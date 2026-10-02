@@ -1,9 +1,10 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.1
+## v0.1.0-beta.2
 
 ### Deutsch
 
+- Windows-Online-Installer startet auch über `irm | iex`; Installer-Dateien werden zusätzlich als öffentliche Release-Downloads veröffentlicht.
 - Gemeinsame Installationsadresse get.darts-hub.de mit automatischer Skriptauswahl und Browser-Anleitung.
 - Online-Installer erkennt Betriebssystem und Architektur und bietet GUI, TUI, Headless, Beta-Versionen und Autostart an.
 - Autodarts-Anmeldung mit gespeicherter Verbindung und direkten Spielereignissen.
@@ -15,6 +16,7 @@
 
 ### English
 
+- Windows online installer works through `irm | iex`; installer scripts are also published as public release downloads.
 - Shared get.darts-hub.de installation URL with automatic script selection and browser instructions.
 - Online installer detects OS and architecture and offers GUI, TUI, headless, beta releases and login autostart.
 - Persistent Autodarts login and direct match events.

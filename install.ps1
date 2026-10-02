@@ -1,9 +1,10 @@
 #requires -Version 5.1
 param(
-    [ValidateSet('stable', 'beta')][string]$Channel,
-    [ValidateSet('gui', 'tui', 'headless')][string]$Mode,
-    [string]$Directory,
-    [switch]$NoStart
+    # Validate after prompting: ValidateSet on empty parameters fails under irm | iex.
+    [Alias('Channel')][string]$DartsHubInstallerChannel,
+    [Alias('Mode')][string]$DartsHubInstallerMode,
+    [Alias('Directory')][string]$DartsHubInstallerDirectory,
+    [Alias('NoStart')][switch]$DartsHubInstallerNoStart
 )
 $ErrorActionPreference = 'Stop'
 $Repository = 'Peschi90/Darts-Hub-2.0'
@@ -75,26 +76,26 @@ function Install-DartsHub {
     $architecture = [Environment]::GetEnvironmentVariable('PROCESSOR_ARCHITECTURE', 'Machine')
     $rid = switch ($architecture.ToUpperInvariant()) { 'AMD64' { 'win-x64' } 'ARM64' { 'win-arm64' } default { throw "Unsupported architecture: $architecture" } }
     Write-Host "DartsHub installer / Installation - $rid"
-    if (-not $Channel) { $Channel = Read-Choice 'Channel / Kanal: stable, beta' 'stable' }
-    if (-not $Mode) { $Mode = Read-Choice 'Mode / Betriebsart: gui, tui, headless' 'gui' }
-    if ($Channel -notin @('stable', 'beta') -or $Mode -notin @('gui', 'tui', 'headless')) { throw 'Invalid channel or mode.' }
-    if (-not $Directory) { $Directory = Read-Host "Install directory / Installationsordner [$env:LOCALAPPDATA\Programs\DartsHub]" }
-    if ([string]::IsNullOrWhiteSpace($Directory)) { $Directory = Join-Path $env:LOCALAPPDATA 'Programs/DartsHub' }
-    $Directory = [System.IO.Path]::GetFullPath($Directory)
-    if ($Directory -eq [System.IO.Path]::GetPathRoot($Directory) -or $Directory -eq $env:USERPROFILE) { throw 'Choose a dedicated application directory.' }
+    if (-not $DartsHubInstallerChannel) { $DartsHubInstallerChannel = Read-Choice 'Channel / Kanal: stable, beta' 'stable' }
+    if (-not $DartsHubInstallerMode) { $DartsHubInstallerMode = Read-Choice 'Mode / Betriebsart: gui, tui, headless' 'gui' }
+    if ($DartsHubInstallerChannel -notin @('stable', 'beta') -or $DartsHubInstallerMode -notin @('gui', 'tui', 'headless')) { throw 'Invalid channel or mode.' }
+    if (-not $DartsHubInstallerDirectory) { $DartsHubInstallerDirectory = Read-Host "Install directory / Installationsordner [$env:LOCALAPPDATA\Programs\DartsHub]" }
+    if ([string]::IsNullOrWhiteSpace($DartsHubInstallerDirectory)) { $DartsHubInstallerDirectory = Join-Path $env:LOCALAPPDATA 'Programs/DartsHub' }
+    $DartsHubInstallerDirectory = [System.IO.Path]::GetFullPath($DartsHubInstallerDirectory)
+    if ($DartsHubInstallerDirectory -eq [System.IO.Path]::GetPathRoot($DartsHubInstallerDirectory) -or $DartsHubInstallerDirectory -eq $env:USERPROFILE) { throw 'Choose a dedicated application directory.' }
     $autostart = Test-Yes (Read-Choice 'Autostart at login / Bei Anmeldung starten? yes/no' 'no')
-    $minimized = $Mode -eq 'gui' -and $autostart -and (Test-Yes (Read-Choice 'Start minimized / Minimiert starten? yes/no' 'no'))
-    if ($Mode -eq 'tui' -and $autostart) { Write-Host 'TUI autostart runs the headless backend; open the TUI shortcut to configure it.' }
+    $minimized = $DartsHubInstallerMode -eq 'gui' -and $autostart -and (Test-Yes (Read-Choice 'Start minimized / Minimiert starten? yes/no' 'no'))
+    if ($DartsHubInstallerMode -eq 'tui' -and $autostart) { Write-Host 'TUI autostart runs the headless backend; open the TUI shortcut to configure it.' }
     $headers = @{ 'User-Agent' = 'DartsHub-Installer'; Accept = 'application/vnd.github+json' }
     $releases = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repository/releases?per_page=100" -Headers $headers -TimeoutSec 30
-    $selected = Select-Release $releases ($Channel -eq 'beta') $rid
+    $selected = Select-Release $releases ($DartsHubInstallerChannel -eq 'beta') $rid
     $asset = $selected.Asset
     if (-not $asset.browser_download_url.StartsWith("https://github.com/$Repository/releases/download/", [StringComparison]::Ordinal)) { throw 'Unexpected download URL.' }
     if ($asset.digest -notmatch '^sha256:[0-9a-fA-F]{64}$') { throw 'Release has no SHA256 digest. Use a newly uploaded release.' }
-    Write-Host "Installing $($selected.Release.tag_name) -> $Directory"
-    if ((Test-Path -LiteralPath $Directory) -and -not (Test-Yes (Read-Choice 'Existing directory. Close DartsHub first. Continue? yes/no' 'no'))) { return }
-    if (Test-Path -LiteralPath $Directory) {
-        $items = @((Get-Item -LiteralPath $Directory -Force)) + @(Get-ChildItem -LiteralPath $Directory -Recurse -Force)
+    Write-Host "Installing $($selected.Release.tag_name) -> $DartsHubInstallerDirectory"
+    if ((Test-Path -LiteralPath $DartsHubInstallerDirectory) -and -not (Test-Yes (Read-Choice 'Existing directory. Close DartsHub first. Continue? yes/no' 'no'))) { return }
+    if (Test-Path -LiteralPath $DartsHubInstallerDirectory) {
+        $items = @((Get-Item -LiteralPath $DartsHubInstallerDirectory -Force)) + @(Get-ChildItem -LiteralPath $DartsHubInstallerDirectory -Recurse -Force)
         if ($items | Where-Object { $_.Attributes -band [IO.FileAttributes]::ReparsePoint }) { throw 'Installation directory contains links or junctions.' }
     }
     $work = Join-Path ([IO.Path]::GetTempPath()) ('dartshub-install-' + [guid]::NewGuid().ToString('N'))
@@ -108,30 +109,30 @@ function Install-DartsHub {
         $staging = Join-Path $work 'app'; New-Item -ItemType Directory -Path $staging | Out-Null
         Expand-SafeRelease $archive $staging
         if (-not (Test-Path -LiteralPath (Join-Path $staging 'DartsHub.exe') -PathType Leaf)) { throw 'Archive does not contain DartsHub.exe.' }
-        New-Item -ItemType Directory -Path $Directory -Force | Out-Null
-        Get-ChildItem -LiteralPath $staging -Force | Copy-Item -Destination $Directory -Recurse -Force
+        New-Item -ItemType Directory -Path $DartsHubInstallerDirectory -Force | Out-Null
+        Get-ChildItem -LiteralPath $staging -Force | Copy-Item -Destination $DartsHubInstallerDirectory -Recurse -Force
     } finally {
         $resolvedWork = [IO.Path]::GetFullPath($work)
         $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\') + '\'
         if (-not $resolvedWork.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase)) { throw 'Invalid cleanup path.' }
         Remove-Item -LiteralPath $resolvedWork -Recurse -Force
     }
-    $exe = Join-Path $Directory 'DartsHub.exe'
-    $arguments = if ($Mode -eq 'gui') { if ($minimized) { '--minimized' } else { '' } } elseif ($Mode -eq 'tui') { '--tui' } else { '--headless --background' }
+    $exe = Join-Path $DartsHubInstallerDirectory 'DartsHub.exe'
+    $arguments = if ($DartsHubInstallerMode -eq 'gui') { if ($minimized) { '--minimized' } else { '' } } elseif ($DartsHubInstallerMode -eq 'tui') { '--tui' } else { '--headless --background' }
     $shell = New-Object -ComObject WScript.Shell
     $shortcutPath = Join-Path ([Environment]::GetFolderPath('Programs')) 'DartsHub.lnk'
-    $shortcut = $shell.CreateShortcut($shortcutPath); $shortcut.TargetPath = $exe; $shortcut.Arguments = $arguments; $shortcut.WorkingDirectory = $Directory; $shortcut.Save()
+    $shortcut = $shell.CreateShortcut($shortcutPath); $shortcut.TargetPath = $exe; $shortcut.Arguments = $arguments; $shortcut.WorkingDirectory = $DartsHubInstallerDirectory; $shortcut.Save()
     if ($autostart) {
-        $target = if ($Mode -eq 'gui') { 'gui' } else { 'headless' }
+        $target = if ($DartsHubInstallerMode -eq 'gui') { 'gui' } else { 'headless' }
         $startArguments = if ($target -eq 'headless') { '--headless --background' } elseif ($minimized) { '--minimized' } else { '' }
         New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Force | Out-Null
         New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name "DartsHub-$target" -Value ('"' + $exe + '" ' + $startArguments) -PropertyType String -Force | Out-Null
     }
     Write-Host "Installed / Installiert. Start menu: DartsHub. Path: $exe"
-    if (-not $NoStart -and (Test-Yes (Read-Choice 'Start now / Jetzt starten? yes/no' 'yes'))) {
-        if ($Mode -eq 'tui') { Start-Process -FilePath $exe -ArgumentList $arguments -WorkingDirectory $Directory -WindowStyle Normal }
-        elseif ($arguments) { Start-Process -FilePath $exe -ArgumentList $arguments -WorkingDirectory $Directory -WindowStyle Hidden }
-        else { Start-Process -FilePath $exe -WorkingDirectory $Directory -WindowStyle Hidden }
+    if (-not $DartsHubInstallerNoStart -and (Test-Yes (Read-Choice 'Start now / Jetzt starten? yes/no' 'yes'))) {
+        if ($DartsHubInstallerMode -eq 'tui') { Start-Process -FilePath $exe -ArgumentList $arguments -WorkingDirectory $DartsHubInstallerDirectory -WindowStyle Normal }
+        elseif ($arguments) { Start-Process -FilePath $exe -ArgumentList $arguments -WorkingDirectory $DartsHubInstallerDirectory -WindowStyle Hidden }
+        else { Start-Process -FilePath $exe -WorkingDirectory $DartsHubInstallerDirectory -WindowStyle Hidden }
     }
 }
 if ($MyInvocation.InvocationName -ne '.') { Install-DartsHub }
