@@ -274,3 +274,5 @@ Each saved entry appears on the dashboard with its actual status and **Start**, 
 The TUI has the same **Own applications** page. Headless uses the saved settings. Examples and startup options: [Own applications](docs/OWN_APPLICATIONS.md).
 
 The startup delay in **Settings** holds back module initialization, own autostart applications and the update check. **Start now** releases the startup early. The TUI provides the same countdown; headless also waits. Attaching another frontend to an already running host does not restart the delay.
+
+When a new version is available, an update dialog shows its release notes after the startup countdown. Choose **Later** to postpone it; reopen it through Settings → Updates → **View update**. Release notes are also available in the TUI update settings.

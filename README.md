@@ -274,3 +274,5 @@ Jeder gespeicherte Eintrag erscheint im Dashboard mit seinem echten Status und d
 Die TUI bietet dieselbe Funktion auf der Seite **Eigene Anwendungen**. Headless verwendet die gespeicherten Einstellungen. Beispiele und Startoptionen: [Eigene Anwendungen](docs/OWN_APPLICATIONS.md).
 
 Die Startverzögerung unter **Einstellungen** hält die Modulinitialisierung, eigene Autostart-Anwendungen und die Updateprüfung zurück. **Jetzt starten** gibt den Start vorzeitig frei. Die TUI bietet denselben Countdown; Headless wartet ebenfalls. Eine bereits laufende Laufzeit wird beim Anbinden einer weiteren Oberfläche nicht erneut verzögert.
+
+Wenn eine neue Version verfügbar ist, erscheint nach dem Start-Countdown ein Update-Dialog mit den Release Notes. Mit **Später** verschiebst du das Update; unter Einstellungen → Updates → **Update ansehen** kannst du den Dialog wieder öffnen. In der TUI lassen sich die Release Notes ebenfalls in den Update-Einstellungen lesen.

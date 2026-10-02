@@ -1,9 +1,10 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.3
+## v0.1.0-beta.4
 
 ### Deutsch
 
+- Neue Versionen werden in einem Update-Dialog mit Release Notes angekündigt; die TUI zeigt dieselben Versionshinweise.
 - Einheitlicher Installer-Header mit ASCII-Monogramm, Dart-Motiv und klaren Installationsabschnitten.
 - Optionale GUI-/TUI-Desktop-Verknüpfungen im Installer; Beta-Installationen aktivieren Beta-Updates automatisch. Headless-Autostart wird nur noch in der TUI angeboten.
 - Windows-Online-Installer startet auch über `irm | iex`; Installer-Dateien werden zusätzlich als öffentliche Release-Downloads veröffentlicht.
@@ -18,6 +19,7 @@
 
 ### English
 
+- New versions are announced in an update dialog with release notes; the TUI exposes the same notes.
 - Unified installer header with ASCII monogram, dart artwork and clear installation stages.
 - Optional GUI/TUI desktop shortcuts in the installer; beta installations enable beta updates automatically. Headless autostart is offered only in the TUI.
 - Windows online installer works through `irm | iex`; installer scripts are also published as public release downloads.
