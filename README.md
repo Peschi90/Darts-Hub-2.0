@@ -1,5 +1,7 @@
 # Darts-Hub 2.0 – Benutzeranleitung
 
+Online installieren: Der [Online-Installer](docs/ONLINE_INSTALLER.md) erkennt dein System und fragt nach GUI, TUI oder Headless sowie Autostart.
+
 <img src="docs/images/user-guide/brand-logo.png" alt="Darts-Hub 2.0" width="220" />
 
 **Deutsch** · [English](README.en.md)
