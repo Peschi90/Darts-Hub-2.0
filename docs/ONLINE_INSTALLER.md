@@ -25,7 +25,7 @@ irm https://get.darts-hub.de | iex
 
 Falls ein Proxy die automatische Auswahl beeinflusst: `irm https://get.darts-hub.de/install.ps1 | iex`. Im Browser zeigt die Domain eine Installationsseite.
 
-Der Windows-Installer legt einen Startmenüeintrag für die gewählte Betriebsart an. Unter Linux wird GUI-Autostart über die Desktop-Anmeldung eingerichtet, Headless über einen systemd-Benutzerdienst. Bei TUI-Autostart startet der Headless-Host; die TUI wird bei Bedarf mit `--tui` geöffnet. Unter macOS wird ein Benutzer-LaunchAgent eingerichtet. Diese Einträge verwenden dieselben Namen wie GUI und TUI und können dort verwaltet werden.
+Der Installer fragt bei GUI und TUI zusätzlich, ob eine Desktop-Verknüpfung erstellt werden soll. Sie startet genau die gewählte Oberfläche. Bei einer Beta-Installation ist der Empfang von Beta-Updates automatisch aktiviert; du kannst ihn danach in GUI oder TUI wieder ausschalten. Der Windows-Installer legt außerdem einen Startmenüeintrag für die gewählte Betriebsart an. Unter Linux wird GUI-Autostart über die Desktop-Anmeldung eingerichtet, Headless über einen systemd-Benutzerdienst. Bei TUI-Autostart startet der Headless-Host; die TUI wird bei Bedarf mit `--tui` geöffnet. Unter macOS wird ein Benutzer-LaunchAgent eingerichtet. Diese Einträge verwenden dieselben Namen wie GUI und TUI und können dort verwaltet werden.
 
 Ein Linux-Benutzerdienst startet normalerweise bei Anmeldung. Für Start ohne Anmeldung kann ein Administrator einmal `sudo loginctl enable-linger BENUTZERNAME` ausführen. Dafür verändert der Installer selbst keine Systemeinstellungen. Bei einem unsignierten macOS-Release kann die Freigabe unter Systemeinstellungen → Datenschutz & Sicherheit erforderlich sein.
 
@@ -44,3 +44,5 @@ GUI starts at desktop login. Headless uses a Linux systemd user service, a macOS
 Close DartsHub before reinstalling. Program files are replaced, settings/logs remain, and the download's SHA256 is checked before extraction. Existing autostart registrations remain unchanged when you decline autostart. Use the same installation directory to retain their paths. Optional flags are `--channel beta --mode headless --no-start` on Linux/macOS and `-Channel beta -Mode headless -NoStart` on Windows. Configuration and Autodarts login follow in GUI/TUI or through headless arguments.
 
 Installer URLs become available after configuring get.darts-hub.de and publishing the installer files in the public repository. Only the six x64/ARM64 platform packages are supported; Linux requires glibc rather than Alpine/musl. GUI operation requires desktop libraries. Install Python 3 from python.org if it is missing on macOS.
+
+For GUI and TUI, the installer also asks whether to create a desktop shortcut for the selected frontend. Installing a beta automatically enables beta updates; you can turn them off later in GUI or TUI.

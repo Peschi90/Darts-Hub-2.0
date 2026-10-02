@@ -9,6 +9,8 @@ import platform
 import plistlib
 import re
 import shutil
+import shlex
+import sys
 import subprocess
 import tarfile
 import tempfile
@@ -16,6 +18,34 @@ import urllib.request
 
 REPO = 'Peschi90/Darts-Hub-2.0'
 SEMVER = re.compile(r'^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z.-]+))?(?:\+[0-9A-Za-z.-]+)?$')
+
+LOGO = r'''       _____    _    _                    __/|
+      |  __ \  | |  | |                  /_/_/
+      | |  | | | |__| |                    /
+      | |  | | |  __  |                   /
+      | |__| | | |  | |          ________/
+      |_____/  |_|  |_|         /'''
+
+
+def styled(text, color='36'):
+    use_color = sys.stdout.isatty() and 'NO_COLOR' not in os.environ and os.environ.get('TERM') != 'dumb'
+    print('\033[' + color + 'm' + text + '\033[0m' if use_color else text)
+
+
+def show_header(rid):
+    print()
+    styled(LOGO)
+    styled('  DARTS-HUB 2.0  |  ONLINE INSTALLER', '97')
+    styled('  --------------------------------------------------------', '36')
+    styled('  System: ' + rid + '    |    get.darts-hub.de')
+    styled('  GUI / TUI / HEADLESS  -  Dein Setup. Dein Spiel.', '90')
+    print()
+
+
+def show_step(number, title):
+    print()
+    styled('  [%d/3] %s' % (number, title))
+    styled('  --------------------------------------------------------')
 
 
 def version_key(tag):
@@ -126,6 +156,26 @@ def ask(prompt, default):
     return value or default
 
 
+def create_desktop_shortcut(executable, mode, desktop, system):
+    desktop.mkdir(parents=True, exist_ok=True)
+    if system == 'Darwin' and mode == 'gui':
+        link = desktop / 'DartsHub.app'
+        bundle = executable.parents[2]
+        if link.is_symlink() and link.resolve() == bundle.resolve():
+            return link
+        link.symlink_to(bundle, target_is_directory=True)
+    elif system == 'Darwin':
+        link = desktop / 'DartsHub-TUI.command'
+        link.write_text('#!/bin/sh\nexec ' + shlex.quote(str(executable)) + ' --tui\n', encoding='utf-8')
+        link.chmod(0o755)
+    else:
+        link = desktop / ('DartsHub-' + mode + '.desktop')
+        quoted = '"' + str(executable).replace('\\', '\\\\').replace('"', '\\"').replace('`', '\\`').replace('$', '\\$').replace('%', '%%') + '"'
+        link.write_text('[Desktop Entry]\nType=Application\nName=DartsHub ' + mode.upper() + '\nExec=' + quoted + (' --tui' if mode == 'tui' else '') + '\nTerminal=' + ('true' if mode == 'tui' else 'false') + '\n', encoding='utf-8')
+        link.chmod(0o755)
+    return link
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--channel', choices=['stable', 'beta'])
@@ -136,7 +186,8 @@ def main():
     if os.geteuid() == 0:
         raise ValueError('Run as your normal user, without sudo.')
     rid = runtime(platform.system(), platform.machine())
-    print('DartsHub installer / Installation — ' + rid)
+    show_header(rid)
+    show_step(1, 'Setup / Einrichtung')
     channel = options.channel or ask('Channel / Kanal: stable, beta', 'stable').lower()
     mode = options.mode or ask('Mode / Betriebsart: gui, tui, headless', 'gui').lower()
     if channel not in ('stable', 'beta') or mode not in ('gui', 'tui', 'headless'):
@@ -148,11 +199,13 @@ def main():
         raise ValueError('Choose a dedicated application directory.')
     autostart = ask('Autostart at login / Bei Anmeldung starten? yes/no', 'no').lower() in ('yes', 'y', 'ja', 'j')
     minimized = mode == 'gui' and autostart and ask('Start minimized / Minimiert starten? yes/no', 'no').lower() in ('yes', 'y', 'ja', 'j')
+    desktop_shortcut = mode in ('gui', 'tui') and ask('Create desktop shortcut / Desktop-Verknuepfung erstellen? yes/no', 'yes').lower() in ('yes', 'y', 'ja', 'j')
     if mode == 'tui' and autostart:
         print('TUI autostart runs the headless backend; open --tui when you want to configure it.')
     request = urllib.request.Request('https://api.github.com/repos/' + REPO + '/releases?per_page=100', headers={'User-Agent': 'DartsHub-Installer', 'Accept': 'application/vnd.github+json'})
     with urllib.request.urlopen(request, timeout=30) as response:
         release, asset = choose_release(json.load(response), channel == 'beta', rid)
+    show_step(2, 'Download & Installation')
     print('Installing ' + release['tag_name'] + ' -> ' + str(target))
     if target.exists() and ask('Existing directory. Close DartsHub first. Continue? yes/no', 'no').lower() not in ('yes', 'y', 'ja', 'j'):
         return
@@ -176,13 +229,26 @@ def main():
         shutil.copytree(staging, target, dirs_exist_ok=True)
     executable = target / relative
     executable.chmod(executable.stat().st_mode | 0o111)
+    if desktop_shortcut:
+        desktop = home / 'Desktop'
+        if platform.system() == 'Linux' and shutil.which('xdg-user-dir'):
+            result = subprocess.run(['xdg-user-dir', 'DESKTOP'], capture_output=True, text=True, check=True)
+            if result.stdout.strip():
+                desktop = Path(result.stdout.strip())
+        create_desktop_shortcut(executable, mode, desktop, platform.system())
     # GUI desktop launcher is also usable without autostart.
     if autostart:
         config_home = Path(os.environ.get('XDG_CONFIG_HOME', str(home / '.config')))
         if not config_home.is_absolute():
             config_home = home / '.config'
         register_autostart(executable, mode, minimized, config_home, home, platform.system())
-    print('Installed. Start: ' + str(executable) + (' --' + mode if mode != 'gui' else ''))
+    show_step(3, 'Ready / Fertig')
+    styled('  DartsHub ist bereit / DartsHub is ready.', '32')
+    print('  Version: ' + release['tag_name'])
+    print('  Mode:    ' + mode.upper())
+    print('  Folder:  ' + str(target))
+    print('  Autostart: %s    Desktop shortcut: %s' % (autostart, desktop_shortcut))
+    print('\nStart: ' + str(executable) + (' --' + mode if mode != 'gui' else ''))
     if rid.startswith('osx'):
         print('If macOS blocks an unsigned application, allow it in System Settings > Privacy & Security.')
     if not options.no_start and ask('Start now / Jetzt starten? yes/no', 'yes').lower() in ('yes', 'y', 'ja', 'j'):
