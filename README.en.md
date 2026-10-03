@@ -84,6 +84,8 @@ Saving does not automatically play the effect you are editing. Applying a new co
 
 ## 6. WLED – lighting
 
+Direct effects and colors always control all LEDs: DartsHub expands segment 0 to the entire strip and removes additional active segments. To control specific segments, use a preset saved in WLED; its segment layout is preserved when called.
+
 ### Add controllers
 
 Open **WLED → Devices**, add a controller and enter a useful name and its address. Add further controllers as separate devices. Enable the devices and module you want, load the controller data or check the connection, and save.

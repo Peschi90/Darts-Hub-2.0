@@ -84,6 +84,8 @@ Speichern löst nicht automatisch den bearbeiteten Effekt aus. Laufende Effektfo
 
 ## 6. WLED – Beleuchtung
 
+Direkte Effekte und Farben steuern immer alle LEDs: DartsHub setzt Segment 0 auf den gesamten Streifen und entfernt weitere aktive Segmente. Für bestimmte Segmente verwende ein in WLED gespeichertes Preset; dessen Segmentaufteilung bleibt beim Aufruf erhalten.
+
 ### Controller hinzufügen
 
 Öffne **WLED → Geräte**, füge einen Controller hinzu und trage einen verständlichen Namen sowie seine Adresse ein. Weitere Controller legst du als eigene Geräte an. Aktiviere die gewünschten Geräte und das Modul, lade die Controllerdaten beziehungsweise prüfe die Verbindung und speichere.
