@@ -11,6 +11,7 @@ import re
 import shutil
 import shlex
 import sys
+import struct
 import subprocess
 import tarfile
 import tempfile
@@ -57,12 +58,27 @@ def version_key(tag):
     return tuple(int(match[i]) for i in (1, 2, 3)), suffix is None, identifiers
 
 
-def runtime(system, machine):
+def runtime(system, machine, bits=64):
+    if bits != 64:
+        raise ValueError("32-bit OS/userspace is not supported by the published packages. Use 64-bit Raspberry Pi OS for linux-arm64.")
     os_name = {'Linux': 'linux', 'Darwin': 'osx'}.get(system)
     arch = {'x86_64': 'x64', 'amd64': 'x64', 'aarch64': 'arm64', 'arm64': 'arm64'}.get(machine.lower())
     if not os_name or not arch:
         raise ValueError('Supported: Linux/macOS, x64/ARM64. Detected: ' + system + '/' + machine)
     return os_name + '-' + arch
+
+
+def detect_runtime():
+    system, machine = platform.system(), platform.machine()
+    bits = struct.calcsize('P') * 8
+    if system == 'Linux' and shutil.which('getconf'):
+        result = subprocess.run(['getconf', 'LONG_BIT'], capture_output=True, text=True, check=True, timeout=5)
+        bits = int(result.stdout.strip())
+    if system == 'Darwin':
+        result = subprocess.run(['/usr/sbin/sysctl', '-n', 'hw.optional.arm64'], capture_output=True, text=True, timeout=5)
+        if result.returncode == 0 and result.stdout.strip() == '1':
+            machine = 'arm64'
+    return runtime(system, machine, bits)
 
 
 def choose_release(releases, beta, rid):
@@ -185,7 +201,7 @@ def main():
     options = parser.parse_args()
     if os.geteuid() == 0:
         raise ValueError('Run as your normal user, without sudo.')
-    rid = runtime(platform.system(), platform.machine())
+    rid = detect_runtime()
     show_header(rid)
     show_step(1, 'Setup / Einrichtung')
     channel = options.channel or ask('Channel / Kanal: stable, beta', 'stable').lower()
@@ -206,6 +222,8 @@ def main():
     with urllib.request.urlopen(request, timeout=30) as response:
         release, asset = choose_release(json.load(response), channel == 'beta', rid)
     show_step(2, 'Download & Installation')
+    if rid.startswith('linux') and not any(shutil.which(player) for player in ('ffplay', 'paplay', 'aplay')):
+        print('No Caller audio player found. For WAV/MP3: sudo apt install ffmpeg; for WAV: pulseaudio-utils or alsa-utils')
     print('Installing ' + release['tag_name'] + ' -> ' + str(target))
     if target.exists() and ask('Existing directory. Close DartsHub first. Continue? yes/no', 'no').lower() not in ('yes', 'y', 'ja', 'j'):
         return

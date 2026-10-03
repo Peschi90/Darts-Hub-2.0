@@ -276,3 +276,6 @@ The TUI has the same **Own applications** page. Headless uses the saved settings
 The startup delay in **Settings** holds back module initialization, own autostart applications and the update check. **Start now** releases the startup early. The TUI provides the same countdown; headless also waits. Attaching another frontend to an already running host does not restart the delay.
 
 When a new version is available, an update dialog shows its release notes after the startup countdown. Choose **Later** to postpone it; reopen it through Settings → Updates → **View update**. Release notes are also available in the TUI update settings.
+## Raspberry Pi
+
+See the [Raspberry Pi guide](docs/RASPBERRY_PI.md) for 64-bit Raspberry Pi OS, architecture detection and Caller audio setup.

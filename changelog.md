@@ -1,9 +1,10 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.4
+## v0.1.0-beta.5
 
 ### Deutsch
 
+- Linux-Caller erkennt ffplay, paplay und aplay automatisch und wählt den Player passend zum Dateiformat; ARM-Architekturen und 32-Bit-Benutzerbereiche werden korrekt erkannt. Der gesamte Soundpack-Bibliothekskopf ist klickbar.
 - Neue Versionen werden in einem Update-Dialog mit Release Notes angekündigt; die TUI zeigt dieselben Versionshinweise.
 - Einheitlicher Installer-Header mit ASCII-Monogramm, Dart-Motiv und klaren Installationsabschnitten.
 - Optionale GUI-/TUI-Desktop-Verknüpfungen im Installer; Beta-Installationen aktivieren Beta-Updates automatisch. Headless-Autostart wird nur noch in der TUI angeboten.
@@ -19,6 +20,7 @@
 
 ### English
 
+- Linux caller detects ffplay, paplay and aplay automatically and selects a player matching the file format; ARM architectures and 32-bit userspace are detected correctly. The entire soundpack-library header is clickable.
 - New versions are announced in an update dialog with release notes; the TUI exposes the same notes.
 - Unified installer header with ASCII monogram, dart artwork and clear installation stages.
 - Optional GUI/TUI desktop shortcuts in the installer; beta installations enable beta updates automatically. Headless autostart is offered only in the TUI.

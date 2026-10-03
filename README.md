@@ -276,3 +276,6 @@ Die TUI bietet dieselbe Funktion auf der Seite **Eigene Anwendungen**. Headless 
 Die Startverzögerung unter **Einstellungen** hält die Modulinitialisierung, eigene Autostart-Anwendungen und die Updateprüfung zurück. **Jetzt starten** gibt den Start vorzeitig frei. Die TUI bietet denselben Countdown; Headless wartet ebenfalls. Eine bereits laufende Laufzeit wird beim Anbinden einer weiteren Oberfläche nicht erneut verzögert.
 
 Wenn eine neue Version verfügbar ist, erscheint nach dem Start-Countdown ein Update-Dialog mit den Release Notes. Mit **Später** verschiebst du das Update; unter Einstellungen → Updates → **Update ansehen** kannst du den Dialog wieder öffnen. In der TUI lassen sich die Release Notes ebenfalls in den Update-Einstellungen lesen.
+## Raspberry Pi
+
+Hinweise zu 64-Bit Raspberry Pi OS, der Architekturerkennung und der Caller-Audioausgabe findest du in der [Raspberry-Pi-Anleitung](docs/RASPBERRY_PI.md).
