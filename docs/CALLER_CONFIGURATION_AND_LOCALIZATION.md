@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+Eigene Soundpacks bauen: [vollständige Key-Referenz mit Auslösern, Ersatzsounds und Beispielen](CALLER_SOUNDPACKS.de.md).
+
 1. Für Live-Ansagen Autodarts verbinden und das gewünschte Board auswählen.
    Anschließend die Seite **Caller** öffnen.
 2. **Caller aktivieren** einschalten.
@@ -20,6 +22,8 @@
 - Bei Fehlern die [Runtime-Konsole](RUNTIME_CONSOLE.md) öffnen.
 
 ## English
+
+Build custom soundpacks: [complete key reference with triggers, fallbacks and examples](CALLER_SOUNDPACKS.en.md).
 
 1. Connect Autodarts and select the intended board for live announcements.
    Then open the **Caller** page.

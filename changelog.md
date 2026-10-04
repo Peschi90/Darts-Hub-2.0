@@ -1,8 +1,30 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.8
+## v0.1.0-beta.11
 
 ### Deutsch
+
+- Weboberfläche für GUI und Headless unter Port 8079: gemeinsames Design, Erweiterungseinstellungen, Autodarts-Anmeldung, Konsole, Lizenz, Support und Deutsch/Englisch. Geschützter Zugangscode in GUI/TUI/Terminal; die Webseite wird in das Programm eingebettet.
+
+- Ausführliche Soundpack-Anleitung auf Deutsch und Englisch: Dateinamen, Ereignisse, Ersatzsounds, Einzelwurfmodi, Spielernamen, Checkout, Blind-Support und Ambient sowie Einrichtung eigener Packs in GUI, TUI und Headless.
+
+- Caller: neue Würfe ersetzen laufende Einzelwurfansagen; veraltete Einzelwürfe werden ausgelassen. Gesamtscore, Bust und Siegeransagen bleiben geschützt. Ambient-Sounds laufen auf einem unabhängigen Audiokanal parallel.
+
+- Caller: feste 200-ms-Pause vor anschließenden TTS-Spielernamen entfernt.
+
+- Logs: eine Datei pro Modul und Kalendertag (`Modulname_04.log`), Neustarts hängen an; am gleichen Tag im nächsten Monat wird die Datei neu begonnen. Keine Größenrotation und keine automatische 14-Tage-Löschung. Support-Sammlungen erfassen auch die neuen Dateinamen.
+
+- Update-Dialog zeigt Release Notes als formatiertes Markdown mit Überschriften, Listen, Hervorhebungen, Code, Links und Tabellen. TUI zeigt lesbaren Text ohne Markdown-Steuerzeichen.
+
+- WLED-Start-/Beenden-Befehle verwenden gepuffertes JSON mit Content-Length, wie die Effektbefehle; verhindert HTTP-400-Ablehnung durch Controller bei Chunked-Requests.
+
+- WLED-Start-/Beenden-Aktionen von weiterer GUI-Initialisierung entkoppelt; Lizenz- und Versandfehler verbrauchen die Aktion nicht mehr. Beenden funktioniert auch ohne erfolgreiche Startaktion; Lizenzblockaden werden sichtbar protokolliert.
+
+- WLED, PixelIt, GIF und Awtrix: normale Punkte-Effekte erst nach drei Darts; gemeinsame Zeitsteuerung mit Ausnahmen für Bust und explizite Einzelwurfregeln; Bots folgen derselben Drei-Dart-Regel.
+
+- Konsole: Rechtsklick kopiert die Auswahl wahlweise ohne oder mit Details/Payloads. Betriebssystemsprache wird vor der Anmeldung beim ersten Start erkannt und gespeichert; manuelle Sprachwahl bleibt erhalten.
+
+- Headless-Anmeldung nutzt fest hinterlegte interne Authentifizierungsparameter; entsprechende nutzerseitige Startoptionen und Konfigurations-Overrides entfernt.
 
 - Update-Pakete werden für Linux und macOS passend zur Prozessarchitektur erkannt. Online-Installer bleiben im öffentlichen Repository, aber entfallen als Release-Anhänge; erneute Veröffentlichung entfernt alte Skript-Anhänge.
 
@@ -55,6 +77,16 @@
 - Kompakte Betriebssystem-Pakete ohne Dokumentationsdateien; Updates kommen aus dem öffentlichen Release-Repository.
 
 ### English
+
+- Web interface for GUI and headless on port 8079: shared design, extension settings, Autodarts login, console, licensing, support and German/English. Protected access code available in GUI/TUI/terminal; web assets are embedded in the executable.
+
+- Detailed German and English soundpack guides covering filenames, events, fallbacks, single-dart modes, player names, checkout, blind support and ambient, plus custom pack setup for GUI, TUI and headless.
+
+- Caller: new darts replace active single-dart announcements and stale individual darts are skipped. Turn totals, busts and winner announcements remain protected. Ambient sounds play in parallel on an independent audio channel.
+
+- Console context menu copies selected messages with or without details/payloads. First launch detects and saves OS language before login; manual language choices persist.
+
+- Headless login uses built-in authentication parameters; user-facing startup options and configuration overrides removed.
 
 - Update packages support Linux and macOS process architectures. Online installers remain public repository files but are no longer release attachments; reruns remove legacy script attachments.
 

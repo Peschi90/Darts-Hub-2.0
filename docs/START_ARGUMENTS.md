@@ -59,3 +59,7 @@ GUI, TUI and headless share the saved configuration. Only supplied values change
 - **Ctrl+C** cleanly stops terminal operation.
 - Modules: [Caller](CALLER_CONFIGURATION_AND_LOCALIZATION.md) · [WLED](WLED_CONFIGURATION_AND_AUTODARTS.md) · [PixelIt](PIXELIT.md) · [AWTRIX](AWTRIX.md) · [GIF](GIF.md)
 - [Import](LEGACY_IMPORT.md) · [Own applications](OWN_APPLICATIONS.md) · [Telemetry](TELEMETRY.md)
+
+Die Anmeldung benötigt nur die Board-ID und `--ad-login`. Interne Anmeldedaten sind fest in DartsHub hinterlegt und werden nicht als Startargument angegeben.
+
+The login only requires the board ID and `--ad-login`. Internal authentication parameters are built into DartsHub and are not supplied as startup arguments.

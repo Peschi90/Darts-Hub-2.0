@@ -8,6 +8,10 @@ Online installieren: Der [Online-Installer](docs/ONLINE_INSTALLER.md) erkennt de
 
 Darts-Hub verbindet dein Autodarts-Board mit Sprachansagen, WLED-Beleuchtung und PixelIt-Anzeigen. Du entscheidest, welche Erweiterungen du nutzen möchtest. WLED und PixelIt funktionieren auch bei ausgeschaltetem Caller.
 
+## Bedienung im Browser
+
+Während GUI oder Headless laufen, erreichst du Darts-Hub im lokalen Netzwerk unter `http://IP-DES-RECHNERS:8079`. Den Zugangscode findest du unter **Einstellungen / Lizenz → Weboberfläche**, in der TUI oder beim Headless-Start im Terminal. [Anleitung zur Weboberfläche](docs/WEB_INTERFACE.md).
+
 ## Schnellstart
 
 1. Lade das Paket für dein Betriebssystem herunter und entpacke es vollständig.
@@ -72,6 +76,8 @@ Speichern löst nicht automatisch den bearbeiteten Effekt aus. Laufende Effektfo
 
 ## 5. Caller – Sprachansagen
 
+Eigene Stimmen und Effekte erstellen: [Soundpack-Anleitung mit allen Keys, Auslösern und Beispielen](docs/CALLER_SOUNDPACKS.de.md).
+
 1. Öffne **Caller** und aktiviere ihn, wenn du Ansagen möchtest.
 2. Suche in der Soundpack-Bibliothek eine Sprache und Stimme aus.
 3. Höre mit **Vorschau** hinein, lade das gewünschte Paket herunter und wähle es als aktive Stimme aus.
@@ -81,6 +87,8 @@ Speichern löst nicht automatisch den bearbeiteten Effekt aus. Laufende Effektfo
 ![Caller und Soundpack-Auswahl](docs/images/user-guide/de/caller.png)
 
 **TTS** erzeugt Sprache zusätzlich zu den Sounddateien. Es ist standardmäßig ausgeschaltet und kann bei Bedarf aktiviert werden. Möchtest du nur Beleuchtung oder Anzeigen, schalte den Caller aus. Die anderen Erweiterungen erhalten ihre Spielereignisse direkt von Autodarts.
+
+Ein neuer Dart ersetzt eine noch laufende Einzelwurfansage. Gesamtscore, Bust und Siegeransagen werden zu Ende gesprochen. Ist der Gesamtscore aktiviert, hat er nach dem dritten Dart Vorrang. Ambient-Sounds laufen unabhängig parallel zu den Ansagen. Das gilt auch in TUI und Headless; zusätzliche Einstellungen sind nicht erforderlich.
 
 ## 6. WLED – Beleuchtung
 
@@ -328,3 +336,11 @@ In WLED, PixelIt und Awtrix öffnet **Ereignisvorlagen** die Bibliothek: eine be
 Die TUI bietet dieselben Aktionen unter **Ereignisvorlagen**. WLED-Regeln werden anschließend über „WLED konfigurieren“ gespeichert. Die Dateien `event-templates/wled.json`, `pixelit.json` und `awtrix.json` liegen neben der Anwendung, mit Beispielen. Sie lassen sich sichern oder auf einen anderen Rechner kopieren. Schreibrechte im Anwendungsordner sind erforderlich.
 
 Die Konsole hält Suche und Filter beim Scrollen sichtbar. Mit **Strg/Klick** wählst du mehrere Meldungen, mit **Shift/Klick** einen Bereich und mit **Strg+A** alle gefilterten Meldungen. **Strg+C** oder **Auswahl kopieren** kopiert die Auswahl mit Zeitstempeln; **Mit Details / Payloads** ergänzt die verfügbaren Details. Die Auswahl stoppt das automatische Folgen; über **Neue Einträge verfolgen** aktivierst du es wieder. Debug-Schalter und weitere Aktionen sind aufklappbar. In der TUI kannst du alle gefilterten Meldungen oder einen Zeilenbereich gemeinsam in der Textansicht zum Kopieren öffnen.
+
+Für die Headless-Anmeldung genügen `--board-id "DEINE-BOARD-ID" --ad-login`. Weitere interne Authentifizierungsparameter sind nicht erforderlich.
+
+Beim ersten Start verwendet DartsHub die Betriebssystemsprache (Deutsch oder Englisch; sonst Englisch). Eine selbst gewählte Sprache bleibt nach Neustarts erhalten. In der Konsole bietet das Rechtsklick-Menü **Nur Meldungen kopieren** und **Meldungen mit Details / Payloads kopieren** für die gesamte Auswahl.
+
+Normale Punkte-, Punktebereich- und Kombinations-Effekte laufen erst nach dem dritten Dart. Bust, Sieg und Start-/Board-Ereignisse sind Ausnahmen. WLED-Einzelwurfregeln (DartScore/DS, DartField und Multiplier/DMU) sowie ausdrückliche Throw-Anzeigen bleiben sofort aktiv. Das gilt auch für die TUI und Headless-Konfiguration.
+
+Logs liegen unter `logs`: `DartsHub_04.log` für alle Meldungen und beispielsweise `Caller/Caller_04.log` für den Caller. Neustarts am selben Tag hängen Meldungen an. Am gleichen Kalendertag im nächsten Monat wird die Datei neu begonnen; die Dateigröße ist nicht begrenzt.

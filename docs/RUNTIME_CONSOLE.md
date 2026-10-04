@@ -14,7 +14,7 @@
 
 ### Dateien und Datenschutz
 - GUI und TUI zeigen den tatsächlichen Logpfad. Standard: `logs` neben der ausführbaren Anwendung.
-- Logdateien werden 14 Tage aufbewahrt; ältere Meldungen können dort noch vorhanden sein.
+- Pro lokalem Kalendertag gibt es ein Gesamtlog `DartsHub_04.log` und je Erweiterung z. B. `Caller/Caller_04.log`. Weitere Starts am selben Tag schreiben in dieselbe Datei. Beim erneuten Erreichen dieses Tages im nächsten Monat wird sie überschrieben. Keine Rotation nach Dateigröße; vorhandene alte Logdateien bleiben erhalten.
 - Geheimnisse werden geschwärzt, eigene Texte können dennoch sensible Angaben enthalten.
   **Export vor dem Teilen prüfen.** Vollständige Autodarts-Nachrichten benötigen die passende Lizenz.
 
@@ -32,6 +32,6 @@
 
 ### Files and privacy
 - GUI and TUI show the actual log path. Default: `logs` beside the executable.
-- Log files are retained for 14 days; older messages may still be available there.
+- Each local calendar day has a combined log `DartsHub_04.log` and module logs such as `Caller/Caller_04.log`. Restarts append to the same file. When that day occurs in the next month, the file is overwritten. File size is unlimited; legacy logs are preserved.
 - Secrets are redacted, but your own text may still contain sensitive information.
   **Review exports before sharing.** Full Autodarts messages require the appropriate license.

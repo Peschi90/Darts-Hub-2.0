@@ -8,6 +8,10 @@ Install online: The [online installer](docs/ONLINE_INSTALLER.md) detects your sy
 
 Darts-Hub connects your Autodarts board to voice announcements, WLED lighting and PixelIt displays. Choose the extensions you want to use. WLED and PixelIt also work with the Caller switched off.
 
+## Browser control
+
+While GUI or headless is running, open `http://HOST-IP:8079` on your local network. Find the access code under **Settings / License → Web interface**, in the TUI or in the terminal at headless startup. [Web interface guide](docs/WEB_INTERFACE.md#english).
+
 ## Quick start
 
 1. Download the package for your operating system and extract it completely.
@@ -72,6 +76,8 @@ Saving does not automatically play the effect you are editing. Applying a new co
 
 ## 5. Caller – voice announcements
 
+Create custom voices and effects: [soundpack guide with all keys, triggers and examples](docs/CALLER_SOUNDPACKS.en.md).
+
 1. Open **Caller** and enable it if you want announcements.
 2. Find a language and voice in the soundpack library.
 3. Use **Preview** to listen, download the pack and select it as your active voice.
@@ -81,6 +87,8 @@ Saving does not automatically play the effect you are editing. Applying a new co
 ![Caller and soundpack selection](docs/images/user-guide/en/caller.png)
 
 **TTS** generates speech in addition to the sound files. It is off by default and can be enabled when needed. If you only want lighting or displays, disable the Caller. Other extensions receive their game events directly from Autodarts.
+
+A new dart replaces a single-dart announcement that is still playing. Turn totals, busts and winner announcements finish normally. If turn totals are enabled, the total takes priority after dart three. Ambient sounds play independently alongside announcements. This also applies to TUI and headless mode; no additional settings are needed.
 
 ## 6. WLED – lighting
 
@@ -328,3 +336,11 @@ Open **Event templates** in WLED, PixelIt or Awtrix to save an existing rule und
 The TUI provides the same actions under **Event templates**. Save WLED rules through “Configure WLED” afterwards. `event-templates/wled.json`, `pixelit.json` and `awtrix.json` sit beside the application and include examples. Back up or copy these files to reuse your library. The application directory must be writable.
 
 The console keeps search and filters visible while scrolling. Use **Ctrl/click** for multiple messages, **Shift/click** for a range and **Ctrl+A** for all filtered messages. **Ctrl+C** or **Copy selection** copies selected messages with timestamps; **Include details / payloads** adds available details. Selection stops automatic following; enable **Follow new entries** to resume. Debug switches and additional actions open in menus. The TUI can open all filtered messages or a row range together in the text view for copying.
+
+Headless login only needs `--board-id "YOUR-BOARD-ID" --ad-login`. Additional internal authentication parameters are not required.
+
+On first launch, DartsHub uses the OS language (German or English, otherwise English). A language selected by the user persists across restarts. The console context menu offers **Copy messages only** and **Copy messages with details / payloads** for the entire selection.
+
+Normal score, score-range and combination effects run after the third dart. Bust, wins and lifecycle events are exceptions. WLED single-dart rules (DartScore/DS, DartField and Multiplier/DMU) and explicit Throw displays remain immediate. The same timing applies to TUI and headless configurations.
+
+Logs are stored under `logs`: `DartsHub_04.log` for all messages and, for example, `Caller/Caller_04.log` for Caller messages. Restarts on the same day append messages. The same calendar day next month starts a fresh file; file size is unlimited.
