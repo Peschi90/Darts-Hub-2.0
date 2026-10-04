@@ -199,9 +199,40 @@ For continuous operation, start headless separately and open the TUI alongside i
 
 These values are saved. The included `start.bat` or `start.sh` files are editable examples; check their defaults before running them. `start-pixelit.bat` or `start-pixelit.sh` demonstrate a PixelIt setup. Use `--help` or the [argument reference](docs/START_ARGUMENTS.md) for all startup options.
 
+**PixelIt** also previews templates and display steps in a virtual LED matrix. Text and brightness update immediately; bitmap graphics are read from the template. The TUI provides a preview in the display step. Animated templates show their first frame.
+
 ## 11. AwtrixNG and GIF
 
 Both extensions receive events directly from Autodarts and work with Caller disabled. Connect your board first. Dashboard switches turn extensions on or off immediately. Changes inside their settings are applied with **Save**; **Test** uses current edits without saving them.
+
+### Live display after each dart (PixelIt and AwtrixNG)
+
+**One matrix for all players:** Create two rules: **After each dart** and **Player change**. Leave the player filter empty and target the same matrix in both rules. Enable **Replace template text** and enter, for example:
+
+```text
+{playername} {points-left} D{dart-number}
+```
+
+The display starts with the active player, updates after each dart and follows player changes. For a fast PixelIt display, set the pause after the step to 0.
+
+**One matrix per player:** Use the same events and a fixed player number in each matrix's text, for example:
+
+```text
+{p1-playername} {p1-points-left} D{p1-darts-thrown}
+```
+
+Replace `p1` with `p2` on the second matrix, and so on. Numbers stay the same when the starting player changes. Leave the player filter empty to refresh values on every event. Target the appropriate matrix from each display step.
+
+| Placeholder | Meaning |
+| --- | --- |
+| `{dart-score}` | Last dart score |
+| `{dart-number}` | Dart number within the current visit (0–3) |
+| `{darts-thrown}` | Darts thrown in the current leg |
+| `{turn-score}` | Current visit score |
+| `{points-left}` | Remaining score of the selected/active player |
+| `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p32 |
+
+Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. Headless configurations use the trigger IDs `Throw` and `PlayerChanged`.
 
 ### AwtrixNG: Connect a display
 
@@ -217,8 +248,14 @@ Both extensions receive events directly from Autodarts and work with Caller disa
 1. Open **Events**, add a rule and give it a name such as “180”.
 2. Select the event and score where applicable. An empty player filter applies to all matching players.
 3. Add a step and select a template, text and target devices. Use `{score}` and `{playername}` to insert the score and player name into your text.
-4. Set an icon, color, duration or sound if needed. Multiple steps run in order, and each step can target different displays.
+4. Set an icon, color and duration if needed. Multiple steps run in order, and each step can target different displays.
 5. Test the rule and save it. It will then react to matching Autodarts events.
+
+Select the triggering event under **When to display?**. **Display template** determines only the appearance. New display steps automatically use a matching template. For existing steps, select **Use suggested template** to apply the suggestion; custom text is preserved. The TUI provides the same options in the event and display step editors.
+
+The **virtual LED matrix** previews the template while editing, including custom text and colors. Long text scrolls. In the TUI, open the preview from the display step. The preview uses sample values; device icons and firmware effects may differ.
+
+Choose text colors with the color picker or a hex value. Brightness and scroll speed update the local preview immediately. The TUI offers preset colors and custom hex values.
 
 ![AwtrixNG events](docs/images/user-guide/awtrix-events-en.png)
 
@@ -281,3 +318,13 @@ When a new version is available, an update dialog shows its release notes after 
 ## Raspberry Pi
 
 See the [Raspberry Pi guide](docs/RASPBERRY_PI.md) for 64-bit Raspberry Pi OS, architecture detection and Caller audio setup.
+
+### Event templates
+
+Templates include a custom description of their trigger and output. Open the library in the extension’s **Events and sequences** tab.
+
+Open **Event templates** in WLED, PixelIt or Awtrix to save an existing rule under a name or load a template as a new rule. Matching names are replaced. Conditions, effects, colours, steps and target selection are retained. Check targets and save the extension afterwards. Missing target devices disable the loaded rule.
+
+The TUI provides the same actions under **Event templates**. Save WLED rules through “Configure WLED” afterwards. `event-templates/wled.json`, `pixelit.json` and `awtrix.json` sit beside the application and include examples. Back up or copy these files to reuse your library. The application directory must be writable.
+
+The console keeps search and filters visible while scrolling. Use **Ctrl/click** for multiple messages, **Shift/click** for a range and **Ctrl+A** for all filtered messages. **Ctrl+C** or **Copy selection** copies selected messages with timestamps; **Include details / payloads** adds available details. Selection stops automatic following; enable **Follow new entries** to resume. Debug switches and additional actions open in menus. The TUI can open all filtered messages or a row range together in the text view for copying.

@@ -135,7 +135,18 @@ function Install-DartsHub {
         Expand-SafeRelease $archive $staging
         if (-not (Test-Path -LiteralPath (Join-Path $staging 'DartsHub.exe') -PathType Leaf)) { throw 'Archive does not contain DartsHub.exe.' }
         New-Item -ItemType Directory -Path $DartsHubInstallerDirectory -Force | Out-Null
-        Get-ChildItem -LiteralPath $staging -Force | Copy-Item -Destination $DartsHubInstallerDirectory -Recurse -Force
+        # Preserve the user's editable event libraries during upgrades.
+        $librarySource = Join-Path $staging 'event-templates'
+        $libraryTarget = Join-Path $DartsHubInstallerDirectory 'event-templates'
+        if (Test-Path -LiteralPath $librarySource) {
+            New-Item -ItemType Directory -Path $libraryTarget -Force | Out-Null
+            if ((Get-Item -LiteralPath $libraryTarget -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Template library must not be a symbolic link.' }
+            foreach ($example in Get-ChildItem -LiteralPath $librarySource -File) {
+                $targetFile = Join-Path $libraryTarget $example.Name
+                if (-not (Test-Path -LiteralPath $targetFile)) { Copy-Item -LiteralPath $example.FullName -Destination $targetFile }
+            }
+        }
+        Get-ChildItem -LiteralPath $staging -Force | Where-Object Name -ne 'event-templates' | Copy-Item -Destination $DartsHubInstallerDirectory -Recurse -Force
     } finally {
         $resolvedWork = [IO.Path]::GetFullPath($work)
         $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\') + '\'

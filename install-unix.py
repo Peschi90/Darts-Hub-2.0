@@ -244,7 +244,13 @@ def main():
             if current.is_symlink() or any(p.is_symlink() for p in current.parents):
                 raise ValueError('Existing installation contains symbolic links.')
         # Merge only shipped files. Settings/logs and other local files are preserved.
-        shutil.copytree(staging, target, dirs_exist_ok=True)
+        # Keep locally saved event libraries, but seed missing files from this release.
+        def preserve_libraries(source, names):
+            folder = Path(source)
+            if folder.name != 'event-templates':
+                return []
+            return [name for name in names if (target / folder.relative_to(staging) / name).exists()]
+        shutil.copytree(staging, target, dirs_exist_ok=True, ignore=preserve_libraries)
     executable = target / relative
     executable.chmod(executable.stat().st_mode | 0o111)
     if desktop_shortcut:

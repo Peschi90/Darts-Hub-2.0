@@ -199,9 +199,40 @@ Für einen dauerhaften Betrieb starte Headless separat und öffne die TUI zusät
 
 Die Werte werden gespeichert. Die beiliegenden `start.bat` beziehungsweise `start.sh` sind anpassbare Beispiele; prüfe ihre Vorgaben vor dem Start. `start-pixelit.bat` beziehungsweise `start-pixelit.sh` zeigen eine PixelIt-Einrichtung. Alle Startoptionen findest du mit `--help` oder in der [Argumentübersicht](docs/START_ARGUMENTS.md).
 
+Auch **PixelIt** zeigt Vorlagen und Anzeigeschritte in einer virtuellen LED-Matrix. Text und Helligkeit aktualisieren sich direkt; die Bitmap-Grafiken werden aus der Vorlage gelesen. Die TUI bietet die Vorschau im Anzeigeschritt. Bei animierten Vorlagen ist das erste Bild zu sehen.
+
 ## 11. AwtrixNG und GIF
 
 Beide Erweiterungen arbeiten direkt mit Autodarts und brauchen keinen laufenden Caller. Verbinde zuerst dein Board. Die Schalter im Dashboard aktivieren oder deaktivieren die Erweiterung sofort. Änderungen innerhalb der Einstellungen übernimmst du mit **Speichern**; ein **Test** verwendet deine aktuellen Eingaben, ohne sie zu speichern.
+
+### Live-Anzeige nach jedem Wurf (PixelIt und AwtrixNG)
+
+**Eine Matrix für alle Spieler:** Lege zwei Regeln an: **Nach jedem Wurf** und **Spielerwechsel**. Lass den Spielerfilter leer und wähle in beiden Regeln dieselbe Matrix als Ziel. Aktiviere **Vorlagentext ersetzen** und trage z. B. ein:
+
+```text
+{playername} {points-left} D{dart-number}
+```
+
+Die Anzeige startet mit dem aktiven Spieler, aktualisiert sich nach jedem Wurf und wechselt beim Spielerwechsel automatisch. Bei PixelIt setze die Pause danach für eine schnelle Anzeige auf 0.
+
+**Eine Matrix je Spieler:** Verwende dieselben Ereignisse und pro Matrix einen Text mit fester Spielernummer, etwa:
+
+```text
+{p1-playername} {p1-points-left} D{p1-darts-thrown}
+```
+
+Auf der zweiten Matrix ersetze `p1` durch `p2`, usw. Die Nummern bleiben gleich, auch wenn sich der Startspieler ändert. Lass den Spielerfilter leer, damit die Werte bei jedem Ereignis aktualisiert werden. Weise den Anzeigeschritt jeweils der gewünschten Matrix zu.
+
+| Platzhalter | Bedeutung |
+| --- | --- |
+| `{dart-score}` | Punkte des letzten Darts |
+| `{dart-number}` | Dartnummer in der aktuellen Aufnahme (0–3) |
+| `{darts-thrown}` | Anzahl geworfener Darts im aktuellen Leg |
+| `{turn-score}` | Punkte der aktuellen Aufnahme |
+| `{points-left}` | Restpunkte des ausgewählten/aktiven Spielers |
+| `{p1-points-left}`, `{p1-darts-thrown}` | Feste Werte von Spieler 1; ebenso für p2 bis p32 |
+
+Korrekturen, Zurücknehmen und Überwerfen verwenden die von Autodarts gemeldeten Werte. In der TUI stehen dieselben Ereignisse und Textfelder zur Verfügung. Headless-Konfigurationen verwenden die Auslöser `Throw` und `PlayerChanged`.
 
 ### AwtrixNG: Display verbinden
 
@@ -217,8 +248,14 @@ Beide Erweiterungen arbeiten direkt mit Autodarts und brauchen keinen laufenden 
 1. Öffne **Ereignisse**, füge eine Regel hinzu und benenne sie, beispielsweise „180“.
 2. Wähle das Ereignis und gegebenenfalls die Punktzahl. Ein leerer Spielerfilter gilt für alle passenden Spieler.
 3. Ergänze einen Schritt und wähle Vorlage, Text und Zielgeräte. Mit `{score}` und `{playername}` setzt du die Punktzahl und den Spielernamen in den Text ein.
-4. Wähle bei Bedarf Icon, Farbe, Dauer oder Ton. Mehrere Schritte werden nacheinander angezeigt; die Zielgeräte können pro Schritt unterschiedlich sein.
+4. Wähle bei Bedarf Icon, Farbe und Dauer. Mehrere Schritte werden nacheinander angezeigt; die Zielgeräte können pro Schritt unterschiedlich sein.
 5. Teste die Regel und speichere sie. Ab dann reagiert sie auf passende Autodarts-Ereignisse.
+
+Unter **Wann anzeigen?** wählst du das auslösende Ereignis. **Anzeigevorlage** bestimmt nur das Aussehen. Neue Anzeigeschritte erhalten automatisch eine passende Vorlage. Bei bestehenden Schritten kannst du den Vorschlag mit **Vorlage übernehmen** anwenden; eigene Texte bleiben erhalten. In der TUI findest du dieselben Optionen im Ereignis und im Anzeigeschritt.
+
+Die **virtuelle LED-Matrix** zeigt die Vorlage direkt beim Bearbeiten, inklusive eigenem Text und Farben. Lange Texte scrollen. In der TUI öffnest du die Vorschau im Anzeigeschritt. Die Vorschau verwendet Beispielwerte; Geräte-Icons und Firmware-Effekte können abweichen.
+
+Textfarben lassen sich per Colorpicker oder Hexwert auswählen. Helligkeit und Scrollgeschwindigkeit werden sofort in der lokalen Vorschau übernommen. In der TUI stehen Farbvorgaben und eigene Hexwerte zur Verfügung.
 
 ![AwtrixNG-Ereignisse](docs/images/user-guide/awtrix-events-de.png)
 
@@ -281,3 +318,13 @@ Wenn eine neue Version verfügbar ist, erscheint nach dem Start-Countdown ein Up
 ## Raspberry Pi
 
 Hinweise zu 64-Bit Raspberry Pi OS, der Architekturerkennung und der Caller-Audioausgabe findest du in der [Raspberry-Pi-Anleitung](docs/RASPBERRY_PI.md).
+
+### Ereignisvorlagen
+
+Vorlagen besitzen eine frei editierbare Beschreibung des Auslösers und der Ausgabe. Die Bibliothek findest du im Reiter **Ereignisse und Sequenzen** der jeweiligen Erweiterung.
+
+In WLED, PixelIt und Awtrix öffnet **Ereignisvorlagen** die Bibliothek: eine bestehende Regel auswählen, benennen und speichern oder eine Vorlage als neue Regel laden. Gleiche Vorlagennamen werden ersetzt. Bedingungen, Effekte, Farben, Schritte und Zielauswahl werden gespeichert. Anschließend Ziele prüfen und die Erweiterung speichern. Fehlende Zielgeräte deaktivieren die geladene Regel.
+
+Die TUI bietet dieselben Aktionen unter **Ereignisvorlagen**. WLED-Regeln werden anschließend über „WLED konfigurieren“ gespeichert. Die Dateien `event-templates/wled.json`, `pixelit.json` und `awtrix.json` liegen neben der Anwendung, mit Beispielen. Sie lassen sich sichern oder auf einen anderen Rechner kopieren. Schreibrechte im Anwendungsordner sind erforderlich.
+
+Die Konsole hält Suche und Filter beim Scrollen sichtbar. Mit **Strg/Klick** wählst du mehrere Meldungen, mit **Shift/Klick** einen Bereich und mit **Strg+A** alle gefilterten Meldungen. **Strg+C** oder **Auswahl kopieren** kopiert die Auswahl mit Zeitstempeln; **Mit Details / Payloads** ergänzt die verfügbaren Details. Die Auswahl stoppt das automatische Folgen; über **Neue Einträge verfolgen** aktivierst du es wieder. Debug-Schalter und weitere Aktionen sind aufklappbar. In der TUI kannst du alle gefilterten Meldungen oder einen Zeilenbereich gemeinsam in der Textansicht zum Kopieren öffnen.
