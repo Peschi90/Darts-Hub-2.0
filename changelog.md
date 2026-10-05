@@ -1,10 +1,10 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.11
+## v0.1.0-beta.15
 
 ### Deutsch
 
-- Weboberfläche für GUI und Headless unter Port 8079: gemeinsames Design, Erweiterungseinstellungen, Autodarts-Anmeldung, Konsole, Lizenz, Support und Deutsch/Englisch. Geschützter Zugangscode in GUI/TUI/Terminal; die Webseite wird in das Programm eingebettet.
+- Weboberfläche für GUI und Headless unter Port 8079: gemeinsames Design, Erweiterungseinstellungen, Autodarts-Anmeldung, Konsole, Lizenz, Support und Deutsch/Englisch. Direkt im Netzwerk ohne Zugangscode verfügbar; die Webseite wird in das Programm eingebettet.
 
 - Ausführliche Soundpack-Anleitung auf Deutsch und Englisch: Dateinamen, Ereignisse, Ersatzsounds, Einzelwurfmodi, Spielernamen, Checkout, Blind-Support und Ambient sowie Einrichtung eigener Packs in GUI, TUI und Headless.
 
@@ -78,7 +78,7 @@
 
 ### English
 
-- Web interface for GUI and headless on port 8079: shared design, extension settings, Autodarts login, console, licensing, support and German/English. Protected access code available in GUI/TUI/terminal; web assets are embedded in the executable.
+- Web interface for GUI and headless on port 8079: shared design, extension settings, Autodarts login, console, licensing, support and German/English. Direct network access without an access code; web assets are embedded in the executable.
 
 - Detailed German and English soundpack guides covering filenames, events, fallbacks, single-dart modes, player names, checkout, blind support and ambient, plus custom pack setup for GUI, TUI and headless.
 

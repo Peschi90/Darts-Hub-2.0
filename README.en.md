@@ -10,7 +10,7 @@ Darts-Hub connects your Autodarts board to voice announcements, WLED lighting an
 
 ## Browser control
 
-While GUI or headless is running, open `http://HOST-IP:8079` on your local network. Find the access code under **Settings / License → Web interface**, in the TUI or in the terminal at headless startup. [Web interface guide](docs/WEB_INTERFACE.md#english).
+While GUI or headless is running, open `http://HOST-IP:8079` on your local network.  [Web interface guide](docs/WEB_INTERFACE.md#english).
 
 ## Quick start
 
@@ -72,7 +72,7 @@ Your sign-in and board ID are saved. Darts-Hub restores the connection at the ne
 | **Test / Preview** in WLED or PixelIt | Sends the current draft immediately without saving it. |
 | Next matching game event | Uses the saved rule or effect. |
 
-Saving does not automatically play the effect you are editing. Applying a new configuration may interrupt running effect sequences. Importing old settings requires a restart.
+Saving does not automatically play the effect you are editing. Applying a new configuration may interrupt running effect sequences. Imported settings are saved and applied to running modules immediately.
 
 ## 5. Caller – voice announcements
 

@@ -10,7 +10,7 @@ Darts-Hub verbindet dein Autodarts-Board mit Sprachansagen, WLED-Beleuchtung und
 
 ## Bedienung im Browser
 
-Während GUI oder Headless laufen, erreichst du Darts-Hub im lokalen Netzwerk unter `http://IP-DES-RECHNERS:8079`. Den Zugangscode findest du unter **Einstellungen / Lizenz → Weboberfläche**, in der TUI oder beim Headless-Start im Terminal. [Anleitung zur Weboberfläche](docs/WEB_INTERFACE.md).
+Während GUI oder Headless laufen, erreichst du Darts-Hub im lokalen Netzwerk unter `http://IP-DES-RECHNERS:8079`.  [Anleitung zur Weboberfläche](docs/WEB_INTERFACE.md).
 
 ## Schnellstart
 
@@ -72,7 +72,7 @@ Anmeldung und Board-ID bleiben gespeichert. Beim nächsten Start wird die Verbin
 | **Testen / Vorschau** bei WLED oder PixelIt | Sendet den aktuellen Entwurf sofort, ohne ihn zu speichern. |
 | Nächstes passendes Spielereignis | Verwendet die gespeicherte Regel beziehungsweise den gespeicherten Effekt. |
 
-Speichern löst nicht automatisch den bearbeiteten Effekt aus. Laufende Effektfolgen können beim Übernehmen einer neuen Konfiguration unterbrochen werden. Nach einem Import alter Einstellungen ist ein Neustart nötig.
+Speichern löst nicht automatisch den bearbeiteten Effekt aus. Laufende Effektfolgen können beim Übernehmen einer neuen Konfiguration unterbrochen werden. Importierte Einstellungen werden sofort gespeichert und auf die laufenden Module angewendet.
 
 ## 5. Caller – Sprachansagen
 

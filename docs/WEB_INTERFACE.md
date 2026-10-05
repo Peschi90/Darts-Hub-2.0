@@ -10,8 +10,7 @@ Darts-Hub stellt automatisch eine Weboberfläche bereit, sobald die Anwendung l�
 
 1. Starte Darts-Hub auf dem Rechner, der deine Erweiterungen steuern soll.
 2. Öffne auf einem Gerät im selben Netzwerk `http://IP-DES-RECHNERS:8079`, beispielsweise `http://192.168.1.100:8079`.
-3. Gib den **Web-Zugangscode** ein. Du findest ihn in der GUI unter **Einstellungen / Lizenz → Weboberfläche**, in der TUI unter **Einstellungen → Weboberfläche** oder beim Headless-Start im Terminal. Dieser Code ist unabhängig von der Autodarts-Anmeldung.
-4. Wähle im Seitenmenü die gewünschte Erweiterung. Bearbeite ihre Einstellungen und drücke **Speichern**. Dashboard-Schalter wirken sofort.
+3. Wähle im Seitenmenü die gewünschte Erweiterung. Bearbeite ihre Einstellungen und drücke **Speichern**. Dashboard-Schalter wirken sofort.
 
 Die Weboberfläche bietet Autodarts-Anmeldung und Board-Auswahl, Caller und Soundpacks, WLED, PixelIt, AwtrixNG, GIF, eigene Anwendungen, Konsole, Lizenz, allgemeine Einstellungen, Import, Telemetrie und Support. Die gemeinsamen Einstellungen werden auf dem Darts-Hub-Rechner gespeichert und gelten auch für GUI und TUI. Speichere deine Änderungen, bevor du in einer anderen Oberfläche weiterarbeitest; mit **Neu laden** holst du den gespeicherten Stand.
 
@@ -23,7 +22,7 @@ Die erste Sprache folgt der Betriebssystemsprache des Darts-Hub-Rechners: Deutsc
 
 Dateipfade und gestartete Skripte beziehen sich auf den Darts-Hub-Rechner. Caller-Vorschauen werden dort abgespielt. Support-ZIP-Dateien können im Browser heruntergeladen werden; ein Upload erfolgt erst über **Senden** nach Bestätigung. Die Update-Suche wartet auf das Ende der Startverzögerung und zeigt formatierte Release Notes.
 
-Der Zugangscode bleibt nach Neustarts erhalten. **Zugangscode erneuern** in GUI oder TUI sperrt vorhandene Browser-Anmeldungen und beendet ihre Web-Verbindungen. Browser-Sitzungen laufen nach acht Stunden ab. **Abmelden** beendet die Anmeldung auf diesem Browser; der Host läuft weiter. Beim Schließen der GUI endet auch deren Webserver. Ein als Service eingerichteter Headless-Host bleibt nach dem Schließen der TUI aktiv.
+Die Seite öffnet sich direkt ohne Zugangscode. Beim Schließen der GUI endet auch deren Webserver. Ein als Service eingerichteter Headless-Host bleibt nach dem Schließen der TUI aktiv.
 
 Falls ein anderer Rechner die Seite nicht erreicht, prüfe die IP-Adresse und erlaube eingehende TCP-Verbindungen auf Port **8079** in der Firewall für dein lokales Netzwerk. Die Webseite verwendet im lokalen Netzwerk HTTP; richte dafür keine Internet-Portweiterleitung ein. Bei mehreren Hosts auf demselben Rechner kann der Port mit `--DartsHub:WebPort 8080` geändert werden; `0` deaktiviert den zusätzlichen Netzwerk-Port. Die lokale API auf Port 5069 bleibt bestehen.
 
@@ -37,8 +36,7 @@ Darts-Hub automatically serves its web interface while the application is runnin
 
 1. Start Darts-Hub on the computer that controls your extensions.
 2. From a device on the same network, open `http://HOST-IP:8079`, for example `http://192.168.1.100:8079`.
-3. Enter the **web access code**. Find it in the GUI under **Settings / License → Web interface**, in the TUI under **Settings → Web interface**, or in the terminal when starting headless. This code is separate from Autodarts authentication.
-4. Select an extension in the sidebar, adjust its settings and click **Save**. Dashboard switches apply immediately.
+3. Select an extension in the sidebar, adjust its settings and click **Save**. Dashboard switches apply immediately.
 
 The web interface includes Autodarts login and board selection, Caller and soundpacks, WLED, PixelIt, AwtrixNG, GIF, external applications, console, licensing, application settings, legacy import, telemetry and support. Shared settings are saved on the host and also apply to the GUI and TUI. Save before switching frontends; **Reload** retrieves the latest saved configuration.
 
@@ -50,6 +48,6 @@ The initial language follows the host operating system: German or otherwise Engl
 
 File paths and scripts refer to the host computer. Caller previews play there. Download support ZIPs in your browser; upload only starts after choosing **Send** and confirming. Update checks wait until the startup countdown finishes and show formatted release notes.
 
-The access code survives restarts. **Renew access code** in the GUI or TUI revokes existing browser sessions and ends their web connections. Sessions expire after eight hours. **Sign out** leaves the host running. Closing the GUI also stops its web server. A headless service continues running after you close the TUI.
+The page opens directly without an access code. Closing the GUI also stops its web server. A headless service continues running after you close the TUI.
 
 If another device cannot reach the page, check the host IP and permit incoming TCP traffic on **8079** in your firewall for your local network. The local interface uses HTTP; do not forward this port to the internet. Multiple hosts on one computer can use `--DartsHub:WebPort 8080`; `0` disables the additional network listener. The existing local API remains on port 5069.
