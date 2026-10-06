@@ -1,8 +1,23 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.16
+## v0.1.0-beta.17
 
 ### Deutsch
+
+#### Updates und Installation
+
+- Builds und Tests laufen beim Erstellen einer Release-Version; doppelte Prüfungen bei normalen Änderungen entfallen.
+- Erst wenn die öffentliche Version mit allen Plattformpaketen verfügbar ist, werden die Versionshinweise archiviert und für die nächste Version vorbereitet.
+
+#### WLED
+
+- Importierte Ereignisregeln erhalten „imp“ am Namensende statt „Startup“ am Anfang.
+
+#### PixelIt und AwtrixNG
+
+- Neuer Auslöser „Wurf oder Spielerwechsel“ aktualisiert die Anzeige bei beiden Ereignissen mit einer einzigen Regel.
+
+#### Allgemein
 
 - Weboberfläche für GUI und Headless unter Port 8079: gemeinsames Design, Erweiterungseinstellungen, Autodarts-Anmeldung, Konsole, Lizenz, Support und Deutsch/Englisch. Direkt im Netzwerk ohne Zugangscode verfügbar; die Webseite wird in das Programm eingebettet.
 
@@ -77,6 +92,21 @@
 - Kompakte Betriebssystem-Pakete ohne Dokumentationsdateien; Updates kommen aus dem öffentlichen Release-Repository.
 
 ### English
+
+#### Updates and Installation
+
+- Builds and tests run when creating a release; duplicate checks for regular changes have been removed.
+- Release notes are archived and prepared for the next version only after the public release and all platform packages are available.
+
+#### WLED
+
+- Imported event rules now use “imp” at the end of their names instead of “Startup” at the beginning.
+
+#### PixelIt and AwtrixNG
+
+- New “Throw or player change” trigger updates the display for both events using a single rule.
+
+#### General
 
 - Web interface for GUI and headless on port 8079: shared design, extension settings, Autodarts login, console, licensing, support and German/English. Direct network access without an access code; web assets are embedded in the executable.
 
