@@ -203,3 +203,7 @@ For testing, disable random voices and TTS first so missing recordings are obvio
 ```
 
 GUI, TUI and headless share these settings. Use `--help` to check the options supported by your version; the names above reflect the current implementation. The short option is **`-E`** (uppercase E). See [startup arguments](START_ARGUMENTS.md).
+
+## Continuous announcements on Windows
+
+GUI and terminal share the same playback. Related recorded sentence parts (such as player name, “you require” and score) use one continuous audio output. Short files are cached during playback. Very quiet clip edges are trimmed with a small safety margin; pauses within recordings remain intact. Original files are never modified. Long ambient recordings remain streamed. Legacy Python mixer options are still reported as unsupported.

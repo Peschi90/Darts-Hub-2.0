@@ -202,3 +202,7 @@ Zum Testen zunächst zufällige Stimmenwahl und TTS ausschalten, damit fehlende 
 ```
 
 Die Einstellungen sind für GUI, TUI und Headless gemeinsam. Prüfe mit `--help` die verfügbaren Startoptionen deiner Version; Namen hier beziehen sich auf die aktuelle Implementierung. Die Kurzoption heißt **`-E`** (großes E). Siehe [Startargumente](START_ARGUMENTS.md).
+
+## Fließende Ansagen unter Windows
+
+GUI und Terminal verwenden dieselbe Wiedergabe. Zusammengehörige aufgezeichnete Satzteile (etwa Spielername, „du benötigst“ und Punktzahl) laufen durch einen gemeinsamen Audioausgang. Kurze Dateien werden beim Abspielen zwischengespeichert. Sehr leise Ränder werden mit einem kleinen Sicherheitsabstand gekürzt; Pausen innerhalb einer Aufnahme bleiben erhalten. Originaldateien werden nicht verändert. Lange Hintergrundaufnahmen bleiben gestreamt. Die alten Python-Mixeroptionen werden weiterhin als nicht unterstützt angezeigt.
