@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.18
+## v0.1.0-beta.19
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -16,11 +16,11 @@
 
 #### Caller
 
-- Windows-Ansagen spielen Satzteile direkt hintereinander ab; lange Pausen durch Dateiwiedergabe und stille Dateiränder werden reduziert.
+- Einheitliche Audiowiedergabe unter Windows, Linux und macOS mit mehr Reserve gegen Stottern. Zusammengehörige Ansagen bleiben ohne zusätzliche Wortpausen verbunden; zusätzliche Audioplayer sind nicht mehr nötig.
 
 #### WLED
 
-- Robbel3D One-Click richtet den LED-Ring mit Geräteprüfung, GPIO-Auswahl, echter Sicherung und passenden Caller-Einstellungen ein – in GUI und Terminal. Der GUI-Dialog bietet klar gegliederte Bereiche, eine übersichtliche Vorschau und einen dauerhaft sichtbaren Fortschritt.
+<!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### PixelIt
 
@@ -66,11 +66,11 @@
 
 #### Caller
 
-- Windows announcements play sentence parts consecutively, reducing long gaps caused by file playback and silent clip edges.
+- Consistent audio playback on Windows, Linux and macOS with additional headroom against stuttering. Related announcements remain connected without additional pauses between words; additional audio players are no longer required.
 
 #### WLED
 
-- Robbel3D One-Click sets up the LED ring with device checks, GPIO selection, a real backup and matching Caller settings in the GUI and terminal. The GUI dialog offers clearly grouped sections, a readable preview and progress that stays visible.
+<!-- Add brief user-facing changes here. -->
 
 #### PixelIt
 

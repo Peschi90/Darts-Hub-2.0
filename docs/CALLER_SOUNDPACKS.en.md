@@ -37,8 +37,7 @@ This is a starter selection, not a complete set of scores. A manually created lo
 
 ### Formats and recordings
 
-- The loader recognizes `.wav`, `.mp3`, `.ogg` and `.flac`. Actual playback also depends on the operating system's audio backend. **PCM WAV** is the simplest choice for custom packs across platforms; for example 44.1 kHz, 16 bit, mono or stereo. This is a recommendation, not a fixed loader requirement.
-- On Linux, Darts-Hub uses `paplay`/`aplay` for WAV; other formats require a suitable player such as `ffplay`. See [Raspberry Pi / Linux audio](RASPBERRY_PI.md).
+- The loader recognizes `.wav`, `.mp3`, `.ogg` and `.flac`. Windows, Linux and macOS use the same decoders and playback engine. **PCM WAV** is the simplest choice for custom packs across platforms; for example 44.1 kHz, 16 bit, mono or stereo. This is a recommendation, not a fixed loader requirement.
 - Keep recordings short and remove leading/trailing silence. Caller waits for a recording to finish, so silence inside the file still delays subsequent announcements.
 - Use one extension per key. Do not supply both `180.wav` and `180.mp3`: selection between them is not reliably defined.
 - Keys are looked up case-insensitively. Still use the lowercase filenames shown here. Special characters must match the requested name exactly.
@@ -204,6 +203,6 @@ For testing, disable random voices and TTS first so missing recordings are obvio
 
 GUI, TUI and headless share these settings. Use `--help` to check the options supported by your version; the names above reflect the current implementation. The short option is **`-E`** (uppercase E). See [startup arguments](START_ARGUMENTS.md).
 
-## Continuous announcements on Windows
+## Continuous announcements on Windows, Linux and macOS
 
-GUI and terminal share the same playback. Related recorded sentence parts (such as player name, “you require” and score) use one continuous audio output. Short files are cached during playback. Very quiet clip edges are trimmed with a small safety margin; pauses within recordings remain intact. Original files are never modified. Long ambient recordings remain streamed. Legacy Python mixer options are still reported as unsupported.
+GUI and terminal share the same playback on all three operating systems. Audio libraries are included; external audio players are not required. Related recorded sentence parts (such as player name, “you require” and score) use one continuous audio output. Short files are cached during playback. Very quiet clip edges are trimmed with a small safety margin; pauses within recordings remain intact. Original files are never modified. Long ambient recordings remain streamed. Legacy Python mixer options are still reported as unsupported.

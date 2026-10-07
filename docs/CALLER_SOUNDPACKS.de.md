@@ -37,7 +37,7 @@ Das ist eine Startauswahl, kein vollständiger Satz aller Punktzahlen. Du brauch
 
 ### Dateiformate und Aufnahmen
 
-- Der Loader erkennt `.wav`, `.mp3`, `.ogg` und `.flac`. Ob eine Datei abgespielt werden kann, hängt auch vom Audiobackend des Betriebssystems ab. **PCM-WAV** ist für eigene, plattformübergreifende Packs die einfachste Wahl; etwa 44,1 kHz, 16 Bit, Mono oder Stereo. Das ist eine Empfehlung, keine feste Vorgabe des Loaders.
+- Der Loader erkennt `.wav`, `.mp3`, `.ogg` und `.flac`. Windows, Linux und macOS verwenden dieselben Decoder und dieselbe Wiedergabe. **PCM-WAV** ist für eigene, plattformübergreifende Packs die einfachste Wahl; etwa 44,1 kHz, 16 Bit, Mono oder Stereo. Das ist eine Empfehlung, keine feste Vorgabe des Loaders.
 - Halte die Aufnahme kurz und entferne Stille am Anfang und Ende. Der Caller wartet auf das Ende einer Aufnahme. Lange Pausen in der Audiodatei bleiben daher hörbar.
 - Verwende pro Key eine Endung. Nicht gleichzeitig `180.wav` und `180.mp3` ablegen: welche davon verwendet wird, ist nicht zuverlässig festgelegt.
 - Keys werden ohne Beachtung der Groß-/Kleinschreibung gesucht. Verwende trotzdem durchgehend die hier gezeigten kleinen Dateinamen. Sonderzeichen müssen exakt dem gesuchten Namen entsprechen.
@@ -203,6 +203,6 @@ Zum Testen zunächst zufällige Stimmenwahl und TTS ausschalten, damit fehlende 
 
 Die Einstellungen sind für GUI, TUI und Headless gemeinsam. Prüfe mit `--help` die verfügbaren Startoptionen deiner Version; Namen hier beziehen sich auf die aktuelle Implementierung. Die Kurzoption heißt **`-E`** (großes E). Siehe [Startargumente](START_ARGUMENTS.md).
 
-## Fließende Ansagen unter Windows
+## Fließende Ansagen unter Windows, Linux und macOS
 
-GUI und Terminal verwenden dieselbe Wiedergabe. Zusammengehörige aufgezeichnete Satzteile (etwa Spielername, „du benötigst“ und Punktzahl) laufen durch einen gemeinsamen Audioausgang. Kurze Dateien werden beim Abspielen zwischengespeichert. Sehr leise Ränder werden mit einem kleinen Sicherheitsabstand gekürzt; Pausen innerhalb einer Aufnahme bleiben erhalten. Originaldateien werden nicht verändert. Lange Hintergrundaufnahmen bleiben gestreamt. Die alten Python-Mixeroptionen werden weiterhin als nicht unterstützt angezeigt.
+GUI und Terminal verwenden unter allen drei Betriebssystemen dieselbe Wiedergabe. Die benötigten Audiobibliotheken sind enthalten; externe Audioplayer sind nicht erforderlich. Zusammengehörige aufgezeichnete Satzteile (etwa Spielername, „du benötigst“ und Punktzahl) laufen durch einen gemeinsamen Audioausgang. Kurze Dateien werden beim Abspielen zwischengespeichert. Sehr leise Ränder werden mit einem kleinen Sicherheitsabstand gekürzt; Pausen innerhalb einer Aufnahme bleiben erhalten. Originaldateien werden nicht verändert. Lange Hintergrundaufnahmen bleiben gestreamt. Die alten Python-Mixeroptionen werden weiterhin als nicht unterstützt angezeigt.

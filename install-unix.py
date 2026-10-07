@@ -222,8 +222,6 @@ def main():
     with urllib.request.urlopen(request, timeout=30) as response:
         release, asset = choose_release(json.load(response), channel == 'beta', rid)
     show_step(2, 'Download & Installation')
-    if rid.startswith('linux') and not any(shutil.which(player) for player in ('ffplay', 'paplay', 'aplay')):
-        print('No Caller audio player found. For WAV/MP3: sudo apt install ffmpeg; for WAV: pulseaudio-utils or alsa-utils')
     print('Installing ' + release['tag_name'] + ' -> ' + str(target))
     if target.exists() and ask('Existing directory. Close DartsHub first. Continue? yes/no', 'no').lower() not in ('yes', 'y', 'ja', 'j'):
         return
