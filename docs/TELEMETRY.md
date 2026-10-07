@@ -9,8 +9,9 @@
   **Später entscheiden** bestätigt kein Profil; ohne vorherige Auswahl bleibt Telemetrie aus.
 - **Minimal:** Modulnamen, Aktivierung und Versionen sowie eine zufällige, dauerhaft gespeicherte Installations-ID.
 - **Voll / erweiterte Diagnose:** zusätzlich Betriebssystem, Nutzung, Ressourcen, effektive Einstellungen,
-  Fehlerdaten und Lizenzstatus. Adressen, Pfade und freie Texte werden maskiert;
-  keine Zugangsdaten oder Autodarts-Rohnachrichten werden übertragen.
+  Warnungen und Fehler einschließlich Meldungstext und Details sowie Lizenzstatus. Namen, Adressen,
+  Pfade und freie Texte werden übertragen. Passwörter, E-Mail-Adressen und Authentifizierungsgeheimnisse
+  werden maskiert; Autodarts-Rohnachrichten werden nicht erhoben.
 - **Nicht anonym:** Die dauerhafte ID kann Telemetrie mit freiwilligen [Supportfällen](SUPPORT.md) verknüpfen.
   Der empfangende Server sieht außerdem die Verbindungs-IP als Netzwerkmetadatum.
 
@@ -30,8 +31,9 @@
   **Decide later** confirms no profile; without a previous choice, telemetry remains inactive.
 - **Minimal:** module names, enabled state and versions, plus a random, persistent installation ID.
 - **Full / enhanced diagnostics:** additionally OS, usage, resources, effective settings,
-  error data and license status. Addresses, paths and free text are masked;
-  no credentials or raw Autodarts messages are transmitted.
+  warnings and errors including message text and details, and license status. Names, addresses,
+  paths and free text are transmitted. Passwords, email addresses and authentication secrets
+  are masked; raw Autodarts messages are not collected.
 - **Not anonymous:** The persistent ID can link telemetry to voluntary [support cases](SUPPORT.md).
   The receiving server also sees your connection IP as network metadata.
 
@@ -43,5 +45,8 @@
   GUI, TUI and headless use the same saved decision.
 
 ### Headless: Windows / Linux / macOS
-`DartsHub.exe --headless --telemetry-profile minimal --telemetry-policy telemetry-v2`
+`DartsHub.exe --headless --telemetry-profile minimal --telemetry-policy telemetry-v3`
 Linux: `./DartsHub`; macOS: `./DartsHub.app/Contents/MacOS/DartsHub` statt `DartsHub.exe` / instead of `DartsHub.exe`.
+
+Changed diagnostic scope requires a new confirmed choice (telemetry-v3) in GUI, TUI or headless mode.
+Der erweiterte Diagnoseumfang erfordert eine neue bestätigte Auswahl (telemetry-v3) in GUI, TUI oder Headless.
