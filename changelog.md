@@ -1,12 +1,14 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.23
+## v0.1.0-beta.24
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
 ### Deutsch
 
 #### Allgemein / General
+
+- Updates ersetzen die bestehende Installation auch unter Linux und macOS; Einstellungen und Soundpacks bleiben erhalten. Bisherige Datenordner werden wieder erkannt und Linux-Verknüpfungen zeigen das DartsHub-Logo.
 
 - Windows installiert standardmäßig in ~/DartsHub und Linux in ~/dartshub; Soundpacks, Logs und Anwendungsdaten liegen in diesen Ordnern.
 
@@ -20,31 +22,21 @@
 
 #### Caller
 
-- Beim Wechsel des Medienpfads können Voicepacks mit Fortschrittsanzeige umgezogen werden; der Installationsstatus zeigt nur Packs im aktuellen Ordner.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### WLED
-
-- Ausschalten bei Matchabbruch funktioniert jetzt; ein neues Match startet wieder mit dem Idle-Effekt des ersten Spielers.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### PixelIt
 
-- DMU-Effekte für Dart-Felder und Ringe sowie CMB-Effekte für Drei-Dart-Kombinationen können jetzt eingerichtet und importiert werden.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### AwtrixNG
 
-- DMU-Effekte für Dart-Felder und Ringe sowie CMB-Effekte für Drei-Dart-Kombinationen können jetzt eingerichtet und importiert werden.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GIF
-
-- DMU-Effekte für Dart-Felder und Ringe sowie CMB-Effekte für Drei-Dart-Kombinationen können jetzt eingerichtet und importiert werden.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -72,10 +64,6 @@
 
 #### Allgemein / General
 
-- Windows defaults to ~/DartsHub and Linux to ~/dartshub; soundpacks, logs and application data are stored within these folders.
-
-- The console uses less memory; complete details load on demand and remain available when copying multiple entries or exporting logs.
-
 <!-- Add brief user-facing changes here. -->
 
 #### Autodarts
@@ -84,31 +72,21 @@
 
 #### Caller
 
-- Move voicepacks with progress when changing the media folder; installation status now reflects the current folder.
-
 <!-- Add brief user-facing changes here. -->
 
 #### WLED
-
-- Match cancellation now switches WLED off when configured; the next match restores the first player’s idle effect.
 
 <!-- Add brief user-facing changes here. -->
 
 #### PixelIt
 
-- Configure and import DMU effects for dart fields and multipliers and CMB effects for three-dart combinations.
-
 <!-- Add brief user-facing changes here. -->
 
 #### AwtrixNG
 
-- Configure and import DMU effects for dart fields and multipliers and CMB effects for three-dart combinations.
-
 <!-- Add brief user-facing changes here. -->
 
 #### GIF
-
-- Configure and import DMU effects for dart fields and multipliers and CMB effects for three-dart combinations.
 
 <!-- Add brief user-facing changes here. -->
 

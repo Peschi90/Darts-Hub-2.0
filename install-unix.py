@@ -149,7 +149,7 @@ def register_autostart(executable, mode, minimized, config_home, home, system, r
         else:
             path = config_home / 'autostart/dartshub.desktop'
             quoted = '"' + str(executable).replace('\\', '\\\\').replace('"', '\\"').replace('`', '\\`').replace('$', '\\$').replace('%', '%%') + '"'
-            text = '[Desktop Entry]\nType=Application\nName=DartsHub\nExec=' + quoted + (' --minimized' if minimized else '') + '\nTerminal=false\nX-GNOME-Autostart-enabled=true\n'
+            text = '[Desktop Entry]\nType=Application\nName=DartsHub\nExec=' + quoted + (' --minimized' if minimized else '') + '\nIcon=' + str(executable.parent / 'dartshub-logo.png') + '\nTerminal=false\nX-GNOME-Autostart-enabled=true\n'
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding='utf-8')
         if target == 'headless':
@@ -187,7 +187,7 @@ def create_desktop_shortcut(executable, mode, desktop, system):
     else:
         link = desktop / ('DartsHub-' + mode + '.desktop')
         quoted = '"' + str(executable).replace('\\', '\\\\').replace('"', '\\"').replace('`', '\\`').replace('$', '\\$').replace('%', '%%') + '"'
-        link.write_text('[Desktop Entry]\nType=Application\nName=DartsHub ' + mode.upper() + '\nExec=' + quoted + (' --tui' if mode == 'tui' else '') + '\nTerminal=' + ('true' if mode == 'tui' else 'false') + '\n', encoding='utf-8')
+        link.write_text('[Desktop Entry]\nType=Application\nName=DartsHub ' + mode.upper() + '\nExec=' + quoted + (' --tui' if mode == 'tui' else '') + '\nIcon=' + str(executable.parent / 'dartshub-logo.png') + '\nTerminal=' + ('true' if mode == 'tui' else 'false') + '\n', encoding='utf-8')
         link.chmod(0o755)
     return link
 
