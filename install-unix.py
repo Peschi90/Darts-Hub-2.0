@@ -209,7 +209,7 @@ def main():
     if channel not in ('stable', 'beta') or mode not in ('gui', 'tui', 'headless'):
         raise ValueError('Invalid channel or mode.')
     home = Path.home()
-    default = home / ('Applications/DartsHub' if rid.startswith('osx') else '.local/share/dartshub-app')
+    default = home / ('Applications/DartsHub' if rid.startswith('osx') else 'dartshub')
     target = Path(options.directory or ask('Install directory / Installationsordner', str(default))).expanduser().absolute()
     if '\n' in str(target) or '\r' in str(target) or target == home or target == Path('/'):
         raise ValueError('Choose a dedicated application directory.')

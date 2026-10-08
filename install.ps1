@@ -102,8 +102,8 @@ function Install-DartsHub {
     if (-not $DartsHubInstallerChannel) { $DartsHubInstallerChannel = Read-Choice 'Channel / Kanal: stable, beta' 'stable' }
     if (-not $DartsHubInstallerMode) { $DartsHubInstallerMode = Read-Choice 'Mode / Betriebsart: gui, tui, headless' 'gui' }
     if ($DartsHubInstallerChannel -notin @('stable', 'beta') -or $DartsHubInstallerMode -notin @('gui', 'tui', 'headless')) { throw 'Invalid channel or mode.' }
-    if (-not $DartsHubInstallerDirectory) { $DartsHubInstallerDirectory = Read-Host "Install directory / Installationsordner [$env:LOCALAPPDATA\Programs\DartsHub]" }
-    if ([string]::IsNullOrWhiteSpace($DartsHubInstallerDirectory)) { $DartsHubInstallerDirectory = Join-Path $env:LOCALAPPDATA 'Programs/DartsHub' }
+    if (-not $DartsHubInstallerDirectory) { $DartsHubInstallerDirectory = Read-Host "Install directory / Installationsordner [$env:USERPROFILE\DartsHub]" }
+    if ([string]::IsNullOrWhiteSpace($DartsHubInstallerDirectory)) { $DartsHubInstallerDirectory = Join-Path $env:USERPROFILE 'DartsHub' }
     $DartsHubInstallerDirectory = [System.IO.Path]::GetFullPath($DartsHubInstallerDirectory)
     if ($DartsHubInstallerDirectory -eq [System.IO.Path]::GetPathRoot($DartsHubInstallerDirectory) -or $DartsHubInstallerDirectory -eq $env:USERPROFILE) { throw 'Choose a dedicated application directory.' }
     $autostart = Test-Yes (Read-Choice 'Autostart at login / Bei Anmeldung starten? yes/no' 'no')
