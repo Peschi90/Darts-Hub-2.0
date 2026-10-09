@@ -1,18 +1,12 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.24
+## v0.1.0-beta.27
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
 ### Deutsch
 
 #### Allgemein / General
-
-- Updates ersetzen die bestehende Installation auch unter Linux und macOS; Einstellungen und Soundpacks bleiben erhalten. Bisherige Datenordner werden wieder erkannt und Linux-Verknüpfungen zeigen das DartsHub-Logo.
-
-- Windows installiert standardmäßig in ~/DartsHub und Linux in ~/dartshub; Soundpacks, Logs und Anwendungsdaten liegen in diesen Ordnern.
-
-- Die Konsole benötigt weniger Arbeitsspeicher; vollständige Details werden bei Bedarf geladen und bleiben beim Kopieren mehrerer Einträge sowie beim Export erhalten.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -26,21 +20,37 @@
 
 #### WLED
 
+- Passende namensgebundene Ereignisregeln haben pro Gerät Vorrang vor allgemeinen Regeln. Groß- und Kleinschreibung sowie äußere Leerzeichen im Namen sind unerheblich.
+
+- Neuer Trigger „Match beendet und verlassen“ für Abschluss und Abbruch. Eine passende Regel hat Vorrang vor dem automatischen Ausschalten.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### PixelIt
+
+- Passende namensgebundene Ereignisregeln haben pro Gerät Vorrang vor allgemeinen Regeln. Groß- und Kleinschreibung sowie äußere Leerzeichen im Namen sind unerheblich.
+
+- Neuer Trigger „Match beendet und verlassen“ für Abschluss und Abbruch.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### AwtrixNG
 
+- Passende namensgebundene Ereignisregeln haben pro Gerät Vorrang vor allgemeinen Regeln. Groß- und Kleinschreibung sowie äußere Leerzeichen im Namen sind unerheblich.
+
+- Neuer Trigger „Match beendet und verlassen“ für Abschluss und Abbruch.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GIF
 
+- Beim Verlassen eines Matches wird ein noch angezeigtes Bild ausgeblendet.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Eigene Anwendungen / External Apps
+
+- Beim Stoppen eigener Anwendungen unter Linux und macOS wird das Ende aller zugehörigen Prozesse abgewartet.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -76,21 +86,37 @@
 
 #### WLED
 
+- Matching player-name event rules override general rules per device. Name matching ignores letter case and surrounding spaces.
+
+- New “Match ended and left” trigger for completed and cancelled matches. Matching rules override automatic switch-off.
+
 <!-- Add brief user-facing changes here. -->
 
 #### PixelIt
+
+- Matching player-name event rules override general rules per device. Name matching ignores letter case and surrounding spaces.
+
+- New “Match ended and left” trigger for completed and cancelled matches.
 
 <!-- Add brief user-facing changes here. -->
 
 #### AwtrixNG
 
+- Matching player-name event rules override general rules per device. Name matching ignores letter case and surrounding spaces.
+
+- New “Match ended and left” trigger for completed and cancelled matches.
+
 <!-- Add brief user-facing changes here. -->
 
 #### GIF
 
+- Leaving a match clears any image still on display.
+
 <!-- Add brief user-facing changes here. -->
 
 #### Eigene Anwendungen / External Apps
+
+- Stopping external applications on Linux and macOS waits for all owned processes to finish.
 
 <!-- Add brief user-facing changes here. -->
 
