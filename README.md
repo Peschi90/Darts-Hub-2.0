@@ -1,5 +1,7 @@
 # Darts-Hub 2.0 – Benutzeranleitung
 
+[Funktionsumfang aller Erweiterungen](docs/erweiterungen/README.md) – Funktionslisten, Ereignisse und Einstellungen.
+
 Online installieren: Der [Online-Installer](docs/ONLINE_INSTALLER.md) erkennt dein System und fragt nach GUI, TUI oder Headless sowie Autostart.
 
 <img src="docs/images/user-guide/brand-logo.png" alt="Darts-Hub 2.0" width="220" />

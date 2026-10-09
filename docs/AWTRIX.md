@@ -61,7 +61,7 @@ Auf der zweiten Matrix ersetze `p1` durch `p2`, usw. Die Nummern bleiben gleich,
 | `{points-left}` | Restpunkte des ausgewählten/aktiven Spielers |
 | `{p1-points-left}`, `{p1-darts-thrown}` | Feste Werte von Spieler 1; ebenso für p2 bis p32 |
 
-Korrekturen, Zurücknehmen und Überwerfen verwenden die von Autodarts gemeldeten Werte. In der TUI stehen dieselben Ereignisse und Textfelder zur Verfügung. Der Auslöser **Wurf oder Spielerwechsel** aktualisiert eine Regel bei beiden Ereignissen. In der TUI unter Ereignisse → Auslöser auswählen; Headless-Konfigurationen verwenden `ThrowOrPlayerChanged` (oder einzeln `Throw` und `PlayerChanged`).
+Korrekturen, Zurücknehmen und Überwerfen verwenden die von Autodarts gemeldeten Werte. In der TUI stehen dieselben Ereignisse und Textfelder zur Verfügung. Der Auslöser **Wurf oder Turnwechsel** aktualisiert eine Regel bei Würfen und neuen Aufnahmen, auch desselben Spielers. In der TUI unter Ereignisse → Auslöser auswählen; Headless-Konfigurationen verwenden `ThrowOrTurnChanged` (`PlayerChanged` bleibt der separate tatsächliche Spielerwechsel).
 
 
 ### Live display after each dart (PixelIt and AwtrixNG)
@@ -91,4 +91,4 @@ Replace `p1` with `p2` on the second matrix, and so on. Numbers stay the same wh
 | `{points-left}` | Remaining score of the selected/active player |
 | `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p32 |
 
-Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. The **Throw or player change** trigger updates one rule for both events. In the TUI, select it under Events → Trigger; headless configurations use `ThrowOrPlayerChanged` (or separately `Throw` and `PlayerChanged`).
+Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. The **Throw or turn change** trigger updates on throws and new visits, including the same player. In the TUI, select it under Events → Trigger; headless configurations use `ThrowOrTurnChanged` (`PlayerChanged` remains the separate actual player change).
