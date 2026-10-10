@@ -15,6 +15,13 @@ Alle aktuell auswählbaren Regeltypen. Ein Haken bedeutet: Das Modul bietet den 
 | Einzelwurf auf Feld (`DartField`) | Treffer auf gewähltem Feld und optionalem Ring. | ✓ | ✓ | ✓ | ✓ |
 | Single / Double / Triple (`Multiplier`) | Treffer mit dem gewählten Multiplikator unabhängig vom Feld. | ✓ | ✓ | ✓ | ✓ |
 | Drei-Dart-Kombination (`Combo`) | Drei-Dart-Kombination, Reihenfolge unerheblich, kein Bust. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics-Mark (`CricketMark`) | Gewertete Marks ohne Abschluss oder Punkte. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics-Feld abgeschlossen (`CricketClosed`) | Dritte Mark erreicht, ohne Punkte. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics-Punkte (`CricketScored`) | Punkte erzielt; bei Cut Throat für offene Gegner. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics: nicht gewertet (`CricketNoMark`) | Kein Zielfeld oder bereits für alle geschlossen. | ✓ | ✓ | ✓ | ✓ |
+| Erste Cricket/Tactics-Mark (`CricketOpened`) | Erste Mark auf einem zuvor unberührten Feld. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics-Feld für alle geschlossen (`CricketClosedAll`) | Letzter Spieler schließt das Feld. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics: verborgenes Feld entdeckt (`CricketRevealed`) | Zielfeld erstmals von Autodarts aufgedeckt. | ✓ | ✓ | ✓ | ✓ |
 | Bust / Überworfen (`Bust`) | Aufnahme ist überworfen. | ✓ | ✓ | ✓ | ✓ |
 | Leg gewonnen (`GameWon`) | Spiel/Leg gewonnen. | ✓ | ✓ | ✓ | ✓ |
 | Match gewonnen (`MatchWon`) | Match gewonnen; Ergebnis kann noch geöffnet sein. | ✓ | ✓ | ✓ | ✓ |
@@ -66,3 +73,11 @@ Beispiele: `{playername} {points-left} D{dart-number}` für aktiven Spieler; `{p
 [Zur Übersicht](README.md)
 
 Der frühere gespeicherte Typ `ThrowOrPlayerChanged` wird beim Laden/Import auf `ThrowOrTurnChanged` umgestellt. Der separate Spielerwechsel vergleicht die Spieleridentität; der kombinierte Typ berücksichtigt zusätzlich die Aufnahme-ID und Leg-/Set-Wechsel.
+
+## Cricket, Tactics und Hidden Cricket
+
+Die vier Trefferergebnisse Mark, Abschluss, Punkte und nicht gewertet sind pro Dart gegenseitig ausschließend. Punkte haben Vorrang vor einem gleichzeitigen Abschluss. Erste Mark, Abschluss für alle und Entdecken sind zusätzliche Zustandsübergänge. Standard, Cut Throat und No Score werden aus dem Autodarts-Scoring-Modus erkannt; No Score erzeugt keine Punkteereignisse. Noch verborgene Hidden-Cricket/Tactics-Felder werden nicht vorab verwendet. Korrekturen werden neu ausgewertet, unveränderte Nachrichten nicht wiederholt.
+
+Neue PixelIt-/Awtrix-Textvariablen: `{cricket-scoring-mode}`, `{cricket-field}`, `{cricket-marks}`, `{cricket-turn-marks}`. Bei einem Cricket/Tactics-Trefferereignis ist `{score}` dessen erspielte Punktzahl, `{dart-score}` sein physischer Wert. `{game-mode-extra}` enthält Cricket, Tactics oder Hidden Cricket.
+
+GUI und TUI: jeweiliges Modul → Regeln → Regel hinzufügen/bearbeiten → Cricket/Tactics-Auslöser wählen → Effekte/Schritte/Medien einstellen → speichern. Es gibt bei diesen Ereignissen keinen zusätzlichen Scorefilter. [Caller-Soundkeys und genaue Auslöser](../CALLER_SOUND_KEYS.de.md).

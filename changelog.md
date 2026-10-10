@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.28
+## v0.1.0-beta.29
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -8,15 +8,29 @@
 
 #### Allgemein / General
 
-- Neue Funktionsübersichten für alle Erweiterungen mit Ereignissen, Einstellungen, Bedienung und Einschränkungen.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Autodarts
 
+- Cricket, Tactics und Hidden Cricket liefern jetzt gewertete Treffer und Feldzustände für alle Scoring-Modi.
+
+- Rundennummern werden auch bei manueller Eingabe korrekt erkannt. Aufnahmen entfernen Avatar-Kennungen und erhalten die Feldnamen der Checkout-Vorschläge.
+
+- Mit passender Lizenz lassen sich Spielsitzungen mit Markierungen aufnehmen und anonymisiert exportieren, auch im Terminal. Die Aufnahme-Anleitung liegt in der internen Dokumentation.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Caller
+
+- Cricket-Ansagen und Effekte berücksichtigen Marks, Feldabschlüsse, Punkte und Undo. Alle Soundkeys und Auslöser sind dokumentiert; Bull-Dateien werden auch im Segmentmodus erkannt.
+
+- Nachträglich korrigierte Einzeldarts werden erneut angesagt, ohne unveränderte Würfe zu wiederholen.
+
+- Ambient-Sounds erkennen wieder Dartkombinationen, Punktebereiche, Gruppierungen und die Spiel- und Lobbyereignisse des alten Callers.
+
+- Bei ausgeschalteten Einzeldartansagen unterbrechen neue Würfe laufende Ansagen nicht mehr; Blind-Support und Spielerwechsel behalten ihre bisherige Priorität.
+
+- Ansagen in der gekoppelten Webapp werden schneller übertragen; Unterbrechungen werden sofort weitergeleitet.
 
 - Matchbeginn und erster Spieler werden auch ohne Bull-off direkt angesagt, ohne auf den ersten Dart zu warten.
 
@@ -26,11 +40,23 @@
 
 #### WLED
 
+- Cricket/Tactics-Effekte während eines Turns benötigen die bestehende Lizenzfreigabe.
+
+- Neue Cricket/Tactics-Auslöser für gewertete Treffer, Feldabschlüsse, Punkte und entdeckte Hidden-Cricket-Felder, auch im Terminal.
+
+- Kombinationseffekte berücksichtigen nachträglich korrigierte Würfe.
+
 - Siegeseffekte werden bei Matchabschluss und beim Legwechsel wieder zuverlässig ausgelöst.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### PixelIt
+
+- Fehlende Templates nach dem Import blockieren das Speichern nicht mehr; Pfade und Regeln lassen sich direkt korrigieren.
+
+- Neue Cricket/Tactics-Auslöser für gewertete Treffer, Feldabschlüsse, Punkte und entdeckte Hidden-Cricket-Felder, auch im Terminal.
+
+- Kombinationseffekte berücksichtigen nachträglich korrigierte Würfe.
 
 - Spielerwechsel reagiert nur auf einen anderen Spieler. „Wurf oder Turnwechsel“ erkennt auch neue Aufnahmen desselben Spielers; Takeout ist als eigener Auslöser verfügbar. Bestehende kombinierte Regeln werden übernommen.
 
@@ -38,11 +64,19 @@
 
 #### AwtrixNG
 
+- Neue Cricket/Tactics-Auslöser für gewertete Treffer, Feldabschlüsse, Punkte und entdeckte Hidden-Cricket-Felder, auch im Terminal.
+
+- Kombinationseffekte berücksichtigen nachträglich korrigierte Würfe.
+
 - Spielerwechsel reagiert nur auf einen anderen Spieler. „Wurf oder Turnwechsel“ erkennt auch neue Aufnahmen desselben Spielers; Takeout ist als eigener Auslöser verfügbar. Bestehende kombinierte Regeln werden übernommen.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GIF
+
+- Neue Cricket/Tactics-Auslöser für gewertete Treffer, Feldabschlüsse, Punkte und entdeckte Hidden-Cricket-Felder, auch im Terminal.
+
+- Kombinationseffekte berücksichtigen nachträglich korrigierte Würfe.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -51,20 +85,6 @@
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
-
-- Die Online-Webapp lässt sich per QR-Code direkt mit dem Smartphone koppeln, ohne den Code abzutippen.
-
-- Die gekoppelte Webapp erklärt bei fehlender Verbindung, wie Darts-Hub gestartet werden muss, und verbindet sich automatisch erneut.
-
-- Die installierte Online-Webapp übernimmt die bestehende Kopplung beim ersten Öffnen ohne neuen Anmeldecode.
-
-- Webapp-Verbindungsfehler zeigen jetzt den konkreten Ablehnungsgrund des Servers; die Anfrage ist mit PHP-Hosting kompatibler.
-
-- Die Online-Webapp koppelt jeden Browser per einmaligem Code mit seiner eigenen Installation; Einstellungen und Caller-Audio sind über die gemeinsame HTTPS-Adresse erreichbar.
-
-- Installation als Webapp mit Nachfrage beim Öffnen, Android-Installationsdialog und iOS-Anleitung; die Nachfrage lässt sich ausblenden.
-
-- Browser-Audio lässt sich oben im Dashboard aktivieren und separat in der Lautstärke regeln; auch für Smartphones.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -78,23 +98,35 @@
 
 #### Lizenz und Support / Licensing and Support
 
-- Das Support-Dashboard zeigt Webapp-Verbindungen, aktive Browser und die letzte Nutzung je Installation.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 ### English
 
 #### Allgemein / General
 
-- New feature guides for all extensions, covering events, settings, controls and limitations.
-
 <!-- Add brief user-facing changes here. -->
 
 #### Autodarts
 
+- Cricket, Tactics and Hidden Cricket now provide counting hits and field states for every scoring mode.
+
+- Turn numbers are recognized correctly for manual scoring. Recordings remove avatar identifiers and preserve checkout suggestion field names.
+
+- Eligible licenses can record game sessions with markers and export anonymized data, including from the terminal. The recording guide is kept in the internal documentation.
+
 <!-- Add brief user-facing changes here. -->
 
 #### Caller
+
+- Cricket calls and effects use marks, field closures, scoring and undo. All sound keys and triggers are documented; Bull clips also work in segment mode.
+
+- Corrected individual darts are announced again without repeating unchanged throws.
+
+- Ambient sounds support dart combinations, score ranges, grouping, and the old Caller’s game and lobby events again.
+
+- New darts no longer interrupt announcements when single-dart calls are disabled; blind support and player changes retain their existing priority.
+
+- Announcements reach the paired web app faster; interruptions are forwarded immediately.
 
 - Match start and the first player are announced immediately without bull-off, without waiting for the first dart.
 
@@ -104,11 +136,23 @@
 
 #### WLED
 
+- Cricket/Tactics effects during a turn require the existing license entitlement.
+
+- New Cricket/Tactics triggers for counting hits, closed fields, points and revealed Hidden-Cricket fields, also in the terminal.
+
+- Combination effects respond to corrected throws.
+
 - Win effects trigger reliably again at match completion and when the leg changes.
 
 <!-- Add brief user-facing changes here. -->
 
 #### PixelIt
+
+- Missing templates after import no longer block saving; paths and rules can be corrected directly.
+
+- New Cricket/Tactics triggers for counting hits, closed fields, points and revealed Hidden-Cricket fields, also in the terminal.
+
+- Combination effects respond to corrected throws.
 
 - Player change only fires for a different player. “Throw or turn change” also detects new visits by the same player; Takeout is available as a separate trigger. Existing combined rules are migrated.
 
@@ -116,11 +160,19 @@
 
 #### AwtrixNG
 
+- New Cricket/Tactics triggers for counting hits, closed fields, points and revealed Hidden-Cricket fields, also in the terminal.
+
+- Combination effects respond to corrected throws.
+
 - Player change only fires for a different player. “Throw or turn change” also detects new visits by the same player; Takeout is available as a separate trigger. Existing combined rules are migrated.
 
 <!-- Add brief user-facing changes here. -->
 
 #### GIF
+
+- New Cricket/Tactics triggers for counting hits, closed fields, points and revealed Hidden-Cricket fields, also in the terminal.
+
+- Combination effects respond to corrected throws.
 
 <!-- Add brief user-facing changes here. -->
 
@@ -129,20 +181,6 @@
 <!-- Add brief user-facing changes here. -->
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
-
-- Pair the online web app directly by scanning a QR code with your phone, without typing a code.
-
-- The paired web app explains how to start Darts-Hub when it is unreachable and reconnects automatically.
-
-- The installed online web app inherits its pairing on first launch without a new sign-in code.
-
-- Web app connection errors now show the server rejection reason; requests are more compatible with PHP hosting.
-
-- Pair the online web app with your own installation using a one-time code; access settings and Caller audio through the shared HTTPS address.
-
-- Web app installation prompt with Android install dialog and iOS instructions; reminders can be dismissed.
-
-- Enable browser audio at the top of the dashboard and adjust its volume separately, including on phones.
 
 <!-- Add brief user-facing changes here. -->
 
@@ -155,7 +193,5 @@
 <!-- Add brief user-facing changes here. -->
 
 #### Lizenz und Support / Licensing and Support
-
-- The support dashboard shows web app connections, active browsers and last usage for each installation.
 
 <!-- Add brief user-facing changes here. -->

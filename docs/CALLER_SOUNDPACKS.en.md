@@ -1,6 +1,7 @@
 # Create your own Caller soundpacks
 
 [Deutsch](CALLER_SOUNDPACKS.de.md) · [Using Caller](CALLER_CONFIGURATION_AND_LOCALIZATION.md)
+[Complete key reference](CALLER_SOUND_KEYS.en.md)
 
 This guide describes the sound names and triggers **currently used by Darts-Hub 2.0**. A soundpack contains audio files. The filename without its extension is the **key** used to find a recording: `180.wav` has the key `180`. Record in any language; the recording language is independent of the interface language.
 
@@ -12,7 +13,7 @@ This guide describes the sound names and triggers **currently used by Darts-Hub 
 4. Refresh the library or reopen Caller. Local pack folders appear under their folder names. Select your pack as the voice and disable random voice selection (`RandomCaller = 0`) so it is not replaced at the next match.
 5. Enable Caller and local playback, apply settings and test. After replacing files, select/apply the voice again or restart Darts-Hub to reload the file list.
 
-The default root is inside the Darts-Hub data directory (normally `%LOCALAPPDATA%\DartsHub\soundpacks` on Windows). Your configured path takes precedence. Custom media paths must be absolute paths.
+The default root is inside the Darts-Hub data directory (normally `%USERPROFILE%\DartsHub\soundpacks` on Windows). Your configured path takes precedence. Custom media paths must be absolute paths.
 
 ```text
 C:\MySoundpacks\                 ← select as the media path in Caller
@@ -45,9 +46,9 @@ This is a starter selection, not a complete set of scores. A manually created lo
 
 ### Random variants and shared recordings
 
-**Any key** supports variants: `180.wav`, `180+1.wav`, `180+2.wav`. Each request randomly selects the base recording or a variant. The base file is optional: `180+1.wav` alone is sufficient. The `+` suffix must contain digits. `180_alt.wav` is not a variant of `180`.
+**Any key** supports variants: `180.wav`, `180+1.wav`, `180+2.wav`. Each request randomly selects the base recording or a variant. The base file is optional: `180+1.wav` alone is sufficient. The `+` suffix can contain any variant label, e.g. `+cheer`. `180_alt.wav` is not a variant of `180`.
 
-The **shared media path** (`MediaPathShared`) supplements the selected pack. Files also go directly inside this folder. Multiple voices can reuse player-name or ambient recordings. An **identically spelled key** in the shared folder overrides the pack entry. Avoid differences in capitalization and multiple extensions for the same key to keep selection unambiguous. The selected pack folder must exist; the shared path is not a standalone pack.
+The **shared media path** (`MediaPathShared`) supplements the selected pack. Files may also be in subfolders. Multiple voices can reuse player-name or ambient recordings. Shared files replace all pack variants of the corresponding key. Avoid differences in capitalization and multiple extensions for the same key to keep selection unambiguous. The selected pack folder must exist; the shared path is not a standalone pack.
 
 ## 2. Settings that control which files are used
 
@@ -119,11 +120,11 @@ This implementation does not request keys `noscore`, `no_score`, `bust_reaction_
 | `CallEveryDart = 2` | `s<field>`, `d<field>`, `t<field>`, `m<field>`. | T20 → `t20`; D20 → `d20`; Single20 → `s20`; zero points → `m` plus the reported field. If missing, TTS “Triple 20”, “Double 20”, “Single 20” or “Miss”, otherwise silent. |
 | `CallEveryDart = 3` | `effect_s<field>`, `effect_d<field>`, `effect_t<field>`, `effect_m<field>`. | Segment-specific effects instead of spoken numbers. Fallback: `effect_single`, `effect_double`, `effect_triple`, `effect_miss`. If also missing, silent; no TTS fallback. |
 
-Regular fields use 1–20. Bull uses field **25**: mode 2 requests `s25` for single bull or `d25` for bullseye; mode 3 uses `effect_s25` / `effect_d25`. Mode 1 uses `25` / `50`. The `bull` and `bullseye` keys are part of blind support (section 8), not automatically part of regular segment mode.
+Regular fields use 1–20. Bull uses `bull` / `bullseye` in mode 2 and `effect_bull` / `effect_bullseye` in mode 3. Existing `s25` / `d25` and their effect equivalents remain fallback keys. Mode 1 uses `25` / `50`.
 
 Misses use the reported field, for example `m0`, `m20`, `effect_m0`, `effect_m20`. The general effect `effect_miss` covers all zero-point darts. Segment mode 2 has **no** general `miss` file fallback; only the specific `m<field>` recording or TTS.
 
-A new dart interrupts a regular single-dart announcement that is still playing and replaces it. Stale queued single darts are skipped. When visit totals are enabled, the total takes priority after dart three, so the third single-dart announcement/effect may be skipped. Visit totals, busts and winner announcements finish normally. Explanatory blind-mode announcements are not interrupted like regular single darts.
+Enabled individual calls can interrupt ordinary announcements. Visit totals follow dart 3 and remain interruptible afterward. Bust and winner announcements retain their priority. With individual calls disabled, an incoming dart alone does not interrupt speech.
 
 ## 6. Player names and bots
 
@@ -170,15 +171,28 @@ All TTS fallbacks remain silent when TTS is disabled/unavailable. Bull/bullseye 
 
 ## 9. Ambient sounds: independent background channel
 
-| Key | Trigger |
+Enable ambient using `AmbientSounds > 0`; volume is Caller volume multiplied by ambient volume. GUI and TUI use the same Caller settings and soundpack; no additional setting or import conversion is needed. Missing recordings are skipped without TTS.
+
+| Keys | Selection / event |
 | --- | --- |
-| `ambient_<visit total>`, e.g. `ambient_60`, `ambient_140`, `ambient_180` | Completed visit with that exact total. Not every individual dart. |
-| `ambient_busted` | Completed bust visit, replacing `ambient_<visit total>`. |
-| `ambient_matchcancel` | Match deletion alongside the cancellation announcement. |
+| `ambient_<combination>` | Concatenate the original segment names in throw order, lowercase, e.g. `ambient_t20t20t20`. First choice for a completed, non-winning visit with nonzero points. |
+| `ambient_<total>` | Second choice if the combination is absent. |
+| `ambient_150more`, `ambient_120more`, `ambient_100more`, `ambient_50more`, `ambient_1more` | Otherwise use the highest applicable range; the corresponding recording must exist. |
+| `ambient_noscore` | Zero points or bust. |
+| `ambient_group_legendary`, `ambient_group_perfect`, `ambient_group_very_nice`, `ambient_group_good`, `ambient_group_normal` | Additional grouping sound when three coordinates are supplied; legacy calculation with thresholds 98, 95, 92, 89, 86. |
+| `ambient_matchon`, `ambient_gameon` | Match/leg start. Match start falls back to game start. |
+| `ambient_matchshot`, `ambient_setshot`, `ambient_gameshot` | Match/set/leg won. Match/set sound falls back to game shot. |
+| `ambient_playerchange` | Next turn when no checkout voice was announced. |
+| `ambient_bogey_number_<score>`, `ambient_bogey_number` | Bogey number instead of a checkout call; exact number before generic. |
+| `ambient_checkout_call_limit` | Checkout announcement limit reached. |
+| `ambient_matchcancel` | Match cancelled. |
+| `ambient_lobby_in`, `ambient_lobby_out` | Local board enters/leaves the lobby or another board player joins/leaves it. |
 
-Ambient requires `AmbientSounds > 0`. There is no generic fallback and no TTS fallback: the exact recording must exist. Ambient is independent of spoken score requests. Disabling score announcements does not prevent the matching ambient sound while Caller is otherwise enabled. Bull-off does not generate regular ambient score effects.
+Start, winner and player-change keys first try `_<player name>` (trimmed, lowercase), then the generic key. Fallback events also first try their named variant. An early overview without the active player uses generic start recordings. Any suffix after `+` is a random recording variant, including `+cheer`. Shared recordings may also be in subdirectories and replace all pack variants of the corresponding key.
 
-Ambient is never interrupted because of a new foreground announcement. Background effects play sequentially within their own channel while the foreground can speak. Stopping Caller stops both channels. `AmbientSoundsAfterCalls` controls whether the effect starts before/after its score/bust/cancellation announcement; it does not make ambient block the foreground.
+Ambient runs separately from voice; new dart announcements do not cancel it. Stopping Caller stops both channels. `AmbientSoundsAfterCalls` schedules effects before or after their associated calls. Like the old Caller, enabling it queues ambient behind previous ambient; otherwise a new ambient sound replaces previous ambient. Blind support does not play ordinary combination/grouping effects; bust still plays no-score. Bull-off does not generate ordinary score effects.
+
+Combination/exact-total selection applies to X01 and Shanghai. Bermuda uses ranges and grouping. Count-up and Gotcha use dart points: exact 180 and thresholds 153/120/100/50. RTW uses hit values: 9 maps to 180, thresholds 7/6/5/4 map to range effects. ATC has no visit-score effects. Cricket, Tactics and Hidden Cricket use counting marks; see the [Cricket key reference](CALLER_SOUND_KEYS.en.md#cricket-tactics-and-hidden-cricket).
 
 ## 10. Example sequences and testing checklist
 
@@ -189,7 +203,7 @@ Ambient is never interrupted because of a new foreground announcement. Backgroun
 | T20 in segment mode | `t20`; missing file uses TTS “Triple 20” if enabled. |
 | T20 in effect mode | `effect_t20`, otherwise `effect_triple`. |
 | Checkout hint for 40 | Name → `yr_40`; otherwise name → `you_require` → `c_40` or `40`. |
-| Bust | Foreground `busted`, optional background `ambient_busted`. |
+| Bust | Foreground `busted`, optional background `ambient_noscore`. |
 | Match win | Possibly a completed visit, then `matchshot` (otherwise `gameshot`) → winner name if enabled. |
 | Bull-off | `bulling_start`; bull winner: optional name → `bulling_end`; next regular game starts with `matchon`. |
 
@@ -206,3 +220,7 @@ GUI, TUI and headless share these settings. Use `--help` to check the options su
 ## Continuous announcements on Windows, Linux and macOS
 
 GUI and terminal share the same playback on all three operating systems. Audio libraries are included; external audio players are not required. Related recorded sentence parts (such as player name, “you require” and score) use one continuous audio output. Short files are cached during playback. Very quiet clip edges are trimmed with a small safety margin; pauses within recordings remain intact. Original files are never modified. Long ambient recordings remain streamed. Legacy Python mixer options are still reported as unsupported.
+
+## Cricket and corrected call timing
+
+Cricket, Tactics and Hidden Cricket now use server marks and scoring mode. See the [complete key reference](CALLER_SOUND_KEYS.en.md) for exact Cricket hit effects, mark totals, optional point phrases and field transitions. Bull segment/effect keys are `bull`, `bullseye`, `effect_bull`, `effect_bullseye`; existing `s25`/`d25` and effect equivalents remain fallbacks. Visit totals follow dart 3 and remain interruptible. Disabled individual calls do not interrupt speech merely because a dart arrives.

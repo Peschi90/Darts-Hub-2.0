@@ -1,6 +1,7 @@
 # Eigene Caller-Soundpacks erstellen
 
 [English](CALLER_SOUNDPACKS.en.md) · [Caller bedienen](CALLER_CONFIGURATION_AND_LOCALIZATION.md)
+[Vollständige Key-Referenz](CALLER_SOUND_KEYS.de.md)
 
 Diese Anleitung beschreibt die **aktuell in Darts-Hub 2.0 verwendeten** Soundnamen und Auslöser. Ein Soundpack besteht aus Audiodateien; der Dateiname ohne Endung ist der **Key**, über den der Caller die Aufnahme findet. `180.wav` hat beispielsweise den Key `180`. Die Sprache deiner Aufnahme ist frei wählbar und unabhängig von der Sprache der Oberfläche.
 
@@ -12,7 +13,7 @@ Diese Anleitung beschreibt die **aktuell in Darts-Hub 2.0 verwendeten** Soundnam
 4. Aktualisiere die Bibliothek beziehungsweise öffne die Caller-Seite erneut. Lokale Pack-Ordner werden mit ihrem Ordnernamen angezeigt. Wähle dein Pack als Stimme und schalte die zufällige Stimmenwahl aus (`RandomCaller = 0`), damit es nicht beim nächsten Match ersetzt wird.
 5. Aktiviere Caller und lokale Wiedergabe, übernimm die Einstellungen und teste. Nach dem Austauschen von Dateien die Stimme erneut auswählen und Einstellungen übernehmen oder Darts-Hub neu starten, damit die Dateiliste neu geladen wird.
 
-Der Standardordner liegt im Darts-Hub-Datenverzeichnis (unter Windows normalerweise `%LOCALAPPDATA%\DartsHub\soundpacks`). Maßgeblich ist der in deiner Installation konfigurierte Pfad. Eigene Medienpfade müssen absolute Pfade sein.
+Der Standardordner liegt im Darts-Hub-Datenverzeichnis (unter Windows normalerweise `%USERPROFILE%\DartsHub\soundpacks`). Maßgeblich ist der in deiner Installation konfigurierte Pfad. Eigene Medienpfade müssen absolute Pfade sein.
 
 ```text
 C:\MeineSoundpacks\              ← im Caller als Medienpfad auswählen
@@ -45,9 +46,9 @@ Das ist eine Startauswahl, kein vollständiger Satz aller Punktzahlen. Du brauch
 
 ### Zufällige Varianten und gemeinsame Dateien
 
-Du kannst zu **jedem Key** Varianten anlegen: `180.wav`, `180+1.wav`, `180+2.wav`. Bei jeder Verwendung wird zufällig aus Grunddatei und Varianten ausgewählt. Die Grunddatei ist optional; `180+1.wav` allein genügt. Nach `+` müssen Ziffern stehen. `180_alt.wav` ist keine Variante von `180`.
+Du kannst zu **jedem Key** Varianten anlegen: `180.wav`, `180+1.wav`, `180+2.wav`. Bei jeder Verwendung wird zufällig aus Grunddatei und Varianten ausgewählt. Die Grunddatei ist optional; `180+1.wav` allein genügt. Nach `+` sind beliebige Variantenbezeichnungen erlaubt, z. B. `+jubel`. `180_alt.wav` ist keine Variante von `180`.
 
-Ein **gemeinsamer Medienpfad** (`MediaPathShared`) ergänzt das ausgewählte Pack. Dort liegen die Dateien ebenfalls direkt im Ordner. So können mehrere Stimmen dieselben Namens- oder Ambient-Aufnahmen nutzen. Bei **identisch geschriebenem Key** überschreibt die gemeinsame Datei den Pack-Eintrag. Vermeide unterschiedliche Großschreibung und gleiche Keys mit verschiedenen Endungen, damit die Auswahl eindeutig bleibt. Der Pack-Ordner selbst muss vorhanden sein; der gemeinsame Pfad ist kein eigenständiges Pack.
+Ein **gemeinsamer Medienpfad** (`MediaPathShared`) ergänzt das ausgewählte Pack. Dort dürfen die Dateien auch in Unterordnern liegen. So können mehrere Stimmen dieselben Namens- oder Ambient-Aufnahmen nutzen. Gemeinsame Dateien ersetzen alle Pack-Varianten desselben Keys. Vermeide unterschiedliche Großschreibung und gleiche Keys mit verschiedenen Endungen, damit die Auswahl eindeutig bleibt. Der Pack-Ordner selbst muss vorhanden sein; der gemeinsame Pfad ist kein eigenständiges Pack.
 
 ## 2. Einstellungen, die bestimmen, welche Dateien benutzt werden
 
@@ -119,11 +120,11 @@ Es gibt in dieser Implementierung keinen gesuchten Key `noscore`, `no_score`, `b
 | `CallEveryDart = 2` | `s<Feld>`, `d<Feld>`, `t<Feld>`, `m<Feld>`. | T20 → `t20`, D20 → `d20`, Single20 → `s20`; Nullpunkte → `m` plus übermitteltes Feld. Fehlt die Datei, TTS „Triple 20“, „Double 20“, „Single 20“ oder „Daneben“, sonst stumm. |
 | `CallEveryDart = 3` | `effect_s<Feld>`, `effect_d<Feld>`, `effect_t<Feld>`, `effect_m<Feld>`. | Effekt pro Segment, keine gesprochene Zahl. Ersatz: `effect_single`, `effect_double`, `effect_triple`, `effect_miss`. Fehlt auch dieser, stumm; kein TTS-Ersatz. |
 
-Für normale Felder ist `<Feld>` 1–20. Bull wird mit Feld **25** verarbeitet: bei Modus 2 `s25` für Single Bull und `d25` für Bullseye; bei Modus 3 `effect_s25` / `effect_d25`. Bei Modus 1 sind es `25` / `50`. Die Keys `bull` und `bullseye` gehören zu Blind-Support (Abschnitt 8), nicht automatisch zum normalen Segmentmodus.
+Für normale Felder ist `<Feld>` 1–20. Bull verwendet in Modus 2 `bull` / `bullseye` und in Modus 3 `effect_bull` / `effect_bullseye`; `s25` / `d25` und `effect_s25` / `effect_d25` bleiben Ersatzkeys für bestehende Packs. Modus 1 verwendet `25` / `50`.
 
 Beim Fehlwurf wird das übermittelte Feld verwendet, z. B. `m0`, `m20`, `effect_m0`, `effect_m20`. Der allgemeine Effekt `effect_miss` deckt alle Nullpunkte ab. Der Segmentmodus 2 hat **keinen** allgemeinen `miss`-Dateiersatz; dort gibt es nur die konkrete `m<Feld>`-Datei oder TTS.
 
-Ein neuer Dart unterbricht eine noch laufende normale Einzelwurfansage und ersetzt sie. Veraltete Einzelwürfe in der Warteschlange werden ausgelassen. Bei aktivem Gesamtscore hat dieser nach dem dritten Dart Vorrang; dann kann dessen Einzelwurfansage/-effekt ausfallen. Gesamtscore, Bust und Siegeransagen werden zu Ende abgespielt. Die erklärenden Ansagen im Blind-Modus werden nicht wie normale Einzelwürfe unterbrochen.
+Ein neuer aktivierter Einzelwurfcall kann eine laufende normale Ansage abbrechen. Der Gesamtscore wartet auf Dart 3, bleibt danach aber unterbrechbar. Bust und Siegeransagen behalten ihre Priorität. Bei deaktivierten Einzelwurfansagen unterbricht ein neuer Dart allein keine laufende Ansage.
 
 ## 6. Spielernamen und Bots
 
@@ -168,17 +169,32 @@ Vor dem Hinweis wird gegebenenfalls der Spielername gesprochen. Die Dateien enth
 
 TTS-Ersatz bleibt in allen Zeilen stumm, wenn TTS nicht aktiv/verfügbar ist. Bull/Bullseye wird als eigene Phrase behandelt und nicht aus Präfix plus Zahl zusammengesetzt. Bei Single innen kann die Zusatzphrase `bs_single_inner` vor der Zahl stehen. Nach einer abgeschlossenen Aufnahme kann zusätzlich der normale Gesamtscore kommen.
 
-## 9. Ambient-Sounds: eigener Hintergrundkanal
+## 9. Ambient-Sounds: unabhängiger Hintergrundkanal
 
-| Key | Auslöser |
+Aktivierung mit `AmbientSounds > 0`. Die Lautstärke ergibt sich aus Caller-Lautstärke mal Ambient-Lautstärke. GUI und TUI verwenden dieselben Einstellungen und Soundpacks. Fehlende Aufnahmen werden ohne TTS übersprungen.
+
+| Keys | Auswahl / Ereignis |
 | --- | --- |
-| `ambient_<Gesamtscore>`, z. B. `ambient_60`, `ambient_140`, `ambient_180` | Abgeschlossene Aufnahme mit genau diesem Gesamtscore. Nicht jeder Einzelwurf. |
-| `ambient_busted` | Abgeschlossene überworfen/Bust-Aufnahme, statt `ambient_<Gesamtscore>`. |
-| `ambient_matchcancel` | Matchlöschung zusammen mit der Abbruchansage. |
+| `ambient_<Kombination>` | Originale Segmentnamen in Wurfreihenfolge, kleingeschrieben, z. B. `ambient_t20t20t20`. Erste Wahl bei abgeschlossener Aufnahme mit Punkten, ohne Sieg. |
+| `ambient_<Gesamtwert>` | Zweite Wahl, wenn keine Kombination vorhanden ist. |
+| `ambient_150more`, `ambient_120more`, `ambient_100more`, `ambient_50more`, `ambient_1more` | Danach der höchste passende Punktebereich. Dessen Aufnahme muss vorhanden sein. |
+| `ambient_noscore` | Null Punkte oder Überwerfen. |
+| `ambient_group_legendary`, `ambient_group_perfect`, `ambient_group_very_nice`, `ambient_group_good`, `ambient_group_normal` | Zusätzlicher Gruppierungssound bei drei Trefferkoordinaten. Berechnung wie im alten Caller, Schwellen 98, 95, 92, 89, 86. |
+| `ambient_matchon`, `ambient_gameon` | Match-/Legbeginn. Matchbeginn verwendet ersatzweise Game-on. |
+| `ambient_matchshot`, `ambient_setshot`, `ambient_gameshot` | Match-/Set-/Legsieg. Match-/Setsieg verwendet ersatzweise Game-shot. |
+| `ambient_playerchange` | Nächster Turn, wenn keine Checkout-Ansage erfolgt. |
+| `ambient_bogey_number_<Restwert>`, `ambient_bogey_number` | Bogey-Zahl statt Checkout-Ansage; konkrete Zahl vor allgemeinem Sound. |
+| `ambient_checkout_call_limit` | Checkout-Ansagelimit erreicht. |
+| `ambient_matchcancel` | Matchabbruch. |
+| `ambient_lobby_in`, `ambient_lobby_out` | Eigenes Board betritt/verlässt die Lobby oder ein anderer Board-Spieler kommt/geht. |
 
-Ambient benötigt `AmbientSounds > 0`. Es gibt keinen allgemeinen Ersatz-Key und keinen TTS-Ersatz. Die genaue Datei muss vorhanden sein. Ambient ist von der gesprochenen Score-Ansage unabhängig: ein ausgeschalteter Score-Schalter verhindert bei ansonsten aktivem Caller nicht den passenden Ambient-Sound. Bull-Off erzeugt keine normalen Ambient-Score-Effekte.
+Beginn, Sieg und Spielerwechsel prüfen zuerst `_<Spielername>` (ohne äußere Leerzeichen, kleingeschrieben), danach den allgemeinen Key. Auch Ersatzereignisse prüfen zuerst ihre Namensvariante. Bei einer frühen Matchübersicht ohne aktiven Spieler wird der allgemeine Startsound verwendet. Beliebige Zusätze nach `+`, etwa `+cheer`, bilden Zufallsvarianten. Gemeinsame Dateien dürfen in Unterordnern liegen und ersetzen die gesamten Varianten des entsprechenden Pack-Keys.
 
-Ambient wird niemals wegen einer neuen Vordergrundansage abgebrochen. Sounds auf dem Ambient-Kanal werden untereinander nacheinander abgespielt; währenddessen kann der Vordergrund sprechen. Beim Beenden des Callers enden beide Kanäle. `AmbientSoundsAfterCalls` bestimmt den Startzeitpunkt vor/nach der passenden Score-/Bust-/Abbruchansage, nicht ob Ambient den Vordergrund blockiert.
+Neue Sprachansagen unterbrechen Ambient nicht. Stoppen des Callers beendet beide Kanäle. `AmbientSoundsAfterCalls` plant Ambient vor/nach der zugehörigen Ansage. Wie im alten Caller wartet Ambient bei aktivierter Option auf vorheriges Ambient; sonst ersetzt ein neuer Ambient-Sound den vorherigen. Blind-Support spielt keine normalen Kombinations-/Gruppierungssounds; Überwerfen verwendet weiterhin No-score. Bull-off erzeugt keine normalen Punkte-Effekte.
+
+GUI: Erweiterungen → Caller → Ambient-Lautstärke / Ambient nach Ansagen. TUI: Caller-Einstellungen → dieselben Parameter `AmbientSounds` und `AmbientSoundsAfterCalls`. Bestehende Importwerte bleiben unverändert nutzbar.
+
+Die Kombination-/Gesamtwert-Auswahl gilt für X01 und Shanghai. Bermuda verwendet Punktebereiche und Gruppierung. Count-up und Gotcha verwenden geworfene Punkte mit exakt 180 und Bereichen ab 153/120/100/50. RTW verwendet Trefferwerte: 9 → 180, ab 7/6/5/4 die entsprechenden Bereiche. ATC hat keine Aufnahme-Punkte-Effekte. Cricket, Tactics und Hidden Cricket verwenden die gewerteten Marks; siehe [Cricket-Keys](CALLER_SOUND_KEYS.de.md#cricket-tactics-und-hidden-cricket).
 
 ## 10. Beispielabläufe und Test-Checkliste
 
@@ -189,7 +205,7 @@ Ambient wird niemals wegen einer neuen Vordergrundansage abgebrochen. Sounds auf
 | T20 im Segmentmodus | `t20`; bei fehlender Datei TTS „Triple 20“, wenn aktiv. |
 | T20 im Effektmodus | `effect_t20`; sonst `effect_triple`. |
 | Checkout-Hinweis für 40 | Name → `yr_40`; andernfalls Name → `you_require` → `c_40` oder `40`. |
-| Bust | Vordergrund `busted`, Hintergrund optional `ambient_busted`. |
+| Bust | Vordergrund `busted`, Hintergrund optional `ambient_noscore`. |
 | Matchgewinn | Gegebenenfalls abgeschlossene Aufnahme, dann `matchshot` (sonst `gameshot`) → Siegername, sofern Namen aktiv. |
 | Bull-Off | `bulling_start`; bei Bull-Sieger optional Name → `bulling_end`; anschließend normales Match mit `matchon`. |
 

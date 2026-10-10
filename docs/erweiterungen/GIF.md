@@ -5,11 +5,11 @@
 - Modul einschalten, Medienordner festlegen und lokale GIF-/PNG-/JPEG-Dateien verwenden.
 - Direkte öffentliche HTTPS-Bildadresse oder Online-Suchbegriff wählen; Websuche optional deaktivieren.
 - Quelle automatisch erkennen oder ausdrücklich lokal, URL bzw. Suche einstellen.
-- [Neun Regeltypen](EREIGNISSE.md): Score, Scorebereich, Bust, Spiel-/Matchgewinn, High Finish, Feld, Multiplikator, Kombination.
+- [Alle Regeltypen](EREIGNISSE.md): Score, Scorebereich, Bust, Spiel-/Matchgewinn, High Finish, Feld, Multiplikator, Kombination.
 - Optional Spielername, Score/Bereich und passende Dartbedingung filtern.
 - Mehrere Bilder als Zufallsalternativen je Regel; keine Sequenz. Nach Möglichkeit wird das zuletzt verwendete Bild nicht wiederholt.
 - Dauer pro Bild: **0** bis zum Takeout, sonst Sekunden bis 3600.
-- Bot-Score-/Bust-/Combo-Anzeigen überspringen; High-Finish-Schwelle und Timeout einstellen.
+- Bot-Score-/Bust-/Combo-/Cricket-Anzeigen überspringen; High-Finish-Schwelle und Timeout einstellen.
 
 ## Anzeige
 
@@ -31,3 +31,7 @@ Weiterlesen: [Einrichtung](../GIF.md).
 GUI: Erweiterungsseite öffnen, Entwurf testen und speichern. TUI: `DartsHub --tui`, entsprechende Seite, **Enter** zum Bearbeiten und **Entwurf speichern**. Headless nutzt dieselbe Konfiguration. Vorschautests speichern nichts. Statuswerte und Fehler stehen auf Modulseite, Dashboard und Konsole.
 
 [Gemeinsame Funktionen](GEMEINSAM.md) · [Zur Übersicht](README.md)
+
+## Cricket-Erweiterungen
+
+Gewertete Marks, Feldabschlüsse, tatsächliche Punkte, nicht gewertete Treffer und entdeckte Hidden-Cricket/Tactics-Felder als Regeln auswählen. Dieselbe Auswertung gilt für Tactics, Standard, Cut Throat und No Score. Details und Terminal-Bedienung: [Ereignisse und Textvariablen](EREIGNISSE.md#cricket-tactics-und-hidden-cricket).

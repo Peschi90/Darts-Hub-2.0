@@ -83,3 +83,7 @@ GUI: Erweiterungsseite öffnen, Entwurf testen und speichern. TUI: `DartsHub --t
 ## Ausgabe im Browser
 
 Die Weboberfläche bietet oben im Dashboard eine pro Tab aktivierbare Caller-Wiedergabe mit eigener Lautstärke. Sie funktioniert auch bei ausgeschalteter lokaler Ausgabe. Details und die Bedienung über GUI/TUI stehen in [Weboberfläche](../WEB_INTERFACE.md#caller-audio-im-browser--caller-browser-audio).
+
+## Cricket-Ansagen und Soundkeys
+
+Cricket, Tactics und Hidden Cricket unterscheiden gewertete Marks, Feldabschlüsse, Punkte und nicht gewertete Treffer. Cut Throat und No Score werden separat berücksichtigt. Neue Cricket-Soundkeys, bestehende Keys, Auswahlprioritäten und Ersatzdateien: [vollständige Caller-Key-Referenz](../CALLER_SOUND_KEYS.de.md).

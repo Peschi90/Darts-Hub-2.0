@@ -12,10 +12,10 @@
 
 ## Ereignisse und Automatik
 
-- [Alle 21 WLED-Regeltypen](EREIGNISSE.md): Aufnahme, Einzel-Dart, Feld/Ring, Multiplikator, Kombination, Gewinne, Spieler- und Boardereignisse.
+- [Alle WLED-Regeltypen](EREIGNISSE.md): Aufnahme, Einzel-Dart, Feld/Ring, Multiplikator, Kombination, Gewinne, Spieler- und Boardereignisse.
 - Zielgeräte, Spielername und bei geeigneten Ereignissen Spielerposition eingrenzen; Namen unabhängig von Schreibweise.
 - Namensregel übersteuert allgemeinen gleichen Regeltyp pro Zielgerät.
-- Bei gleichzeitig passenden Ereignissen: High Finish vor Matchgewinn, Spielgewinn, Bust, Kombination, exaktem Score, Scorebereich, Feld, Multiplikator und übrigen Ereignissen. Danach zählt Regelspezifität; pro Gerät wird ein Effekt gewählt.
+- Bei gleichzeitig passenden Ereignissen: High Finish vor Matchgewinn, Spielgewinn, Bust, Cricket/Tactics-Trefferereignissen, Kombination, exaktem Score, Scorebereich, Feld, Multiplikator und übrigen Ereignissen. Danach zählt Regelspezifität; pro Gerät wird ein Effekt gewählt.
 - Idle bei Match-/Legstart und im Spielablauf; Rückkehr nach begrenzten Effekten/Takeout. Dauer **0** bei Spielregeln bedeutet bis zum Takeout.
 - Ausschalten bei Anwendungsstart bzw. nach Spielende; Schlaf-Effekt nach Inaktivität und optional späteres Ausschalten.
 - **Match beendet und verlassen:** regulären Abschluss und Abbruch erfassen. Passende Exit-Regel übersteuert das automatische Ausschalten pro Zielgerät.
@@ -36,3 +36,9 @@ Weiterlesen: [Einrichtung](../WLED_CONFIGURATION_AND_AUTODARTS.md), [Robbel3D](.
 GUI: Erweiterungsseite öffnen, Entwurf testen und speichern. TUI: `DartsHub --tui`, entsprechende Seite, **Enter** zum Bearbeiten und **Entwurf speichern**. Headless nutzt dieselbe Konfiguration. Vorschautests speichern nichts. Reale Statuswerte und Fehler stehen im Dashboard, auf der Modulseite und in der Konsole.
 
 [Gemeinsame Funktionen](GEMEINSAM.md) · [Zur Übersicht](README.md)
+
+## Cricket-Erweiterungen
+
+Gewertete Marks, Feldabschlüsse, tatsächliche Punkte, nicht gewertete Treffer und entdeckte Hidden-Cricket/Tactics-Felder als Regeln auswählen. Dieselbe Auswertung gilt für Tactics, Standard, Cut Throat und No Score. Details und Terminal-Bedienung: [Ereignisse und Textvariablen](EREIGNISSE.md#cricket-tactics-und-hidden-cricket).
+
+Die Cricket/Tactics-Auslöser reagieren bereits nach Dart 1 und Dart 2 und benötigen daher die Lizenzfreigabe `i_m_able_to_read`. Ohne Freigabe bleiben diese Regeln in GUI, TUI und bei der Ausführung gesperrt.

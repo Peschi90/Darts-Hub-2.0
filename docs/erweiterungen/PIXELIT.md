@@ -9,7 +9,7 @@
 
 ## Regeln und Sequenzen
 
-- [Alle 20 Auslöser](EREIGNISSE.md), einschließlich Wurf, Spielerwechsel, kombiniertem Live-Trigger und Match-Verlassen.
+- [Alle Auslöser](EREIGNISSE.md), einschließlich Wurf, Spielerwechsel, kombiniertem Live-Trigger und Match-Verlassen.
 - Spielername, exakter Score/Bereich, Dartfeld/Ring, Multiplikator und Drei-Dart-Kombination einschränken.
 - Passende Namensregeln vor allgemeinen Regeln desselben Typs pro Display; Namen unabhängig von Groß-/Kleinschreibung.
 - Exakter Score vor Scorebereich; im Bereich die erste passende Regel nach Namensvorrang verwenden.
@@ -30,3 +30,9 @@ Weiterlesen: [Einrichtung](../PIXELIT.md), [Feld-/Kombinationseffekte](../DISPLA
 GUI: Erweiterungsseite öffnen, Entwurf testen und speichern. TUI: `DartsHub --tui`, entsprechende Seite, **Enter** zum Bearbeiten und **Entwurf speichern**. Headless nutzt dieselbe Konfiguration. Vorschautests speichern nichts. Reale Statuswerte und Fehler stehen im Dashboard, auf der Modulseite und in der Konsole.
 
 [Gemeinsame Funktionen](GEMEINSAM.md) · [Zur Übersicht](README.md)
+
+## Cricket-Erweiterungen
+
+Gewertete Marks, Feldabschlüsse, tatsächliche Punkte, nicht gewertete Treffer und entdeckte Hidden-Cricket/Tactics-Felder als Regeln auswählen. Dieselbe Auswertung gilt für Tactics, Standard, Cut Throat und No Score. Details und Terminal-Bedienung: [Ereignisse und Textvariablen](EREIGNISSE.md#cricket-tactics-und-hidden-cricket).
+
+Fehlende Template-Dateien werden als Warnung im Status angezeigt und verhindern das Speichern nicht. In GUI und TUI kannst du unter Pixelit den Template-Pfad oder einzelne Regeln korrigieren und speichern. Der neue Pfad wird direkt geladen. Eine Regel mit fehlendem Template wird nicht ausgeführt; die Vorschau meldet weiterhin den Fehler. Importierte Regeln bleiben erhalten.

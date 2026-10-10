@@ -78,7 +78,7 @@ Speichern löst nicht automatisch den bearbeiteten Effekt aus. Laufende Effektfo
 
 ## 5. Caller – Sprachansagen
 
-Eigene Stimmen und Effekte erstellen: [Soundpack-Anleitung mit allen Keys, Auslösern und Beispielen](docs/CALLER_SOUNDPACKS.de.md).
+Eigene Stimmen und Effekte erstellen: [Soundpack-Anleitung](docs/CALLER_SOUNDPACKS.de.md) und [vollständige Soundkey-Referenz mit Auslösern](docs/CALLER_SOUND_KEYS.de.md).
 
 1. Öffne **Caller** und aktiviere ihn, wenn du Ansagen möchtest.
 2. Suche in der Soundpack-Bibliothek eine Sprache und Stimme aus.

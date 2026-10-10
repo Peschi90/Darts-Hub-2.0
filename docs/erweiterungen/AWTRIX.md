@@ -11,7 +11,7 @@
 
 ## Regeln und Sequenzen
 
-- Dieselben [20 Auslöser wie PixelIt](EREIGNISSE.md), einschließlich Match-Verlassen.
+- Dieselben [Auslöser wie PixelIt](EREIGNISSE.md), einschließlich Match-Verlassen.
 - Spielername, exakter Score/Bereich, Feld/Ring, Multiplikator und Kombination festlegen.
 - Namensregel vor allgemeiner Regel desselben Typs pro Display; Groß-/Kleinschreibung und äußere Leerzeichen irrelevant.
 - Exakter Score vor Scorebereich; erste passende Bereichsregel nach Namensvorrang. High Finish kann Gewinnanzeige ersetzen, wenn die Schwelle erreicht ist.
@@ -59,3 +59,7 @@ Weiterlesen: [Einrichtung](../AWTRIX.md).
 GUI: Erweiterungsseite öffnen, Entwurf testen und speichern. TUI: `DartsHub --tui`, entsprechende Seite, **Enter** zum Bearbeiten und **Entwurf speichern**. Headless nutzt dieselbe Konfiguration. Vorschautests speichern nichts. Statuswerte und Fehler stehen auf Modulseite, Dashboard und Konsole.
 
 [Gemeinsame Funktionen](GEMEINSAM.md) · [Zur Übersicht](README.md)
+
+## Cricket-Erweiterungen
+
+Gewertete Marks, Feldabschlüsse, tatsächliche Punkte, nicht gewertete Treffer und entdeckte Hidden-Cricket/Tactics-Felder als Regeln auswählen. Dieselbe Auswertung gilt für Tactics, Standard, Cut Throat und No Score. Details und Terminal-Bedienung: [Ereignisse und Textvariablen](EREIGNISSE.md#cricket-tactics-und-hidden-cricket).
