@@ -92,3 +92,25 @@ Replace `p1` with `p2` on the second matrix, and so on. Numbers stay the same wh
 | `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p32 |
 
 Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. The **Throw or turn change** trigger updates on throws and new visits, including the same player. In the TUI, select it under Events → Trigger; headless configurations use `ThrowOrTurnChanged` (`PlayerChanged` remains the separate actual player change).
+
+
+## Uhr-Diagnose / Clock diagnostics
+
+GUI: Unter Geräte zeigt jede Karte Verbindung, optionale Zugangsdaten und einen eigenen Diagnosebereich. **Daten aktualisieren** liest den aktuellen Zustand des Controllers, ohne Einstellungen zu ändern. Je nach Firmware erscheinen Firmware, Geräte-IP, aktive Anzeige, Matrixstatus und Auflösung, Helligkeit, WLAN-Signal, Laufzeit, Bildrate und freier Speicher. Fehlende Angaben werden nicht als Nullwerte ergänzt. Der Zeitstempel bezieht sich auf die tatsächlich empfangenen Gerätedaten; ältere Werte bleiben bei einem fehlgeschlagenen Abruf sichtbar. Verbindungsfehler erscheinen im Gerätestatus.
+
+TUI: Im AWTRIX-Menü **Uhrname · Daten aktualisieren** wählen. Die Diagnose erscheint als Textansicht. Im Browser steht derselbe Abruf unter Geräte zur Verfügung. Konfiguration und JSON-Import bleiben unverändert.
+
+GUI: Each device card separates connection settings, optional authentication and clock diagnostics. **Refresh device data** reads the controller without changing its settings. Available readings depend on firmware; missing fields are omitted. The timestamp indicates when device data was received, and previous readings remain visible after failed requests. Connection errors appear in the device status.
+
+TUI: Select **Clock name · Refresh device data** in the AWTRIX menu to open the diagnostic text view. The browser offers the same action under Devices. Configuration and legacy imports are unchanged.
+
+
+### Aktuelle Werte in Einstellungsfeldern / Current values in setting fields
+
+GUI: Im Reiter **Geräteeinstellungen** die Quelluhr wählen. Deren aktuelle Werte werden in alle nicht aktivierten Felder geladen. Vorhandene aktivierte Vorgaben und laufende Änderungen bleiben erhalten. Eine Einstellung aktivieren, den vorausgefüllten Wert ändern und speichern; nur aktivierte Einstellungen werden an alle aktiven Uhren übertragen. Nicht von der Firmware gelieferte oder ungültige Werte sind als nicht verfügbar gekennzeichnet. **Daten aktualisieren** lädt die Uhr erneut. Farben, Zahlen, Auswahlfelder, Schalter und Listen werden berücksichtigt, auch ausdrücklich leere Farbkorrekturen.
+
+TUI: Eine Einstellungsgruppe öffnen und bei mehreren Uhren die Quelluhr auswählen. Nach dem Abruf zeigen Auswahl und Eingabe den Gerätewert, sofern keine aktivierte Vorgabe existiert. **Überschreiben** aktiviert den Wert; **Vom Gerät übernehmen** entfernt die Vorgabe. Im Browser wird die Quelluhr ebenfalls über den Einstellungsbereich gewählt. Ein reiner Abruf speichert keine Vorgaben und verändert weder Geräte noch Importdaten.
+
+GUI/browser: Select a source clock in device settings. Current device values prefill inactive fields; enabled overrides remain untouched. Enable a setting, edit its prefilled value and save. Saving applies only enabled overrides to all enabled clocks. Missing or invalid firmware values are marked unavailable.
+
+TUI: Open a settings group, select a source clock when prompted and edit the prefilled value. Reading values alone creates no overrides. Legacy imports remain unchanged.
