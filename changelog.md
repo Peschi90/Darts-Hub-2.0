@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.33
+## v0.1.0-beta.34
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -16,9 +16,6 @@
 
 #### Caller
 
-- Browser-Ansagen werden beim Abbruch auch bei zeitgleichen Wiedergabeereignissen zuverlässig gestoppt.
-
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### WLED
@@ -31,28 +28,11 @@
 
 #### AwtrixNG
 
-- Geräteeinstellungen werden mit aktuellen Uhrwerten vorausgefüllt. Die Quelluhr ist auswählbar; aktivierte Änderungen bleiben erhalten.
+- Die Matrixvorschau zeigt die ausgewählten animierten Icons, Farben und Effekte und berücksichtigt Iconbewegung, Scrolltempo und Einstellungen der Uhr.
 
-
-- Übersichtliche Gerätekarten mit optionalen Zugangsdaten und abrufbaren Uhr-Diagnosen samt Zeitstempel.
-
-
-- Zu große GIFs können nach einer Größen- und Qualitätswarnung animiert für die Gerätematrix verkleinert werden. Die Vorschau startet direkt bei der Dateiauswahl.
-
-
-- GIF-Verwaltung mit übersichtlicher Dateiliste, Matrixvorschau und direkten Bestätigungen für Ersetzen und Löschen.
-
-
-- Zu große GIFs werden beim Hochladen und Sequenztest mit der passenden Controllergröße gemeldet.
-
-
-- Icon-Listen und GIF-Uploads funktionieren jetzt auch bei Geräten ohne eingerichtetes Passwort.
-
-
-- Gespeicherte Geräte-Passwörter sind jetzt klar erkennbar und bleiben beim erneuten Speichern erhalten.
-
-
-- GIF-Uploads verwenden ein controllerkompatibles Format und prüfen die gespeicherte Datei auf vollständige Übertragung.
+- Beim Schließen von Darts-Hub werden pausierte Uhr-Apps im Modus „Solange Darts-Hub aktiv ist“ zuverlässig wiederhergestellt.
+- Uhr-Apps lassen sich während des Matches (ab Bull-off), solange Darts-Hub läuft oder dauerhaft pausieren. Die vorherige Konfiguration kann wiederhergestellt werden.
+- Optionen stehen direkt hinter den Ereignissen; selten benötigte Einstellungen sind erklärt und eingeklappt. Geräteeinstellungen zeigen einen Warnhinweis.
 
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
@@ -93,9 +73,6 @@
 
 #### Caller
 
-- Browser announcements now stop reliably when cancellation coincides with playback events.
-
-
 <!-- Add brief user-facing changes here. -->
 
 #### WLED
@@ -108,28 +85,11 @@
 
 #### AwtrixNG
 
-- Device setting fields are prefilled with current clock values. Select the source clock while retaining enabled changes.
+- The matrix preview displays selected animated icons, colors and effects and respects icon movement, scrolling speed and clock settings.
 
-
-- Clearer device cards with optional authentication and refreshable clock diagnostics with timestamps.
-
-
-- Oversized GIFs can be resized for the device matrix after a size and quality warning, keeping animation. Previews start when selecting a file.
-
-
-- Clearer GIF management with a file list, matrix preview and direct confirmations for replacing and deleting files.
-
-
-- GIFs exceeding the controller display size now show a clear size warning during upload and sequence tests.
-
-
-- Icon lists and GIF uploads now work for devices without a configured password.
-
-
-- Saved device passwords are clearly indicated and retained when saving again.
-
-
-- GIF uploads use a controller-compatible format and verify that the stored file matches the original.
+- Closing Darts-Hub restores paused clock apps in “While Darts-Hub is running” mode before exiting.
+- Clock apps can be paused during matches (from bull-off onwards), while Darts-Hub runs, or permanently. The previous configuration can be restored.
+- Options follow events; advanced settings are explained and collapsed. Device settings show a caution notice.
 
 
 <!-- Add brief user-facing changes here. -->

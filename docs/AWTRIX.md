@@ -114,3 +114,53 @@ TUI: Eine Einstellungsgruppe öffnen und bei mehreren Uhren die Quelluhr auswäh
 GUI/browser: Select a source clock in device settings. Current device values prefill inactive fields; enabled overrides remain untouched. Enable a setting, edit its prefilled value and save. Saving applies only enabled overrides to all enabled clocks. Missing or invalid firmware values are marked unavailable.
 
 TUI: Open a settings group, select a source clock when prompted and edit the prefilled value. Reading values alone creates no overrides. Legacy imports remain unchanged.
+
+
+## Exklusive Match-Steuerung / Exclusive match control
+
+GUI: Unter **AWTRIX → Optionen** **Normale Uhr-Apps deaktivieren** auswählen und speichern. Zur Auswahl stehen **Keine Apps deaktivieren**, **Während des Matches**, **Solange Darts-Hub aktiv ist** und **Dauerhaft deaktivieren**. TUI: Den gleichnamigen Eintrag im AWTRIX-Menü öffnen, den Modus auswählen und speichern. Web: Den Modus unter AWTRIX-Optionen auswählen und speichern. Im Match-Modus beginnt die Übernahme bereits beim Bull-off oder der frühen Match-Startmeldung und gilt für alle Spielmodi. Standardmäßig ist sie ausgeschaltet; der v1-Import übernimmt keine entsprechende Vorgabe und erhält eine bereits gesetzte v2-Option.
+
+Im Match-Modus beim ersten Match-Ereignis (auch vor dem anfänglichen Idle-Effekt) liest Darts-Hub die aktuellen Einstellungen, App-Zustände, Reihenfolge, aktive Anzeige und Matrix-Stromversorgung jeder aktiven Uhr. Erst nach erfolgreicher Sicherung werden die vorhandenen Apps deaktiviert, Navigation und Rotation pausiert und eigene temporäre Match-Anzeigen erstellt. Vorhandene Apps werden nicht gelöscht oder mit Match-Inhalten überschrieben. Neue Legs sichern den Zustand nicht erneut.
+
+Im Match-Modus nach Matchgewinn oder Verlassen/Abbruch werden die ursprünglichen App-Schalter, einschließlich zuvor deaktivierter Apps und mehrfacher Reihenfolgeeinträge, Rotation, Anzeigeeinstellungen, aktive App und Stromversorgung wiederhergestellt. Ein konfigurierter Endeffekt läuft zuvor für seine Anzeigedauer. Temporäre Match-Apps werden entfernt. Im Match-Modus stellen Modulstopp, Deaktivierung oder Speichern der Konfiguration ebenfalls wieder her; bei weiterhin aktivem Match kann die gespeicherte Option erneut übernehmen.
+
+Eine Sicherung ohne Passwörter liegt währenddessen im Datenverzeichnis unter `awtrix-recovery`. Bei Fehlern bleibt sie erhalten. Die nächste Verbindung der betreffenden konfigurierten Uhr versucht die Wiederherstellung vor anderen Befehlen. Die Uhr-Diagnose zeigt exklusive Steuerung und ausstehende Wiederherstellung; Verbindungsfehler erscheinen zusätzlich im Gerätestatus. Die Uhr muss erreichbar bleiben oder erneut erreichbar werden. Andere externe HTTP/MQTT-Clients werden durch diese Option nicht gesperrt; deren Automationen sollten während des Matches keine konkurrierenden Befehle senden.
+
+Select **Disable normal clock apps** in GUI options, the TUI AWTRIX menu, or browser options, then save. Choose Off, during matches, while Darts-Hub runs, or permanently. In match mode, ownership starts at bull-off or the early match overview and applies to every game mode. It defaults off and is preserved by legacy imports. Before the first match effect, each clock's settings, app switches/order, active app and matrix power are backed up. Existing apps are paused, not deleted or overwritten; match content uses temporary app names. In match mode, completion, cancellation, module stop and configuration changes restore the backup. Configured end effects finish before normal restoration. A failed restoration keeps a credential-free recovery file for retry on the next connection. The clock diagnostics show active control and pending restoration. The feature does not block competing external HTTP/MQTT clients.
+
+### Weitere App-Modi / Additional app modes
+
+**Solange Darts-Hub aktiv ist:** Übernahme beim Aktivieren/Starten des Moduls, auch ohne laufendes Spiel. Match-Ende und Abbruch lassen die normalen Apps weiterhin pausiert. Beim Beenden oder Deaktivieren des Moduls wird die Sicherung wiederhergestellt. Ein unerwarteter Abbruch wird über die vorhandene Wiederherstellung beim nächsten Start behandelt.
+
+**Dauerhaft deaktivieren:** Die normalen Apps bleiben nach Match-Ende und beim Beenden von Darts-Hub deaktiviert. Die Sicherung bleibt im Datenverzeichnis erhalten und wird beim Neustart dieses Modus nicht überschrieben. Um die ursprüngliche Konfiguration zurückzuholen, **Keine Apps deaktivieren** wählen und speichern, während das Modul aktiviert und die Uhr erreichbar ist. Wird das Datenverzeichnis gelöscht, ist diese ursprüngliche Sicherung nicht mehr verfügbar.
+
+**While Darts-Hub runs:** Control starts when the module is enabled/started, without needing an active game. Matches and cancellations do not restore normal apps. Stopping or disabling the module restores the backup; an unexpected termination uses the existing recovery mechanism on the next start.
+
+**Permanent:** Apps remain disabled after games and shutdown. The backup remains in the data directory and survives restarts without being overwritten. Select **Do not disable apps** and save with the module enabled and the clock reachable to restore the original configuration. Deleting the data directory also deletes that original backup.
+
+Optionen stehen in der GUI direkt hinter den Ereignissen. HTTP-Wartezeit und Highfinish befinden sich unter **Erweiterte Optionen**; in der TUI öffnet der gleichnamige Eintrag diese Werte, im Web ist der Bereich einklappbar. Geräteeinstellungen zeigen in allen Frontends einen Hinweis, sie nur mit Kenntnis ihrer Auswirkungen zu verändern.
+
+GUI options follow events. HTTP wait time and Highfinish are under **Advanced options**; the TUI entry opens those values, and the browser section is collapsible. All frontends caution that device settings should only be changed when their effects are understood.
+
+Beim normalen Beenden per Fensterkreuz, TUI oder Headless-Stop wartet das lokale Backend auf das Stoppen der Module und die Wiederherstellung der Uhren. „Dauerhaft deaktivieren“ bleibt davon ausgenommen. Wird nur eine GUI/TUI geschlossen, die mit einem separat laufenden Backend verbunden ist, bleibt dieser Modus aktiv, solange das Backend läuft. Bei einer nicht erreichbaren Uhr bleibt die Sicherung für den nächsten Start erhalten.
+
+On normal exit through the window close button, TUI, or headless stop, the local backend waits for module shutdown and clock restoration. Permanent mode remains disabled. Closing a GUI/TUI attached to a separately running backend leaves the mode active until that backend stops. If a clock is unreachable, its backup remains for recovery on the next start.
+
+
+## Animierte Matrixvorschau / Animated matrix preview
+
+Die Ereigniskarten in GUI und Web zeigen den berechneten Anzeige-Payload mit Beispielwerten (180 Punkte, 121 Rest). Farben, Paletten, Hintergrundeffekte und Overlays werden animiert. Scrollrichtung, Modus, Pause und Tempo werden berücksichtigt: 100 entspricht etwa 21 Pixeln pro Sekunde, 50 etwa 10,5; 0 hält den Text an. Die geladenen Einstellungen der ersten ausgewählten, aktivierten Uhr werden mit den Moduleinstellungen und den Änderungen am Ereignis kombiniert. Ohne erreichbare Uhr gelten die lokalen Standardwerte.
+
+Terminal: AWTRIX → Ereignisse → Sequenzschritt → Virtuelle LED-Matrix öffnet dieselbe animierte Vorschau mit Farbausgabe. Die Vorschau liest nur Icon-Dateien von der Uhr; sie sendet keine Anzeige- oder Einstellungsbefehle.
+
+GUI, web and terminal share the same bounded animation frames. At most 256 frames are retained per preview; long scrolling cycles may therefore have coarser animation steps. Unchanged diagnostic updates do not restart the GUI animation. Firmware fonts and random effect sequences are approximations. Icons are downloaded from the first selected enabled clock using its configured authentication; embedded GIF/JPEG data URLs also work. A bounded cache prevents repeated downloads while editing. Missing/unreachable icons are reported and take no text space. Custom fonts/palettes, charts and unsupported drawing commands remain preview limitations.
+
+Iconbewegung / icon movement (`iconMode`):
+
+- `fixed`: Icon bleibt links stehen; Text läuft daneben / icon stays while text scrolls beside it.
+- `pushOnce`: Icon wird einmal hinausgeschoben und bleibt auch bei weiteren Textdurchläufen verschwunden / pushed out once and stays gone.
+- `push`: Icon kommt bei jedem Textdurchlauf zurück / returns on every text run.
+
+GUI: Dropdown **Iconbewegung** im Sequenzschritt. Web/TUI: `iconMode` in den zusätzlichen Anzeigeoptionen. `iconOffsetX` verändert die Position, `iconGap` den Abstand zum Text. Ein bildschirmbreites GIF wird hinter dem Text angezeigt. Diese vorhandenen Einstellungen und Icon-IDs bleiben beim JSON-Import erhalten.
+
+Reference: [AWTRIX-NG payload](https://blueforcer.github.io/awtrix-ng/esp32/reference/payload/) and [visual effects](https://blueforcer.github.io/awtrix-ng/esp32/reference/visuals/).
