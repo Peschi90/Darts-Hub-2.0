@@ -147,7 +147,7 @@ Eine Punktzahl-Regel bezieht sich auf die abgeschlossene Aufnahme, also die Summ
 
 In **Einstellungen** findest du Sprache, Startverhalten, Updates, Lizenz und Datenschutz. Trage unter **Lizenz** deinen Lizenzschlüssel ein und lasse ihn prüfen. Freigeschaltete Funktionen hängen von deiner Lizenz ab; gesperrte Optionen werden entsprechend angezeigt.
 
-Bei **Updates** kannst du nach neuen Versionen suchen und auf Wunsch Beta-Versionen berücksichtigen. Lies die angezeigten Hinweise und bestätige eine angebotene Installation. Deine Einstellungen liegen getrennt vom Programm; unter Windows in `%LOCALAPPDATA%\DartsHub`. Lösche diesen Ordner nicht, wenn du deine Einrichtung behalten möchtest.
+Bei **Updates** kannst du nach neuen Versionen suchen und auf Wunsch Beta-Versionen berücksichtigen. Lies die angezeigten Hinweise und bestätige eine angebotene Installation. Updates behalten deine Einrichtung. Unter Windows und Linux liegen die Daten neuer Installationen im Installationsordner; vorhandene ältere Datenablagen werden weiterverwendet. Die Befehle für Headless-Updates und die vollständige Deinstallation sind weiter unten beschrieben.
 
 Unter **Datenschutz & Diagnose** kannst du den Telemetriehinweis lesen und das angebotene Minimal- oder Vollprofil wählen. Ohne bestätigte Entscheidung werden keine Telemetriedaten erhoben oder übertragen. „Später entscheiden“ verschiebt die Auswahl. Das Ausschalten der erweiterten Diagnose wechselt zum Minimalprofil.
 
@@ -346,3 +346,68 @@ Beim ersten Start verwendet DartsHub die Betriebssystemsprache (Deutsch oder Eng
 Normale Punkte-, Punktebereich- und Kombinations-Effekte laufen erst nach dem dritten Dart. Bust, Sieg und Start-/Board-Ereignisse sind Ausnahmen. WLED-Einzelwurfregeln (DartScore/DS, DartField und Multiplier/DMU) sowie ausdrückliche Throw-Anzeigen bleiben sofort aktiv. Das gilt auch für die TUI und Headless-Konfiguration.
 
 Logs liegen unter `logs`: `DartsHub_04.log` für alle Meldungen und beispielsweise `Caller/Caller_04.log` für den Caller. Neustarts am selben Tag hängen Meldungen an. Am gleichen Kalendertag im nächsten Monat wird die Datei neu begonnen; die Dateigröße ist nicht begrenzt.
+
+
+### Updates über die lokale Weboberfläche und das Terminal
+
+Die lokale Konfigurationsseite prüft beim Öffnen und anschließend stündlich auf Updates, solange sie geöffnet bleibt. Verfügbare Updates erscheinen mit Release Notes einmal pro Version und Browser-Tab als Dialog. Andere Dialoge werden nicht unterbrochen. **Einstellungen → Updates → Auf Updates prüfen** bietet weiterhin die manuelle Prüfung. Es wird nichts automatisch installiert.
+
+Für ein Headless-System brauchst du keine TUI. Öffne ein Terminal (zum Beispiel über SSH) **im bestehenden Installationsordner**:
+
+```sh
+# Linux – bei abweichendem Installationspfad diesen verwenden
+cd ~/dartshub
+./DartsHub --update
+
+# Nur prüfen, nichts installieren
+./DartsHub --update --check-only
+
+# Installation ohne Rückfrage bestätigen
+./DartsHub --update --yes
+```
+
+Windows: `cd "$env:USERPROFILE\DartsHub"`, anschließend `.\DartsHub.exe --update`.
+macOS: im installierten Bundle `DartsHub.app/Contents/MacOS` den Befehl `./DartsHub --update` aufrufen.
+
+Der Befehl verwendet die gespeicherte Beta-Einstellung; `--beta` beziehungsweise `--stable` wählt den Kanal ausdrücklich. Nach der Prüfung werden Release Notes angezeigt. Mit `yes` bestätigst du die Installation. Das Update wird heruntergeladen und nach Ende des Befehls in **dieser Installation** eingespielt. Ein laufender Darts-Hub-Prozess wird beendet, Einstellungen, Soundpacks und Logs bleiben erhalten. Danach startet Darts-Hub headless; eingerichtete Dienste werden wieder gestartet. Nutze den Installationsbenutzer mit Schreibrechten auf den Installationsordner.
+
+Bei eigener Datenablage oder API-Adresse die bisherigen Werte mitgeben, beispielsweise:
+
+```sh
+./DartsHub --update --DartsHub:DataDirectory /mein/dartshub-datenordner --urls http://127.0.0.1:5070
+```
+
+Alternativ: `./DartsHub --tui` verbindet sich mit der lokalen Laufzeit. Unter **Einstellungen**: **Updates prüfen**, Release Notes lesen, **Update herunterladen**, Installation bestätigen. Für einen abweichenden Port ergänzt du `--api-url http://127.0.0.1:5070`.
+
+### Vollständig deinstallieren
+
+Aus derselben Installation, als derselbe Betriebssystembenutzer:
+
+```sh
+./DartsHub --uninstall
+# Ohne die Rückfrage (endgültige Löschung):
+./DartsHub --uninstall --yes
+```
+
+Windows: `.\DartsHub.exe --uninstall`. macOS: `./DartsHub --uninstall` aus `DartsHub.app/Contents/MacOS`.
+
+Der Befehl zeigt die ermittelten Löschpfade und verlangt `yes`. Er entfernt die aktuelle Installation, Einstellungen und Zugangsdaten, Soundpacks, Logs, Backups, Caches, bekannte temporäre Darts-Hub-Dateien sowie Autostarts und passende Verknüpfungen des aktuellen Benutzers. Erkannte ältere Darts-Hub-Datenordner werden ebenfalls bereinigt. Bei einer eigenen Datenablage zusätzlich `--DartsHub:DataDirectory /mein/dartshub-datenordner` angeben. In externen Medienordnern werden nur Soundpacks mit Darts-Hub-Installationsmarkierung entfernt; gemeinsam genutzte Ordner und fremde Dateien bleiben erhalten. Quellcode-Repositories und System-/Benutzerstammordner werden abgewiesen.
+
+Die Löschung startet nach Ende des Befehls, damit auch die Programmdatei entfernt werden kann. Bei einem Fehler bleibt das ausgegebene `uninstall.log` erhalten; nach erfolgreicher Entfernung wird auch der Helfer gelöscht. Browserdaten, Dateien anderer Benutzer und Daten auf WLED-/AWTRIX-/Pixelit-Geräten sind nicht Teil der lokalen Installation.
+
+### Terminal maintenance (English)
+
+The local web interface checks on opening and hourly while open. Release notes appear once per available version per tab, after other dialogs close. Installation is not automatic.
+
+From your **existing installation directory**, run `./DartsHub --update` (Windows: `.\DartsHub.exe --update`; macOS: inside `DartsHub.app/Contents/MacOS`). Use `--check-only` to inspect without installing, `--yes` to confirm without prompting, or `--beta`/`--stable` to override the saved update channel. Updates use the current location, preserve settings/soundpacks/logs and restart headless. Run as the installation owner with write permissions. For custom runtime paths/ports, pass the existing `--DartsHub:DataDirectory PATH` and `--urls URL`. The TUI update workflow remains available through `--tui` → **Settings** → **Check updates** → **Download update** → confirm.
+
+`./DartsHub --uninstall` lists removal targets and asks for `yes`; `--uninstall --yes` confirms complete removal without prompting. This removes the current installation, user configuration/credentials, installed soundpacks, logs/backups/caches, known temporary Darts-Hub files, autostart entries and matching shortcuts. Recognized legacy data directories are included. Supply `--DartsHub:DataDirectory PATH` for custom data storage. In external/shared media folders, only soundpacks marked as installed by DartsHub are removed. Shared folders, unrelated files, browser data, other users' files and controller data are retained. Source checkouts and system/user root folders are rejected. Removal starts after the command exits. On failure, the printed `uninstall.log` is retained; on success the temporary helper also removes itself.
+
+
+### Einzelne HubX-Presets und Anzeigevorlagen
+
+Beim Teilen eines WLED-Ereignisses werden die verwendeten Presets zusätzlich als einzelne HubX-Downloads mit passender Vorschau veröffentlicht. Beim Teilen eines Pixelit-Ereignisses werden auch die Anzeigevorlagen inklusive deiner Änderungen einzeln angeboten.
+
+Auf HubX kannst du **An Darts-Hub senden** wählen oder die Paket-JSON herunterladen und über den HubX-Dateiimport öffnen. Bei einem einzelnen WLED-Preset wählst du den Controller; bei belegten IDs wird eine freie ID verlangt. Es wird ausschließlich das Preset hochgeladen, keine Ereignisregel angelegt. Eine einzelne Pixelit-Vorlage wird ohne Zielgerät direkt mit `_hubX` in der Vorlagenbibliothek gespeichert und sofort geladen. GUI, TUI, lokale Weboberfläche und Webapp nutzen denselben Ablauf. In der TUI: **HubX-Posteingang → Prüfen → Übernehmen**.
+
+Standalone HubX WLED presets upload only to the selected controller, with free-ID conflict review. Standalone Pixelit display templates save to the template library and load immediately. Neither creates an event. Direct delivery and downloaded package files behave identically in GUI, TUI, local web UI and webapp.

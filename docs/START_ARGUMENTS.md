@@ -63,3 +63,12 @@ GUI, TUI and headless share the saved configuration. Only supplied values change
 Die Anmeldung benötigt nur die Board-ID und `--ad-login`. Interne Anmeldedaten sind fest in DartsHub hinterlegt und werden nicht als Startargument angegeben.
 
 The login only requires the board ID and `--ad-login`. Internal authentication parameters are built into DartsHub and are not supplied as startup arguments.
+
+
+## Terminal-Wartung / Terminal maintenance
+
+- `--update [--yes] [--check-only] [--beta|--stable]`: aktuelle Installation aktualisieren und headless neu starten / update the current installation and restart headless.
+- `--uninstall [--yes]`: Installation einschließlich eigener Daten entfernen / remove the installation and its owned data.
+- Bei eigenen Datenpfaden `--DartsHub:DataDirectory PATH`, beim Update bei Bedarf `--urls URL` mitgeben / supply custom data paths and update restart URLs explicitly.
+
+Siehe README für Rückfragen, Ablauf und Löschumfang / See README for confirmation, workflow and removal scope.
