@@ -411,3 +411,9 @@ Beim Teilen eines WLED-Ereignisses werden die verwendeten Presets zusätzlich al
 Auf HubX kannst du **An Darts-Hub senden** wählen oder die Paket-JSON herunterladen und über den HubX-Dateiimport öffnen. Bei einem einzelnen WLED-Preset wählst du den Controller; bei belegten IDs wird eine freie ID verlangt. Es wird ausschließlich das Preset hochgeladen, keine Ereignisregel angelegt. Eine einzelne Pixelit-Vorlage wird ohne Zielgerät direkt mit `_hubX` in der Vorlagenbibliothek gespeichert und sofort geladen. GUI, TUI, lokale Weboberfläche und Webapp nutzen denselben Ablauf. In der TUI: **HubX-Posteingang → Prüfen → Übernehmen**.
 
 Standalone HubX WLED presets upload only to the selected controller, with free-ID conflict review. Standalone Pixelit display templates save to the template library and load immediately. Neither creates an event. Direct delivery and downloaded package files behave identically in GUI, TUI, local web UI and webapp.
+
+### Systeminformationen / System information
+
+Die GUI und die lokale Weboberfläche/Webapp zeigen unter **System** die tatsächlich verwendeten Ordner, Einstellungsdatei, Version, Architektur, Betriebsmodus und HTTP-Adressen des verbundenen Backends. Die Angaben sind kopierbar. Terminal-Entsprechung: in der TUI **Weitere Module / System → System** öffnen. Vor einem Umzug den vollständigen Datenordner einschließlich `settings.json` und `keys` sichern; unter Windows sind geschützte Schlüssel zusätzlich an das Benutzerkonto gebunden.
+
+Open **System** in the GUI or local web interface/webapp, or **Other modules / system → System** in the TUI. All views report the connected backend's actual storage and program paths, settings file, version, architecture, runtime mode and HTTP listener addresses. Back up the complete data directory, including `settings.json` and `keys`, before moving it; protected Windows keys are also bound to the user account.
