@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.38
+## v0.1.0-beta.39
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -16,10 +16,6 @@
 
 #### Caller
 
-- Zufällige Stimmen bleiben vom Ausbullen bis zum Matchbeginn gleich; ein Wechsel erfolgt erst beim nächsten Match beziehungsweise echten Leg.
-
-- Änderungen an der Atmo-Lautstärke während eines Spiels behalten die aktuelle Stimme bei; Ansagen laufen weiter.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### WLED
@@ -31,6 +27,8 @@
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### AwtrixNG
+
+- Einzelne HubX-GIFs können direkt auf einen ausgewählten AWTRIX-NG-Controller geladen werden; gleiche Namen lassen sich vergleichen, überschreiben oder ändern.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -70,10 +68,6 @@
 
 #### Caller
 
-- Random voices stay consistent from bull-off into the match, changing only for the next match or actual leg.
-
-- Changing ambient volume during a game keeps the current voice and spoken calls continue.
-
 <!-- Add brief user-facing changes here. -->
 
 #### WLED
@@ -85,6 +79,8 @@
 <!-- Add brief user-facing changes here. -->
 
 #### AwtrixNG
+
+- Standalone HubX GIFs can be uploaded directly to a selected AWTRIX NG controller; matching filenames can be compared, overwritten or renamed.
 
 <!-- Add brief user-facing changes here. -->
 
