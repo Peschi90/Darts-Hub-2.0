@@ -21,7 +21,8 @@ GUI, TUI, local output and browser caller use the same recorded sounds and event
 | --- | --- |
 | `matchon` | Match start, falling back to `gameon`. The actual game after bull-off is recognized. |
 | `gameon` | Leg start and match-start fallback. |
-| `s<Set>_l<Leg>_n` | X01 start with `CallerRealLife = 1`, e.g. `s1_l2_n`; falls back to `gameon`. Record the set/leg phrase. |
+| `s<Set>_l<Leg>_n` | X01 start using sets with `CallerRealLife = 1`, e.g. `s1_l2_n`; falls back to `gameon`. Record the set/leg phrase. |
+| `l<leg>_n` | X01 without sets and `CallerRealLife = 1` (`-crl`), e.g. `l2_n`; falls back to `gameon`. No set announcement. |
 | `first_to_throw` | After the start and player phrase in X01 Real-Life mode. |
 | `bulling_start` | Bull-off begins. |
 | `bulling_end` | Bull-off decided, optionally after the winning player's name. |

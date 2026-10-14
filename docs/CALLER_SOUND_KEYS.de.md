@@ -21,7 +21,8 @@ GUI, TUI, lokale Wiedergabe und Browser-Caller verwenden dieselben aufgezeichnet
 | --- | --- |
 | `matchon` | Matchbeginn; Ersatz `gameon`. Nach Bull-off wird der Start des eigentlichen Spiels erkannt. |
 | `gameon` | Legbeginn und Ersatz für Matchbeginn. |
-| `s<Set>_l<Leg>_n` | X01-Start bei `CallerRealLife = 1`, z. B. `s1_l2_n`; Ersatz `gameon`. Enthält die Set-/Legankündigung. |
+| `s<Set>_l<Leg>_n` | X01-Start mit Sets bei `CallerRealLife = 1`, z. B. `s1_l2_n`; Ersatz `gameon`. Enthält die Set-/Legankündigung. |
+| `l<Leg>_n` | X01 ohne Sets bei `CallerRealLife = 1` (`-crl`), z. B. `l2_n`; Ersatz `gameon`. Keine Set-Ansage. |
 | `first_to_throw` | Nach Start- und Spielerphrase im X01-Real-Life-Modus. |
 | `bulling_start` | Beginn des Bull-offs. |
 | `bulling_end` | Bull-off entschieden; gegebenenfalls vorher Gewinnername. |

@@ -81,7 +81,8 @@ In these tables, **silent** means there is no automatic speech fallback. “TTS�
 | --- | --- | --- |
 | `matchon` → `matchon.wav` | A new regular match, including the transition from bull-off to the actual game. “Match on”. | `gameon`, otherwise silent. |
 | `gameon` | Start of another leg; also fallback for a missing match/set-leg start recording. “Game on”. | Silent. |
-| `s<set>_l<leg>_n`, e.g. `s1_l2_n` | X01 with `CallerRealLife = 1`: start of that set/leg. Record a complete phrase, e.g. “First set, second leg”. | `gameon`. |
+| `s<set>_l<leg>_n`, e.g. `s1_l2_n` | X01 using sets with `CallerRealLife = 1`: start of that set/leg. Record a complete phrase, e.g. “First set, second leg”. | `gameon`. |
+| `l<leg>_n`, e.g. `l2_n` | X01 without sets and `CallerRealLife = 1` (`-crl`): announce only the leg. | Falls back to `gameon`, never a set/leg recording. |
 | `first_to_throw` | X01 with `CallerRealLife = 1`: after the start recording and optional player name. “First to throw”. | Silent. |
 | `gameshot` | A leg has been won. “Game shot”. | Silent. |
 | `gameshot_l<leg>_n`, e.g. `gameshot_l2_n` | Leg win with `CallerRealLife = 1`. “Game shot, second leg”. No separate set index in this key. | `gameshot`. |

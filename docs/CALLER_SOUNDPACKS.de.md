@@ -81,7 +81,8 @@ In den Tabellen bedeutet **stumm**: keine automatische Sprachausgabe als Ersatz.
 | --- | --- | --- |
 | `matchon` → `matchon.wav` | Neues normales Match beziehungsweise Wechsel von Bull-Off in das eigentliche Spiel. Inhalt z. B. „Match on“. | `gameon`, danach stumm. |
 | `gameon` | Beginn eines weiteren Legs; außerdem Ersatz für fehlenden Match-/Set-Leg-Startsound. „Game on“. | Stumm. |
-| `s<Set>_l<Leg>_n`, z. B. `s1_l2_n` | X01 mit `CallerRealLife = 1`: Start des angegebenen Sets/Legs. Eine komplette Phrase aufnehmen, z. B. „Erstes Set, zweites Leg“. | `gameon`. |
+| `s<Set>_l<Leg>_n`, z. B. `s1_l2_n` | X01 mit Sets und `CallerRealLife = 1`: Start des angegebenen Sets/Legs. Eine komplette Phrase aufnehmen, z. B. „Erstes Set, zweites Leg“. | `gameon`. |
+| `l<Leg>_n`, z. B. `l2_n` | X01 ohne Sets bei `CallerRealLife = 1` (`-crl`): nur das Leg ansagen. | `gameon` als Ersatz, keine Set-/Leg-Datei. |
 | `first_to_throw` | X01 mit `CallerRealLife = 1`: nach Startsound und optionalem Spielernamen. „Wirft zuerst“. | Stumm. |
 | `gameshot` | Leg gewonnen. „Game shot“. | Stumm. |
 | `gameshot_l<Leg>_n`, z. B. `gameshot_l2_n` | Leg-Sieg mit `CallerRealLife = 1`. „Game shot, zweites Leg“. Kein separater Set-Index in diesem Key. | `gameshot`. |

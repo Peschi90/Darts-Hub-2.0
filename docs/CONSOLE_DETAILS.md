@@ -17,3 +17,13 @@ Secrets are redacted before persistence. Device/licensing restrictions are check
 ## Deutsch
 
 Die Details werden bei Bedarf aus den lokalen Protokolldateien geladen. Mehrfachauswahl und vollständiger Export bleiben erhalten. Fehlende Dateien erzeugen eine Fehlermeldung; die Zwischenablage bleibt bei einer fehlgeschlagenen vollständigen Kopie unverändert. Große Kopien und Exporte benötigen vorübergehend Speicher für den gesamten Text. Die Speicherbudgets begrenzen die Konsolendaten, nicht den gesamten Arbeitsspeicher der Anwendung.
+
+## Module diagnostics / Moduldiagnose
+
+In GUI, TUI and web Console, select the **Actions** filter and open a row for complete details. AWTRIX, PixelIt and WLED requests include device name/ID/address, action, HTTP method/path, actual request and response, status and elapsed time. Caller records audio preparation/playback and interruptions; GIF records media selection/download; own applications and user extensions record process start/stop and failures. Browser audio reports queuing, not confirmed playback. Operation/group identifiers connect related commands.
+
+Passwords, credentials and email addresses are protected before logging. Binary files contain name, size and checksum instead of file contents. Payloads above 128 KiB are explicitly marked as omitted. Continuous PixelIt animations produce summaries; failed frames retain their request details. Autodarts diagnostics are unchanged.
+
+In GUI, TUI und Webkonsole den Filter **Aktionen** wählen und einen Eintrag für die vollständigen Details öffnen. AWTRIX-, PixelIt- und WLED-Anfragen enthalten Gerätename, ID, Adresse, Aktion, Methode, Pfad, gesendete Daten, Antwort, Status und Laufzeit. Caller protokolliert Audiovorbereitung, Wiedergabe und Unterbrechungen; GIF die Medienauswahl und Downloads; eigene Anwendungen und User-Erweiterungen Prozessstarts, Stopps und Fehler. Browseraudio meldet die Übergabe an verbundene Browser, keine bestätigte Wiedergabe. Kennungen verbinden zusammengehörige Befehle.
+
+Passwörter, Zugangsdaten und E-Mail-Adressen bleiben geschützt. Binärdateien erscheinen mit Name, Größe und Prüfsumme statt Dateiinhalt. Daten über 128 KiB werden ausdrücklich als ausgelassen markiert. Laufende PixelIt-Animationen werden zusammengefasst; fehlgeschlagene Frames behalten ihre Anfragedetails. Autodarts bleibt unverändert.

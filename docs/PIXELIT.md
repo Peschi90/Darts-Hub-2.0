@@ -102,3 +102,9 @@ Replace `p1` with `p2` on the second matrix, and so on. Numbers stay the same wh
 | `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p32 |
 
 Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. The **Throw or turn change** trigger updates on throws and new visits, including the same player. In the TUI, select it under Events → Trigger; headless configurations use `ThrowOrTurnChanged` (`PlayerChanged` remains the separate actual player change).
+
+## GIF-Animationen / GIF animations
+
+HubX-GIFs bis 32 × 8 Pixel können als animierte PixelIt-Vorlagen importiert werden. Originalgröße, Bilddauer und Farben bleiben erhalten. Wiederholung: 1–100 Durchläufe, bis zum nächsten Effekt oder bis zum nächsten Turn. Im Ereignisschritt kann die Vorlagenvorgabe überschrieben werden. Darts-Hub muss zur Wiedergabe laufen. [Anleitung und Grenzen](HubX-GIF-Import.md).
+
+HubX GIFs up to 32 × 8 pixels can be imported as animated PixelIt templates. Original dimensions, frame timing and colors are preserved. Choose 1–100 plays, until the next effect or until the next turn; each event step can override the template settings. Darts-Hub must remain running. See [workflow and limits](HubX-GIF-Import.md).

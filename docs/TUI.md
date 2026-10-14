@@ -39,3 +39,9 @@ Die **System**-Ansicht unter **Weitere Module / System** zeigt die echten Backen
 - For a separate host without a UI, replace `--tui` with `--headless` in the start command; open the TUI in a second terminal.
 - A host automatically started by the TUI stops when the TUI closes, unless headless autostart is enabled. A separately started host keeps running.
 - [Autostart](AUTOSTART.md) · [Startup arguments](START_ARGUMENTS.md)
+
+## PixelIt-GIF-Import / PixelIt GIF import
+
+Im HubX-Posteingang beim Übernehmen eines GIFs „Als animierte PixelIt-Vorlage übernehmen“ wählen. Name und Wiederholung festlegen (1–100 Durchläufe / bis zum nächsten Effekt / bis zum nächsten Turn). Die Vorlage anschließend im PixelIt-Ereignisschritt wählen; dessen Menü kann die Wiederholung überschreiben. Originalgröße maximal 32 × 8, Darts-Hub muss laufen.
+
+When accepting a GIF in the HubX inbox, select “Import as an animated PixelIt template”, then choose its name and repetition (1–100 plays / until next effect / until next turn). Select the template in a PixelIt event step; its menu can override repetition. Original dimensions must not exceed 32 × 8 and Darts-Hub must remain running.

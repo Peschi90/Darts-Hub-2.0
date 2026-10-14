@@ -40,3 +40,5 @@ Event packages include their required resources. Standalone GIFs upload to a sel
 When sharing, enter a title, choose the intended events and source controller, review and confirm public **CC0** sharing. Device addresses and credentials stay private. Included AWTRIX GIFs, linked WLED presets and effective Pixelit templates are also offered separately. Manual website uploads accept GIFs; event packages originate in Darts-Hub. Studio requires administrator rights or **studio_access**. GUI, TUI, local web UI and paired webapp share import validation. Previews have simulation, firmware and external-input limitations.
 
 [GIF import](HubX-GIF-Import.md) · [AWTRIX](AWTRIX.md) · [Pixelit](PIXELIT.md) · [WLED](WLED_CONFIGURATION_AND_AUTODARTS.md)
+
+Standalone GIFs can also become PixelIt animation templates, retaining their original dimensions (maximum 32 × 8) and timing. Select this destination in the Darts-Hub inbox and configure repetition there. Einzelne GIFs lassen sich im Posteingang auch als PixelIt-Animation übernehmen; Originalgröße bis 32 × 8, Bilddauer und einstellbare Wiederholung bleiben erhalten. [GIF import / GIF-Import](HubX-GIF-Import.md).
