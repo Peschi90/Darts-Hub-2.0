@@ -2,6 +2,13 @@
 
 ## Deutsch
 
+### GIF-Vorlage und HubX
+Für Vollbild-Icons **gif** auswählen, **Vorlagentext ersetzen** ausschalten und ein auf dem Controller vorhandenes Icon wählen. Die Vorlage hat keinen Text und verwendet einen festen Icon-Modus. Für Vollbild eine **32×8-GIF-Datei** verwenden; kleine Icons werden nicht auf die volle Breite gestreckt. Die virtuelle Vorschau verändert den Controller nicht, **Testsequenz** dagegen sendet den Entwurf tatsächlich. Danach speichern.
+
+![GIF-Vorlage mit Beispieldaten](images/user-guide/de/awtrix-gif.png)
+
+Im HubX-Bereich Ereignisse entdecken, teilen und übernehmen. Mitgelieferte GIFs erscheinen zusätzlich einzeln. Einzelne GIFs werden nach Zielauswahl und Dateikonfliktprüfung auf den Controller geladen, ohne neue Regel. [HubX](HUBX.md) · [GIF-Verwaltung](AWTRIXNG_ICONS.md)
+
 Voraussetzung: **AwtrixNG-Firmware** und verbundenes Board unter **Autodarts**. Der Caller darf ausgeschaltet sein.
 
 1. **AwtrixNG → Geräte** öffnen, Erweiterung aktivieren und Display mit Adresse hinzufügen. Falls nötig, HTTP-Benutzer und Passwort eintragen.
@@ -18,6 +25,11 @@ Voraussetzung: **AwtrixNG-Firmware** und verbundenes Board unter **Autodarts**. 
 TUI: Seite **AwtrixNG**, **Enter** zum Bearbeiten. Headless nutzt die gespeicherten Einstellungen; [Startargumente](START_ARGUMENTS.md).
 
 ## English
+
+### GIF template and HubX
+For fullscreen icons choose **gif**, disable custom text and select an installed controller icon. Use a **32×8 GIF**; smaller icons are not stretched. Virtual previews leave the controller unchanged; device tests send the draft. Save afterwards. Discover/share/import events from the module's HubX area. Included GIFs are also offered separately; standalone GIF imports upload to a selected controller after conflict review without creating a rule. [HubX](HUBX.md)
+
+![GIF template with example data](images/user-guide/en/awtrix-gif.png)
 
 Requires **AwtrixNG firmware** and a connected board under **Autodarts**. Caller may stay disabled.
 

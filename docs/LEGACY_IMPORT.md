@@ -20,8 +20,9 @@ Zuordnungen und Validatoren wie beim Terminalstart verarbeitet. Boolesche
 Wertzuordnungen aus den alten Dateien werden berücksichtigt. Unbekannte
 Effektparameter erscheinen als ungültig. `74|9` und `74|p9` übernehmen beide Palette 9.
 Eine nackte Zahl nach einer Preset-/Playlist-ID bleibt die Dauer. Ungültige Angaben ersetzen
-keine vorhandene Regel. URL-Verknüpfungen aus `apps-open.json` bleiben als nicht
-unterstützte Anwendungen im Bericht sichtbar.
+keine vorhandene Regel. Unterstützte `custom-url-*`-Einträge aus `apps-open.json`
+werden als Webseiten mit Browser und Startparametern übernommen. Ungültige Adressen
+oder nicht unterstützte Angaben bleiben im Prüfbericht sichtbar; beim Import wird keine Webseite geöffnet.
 
 Importierte WLED-Effekt-IDs werden im GUI dem Namen aus dem Gerätekatalog zugeordnet, ohne die gespeicherte ID zu verändern. Solange der Katalog fehlt, bleiben Effekt-, Preset- und Palette-IDs sichtbar. Die TUI erlaubt dieselben IDs und Gerätenamen im WLED-Regel-Editor.
 
@@ -56,8 +57,9 @@ WLED preserves all alternatives in score ranges and player, combo and multiplier
 definitions. Short and long names share the terminal aliases and validators. Legacy
 boolean value mappings are honored. Unknown effect parameters are reported as
 invalid. Both `74|9` and `74|p9` import palette 9. A bare number after a preset or playlist ID remains its duration. Invalid definitions
-do not replace existing rules. URL shortcuts from `apps-open.json` remain reported
-as unsupported applications.
+do not replace existing rules. Supported `custom-url-*` entries from `apps-open.json`
+are imported as websites with browser and start arguments. Invalid URLs and unsupported
+values remain visible in the review; import never opens a website.
 
 The GUI displays imported WLED effect IDs using names from the device catalog without changing the stored ID. Effect, preset and palette IDs remain visible when the catalog is unavailable. The TUI accepts the same IDs and device effect names in its WLED rule editor.
 

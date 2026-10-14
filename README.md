@@ -310,7 +310,7 @@ In **Einstellungen → Autostart** kannst du die GUI beim Anmelden automatisch s
 
 Unter Linux wird ein systemd-Benutzerdienst eingerichtet. Für Betrieb schon vor der Anmeldung ist gegebenenfalls einmalig ein Administrator-Schritt nötig. Siehe [Autostart-Anleitung](docs/AUTOSTART.md).
 
-Weitere Einzelheiten bei Bedarf: [WLED](docs/WLED_CONFIGURATION_AND_AUTODARTS.md), [PixelIt](docs/PIXELIT.md), [Terminal-Bedienung](docs/TUI.md).
+Weitere Einzelheiten: [Alle Nutzeranleitungen](docs/README.md), [HubX](docs/HUBX.md), [Systeminformationen](docs/SYSTEM.md), [WLED](docs/WLED_CONFIGURATION_AND_AUTODARTS.md), [PixelIt](docs/PIXELIT.md), [Terminal-Bedienung](docs/TUI.md).
 
 ## 13. Eigene Programme und Skripte mitstarten
 

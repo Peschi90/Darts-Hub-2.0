@@ -7,7 +7,7 @@
 GUI: **Einstellungen → Weboberfläche → Online-Webapp**. TUI: **Allgemein → Online-Webapp**. Im lokalen Browser: **Einstellungen → Online-Webapp**.
 
 1. Verbindung aktivieren, Installationsnamen vergeben und speichern. Standardmäßig ist sie ausgeschaltet; sie wird ohne Neustart aktiv.
-2. **Kopplungscode erzeugen**, `https://webapp.darts-hub.de/` am Handy öffnen und den Code eingeben. Er gilt zehn Minuten und nur einmal. Weitere Browser brauchen neue Codes.
+2. **Kopplungscode erzeugen** und den angezeigten **QR-Code** scannen; der Link schließt die Kopplung direkt ab. Alternativ `https://webapp.darts-hub.de/` öffnen und den Code eingeben. Er gilt zehn Minuten und nur einmal. Weitere Browser brauchen neue Codes.
 3. Die Oberfläche zeigt nun diese Installation. **Audio hier aktivieren** im Dashboard einschalten und die angebotene Webapp-Installation verwenden. iOS: Safari → **Teilen → Zum Home-Bildschirm**. Die Kopplung wird beim ersten App-Start automatisch übernommen, auch bei getrenntem Cookiespeicher. Die App innerhalb von 24 Stunden nach der Installation erstmals öffnen; abgelaufene oder widerrufene Kopplungen erfordern einen neuen Code.
 4. **Browser entkoppeln** trennt diesen Browser. Die Verbindung lokal ausschalten stoppt die Vermittlung und widerruft bei erreichbarem Server alle Kopplungen dieser Installation.
 
@@ -43,7 +43,7 @@ Die Installation garantiert weiterhin keine Caller-Hintergrundwiedergabe.
 
 For the shared **https://webapp.darts-hub.de/** service, enable **Online web app** in GUI Web settings, TUI General or the local browser settings, save a device name and generate a pairing code. Enter it on the phone; it lasts ten minutes and is single-use. Each browser pairs with its own installation. Install from the Android offer or Safari's **Share → Add to Home Screen** on iOS; pairing transfers automatically even with separate cookie storage. First launch must occur within 24 hours; expired or revoked pairings require a new code. Enable dashboard audio on that device. Saving enables the connection without restarting.
 
-Both devices need internet. The host connects outbound; users need no router forwarding, local DNS changes or phone certificates. Disabling stops forwarding and revokes all its pairings when the server is reachable. Unpairing affects only that browser. Internet latency may delay playback and cancellation; installation does not guarantee locked-screen playback. Direct local HTTPS remains an alternative. The server operator must deploy the companion server project's `webapp-public/` following `docs/WEBAPP-PLESK.md` before the domain is usable.
+Both devices need internet. The host connects outbound; users need no router forwarding, local DNS changes or phone certificates. Disabling stops forwarding and revokes all its pairings when the server is reachable. Unpairing affects only that browser. Internet latency may delay playback and cancellation; installation does not guarantee locked-screen playback. Direct local HTTPS remains an alternative.
 
 Configure **HTTPS and web app** from GUI application settings, the TUI general page or browser settings. For **Local certificate**, choose the host's reachable LAN addresses, save, restart, export the root certificate and trust it on each phone. GUI exports to Downloads; TUI asks for a destination; browser offers a download after refreshing settings. On iOS install the profile and enable full trust in **General → About → Certificate Trust Settings**. On Android install as a CA certificate in security settings. Open the displayed HTTPS address without certificate warnings, then install the web app.
 
@@ -68,3 +68,9 @@ After **Generate pairing code**, scan the QR with your phone camera to open the 
 ## Caller latency
 
 The paired web caller receives WAV audio up to 2 MiB directly with the play command, avoiding a second relay round trip. Larger phrases retain the authenticated clip request. Host exchanges wake immediately when audio, cancellation or a completed reply is queued; the idle polling interval is unchanged. Browser decoding and cancellation checks still prevent a canceled clip from starting. Both host and server enforce bounded audio queues and encrypted, installation-specific transport. Deploy the client and companion server update together. Actual latency depends on network and hosting response times; no fixed latency is guaranteed. The shared implementation applies to GUI/TUI and Windows, Linux and macOS.
+
+## QR-Kopplung / QR pairing
+
+Den QR-Code nach **Kopplungscode erzeugen** scannen: der Link meldet das Smartphone direkt an. Nicht öffentlich teilen; der Code gilt einmalig zehn Minuten. Alternativ den Code auf der Webapp-Seite eingeben.
+
+Scan the QR code after generating a pairing code to link the phone directly. Keep it private; it is single-use and valid for ten minutes. Manual code entry remains available.

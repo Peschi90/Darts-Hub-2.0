@@ -29,7 +29,7 @@ Gebündelten 145-LED-Ring und sechs Presets einrichten: Controller suchen, Adres
 
 DartScore, Feld, Multiplikator, Kombination, Schlaf, namensgebundenes Idle und Schlafparameter können die WLED-Lizenz benötigen. Ein gespeicherter gesperrter Wert umgeht sie nicht. Kataloge werden beim Start oder manuell geladen. Ein Vorschautest stellt den vorherigen Controllerzustand nicht automatisch wieder her. WLED-UDP-Synchronisation kann unabhängig angesprochene Controller gegenseitig überschreiben.
 
-Weiterlesen: [Einrichtung](../WLED_CONFIGURATION_AND_AUTODARTS.md), [Robbel3D](../ROBBEL3D.md), [Exit-Regel](../MATCH_EXIT_TRIGGER.md).
+Weiterlesen: [Einrichtung](../WLED_CONFIGURATION_AND_AUTODARTS.md), [Robbel3D](../ROBBEL3D.md).
 
 ## Bedienung und Diagnose
 

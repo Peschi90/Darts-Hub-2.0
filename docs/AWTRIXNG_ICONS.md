@@ -26,4 +26,10 @@ Gerätezugang: Benutzername und Passwort mit den Moduleinstellungen speichern. G
 
 GIFs müssen zur tatsächlichen Matrixgröße passen (zum Beispiel maximal 32×8 bei einer 32×8-Matrix). Die verkleinerte lokale Vorschau ändert die Originaldatei nicht. Upload und Sequenztest prüfen die Größe anhand der Controllerangaben und melden zu große GIFs in GUI, TUI und Weboberfläche. Beim Upload bietet ein Dialog die proportionale Verkleinerung an und zeigt Original- und Zielauflösung. Kleine Details und Texte können verloren gehen. Nur nach Bestätigung wird die verkleinerte Animation hochgeladen; die lokale Originaldatei bleibt unverändert. Animation, Transparenz und Bildzeiten bleiben erhalten. Der Ablauf ist in GUI, TUI und Weboberfläche verfügbar.
 
-Im Verwaltungsdialog startet die Matrixvorschau direkt bei der Dateiauswahl. Der Vorschauknopf dient zum erneuten Laden. API: `POST /api/v1/awtrix/icons/upload-plan` mit derselben Datei liefert die Zielgröße; `ResizeToFit: true` beim Upload bestätigt die Verkleinerung. Diese Bestätigung wird nicht in Moduleinstellungen gespeichert und ändert den Altimport nicht.
+Im Verwaltungsdialog startet die Matrixvorschau direkt bei der Dateiauswahl. Der Vorschauknopf dient zum erneuten Laden. Die Größenanpassung wird nur für diesen Upload bestätigt; die Originaldatei bleibt unverändert.
+
+## Vollbild ohne Text / Fullscreen without text
+
+In der Ereignisregel **gif** als Anzeigevorlage wählen und den Text-Override ausschalten. Für Vollbild eine 32×8-GIF-Datei verwenden. Die Icon-ID ist der Dateiname ohne Endung. Hochladen und Testsequenz verändern den Controller; die virtuelle Vorschau liest nur die Datei. HubX-GIFs lassen sich ebenfalls direkt auf einen gewählten Controller übernehmen: [HubX](HUBX.md).
+
+Select **gif** in an event step, disable custom text and choose the installed icon ID (filename without extension). A 32×8 GIF fills the whole matrix. Virtual preview only reads the icon; upload and device testing change the controller. [HubX](HUBX.md) also supports standalone GIF uploads.

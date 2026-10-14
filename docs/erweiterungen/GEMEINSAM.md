@@ -34,4 +34,4 @@
 
 Dashboard, Erweiterungsseiten und Konsole zeigen reale Verbindungen, letzte Ereignisse/Aktionen und Fehler. Die Konsole kann filtern und vollständige Details mehrerer markierter Einträge kopieren. Lizenz- und Geräteanmeldung gelten auch im Terminal.
 
-Weiterlesen: [Import](../LEGACY_IMPORT.md), [Reset](../FACTORY_RESET.md), [Änderungshinweise](../UNSAVED_SETTINGS.md), [Reihenfolge](../EVENT_RULE_ORDER.md), [Namensregeln](../PLAYER_EVENT_RULES.md), [TUI](../TUI.md).
+Weiterlesen: [Import](../LEGACY_IMPORT.md), [Reset](../FACTORY_RESET.md), [Reihenfolge](../EVENT_RULE_ORDER.md), [TUI](../TUI.md).

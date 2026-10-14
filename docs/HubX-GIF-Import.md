@@ -10,4 +10,4 @@ Confirm standalone GIF contributions in the HubX inbox and choose the AWTRIX NG 
 
 GUI: Dashboard → HubX → Inbox. Terminal: open the HubX inbox, accept, select the target device, optionally allow resizing and resolve filename conflicts. Local web UI, paired webapp and downloaded HubX package files use the same review and validation.
 
-No legacy v1 configuration contract or HubX package schema changed. Upload destinations are derived from the existing standalone GIF kind.
+Weitere Beiträge und Einzelressourcen / Other packages and standalone resources: [HubX](HUBX.md).

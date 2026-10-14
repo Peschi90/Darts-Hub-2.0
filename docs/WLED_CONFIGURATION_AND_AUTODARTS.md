@@ -2,6 +2,11 @@
 
 ## Deutsch
 
+### HubX-Presets
+Im Modul Effekte entdecken und Regeln teilen. Verknüpfte Presets werden zusätzlich einzeln angeboten. Beim Import den Zielcontroller wählen und belegte Preset-IDs durch **freie** IDs ersetzen; übernommene Regeln benutzen diese IDs. Ein einzelnes Preset wird nur auf den Controller geladen, ohne Ereignisregel. Direkte Zustellung und Paketdatei verwenden dieselbe Prüfung: [HubX](HUBX.md).
+
+HubX zeigt mitgelieferte Controller-Aufnahmen: LED-Punkte bis 40 LEDs, Dartboard-Miniansicht bei 41–146 LEDs, darüber Wandschein. Details enthalten zusätzliche Beleuchtungsansichten. Aufzeichnungen laufen als Schleife; Zufall und Audioeingaben können später anders aussehen.
+
 1. Autodarts verbinden und das gewünschte Board auswählen; der Caller ist nicht nötig.
    Die Seite **WLED** öffnen und das Modul aktivieren.
 2. Geräte mit Namen und Adresse hinzufügen und aktivieren.
@@ -20,6 +25,9 @@
 - Manche erweiterten Regeln benötigen eine Lizenz.
 
 ## English
+
+### HubX presets
+Share/discover effects in the module. Linked presets are additionally offered separately. Select the controller and replace occupied IDs with free IDs; imported rules use them. Standalone presets upload without a rule. Direct delivery and package-file import share review. HubX previews use included recordings: points up to 40 LEDs, board-ring thumbnails for 41–146, wall light above 146. Recorded loops do not predict future random/audio input. [HubX](HUBX.md)
 
 1. Connect Autodarts and select the intended board; Caller is not required.
    Open **WLED** and enable the module.

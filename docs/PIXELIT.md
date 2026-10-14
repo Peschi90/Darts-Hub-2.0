@@ -2,6 +2,9 @@
 
 ## Deutsch
 
+### HubX-Vorlagen
+Im Modul **Effekte entdecken** öffnen. Beim Teilen eines Ereignisses wird zusätzlich seine wirksame Vorlage inklusive Text-, Farb-, Scroll- und Helligkeitsanpassungen angeboten. Eine einzelne HubX-Vorlage wird mit `_hubX` in der Bibliothek gespeichert und sofort geladen, ohne Ereignisregel oder Zielgerät. Ereignispakete benötigen dagegen eine Gerätezuordnung. Direkte Zustellung und Paketdateiimport verwenden dieselben Prüfungen: [HubX](HUBX.md).
+
 1. Autodarts verbinden und das gewünschte Board auswählen; der Caller ist nicht nötig.
    Die Seite **PixelIt** öffnen und das Modul aktivieren.
 2. Ein Gerät mit Namen, Adresse und optionalem Port hinzufügen und aktivieren.
@@ -20,6 +23,9 @@
 - TUI: auf der Seite **PixelIt** mit **Enter** bearbeiten und mit **Entwurf speichern** speichern.
 
 ## English
+
+### HubX templates
+Discover contributions in the module. Sharing an event also offers its effective template, including text/color/scroll/brightness overrides. Standalone templates save to the library with `_hubX` and load immediately without a rule or target device. Event packages need device selection. Direct and package-file imports share review: [HubX](HUBX.md).
 
 1. Connect Autodarts and select the intended board; Caller is not required.
    Open **PixelIt** and enable the module.

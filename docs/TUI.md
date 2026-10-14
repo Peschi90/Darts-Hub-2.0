@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+Die **System**-Ansicht unter **Weitere Module / System** zeigt die echten Backend-Pfade. HubX-Pakete lassen sich über den Posteingang oder den Dateiimport prüfen und übernehmen. Terminal-Updates funktionieren auch ohne TUI mit `--update`; vollständige Entfernung mit `--uninstall` nach Bestätigung. [System](SYSTEM.md) · [HubX](HUBX.md) · [Startargumente](START_ARGUMENTS.md)
+
 1. Im entpackten Programmordner starten:
 
 | System | Befehl |
@@ -19,6 +21,8 @@
 - [Autostart](AUTOSTART.md) · [Startargumente](START_ARGUMENTS.md)
 
 ## English
+
+**System** under **Other modules / system** reports actual backend paths. Review HubX packages through the inbox or file import. Terminal maintenance also works without the TUI: `--update` updates in place; `--uninstall` performs complete removal after confirmation. [System](SYSTEM.md) · [HubX](HUBX.md) · [Arguments](START_ARGUMENTS.md)
 
 1. Start from the extracted program folder:
 

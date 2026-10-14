@@ -1,6 +1,6 @@
 # Funktionsumfang der DartsHub-Erweiterungen
 
-Stand: 9. Oktober 2026, Quellstand zur geplanten Version v0.1.0-beta.28. Diese Referenz beschreibt vorhandene Funktionen und ihre Grenzen anhand der aktuellen Kataloge und Laufzeitmodule. Ältere Planungsdokumente sind keine aktuelle Funktionsliste.
+Stand: 14. Oktober 2026, aktueller Quellstand. Diese Referenz beschreibt vorhandene Funktionen und ihre Grenzen anhand der Kataloge und Laufzeitmodule. Ein geplantes Release ist nicht automatisch bereits veröffentlicht.
 
 | Bereich | Funktionsübersicht |
 | --- | --- |
@@ -11,6 +11,9 @@ Stand: 9. Oktober 2026, Quellstand zur geplanten Version v0.1.0-beta.28. Diese R
 | Bilder/GIFs im Fenster und Browser | [GIF](GIF.md) |
 | Programme, Skripte, Webseiten und Prozessverwaltung | [Eigene Anwendungen](EIGENE_ANWENDUNGEN.md) |
 | Anmeldung, Board-Auswahl und Live-Spielereignisse | [Autodarts](AUTODARTS.md) |
+| Effekte teilen, entdecken und übernehmen | [HubX](../HUBX.md) |
+| Eigene autorisierte Skripte | [User-Erweiterung](../USER_EXTENSION.md) |
+| Tatsächliche Speicherorte und Listener | [Systeminformationen](../SYSTEM.md) |
 
 Caller, WLED, PixelIt, AwtrixNG und GIF sind die fünf schaltbaren integrierten Erweiterungen. Eigene Anwendungen und Autodarts werden als ergänzende Anwendungsbereiche ebenfalls dokumentiert.
 

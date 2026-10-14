@@ -15,7 +15,7 @@
 4. Gewünschte Erweiterung einrichten und **Speichern** wählen.
 
 - Keine separate .NET-Installation oder zusätzliche API-Anwendung nötig.
-- Nutzerdateien liegen im Benutzerprofil, unter Windows in `%LOCALAPPDATA%/DartsHub`. Bei Updates behalten; nicht mit Dateien aus dem Programmordner überschreiben.
+- Neue Windows-Installationen verwenden normalerweise `%USERPROFILE%\DartsHub`, Linux `~/dartshub`. Ältere Datenordner können weiterhin aktiv sein. Unter [System](SYSTEM.md) die echten Pfade prüfen. Updates aus der Anwendung oder mit `--update` erhalten Einstellungen und ersetzen die Installation am vorhandenen Ort; nicht manuell einen leeren Datenordner darüber kopieren.
 - macOS kann unsignierte Downloads blockieren. Nur Anwendungen aus einer verlässlichen Quelle öffnen.
 - [TUI / Headless](TUI.md) · [Startargumente](START_ARGUMENTS.md)
 
@@ -34,6 +34,6 @@
 4. Configure the desired extension and select **Save**.
 
 - No separate .NET installation or additional API application is needed.
-- User files are stored in your user profile, on Windows in `%LOCALAPPDATA%/DartsHub`. Keep them when updating; do not overwrite them with files from the program folder.
+- New Windows installations normally use `%USERPROFILE%\DartsHub`; Linux uses `~/dartshub`. Legacy data folders may remain active. Check [System](SYSTEM.md) for actual paths. App updates or `--update` preserve settings and replace the current installation in place; do not copy an empty data folder over it.
 - macOS may block unsigned downloads. Only open applications from a trusted source.
 - [TUI / Headless](TUI.md) · [Startup arguments](START_ARGUMENTS.md)

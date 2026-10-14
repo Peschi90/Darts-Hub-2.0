@@ -310,7 +310,7 @@ The TUI provides the same settings and previews on its **AwtrixNG** and **GIF** 
 
 Linux uses a systemd user service. Running before login may need a one-time administrator step. See [Autostart](docs/AUTOSTART.md).
 
-More detail when needed: [WLED](docs/WLED_CONFIGURATION_AND_AUTODARTS.md), [PixelIt](docs/PIXELIT.md), [terminal usage](docs/TUI.md).
+More detail: [All user guides](docs/README.md), [HubX](docs/HUBX.md), [System information](docs/SYSTEM.md), [WLED](docs/WLED_CONFIGURATION_AND_AUTODARTS.md), [PixelIt](docs/PIXELIT.md), [terminal usage](docs/TUI.md).
 
 ## 13. Start your own applications and scripts
 
@@ -346,3 +346,9 @@ On first launch, DartsHub uses the OS language (German or English, otherwise Eng
 Normal score, score-range and combination effects run after the third dart. Bust, wins and lifecycle events are exceptions. WLED single-dart rules (DartScore/DS, DartField and Multiplier/DMU) and explicit Throw displays remain immediate. The same timing applies to TUI and headless configurations.
 
 Logs are stored under `logs`: `DartsHub_04.log` for all messages and, for example, `Caller/Caller_04.log` for Caller messages. Restarts on the same day append messages. The same calendar day next month starts a fresh file; file size is unlimited.
+
+## Current maintenance and sharing workflows
+
+From the existing installation, use `--update` to update in place or `--update --check-only` to inspect availability. `--yes` confirms without prompting; `--beta`/`--stable` override the saved update channel. Provide existing custom data paths/URLs explicitly. `--uninstall` removes the installation and owned settings/media after confirmation. See [startup arguments](docs/START_ARGUMENTS.md).
+
+The [System page](docs/SYSTEM.md) reports actual backend storage, settings file, program/log/update directories and listeners. [HubX](docs/HUBX.md) supports direct delivery and downloaded package imports, including standalone AWTRIX GIFs, WLED presets and Pixelit templates. Standalone resources do not create event rules. The AWTRIX **gif** template is text-free; disable custom text and use a 32×8 icon for fullscreen output.

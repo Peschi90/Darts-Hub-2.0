@@ -8,4 +8,4 @@ In the extension settings, drag an event's left grip onto another card. The high
 
 TUI: Open a PixelIt/Awtrix event and choose **Move up** or **Move down**. In the WLED settings editor, open **Rules**, select an event and use those actions. Save afterwards. Both frontends use the same persisted order.
 
-The existing rule array stores the order; IDs, settings and step sequences stay attached to their event. No new legacy-import parameter is required. The order can also determine the execution order of rules matching the same event.
+Settings and step sequences stay attached to their event when reordered. Order does not override event conditions, targets, player-name priorities or exact-score/range/win priorities. Reordering does not guarantee that every matching rule will play.

@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+**System** zeigt tatsächliche Backend-Pfade und HTTP-Adressen. Hintergrundprüfungen melden verfügbare Updates im Dialog. Der HubX-Bereich der Module bietet Entdecken, Teilen, Posteingang und Paket-JSON-Import. [System](SYSTEM.md) · [HubX](HUBX.md) · [Terminal-Updates](START_ARGUMENTS.md)
+
 ![Web-Dashboard](images/web/dashboard.de.png)
 
 Die Bilder zeigen einen lokalen Testbetrieb mit abweichendem Port. Im normalen Betrieb verwendest du Port 8079.
@@ -27,6 +29,8 @@ Die Seite öffnet sich direkt ohne Zugangscode. Beim Schließen der GUI endet au
 Falls ein anderer Rechner die Seite nicht erreicht, prüfe die IP-Adresse und erlaube eingehende TCP-Verbindungen auf Port **8079** in der Firewall für dein lokales Netzwerk. Die Webseite verwendet im lokalen Netzwerk HTTP; richte dafür keine Internet-Portweiterleitung ein. Bei mehreren Hosts auf demselben Rechner kann der Port mit `--DartsHub:WebPort 8080` geändert werden; `0` deaktiviert den zusätzlichen Netzwerk-Port. Die lokale API auf Port 5069 bleibt bestehen.
 
 ## English
+
+**System** shows actual backend paths and HTTP addresses. Background checks notify about available updates. Module HubX areas provide discovering, sharing, incoming packages and package JSON import. [System](SYSTEM.md) · [HubX](HUBX.md)
 
 ![Web dashboard](images/web/dashboard.en.png)
 

@@ -2,11 +2,11 @@
 
 The online installer defaults to `~/dartshub` for both Linux x64 and ARM64. For the user `autodarts` this is `/home/autodarts/dartshub`.
 
-The shared runtime data directory defaults to the same folder. With no caller media path configured, soundpacks are installed in `~/dartshub/soundpacks`. Settings, authentication data and runtime backups use the shared data directory; GUI preferences, custom translations and update downloads also use the visible folder. Logs are stored in the data directory’s `logs` subfolder.
+The shared runtime data directory defaults to the same folder. With no caller media path configured, soundpacks are installed in `~/dartshub/soundpacks`. Settings, authentication data and runtime backups use the shared data directory; GUI preferences, custom translations and update downloads also use the visible folder. Logs normally use the installation folder’s `logs` subfolder. With custom paths or a legacy configuration, data and logs can be in different folders; System shows the effective locations.
 
 GUI, TUI (`--tui`) and background mode (`--headless`) share the runtime defaults. An explicit `--DartsHub:DataDirectory PATH` or `DartsHub__DataDirectory` continues to override the runtime directory. An explicitly saved soundpack path or caller media path also remains effective.
 
-Existing installation folders and files are not moved automatically. Close the application before moving an existing installation, and update its desktop/autostart entry by running the installer for the new folder. Preserve existing settings and authentication files when moving the runtime data; the default directory used previously was `~/.local/share/DartsHub`. Windows defaults to `%USERPROFILE%\DartsHub`, with `soundpacks`, `logs`, and `updates` subfolders. macOS defaults are unchanged.
+Existing installation folders and files are not moved automatically. Close the application before moving an existing installation, and update its desktop/autostart entry by running the installer for the new folder. Preserve existing settings and authentication files when moving the runtime data; earlier versions used hidden application-data directories such as `~/.local/share/DartsHub` or `~/.local/share/dartshub-app`. Windows defaults to `%USERPROFILE%\DartsHub`, with `soundpacks`, `logs`, and `updates` subfolders. macOS defaults are unchanged.
 
 ## In-place updates and existing data
 
@@ -14,4 +14,8 @@ Updates initiated in GUI or TUI replace the running published installation at it
 
 Older data directories with `settings.json` are detected when the current installation does not already contain settings. Settings and their encryption keys remain together in the old directory, so logins and absolute soundpack paths stay usable. Explicit data-directory overrides take precedence. A newer existing configuration is never automatically overwritten; files deleted during a previous manual update cannot be reconstructed.
 
-Linux desktop and autostart shortcuts use the packaged `dartshub-logo.png`; matching existing shortcuts are repaired during an update. macOS continues to use its app-bundle icon. No native Linux/macOS session is available on the Windows development host; shell integration tests validate custom-path updates and rollback with simulated Linux and app-bundle layouts.
+Linux desktop and autostart shortcuts use the packaged `dartshub-logo.png`; matching existing shortcuts are repaired during an update. macOS continues to use its app-bundle icon. For headless updates use `./DartsHub --update`; `--check-only` checks availability without installing. Complete removal uses `./DartsHub --uninstall` and deletes settings and owned media after confirmation. See [terminal arguments](START_ARGUMENTS.md) and [System](SYSTEM.md).
+
+## Deutsch
+
+Linux installiert standardmäßig nach `~/dartshub`; Soundpacks liegen ohne eigenen Medienpfad unter `soundpacks`. Eigene Installationsordner werden beim Update weiterverwendet. Ein vorhandener älterer Datenordner mit `settings.json` kann weiterhin aktiv sein; Einstellungen und Schutzschlüssel bleiben dort zusammen. **System** zeigt die tatsächlichen Programm-, Daten- und Logordner. Nicht anhand eines vermuteten Standardpfads löschen oder neu einrichten. Direkte Terminal-Updates: `./DartsHub --update`; vollständige Entfernung: `./DartsHub --uninstall` nach ausdrücklicher Bestätigung.
