@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.43
+## v0.1.0-beta.44
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -8,7 +8,12 @@
 
 #### Allgemein / General
 
+- DMU-Regeln in WLED, PixelIt, AWTRIX und GIF unterstützen M1–M20 sowie M und MISS. Auswahlfelder verhindern ungültige Dartfelder 21–24.
+
+- Lizenzgeschützte WLED-Funktionen bieten einen gestalteten Dialog zur kostenlosen Lizenz; Hinweise stehen einmal direkt bei den betroffenen Funktionen statt über allen Einstellungstabs.
+
 - Nutzeranleitungen und deutsche/englische Bildschirmfotos aktualisiert, einschließlich HubX, GIF-Vorlage, Systeminformationen, Updates und Raspberry Pi. Technische Berichte und UI-Referenzen sind von den Nutzeranleitungen getrennt.
+- Spielerzuordnungen für Effekte, Anzeigen und nummerierte Caller-Ansagen bleiben ab dem Ausbullen beziehungsweise Matchstart über alle Legs und Sets gleich.
 
 #### Autodarts
 
@@ -52,13 +57,17 @@
 
 #### Lizenz und Support / Licensing and Support
 
-- Die öffentliche Webseite erklärt Darts-Hub 2.0 mit aktuellen Funktionsübersichten, Bildern, Einrichtung und deutsch-englischen FAQ samt passenden Links zur öffentlichen Dokumentation.
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 ### English
 
 #### Allgemein / General
 
+- DMU rules in WLED, PixelIt, AWTRIX and GIF support M1–M20, M and MISS. Selection lists prevent invalid dart fields 21–24.
+
+- License-protected WLED functions offer a designed dialog for a free license; notices appear once alongside the affected functions rather than above all settings tabs.
+
+- Player assignments for effects, displays and numbered Caller announcements stay fixed from bull-off or match start across all legs and sets.
 - Updated user guides and German/English screenshots, including HubX, the GIF template, System information, updates and Raspberry Pi. Technical reports and UI references are separated from user guides.
 
 #### Autodarts
@@ -103,5 +112,4 @@
 
 #### Lizenz und Support / Licensing and Support
 
-- The public website explains Darts-Hub 2.0 with current feature overviews, images, setup instructions and German/English FAQs linked to the relevant public documentation.
 <!-- Add brief user-facing changes here. -->
