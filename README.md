@@ -38,6 +38,8 @@ Du musst keine zusätzliche API oder andere DartsHub-Programme starten. Eine sep
 
 ## 2. Die Oberfläche
 
+**Neu dabei?** Öffne **Geführte Einführung** im Dashboard oder **?** im Kopfbereich. Der deutsch/englische Begleiter führt dich mit Beispielen und Übungen durch Einrichtung, Soundpacks, Ereignisse, HubX und Support. Du kannst pausieren und später fortsetzen. [Einführung und Terminalbedienung](docs/GUIDED_INTRODUCTION.md)
+
 Das linke Menü führt zu Dashboard, Autodarts, Erweiterungen, Konsole, Einstellungen und Support. Mit der Menüschaltfläche klappst du es ein; die Symbole bleiben anklickbar. Halte den Mauszeiger über ein Symbol oder eine Einstellung, um die Erklärung zu lesen.
 
 ![Dashboard und Seitenmenü](docs/images/user-guide/de/overview.png)

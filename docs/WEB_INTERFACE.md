@@ -2,7 +2,17 @@
 
 ## Deutsch
 
+Update-Dialog: **Auf Darts-Hub herunterladen** lädt das passende Paket auf den Darts-Hub-Rechner, nicht auf dein Smartphone oder deinen Browser-PC. Der Fortschritt wird im Dialog angezeigt. Danach startet **Installieren und neu starten** nach deiner Bestätigung die Aktualisierung im vorhandenen Installationsordner. Konfiguration, Soundpacks und Daten bleiben erhalten. Die Weboberfläche verbindet sich nach dem Neustart neu. Laufende Ansagen und Spiele werden unterbrochen; speichere vorher offene Änderungen. Dies gilt für veröffentlichte Installationen unter Windows, Linux und macOS; Entwicklungsstarts werden nicht überschrieben.
+
+![Web-Update im lokalen Test mit Beispielrelease](images/user-guide/web-update-de.png)
+
+GUI, Terminal und Weboberfläche derselben laufenden Installation übernehmen gespeicherte Änderungen automatisch, normalerweise innerhalb weniger Sekunden. Ein Neuladen ist nicht nötig. Bei offenen Entwürfen oder Bearbeitungsdialogen bleibt die Eingabe erhalten und ein Hinweis meldet wartende Änderungen. Speichere oder verwirf deinen Entwurf beziehungsweise schließe den Dialog, damit der aktuelle Stand geladen wird. Speichern übernimmt deinen lokalen Entwurf; prüfe bei gleichzeitiger Bearbeitung derselben Einstellungen zuvor die Änderungen. Getrennte Darts-Hub-Backends werden nicht miteinander synchronisiert.
+
+Die Lizenz wird verschlüsselt auf dem Darts-Hub-Rechner gespeichert. Ein leeres Eingabefeld bedeutet nicht, dass sie fehlt; der Status weist auf einen gespeicherten Schlüssel hin. Nach Verbindungsfehlern wird etwa nach einer Minute automatisch erneut geprüft, sonst alle 15 Minuten. Bis zur erfolgreichen Prüfung bleiben geschützte Funktionen gesperrt. Sichere und übertrage `settings.json` und den zugehörigen Ordner `keys` gemeinsam und verwende denselben Dienstbenutzer.
+
 **System** zeigt tatsächliche Backend-Pfade und HTTP-Adressen. Hintergrundprüfungen melden verfügbare Updates im Dialog. Der HubX-Bereich der Module bietet Entdecken, Teilen, Posteingang und Paket-JSON-Import. [System](SYSTEM.md) · [HubX](HUBX.md) · [Terminal-Updates](START_ARGUMENTS.md)
+
+![Hinweis auf wartende Änderungen in der GUI – lokaler Testbetrieb](images/user-guide/configuration-sync-de.png)
 
 ![Web-Dashboard](images/web/dashboard.de.png)
 
@@ -14,7 +24,7 @@ Darts-Hub stellt automatisch eine Weboberfläche bereit, sobald die Anwendung l�
 2. Öffne auf einem Gerät im selben Netzwerk `http://IP-DES-RECHNERS:8079`, beispielsweise `http://192.168.1.100:8079`.
 3. Wähle im Seitenmenü die gewünschte Erweiterung. Bearbeite ihre Einstellungen und drücke **Speichern**. Dashboard-Schalter wirken sofort.
 
-Die Weboberfläche bietet Autodarts-Anmeldung und Board-Auswahl, Caller und Soundpacks, WLED, PixelIt, AwtrixNG, GIF, eigene Anwendungen, Konsole, Lizenz, allgemeine Einstellungen, Import, Telemetrie und Support. Die gemeinsamen Einstellungen werden auf dem Darts-Hub-Rechner gespeichert und gelten auch für GUI und TUI. Speichere deine Änderungen, bevor du in einer anderen Oberfläche weiterarbeitest; mit **Neu laden** holst du den gespeicherten Stand.
+Die Weboberfläche bietet Autodarts-Anmeldung und Board-Auswahl, Caller und Soundpacks, WLED, PixelIt, AwtrixNG, GIF, eigene Anwendungen, Konsole, Lizenz, allgemeine Einstellungen, Import, Telemetrie und Support. Die gemeinsamen Einstellungen werden auf dem Darts-Hub-Rechner gespeichert und gelten auch für GUI und TUI. Gespeicherte Änderungen werden zwischen den verbundenen Oberflächen automatisch nachgeladen; **Neu laden** bleibt für das bewusste Verwerfen eines Entwurfs verfügbar.
 
 Farben, Karten, Logo und das einklappbare Seitenmenü folgen der GUI. Auf schmalen Bildschirmen bleibt das Menü als Symbolleiste sichtbar. PixelIt und AwtrixNG haben eine Live-Matrixvorschau mit Beispielwerten; **Am Gerät testen** sendet die aktuelle Regel an die eingerichteten Geräte. WLED nutzt den vorhandenen Controller-Katalog. **Gerät laden / testen** aktualisiert diesen bewusst.
 
@@ -29,6 +39,16 @@ Die Seite öffnet sich direkt ohne Zugangscode. Beim Schließen der GUI endet au
 Falls ein anderer Rechner die Seite nicht erreicht, prüfe die IP-Adresse und erlaube eingehende TCP-Verbindungen auf Port **8079** in der Firewall für dein lokales Netzwerk. Die Webseite verwendet im lokalen Netzwerk HTTP; richte dafür keine Internet-Portweiterleitung ein. Bei mehreren Hosts auf demselben Rechner kann der Port mit `--DartsHub:WebPort 8080` geändert werden; `0` deaktiviert den zusätzlichen Netzwerk-Port. Die lokale API auf Port 5069 bleibt bestehen.
 
 ## English
+
+Update dialog: **Download on Darts-Hub** downloads the matching package to the Darts-Hub host, not to your phone or browser computer. Progress appears in the dialog. Afterwards, **Install and restart** asks for confirmation and updates the existing installation directory. Configuration, soundpacks and data are preserved. The web interface reconnects after restart. Running calls and games are interrupted; save open changes first. This supports published Windows, Linux and macOS installations; development builds are not overwritten.
+
+![Web update in a local test with a sample release](images/user-guide/web-update-en.png)
+
+![Pending changes in the GUI – local test run](images/user-guide/configuration-sync-en.png)
+
+GUI, terminal and web frontends connected to the same running installation automatically load saved changes, normally within a few seconds. Manual refresh is unnecessary. Unsaved drafts and open editors are preserved; a notice indicates pending changes. Save or discard your draft, or close the editor, to load the current settings. Saving applies your local draft; review changes first when editing the same settings concurrently. Separate Darts-Hub backends are not synchronized.
+
+The license is stored encrypted on the Darts-Hub host. An empty input does not mean it is missing; the status indicates a saved key. Connection failures are retried automatically after about one minute; otherwise validation runs every 15 minutes. Protected features remain locked until validation succeeds. Back up and transfer `settings.json` together with its matching `keys` directory and use the same service account.
 
 **System** shows actual backend paths and HTTP addresses. Background checks notify about available updates. Module HubX areas provide discovering, sharing, incoming packages and package JSON import. [System](SYSTEM.md) · [HubX](HUBX.md)
 

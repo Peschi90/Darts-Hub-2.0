@@ -45,3 +45,34 @@ Die **System**-Ansicht unter **Weitere Module / System** zeigt die echten Backen
 Im HubX-Posteingang beim Übernehmen eines GIFs „Als animierte PixelIt-Vorlage übernehmen“ wählen. Name und Wiederholung festlegen (1–100 Durchläufe / bis zum nächsten Effekt / bis zum nächsten Turn). Die Vorlage anschließend im PixelIt-Ereignisschritt wählen; dessen Menü kann die Wiederholung überschreiben. Originalgröße maximal 32 × 8, Darts-Hub muss laufen.
 
 When accepting a GIF in the HubX inbox, select “Import as an animated PixelIt template”, then choose its name and repetition (1–100 plays / until next effect / until next turn). Select the template in a PixelIt event step; its menu can override repetition. Original dimensions must not exceed 32 × 8 and Darts-Hub must remain running.
+
+## Geführte Einführung / Guided introduction
+
+Im Menü oder über die Schaltfläche **Geführte Einführung** dieselben 28 Kapitel wie in der GUI öffnen. **Lerninhalt öffnen** zeigt Erklärung, Beispiel und Aufgabe; **Bereich zeigen** öffnet die echte Konfiguration. Übungen und Verständnisfragen senden keine Befehle. Kapitelwahl, Pause, Fortsetzen und Neustart sind verfügbar. [Anleitung](GUIDED_INTRODUCTION.md)
+
+Choose **Guided introduction** in navigation or its button for the same 28 lessons as the GUI. **Open lesson** shows explanation, example and task; **Show section** opens actual settings. Exercises and checks send no commands. Choose chapters, pause, resume or restart. [Guide](GUIDED_INTRODUCTION.md)
+
+Die Einführung führt jede kleine Teilaufgabe einzeln auf. Nach dem Ausprobieren **Aufgabe selbst ausprobiert** wählen oder die Aufgabe ausdrücklich überspringen. Kapitel und Teilaufgabe bleiben gespeichert. Die Animationswahl betrifft die visuelle Hervorhebung in der GUI.
+
+The guide lists small subtasks separately. After trying one, select **I tried the task**, or deliberately skip it. Chapter and subtask are saved. The animation preference affects visual highlighting in the GUI.
+
+
+## Gespeicherte Lizenz / Saved license
+
+Unter **Einstellungen → Lizenz** kannst du denselben gespeicherten Schlüssel prüfen wie im Browser. Die Lizenz wird verschlüsselt auf dem Darts-Hub-Rechner gespeichert. Ein leeres Eingabefeld bedeutet nicht, dass sie fehlt; der Status weist auf einen gespeicherten Schlüssel hin. Nach Verbindungsfehlern wird etwa nach einer Minute automatisch erneut geprüft, sonst alle 15 Minuten. Bis zur erfolgreichen Prüfung bleiben geschützte Funktionen gesperrt. Sichere und übertrage `settings.json` und den zugehörigen Ordner `keys` gemeinsam und verwende denselben Dienstbenutzer.
+
+Under **Settings → License**, you can validate the same saved key as in the browser. The license is stored encrypted on the Darts-Hub host. An empty input does not mean it is missing; the status indicates a saved key. Connection failures are retried automatically after about one minute; otherwise validation runs every 15 minutes. Protected features remain locked until validation succeeds. Back up and transfer `settings.json` together with its matching `keys` directory and use the same service account.
+
+
+## Änderungen aus anderen Oberflächen / Changes from other frontends
+
+GUI, Terminal und Weboberfläche derselben laufenden Installation übernehmen gespeicherte Änderungen automatisch, normalerweise innerhalb weniger Sekunden. Ein Neuladen ist nicht nötig. Bei offenen Entwürfen oder Bearbeitungsdialogen bleibt die Eingabe erhalten und ein Hinweis meldet wartende Änderungen. Speichere oder verwirf deinen Entwurf beziehungsweise schließe den Dialog, damit der aktuelle Stand geladen wird. Speichern übernimmt deinen lokalen Entwurf; prüfe bei gleichzeitiger Bearbeitung derselben Einstellungen zuvor die Änderungen. Getrennte Darts-Hub-Backends werden nicht miteinander synchronisiert.
+
+GUI, terminal and web frontends connected to the same running installation automatically load saved changes, normally within a few seconds. Manual refresh is unnecessary. Unsaved drafts and open editors are preserved; a notice indicates pending changes. Save or discard your draft, or close the editor, to load the current settings. Saving applies your local draft; review changes first when editing the same settings concurrently. Separate Darts-Hub backends are not synchronized.
+
+
+## Updates auf dem Darts-Hub-Rechner / Updates on the Darts-Hub host
+
+Unter **Einstellungen / Lizenz → Updates prüfen** lädt die TUI das Paket auf dem verbundenen Backend herunter. Nach vollständigem Download erscheint die Installation mit Bestätigung. Sie verwendet denselben Ablauf wie GUI und Web, auch bei einer entfernten Verbindung. Ohne TUI bleibt `DartsHub --update` verfügbar.
+
+Under **Settings / license → Check updates**, the TUI downloads the package on the connected backend. Once downloaded, installation becomes available with confirmation. This uses the same workflow as GUI and web, including remote connections. Without the TUI, `DartsHub --update` remains available.

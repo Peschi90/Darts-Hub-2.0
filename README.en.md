@@ -10,6 +10,9 @@ Install online: The [online installer](docs/ONLINE_INSTALLER.md) detects your sy
 
 Darts-Hub connects your Autodarts board to voice announcements, WLED lighting and PixelIt displays. Choose the extensions you want to use. WLED and PixelIt also work with the Caller switched off.
 
+
+**New here?** Open **Guided introduction** on Dashboard or **?** in the header. The German/English companion explains setup, soundpacks, event rules, HubX and support using examples and safe exercises. Pause and resume whenever needed. [Guide and terminal equivalent](docs/GUIDED_INTRODUCTION.md)
+
 ## Browser control
 
 While GUI or headless is running, open `http://HOST-IP:8079` on your local network.  [Web interface guide](docs/WEB_INTERFACE.md#english).

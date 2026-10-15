@@ -6,6 +6,7 @@ Stand: 14. Oktober 2026, aktueller Quellstand. Ein geplantes Release ist nicht a
 
 | Aufgabe / Task | Anleitung / Guide |
 | --- | --- |
+| Interaktiv lernen / Interactive introduction | [Geführte Einführung / Guided introduction](GUIDED_INTRODUCTION.md) |
 | Installation und Updates | [Installer](ONLINE_INSTALLER.md), [Pakete](DISTRIBUTION.md), [Startargumente](START_ARGUMENTS.md), [Speicherorte](LINUX_PATHS.md) |
 | Terminal und Hintergrunddienst | [TUI](TUI.md), [Autostart](AUTOSTART.md) |
 | Browser-Caller und Webapp | [Weboberfläche](WEB_INTERFACE.md), [HTTPS und Kopplung](WEB_HTTPS.md) |
