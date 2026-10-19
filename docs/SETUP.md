@@ -16,3 +16,23 @@
 Install the matching OS/architecture package, open Darts-Hub or start `--tui`, sign in under **Autodarts** with your board ID and approve the code. Enable only the required modules, install/select a Caller soundpack, and enter device addresses. **Save** edits before testing. Virtual previews do not control hardware; device tests do. Locate and back up the actual data directory under **System**. See [web interface](WEB_INTERFACE.md) for phone access.
 
 ![Dashboard with example data](images/user-guide/en/overview.png)
+
+
+### Autodarts: Anmeldung und Wartezeiten / Sign-in and retry delays
+
+GUI, TUI und Weboberfläche verwenden dieselbe gespeicherte Autodarts-Freigabe.
+Bei vorübergehenden Fehlern wartet Darts-Hub vor weiteren Token-Erneuerungen
+zunächst 30 Sekunden, danach zunehmend länger bis zu 15 Minuten. Längere vom
+Server vorgegebene Wartezeiten werden eingehalten. Eine endgültig abgelehnte
+Freigabe wird entfernt: Unter Autodarts erneut anmelden, in der TUI ebenfalls
+über den Bereich Autodarts. Wiederholtes Klicken auf Verbinden verkürzt keine
+laufende Wartefrist. Mehrere separat gestartete Installationen teilen diese
+Wartefrist nicht; unnötige zusätzliche Instanzen schließen.
+
+GUI, TUI and web interface reuse the same saved Autodarts authorization.
+Temporary failures pause token refreshes for 30 seconds initially, increasing
+up to 15 minutes; longer server-specified waiting periods are respected.
+Rejected authorization is removed: sign in again through Autodarts in the GUI,
+TUI or web interface. Repeatedly connecting does not shorten the waiting period.
+Separate running installations do not share this deadline; close unnecessary
+additional instances.

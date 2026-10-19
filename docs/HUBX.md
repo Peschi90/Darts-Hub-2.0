@@ -2,6 +2,14 @@
 
 ## Deutsch
 
+### Vorlagen für mehrere Geräte
+
+Mehrgeräte-Ereignisse sind im Katalog gekennzeichnet. Jede Anzeige hat ihre eigene animierte Vorschau, auch in der kleinen Katalogkarte. Vor **Download** oder **An Darts-Hub senden** wählst du alle Anzeigen oder nur eine. Die Einzelwahl enthält nur deren Schritte, Anzeigevorlagen und Bilder, weiterhin als ein Ereignis.
+
+Im Darts-Hub-Empfangsdialog ordnest du jede gewählte Anzeige einem anderen Zielgerät zu. Dies gilt auch in TUI, lokaler Weboberfläche, Webapp und beim Paketdateiimport. Icon-Konflikte werden je Uhr geprüft; WLED-Preset-IDs müssen auf allen gewählten Controllern frei sein. Adressen, Zugangsdaten und lokale Geräte-IDs werden nicht veröffentlicht.
+
+Für vollständige Mehrgeräte-Pakete werden aktuelle Versionen von HubX und Darts-Hub benötigt. Einzelne Anzeigen bleiben mit dem bisherigen Paketformat kompatibel. Alte Uploads ohne Gerätezuordnung bitte erneut teilen; ihre ursprüngliche Aufteilung lässt sich nicht zuverlässig nachträglich ermitteln.
+
 HubX ist in **AWTRIX-NG, PixelIt und WLED** verfügbar. Das GIF-Anzeigemodul bietet keinen HubX-Browser und keine Teilen-Funktion. Pro Veröffentlichung wird genau ein Ereignis geteilt, mit allen zugehörigen Schritten und Bildern.
 
 HubX unterstützt GIFs und PNG-Pixelgrafiken auch in **64×8**. Auflösungsfilter und Größenangaben unterscheiden die Inhalte. Bei AWTRIX-Ereignissen wird die 32×8- oder 64×8-Displaygröße des Quellcontrollers für die Vorschau übernommen; sie ändert beim Import keine Einstellungen des Zielcontrollers. Der AWTRIX-HubX-Browser in GUI, TUI, lokaler Weboberfläche und Webapp hat ebenfalls einen Auflösungsfilter. PixelIt-Animationen bleiben auf maximal 32×8 beschränkt.
@@ -36,6 +44,14 @@ Studio-Zugang: Administratoren oder **studio_access**. Eigene GIFs lassen sich i
 TUI: HubX-Posteingang beziehungsweise HubX-Aktionen der Erweiterung verwenden. Lokale Weboberfläche und gekoppelte Webapp bieten dieselben Konfliktprüfungen.
 
 ## English
+
+### Multi-device templates
+
+Multi-device events are marked in the catalogue. Each display has its own animated preview, including compact cards. Before **Download** or **Send to Darts-Hub**, choose all displays or one. Selecting one keeps only its steps, templates and images, still as a single event.
+
+In Darts-Hub, assign each selected display to a different target device. The same workflow applies to TUI, local web UI, paired webapp and package-file imports. Icon conflicts are checked per clock; WLED preset IDs must be free on every selected controller. Device addresses, credentials and local IDs remain private.
+
+Full multi-device packages require current HubX and Darts-Hub versions. Single-display selections retain the previous package format. Re-share old uploads that lack device information: their original allocation cannot be reliably reconstructed.
 
 HubX is available in **AWTRIX NG, PixelIt and WLED**. The GIF display module has no HubX browser or sharing action. Each publication shares exactly one event, including all its steps and images.
 
