@@ -2,6 +2,9 @@
 
 ## Deutsch
 
+### Wiederherstellung nach Uhrenneustart
+AWTRIX-NG hält gesendete Apps wie `darts_event` nur im Arbeitsspeicher. Nach einem Neustart können sie fehlen, obwohl ihr Name noch in der gespeicherten Reihenfolge steht. Darts-Hub stellt App-Reihenfolge, deaktivierte Apps, Einstellungen und Displayzustand wieder her und aktiviert die vorherige App nur, wenn sie noch verfügbar ist. Eine fehlende App blockiert die Wiederherstellung nicht. Das gilt gemeinsam für GUI, Weboberfläche und TUI; dort unter **AwtrixNG** das Gerät prüfen/neu laden. Neue Ereignisse senden ihre Anzeige erneut.
+
 ### GIF-Vorlage und HubX
 Für Vollbild-Icons **gif** auswählen, **Vorlagentext ersetzen** ausschalten und ein auf dem Controller vorhandenes Icon wählen. Die Vorlage hat keinen Text und verwendet einen festen Icon-Modus. Für Vollbild eine **32×8-GIF-Datei** verwenden; kleine Icons werden nicht auf die volle Breite gestreckt. Die virtuelle Vorschau verändert den Controller nicht, **Testsequenz** dagegen sendet den Entwurf tatsächlich. Danach speichern.
 
@@ -25,6 +28,9 @@ Voraussetzung: **AwtrixNG-Firmware** und verbundenes Board unter **Autodarts**. 
 TUI: Seite **AwtrixNG**, **Enter** zum Bearbeiten. Headless nutzt die gespeicherten Einstellungen; [Startargumente](START_ARGUMENTS.md).
 
 ## English
+
+### Recovery after a clock restart
+AWTRIX NG keeps pushed apps such as `darts_event` in memory. After a restart they may be missing even when their names remain in the saved order. Darts-Hub restores app order, disabled apps, settings and display state, and only activates the previous app if it is still available. A missing app does not block recovery. This shared behavior applies to GUI, web UI and TUI; use the device check/reload action under **AwtrixNG**. New events push their display again.
 
 ### GIF template and HubX
 For fullscreen icons choose **gif**, disable custom text and select an installed controller icon. Use a **32×8 GIF**; smaller icons are not stretched. Virtual previews leave the controller unchanged; device tests send the draft. Save afterwards. Discover/share/import events from the module's HubX area. Included GIFs are also offered separately; standalone GIF imports upload to a selected controller after conflict review without creating a rule. [HubX](HUBX.md)

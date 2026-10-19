@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+Das GIF-Anzeigemodul bietet keine HubX-Anbindung. HubX-GIFs und PNG-Pixelgrafiken werden über die AWTRIX-NG-Integration verwendet; PixelIt unterstützt weiterhin die GIF-Konvertierung bis maximal 32×8.
+
 Für Spielereignisse zuerst das Board unter **Autodarts** verbinden. Der Caller darf ausgeschaltet sein.
 
 1. **GIF → Medien** öffnen, einen Ordner mit GIF-, PNG- oder JPEG-Dateien wählen und speichern.
@@ -16,6 +18,8 @@ Im Browser schaltet Doppelklick auf Vollbild. Bei Netzwerkfreigabe die angezeigt
 TUI: Seite **GIF**, **Enter** zum Bearbeiten. Headless nutzt die gespeicherten Einstellungen; [Startargumente](START_ARGUMENTS.md).
 
 ## English
+
+The GIF display module has no HubX integration. Use HubX GIFs and PNG pixel graphics through AWTRIX NG; PixelIt still supports GIF conversion up to 32×8.
 
 Connect your board under **Autodarts** for game events. Caller may stay disabled.
 

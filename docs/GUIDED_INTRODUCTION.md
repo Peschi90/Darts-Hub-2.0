@@ -4,6 +4,7 @@
 
 Beim ersten GUI-Start bietet Darts-Hub die Einführung an, sobald der Start und notwendige Dialoge abgeschlossen sind. Du erreichst sie jederzeit über **?** im Kopfbereich oder **Geführte Einführung** im Dashboard. Der Begleiter bleibt verschiebbar und an den Rändern skalierbar; die eigentliche Anwendung bleibt bedienbar.
 
+- Aufgaben erklären zuerst Zweck und Wirkung der Funktion, dann den konkreten Handgriff. Zusatzinfos erläutern beispielsweise Download gegenüber Stimmenauswahl, Auslöser gegenüber Effekt, Spielerfilter gegenüber Zielgerät und Vorlage gegenüber Überschreibung.
 - Die echten Bedienelemente werden mit einem hellen Ausschnitt hervorgehoben; der übrige Bereich wird abgedunkelt. Die Oberfläche bleibt bedienbar. Der Ausschnitt folgt Scrollen und Fenstergröße. „Sanfte Animation“ schaltet die gleitende, dezent pulsierende Hervorhebung ab oder an.
 - Jedes Kapitel hat kleine Aufgaben statt eines langen Pflichttexts: etwa Bibliothek aufklappen, Sprachfilter ansehen und Suche ändern. Passende Klicks, Fokus oder Änderungen werden erkannt; eine Rückmeldung bestätigt den Handgriff. Längere Erklärungen und Beispiele stehen in einer aufklappbaren Karte im Anwendungsstil unter **Mehr erfahren / Beispiel**.
 - Fehlende Elemente werden als nicht sichtbar gemeldet. **Aufgabe überspringen** führt weiter, ohne etwas einzurichten. Die Übungsregel ist weiterhin eine Simulation.
@@ -27,6 +28,8 @@ Der Fortschritt ist lokale Bedienoberflächeninformation in `learning-progress.j
 ## English
 
 On first GUI launch, Darts-Hub offers the introduction after startup and required dialogs finish. Reopen it using **?** in the header or **Guided introduction** on Dashboard. Move or resize the companion while continuing to use the actual application.
+
+Tasks first explain the purpose and effect of a function, then the action to try. Additional information distinguishes downloading from voice selection, triggers from effects, player filters from target devices, and templates from overrides.
 
 Real controls are spotlighted while the surrounding interface is dimmed and remains usable. The cutout follows scrolling and resizing. Gentle animation can be disabled. Small tasks recognize clicks, focus or changes and give immediate feedback. Longer explanations and examples sit in a collapsible card styled like the application under **Learn more / example**. Missing controls are reported explicitly; **Skip task** continues without configuring anything. Progress includes the exact subtask and animation preference.
 
