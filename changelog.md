@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.50
+## v0.1.0-beta.52
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -8,14 +8,9 @@
 
 #### Allgemein / General
 
-- Sicherungen bestätigen erfolgreiche Aktionen und Fehler direkt in sichtbaren Meldungsdialogen; Hochscrollen ist nicht mehr nötig.
+- Ein Dokumentations-Wegweiser in der README erklärt die Anleitungen in sinnvoller Reihenfolge.
 
-- HubX-Sicherungen werden zuverlässiger übertragen, auch mit Sonderzeichen und größeren Einstellungen. Fehler unterscheiden Anmeldung, Dateien und Serverprobleme; die Konsole zeigt Schritt und HTTP-Status.
-
-- Gesamt- und Teilbackups lokal oder privat in HubX speichern und auf anderen Systemen wiederherstellen; Passwortschutz ist optional.
-- One-Click ersetzt die enthaltenen Module vollständig; die optionale Sicherung enthält auch ihre bisherigen Einstellungen.
-
-- Kombinations-Effekte unterscheiden Fehlwürfe wieder korrekt von Single-Treffern auf dieselbe Zahl.
+- Die Web-Supportseite führt mit klarer Aufteilung, Datenschutzinformationen und sichtbarem Diagnosefortschritt durch die Anfrage.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -25,48 +20,51 @@
 
 #### Caller
 
-- Optional geschützte Checkout-Ansagen: Andere Ansagen werden erst danach abgespielt.
+- Die Caller-Webseite bietet eine hervorgehobene Soundpack-Auswahl, übersichtliche Themenreiter und kompakte Audio-Einstellungen.
+
+
+- Soundpack-Downloads zeigen getrennten Fortschritt für Herunterladen, Entpacken und Installation. Der neue Webdialog meldet Erfolg oder Fehler und aktualisiert die Soundpack-Liste automatisch; GUI und Terminal zeigen denselben Phasenfortschritt.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### WLED
 
-- „Robbel 3D WLED 2027“ enthält ein eigenständiges 250-LED-Paket mit 26 Presets und WLED-Ereignissen. Vier bebilderte Montagepositionen verschieben Anfang und Ende der Effekte nach unten in die Mitte; Caller-Einstellungen bleiben erhalten.
-
-- Robbel3D prüft nach dem Schreiben auch LED-Typ, Ausgangslänge, Farbreihenfolge und zusätzliche Ausgänge, bevor die Einrichtung fortgesetzt wird.
-
-- Die Robbel3D-Einrichtung zeigt das offizielle Logo; das Ergänzen eigener Konfigurationsvorlagen ist dokumentiert.
-
-- Robbel3D-Einrichtung mit modernem Dialog, korrektem Medienordner und konkreten Hinweisen bei ungültigen Eingaben.
-
-- GIFs auf WLED-Matrizen verwalten, direkt vom Controller abspielen und einschließlich der Dateien über HubX teilen oder importieren.
-
-
-- Erkennt LED-Matrizen samt Panelaufteilung, bietet Matrixausschnitte und ein echtes Controller-Livebild. HubX zeigt passende Matrixvorschauen und Auflösungsfilter.
+- Die Weboberfläche bietet eine Setup-Übersicht, kompakte Gerätekarten und Ereignisse sowie einen eigenen Bereich für gespeicherte Ereignisvorlagen.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### PixelIt
 
+- Die Weboberfläche bündelt Geräte, Ereignisse und Vorlagen im neuen Caller-Stil mit direktem HubX-Zugang.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### AwtrixNG
+
+- Die Weboberfläche zeigt Geräte und Ereignisse übersichtlicher; Einstellungen der Uhr haben einen eigenen Reiter.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GIF
 
+- Die Weboberfläche zeigt Ereignisse, Anzeigeoptionen und Medien in übersichtlichen Themenbereichen.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Eigene Anwendungen / External Apps
+
+- Konfiguration und Laufstatus sind in der Weboberfläche getrennt und im neuen Kartenstil gestaltet.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
-- Die lokale Websteuerung ohne HTTPS zeigt keine Webapp-Installationsschaltfläche und keine Installationsnachfrage mehr.
+- Netzwerk-GUIs bleiben verbunden, wenn die ausschließlich lokale Skriptverwaltung nicht zugänglich ist. Zeitüberschreitungen beenden die Wiederverbindung nicht mehr dauerhaft.
 
-- Die eingeklappte Web-Navigation zeigt ihre Symbole ohne störende Scrollbalken und bleibt scrollbar.
+- GUI, TUI und Headless stellen das Backend automatisch im LAN bereit. Eine zweite GUI verbindet sich mit `bip=IPADRESSE` ohne Host-Einstellungen, Token oder Bestätigung; ältere Hosts werden auch über ihren Webzugang gefunden.
+
+- Terminaloberfläche beim Starten und Schließen stabilisiert; Abstürze liefern jetzt ein bereinigtes Fehlerprotokoll.
+
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -76,7 +74,7 @@
 
 #### Updates und Installation / Updates and Installation
 
-- Update-Downloads zeigen sofort eine animierte Fortschrittsanzeige mit Prozentwert im Dialog.
+- Release-Prüfungen berücksichtigen die LAN-Erreichbarkeit in GUI, TUI und Headless korrekt.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -88,14 +86,9 @@
 
 #### Allgemein / General
 
-- Backup actions and errors appear in visible message dialogs without scrolling back to the top.
+- The README now guides you through the documentation in a useful reading order.
 
-- HubX backup uploads are more reliable, including special characters and larger settings. Errors distinguish authentication, files and server problems; the console shows stage and HTTP status.
-
-- Save full or partial settings backups locally or privately in HubX and restore them on other systems; password protection is optional.
-- One-Click fully replaces included modules; optional backups also contain their previous settings.
-
-- Combination effects correctly distinguish missed fields from single hits on the same number.
+- The web support page guides requests with a clear layout, privacy information and visible diagnostic progress.
 
 <!-- Add brief user-facing changes here. -->
 
@@ -105,48 +98,51 @@
 
 #### Caller
 
-- Optional checkout protection lets “You require” finish before other announcements play.
+- The Caller web page now offers a prominent soundpack overview, themed tabs and compact audio settings.
+
+
+- Soundpack downloads show separate progress for downloading, extraction and installation. The new web dialog reports success or errors and refreshes the soundpack list automatically; GUI and terminal show the same phase progress.
 
 <!-- Add brief user-facing changes here. -->
 
 #### WLED
 
-- “Robbel 3D WLED 2027” includes an independent 250-LED package with 26 presets and WLED events. Four illustrated mounting positions rotate effect start/end to bottom center; Caller settings are preserved.
-
-- Robbel3D also checks LED type, output length, color order and additional outputs after writing, before setup continues.
-
-- Robbel3D setup displays the official logo; adding configuration profiles is documented.
-
-- Robbel3D setup has a refreshed dialog, the correct media folder and specific guidance for invalid inputs.
-
-- Manage GIFs on WLED matrices, play them directly from the controller and share or import them with their files through HubX.
-
-
-- Detects LED matrices and panel layouts, adds matrix areas and a live controller view. HubX provides matching matrix previews and resolution filters.
+- The web interface adds a setup overview, compact device and event cards, and a dedicated area for saved event templates.
 
 <!-- Add brief user-facing changes here. -->
 
 #### PixelIt
 
+- The web interface groups devices, events and templates in the new Caller style with direct HubX access.
+
 <!-- Add brief user-facing changes here. -->
 
 #### AwtrixNG
+
+- The web interface presents devices and events more clearly; clock settings have their own tab.
 
 <!-- Add brief user-facing changes here. -->
 
 #### GIF
 
+- The web interface presents events, display options and media in clear themed sections.
+
 <!-- Add brief user-facing changes here. -->
 
 #### Eigene Anwendungen / External Apps
+
+- Configuration and runtime status have separate tabs in the web interface with the new card design.
 
 <!-- Add brief user-facing changes here. -->
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
-- The local web control over HTTP no longer shows the web app installation button or installation prompt.
+- Network GUIs stay connected when local-only script management is unavailable. Request timeouts no longer permanently stop reconnection.
 
-- Collapsed web navigation keeps icons visible without intrusive scrollbars and remains scrollable.
+- GUI, TUI and headless automatically expose the backend on the LAN. A second GUI connects with `bip=IPADDRESS` without host settings, tokens or confirmation; older hosts can also be reached through their web listener.
+
+- Stabilized terminal startup and shutdown; crashes now provide a redacted diagnostic log.
+
 
 <!-- Add brief user-facing changes here. -->
 
@@ -156,7 +152,7 @@
 
 #### Updates und Installation / Updates and Installation
 
-- Update downloads immediately show animated progress and a percentage in the dialog.
+- Release checks correctly account for LAN access in GUI, TUI and headless mode.
 
 <!-- Add brief user-facing changes here. -->
 

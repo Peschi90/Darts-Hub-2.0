@@ -10,6 +10,82 @@ Online installieren: Der [Online-Installer](docs/ONLINE_INSTALLER.md) erkennt de
 
 Darts-Hub verbindet dein Autodarts-Board mit Sprachansagen, WLED-Beleuchtung und PixelIt-Anzeigen. Du entscheidest, welche Erweiterungen du nutzen möchtest. WLED und PixelIt funktionieren auch bei ausgeschaltetem Caller.
 
+## Dokumentations-Wegweiser
+
+Neu dabei? Gehe die ersten beiden Abschnitte der Reihe nach durch. Danach brauchst du nur die Anleitungen für deine Erweiterungen. Nachschlagewerke und Fehlerhilfe kannst du bei Bedarf öffnen. Die Links führen zu den Nutzerdokumenten; interne Entwicklungsunterlagen sind hier nicht aufgeführt.
+
+### 1. Zuerst: installieren und kennenlernen
+
+| Dokument | Wann hilft es? |
+| --- | --- |
+| [Online-Installer](docs/ONLINE_INSTALLER.md) | Automatische Installation und Auswahl von GUI, Terminal oder Headless. |
+| [Installation aus einem Paket](docs/DISTRIBUTION.md) | Passendes Paket auswählen, entpacken und starten. |
+| [Schnelleinrichtung](docs/SETUP.md) | Autodarts verbinden und die ersten Erweiterungen einrichten. |
+| [Geführte Einführung](docs/GUIDED_INTRODUCTION.md) | Die Oberfläche anhand interaktiver Aufgaben kennenlernen. |
+| [Wechsel von Darts-Hub V1](docs/LEGACY_IMPORT.md) | Alte JSON-Einstellungen prüfen, korrigieren und übernehmen; nur bei einem Umstieg nötig. |
+
+### 2. Danach: die passende Bedienung wählen
+
+| Dokument | Wann hilft es? |
+| --- | --- |
+| [Weboberfläche und Browser-Caller](docs/WEB_INTERFACE.md) | Im Browser bedienen, Ansagen dort abspielen und die Webapp installieren. |
+| [HTTPS und Webapp-Kopplung](docs/WEB_HTTPS.md) | Online-Webapp verbinden, HTTPS verstehen und Verbindungsprobleme einordnen. |
+| [Terminaloberfläche (TUI)](docs/TUI.md) | Ohne grafische Oberfläche konfigurieren und bedienen. |
+| [Raspberry Pi](docs/RASPBERRY_PI.md) | Hinweise zur Installation und zum Betrieb auf dem Pi. |
+
+### 3. Nach Bedarf: deine Erweiterungen einrichten
+
+| Dokument | Wann hilft es? |
+| --- | --- |
+| [Alle Erweiterungen im Überblick](docs/erweiterungen/README.md) | Funktionsumfang und Einstellungen je Erweiterung, einschließlich Autodarts. |
+| [Caller: Stimme und Ansagen](docs/CALLER_CONFIGURATION_AND_LOCALIZATION.md) | Soundpacks wählen, herunterladen und Ansagen einstellen. |
+| [Caller: Medienordner](docs/CALLER_MEDIA_PATH.md) | Soundpacks speichern und beim Wechsel des Medienpfads umziehen. |
+| [WLED](docs/WLED_CONFIGURATION_AND_AUTODARTS.md) | Controller, Effekte, Presets und Spielregeln einrichten. |
+| [Robbel3D](docs/ROBBEL3D.md) | Die unterstützte WLED-Einrichtung mit One-Click konfigurieren. |
+| [PixelIt](docs/PIXELIT.md) | Anzeigen, Vorlagen und Abläufe mit mehreren Schritten konfigurieren. |
+| [AWTRIX-NG](docs/AWTRIX.md) | Uhren, Anzeigen und Ereignisse einrichten. |
+| [AWTRIX: Icons und GIFs](docs/AWTRIXNG_ICONS.md) | Controller-Grafiken laden, verwalten und in der Matrix ansehen. |
+| [GIF-Anzeige](docs/GIF.md) | Lokale Grafiken und Animationen bei Spielereignissen anzeigen. |
+| [Eigene Anwendungen](docs/OWN_APPLICATIONS.md) | Zusätzliche Programme starten und verwalten. |
+| [Webseiten starten](docs/EXTERNAL_WEBSITES.md) | Browser, URL und optionale Startparameter festlegen. |
+| [User-Erweiterung](docs/USER_EXTENSION.md) | Ein eigenes Skript mit Client-ID und Secret freischalten und betreiben. |
+
+### 4. Wenn die Grundlagen stehen: Ereignisse und eigene Inhalte
+
+| Dokument | Wann hilft es? |
+| --- | --- |
+| [Ereignisübersicht](docs/erweiterungen/EREIGNISSE.md) | Nachsehen, welche Ereignisse die Erweiterungen unterstützen. |
+| [Dartbedingungen (DMU/CMB)](docs/DISPLAY_DART_EFFECTS.md) | Effekte auf Felder, Multiplikatoren und Kombinationen beschränken. |
+| [Ereignisse sortieren](docs/EVENT_RULE_ORDER.md) | Regelkarten per Drag-and-drop umordnen. |
+| [HubX entdecken, teilen und importieren](docs/HUBX.md) | Fertige Inhalte finden, übernehmen oder eigene Vorlagen teilen. |
+| [Einzelne HubX-GIFs übernehmen](docs/HubX-GIF-Import.md) | Grafiken für die unterstützten Controller übernehmen. |
+| [Eigene Soundpacks erstellen](docs/CALLER_SOUNDPACKS.de.md) | Eigene Sprachaufnahmen und Soundpack-Struktur vorbereiten. |
+| [Caller-Soundkeys](docs/CALLER_SOUND_KEYS.de.md) | Vollständige Referenz der Dateischlüssel und ihrer Auslöser. |
+
+### 5. Für den laufenden Betrieb: Updates, Start und Sicherung
+
+| Dokument | Wann hilft es? |
+| --- | --- |
+| [Startargumente und Terminal-Wartung](docs/START_ARGUMENTS.md) | Startoptionen, Netzwerk-GUI, --update und --uninstall. |
+| [Autostart](docs/AUTOSTART.md) | Darts-Hub automatisch beim Anmelden oder im Hintergrund starten. |
+| [Sicherungen](docs/BACKUPS.md) | Einstellungen und Daten sichern und wiederherstellen. |
+| [Systeminformationen](docs/SYSTEM.md) | Version, Verbindung und tatsächlich verwendete Speicherorte finden. |
+| [Linux-Speicherorte](docs/LINUX_PATHS.md) | Installations- und Datenordner unter Linux verstehen. |
+| [Werkseinstellungen](docs/FACTORY_RESET.md) | Einzelne Module oder die ganze Anwendung zurücksetzen. |
+| [Telemetrie und Datenschutz](docs/TELEMETRY.md) | Umfang der Diagnoseübermittlung und eigene Auswahl verstehen. |
+
+### 6. Bei Problemen: gezielt Hilfe finden
+
+| Dokument | Wann hilft es? |
+| --- | --- |
+| [Bekannte Probleme und Grenzen](docs/KNOWN_ISSUES.md) | Erste Anlaufstelle bei typischen Fehlern und Einschränkungen. |
+| [Konsole nutzen](docs/RUNTIME_CONSOLE.md) | Meldungen filtern, relevante Einträge finden und Logs zuordnen. |
+| [Konsolendetails kopieren](docs/CONSOLE_DETAILS.md) | Vollständige Diagnoseinformationen für eine Fehlermeldung kopieren. |
+| [Speichernutzung der GUI](docs/GUI_MEMORY.md) | Einordnen, was den Arbeitsspeicherverbrauch beeinflusst. |
+| [Support anfragen](docs/SUPPORT.md) | Eine hilfreiche Anfrage mit passenden Diagnoseinformationen senden. |
+
+Weitere gemeinsame Bedienhinweise findest du in [Grundlagen für alle Erweiterungen](docs/erweiterungen/GEMEINSAM.md). Die [kompakte Dokumentübersicht](docs/README.md) bleibt als schnelle Linkliste verfügbar.
+
 ## Bedienung im Browser
 
 Während GUI oder Headless laufen, erreichst du Darts-Hub im lokalen Netzwerk unter `http://IP-DES-RECHNERS:8079`.  [Anleitung zur Weboberfläche](docs/WEB_INTERFACE.md).

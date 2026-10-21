@@ -109,3 +109,50 @@ On iPhone and iPad: open in Safari → **Share → Add to Home Screen → Add**.
 **GUI/TUI:** Open the existing web address from GUI application settings or the TUI **Web interface** page, then install in the browser. No saved module setting or JSON-import change is introduced.
 
 Online-Webapp mit individueller Kopplung und direkte lokale HTTPS-Einrichtung / Online web app pairing and direct local HTTPS setup: [HTTPS](WEB_HTTPS.md).
+
+
+## Soundpack-Downloads / Soundpack downloads
+
+![Soundpack-Dialog – lokaler Test mit Beispieldaten](images/user-guide/soundpack-download-de.png)
+
+![Soundpack dialog – local test with sample data](images/user-guide/soundpack-download-en.png)
+
+In der Websteuerung öffnet **Herunterladen** einen Fortschrittsdialog. Er zeigt Downloadmenge und Prozentwert getrennt vom Entpacken des Paketarchivs, dem Entpacken der Audiodateien und der Soundzuordnung mit Dateizähler. 100 % beim Download bedeutet nur, dass die Übertragung fertig ist. Beim abschließenden Aufräumen bleibt eine Warteanzeige sichtbar. Nach erfolgreicher Installation aktualisiert sich die Soundpack-Liste automatisch und der Dialog schließt sich. Fehler und Abbrüche bleiben sichtbar. **Schließen** lässt die Installation weiterlaufen; **Fortschritt anzeigen** öffnet den Dialog erneut. **Abbrechen** stoppt den laufenden Download oder die Verarbeitung vor der fertigen Installation. Ungespeicherte Caller-Einstellungen und die Browser-Audiowiedergabe bleiben beim Aktualisieren der Liste erhalten.
+
+In web control, **Download** opens a progress dialog. It shows transferred data and percentage separately from package extraction, audio extraction and sound mapping with file counts. A download at 100% only means the transfer has finished. Final cleanup keeps a waiting indicator visible. After successful installation the soundpack list refreshes automatically and the dialog closes. Errors and cancellations remain visible. **Close** lets installation continue; **Show progress** reopens the dialog. **Cancel** stops the download or processing before installation finishes. Unsaved Caller settings and browser audio playback survive the list refresh.
+
+
+### Caller: Themenbereiche / themed settings
+
+Die Caller-Seite zeigt das gewählte Soundpack oben. Stimme & Audio, Ansagen & Checkout, Atmosphäre, Soundpacks & Speicher und Diagnose bündeln alle Einstellungen. Änderungen bleiben beim Reiterwechsel erhalten; anschließend „Änderungen speichern“ wählen. Im Terminal stehen dieselben Parameter im Caller-Konfigurationsmenü bereit.
+
+The Caller page highlights the selected soundpack. Voice & audio, Calls & checkout, Atmosphere, Soundpacks & storage and Diagnostics group all settings. Switching tabs keeps your edits; select Save changes to apply them. The terminal exposes the same parameters in the Caller configuration menu.
+
+
+### Erweiterungen im Web / Extension workspaces
+
+WLED, Pixelit, AWTRIX NG, GIF und eigene Anwendungen verwenden denselben Kartenstil wie der Caller. Die Übersicht zählt die Geräte und Regeln des aktuellen Entwurfs; sie ist keine Bestätigung der Verbindung. Den zuletzt gemeldeten Gerätestatus findest du bei den Geräten. Oben aktivierst du die Erweiterung und speicherst oder lädst die Einstellungen neu. Beim Reiterwechsel bleiben Eingaben erhalten.
+
+- **WLED, Pixelit, AWTRIX NG:** Geräte, Ereignisse, Optionen und Vorlagen haben eigene Reiter. Gespeicherte Ereignisvorlagen liegen jetzt im Vorlagenreiter. HubX-Entdecken und Teilen sind in der Setup-Übersicht erreichbar.
+- **AWTRIX NG:** Die Werte für die Uhr selbst liegen unter **Geräteeinstellungen**. Die Warnung, die Geräteauswahl und das Laden der aktuellen Werte bleiben erhalten. Direkte Gerätebefehle und ausführliche Statusdaten findest du weiterhin bei den Geräten in aufklappbaren Karten.
+- **GIF:** Ereignisse, Optionen und Medien sind getrennt. Über **Medien & Vorschau öffnen** gelangst du zur Anzeige. Dieses Modul bietet weiterhin keine HubX-Funktion.
+- **Eigene Anwendungen:** Unter **Anwendungen & Webseiten** bearbeitest du die Einträge. **Status & Steuerung** zeigt die gespeicherten Prozesse mit Start-, Stopp- und Neustartaktionen auf dem Darts-Hub-Rechner.
+
+Die Reiter lassen sich auch mit Pfeiltasten, Pos1 und Ende bedienen. Es entstehen keine neuen gespeicherten Parameter. In GUI und TUI stehen dieselben Moduleinstellungen und Aktionen weiterhin in den jeweiligen Modul- und Anwendungsmenüs bereit; der JSON-Import bleibt unverändert.
+
+WLED, Pixelit, AWTRIX NG, GIF and own applications use the same card style as Caller. The overview counts devices and rules in the current draft; it does not confirm connectivity. The device section shows the last reported status. Activate the extension, save changes or reload settings at the top. Switching tabs retains your edits.
+
+- **WLED, Pixelit, AWTRIX NG:** Devices, events, options and templates have separate tabs. Saved event templates now live in the templates tab. Discover and share with HubX from the setup overview.
+- **AWTRIX NG:** Settings that change the clock itself are under **Device settings**. The warning, source-device selection and loading of current values remain available. Direct device commands and detailed reported status remain in collapsible cards in Devices.
+- **GIF:** Events, options and media are separate. **Open media & preview** opens the display section. This module still has no HubX actions.
+- **Own applications:** Edit entries under **Applications & websites**. **Status & controls** shows saved processes and start, stop and restart actions on the Darts-Hub host.
+
+Use arrow keys, Home and End to navigate the tabs. No new stored parameters are introduced. GUI and TUI retain the same module settings and actions in their corresponding menus; JSON import is unchanged.
+
+Screenshots below are from a local test with sample entries and disabled devices; they do not show a live hardware connection. / Die folgenden Bilder zeigen lokale Beispielkonfigurationen mit deaktivierten Geräten, keine echte Geräteverbindung.
+
+![WLED – Weboberfläche](images/web-modules/wled-de-1440.png)
+![Pixelit – Web interface](images/web-modules/pixelit-en-1440.png)
+![AWTRIX NG – Weboberfläche](images/web-modules/awtrix-de-1440.png)
+![GIF – Web interface](images/web-modules/gif-en-1440.png)
+![Eigene Anwendungen – Weboberfläche](images/web-modules/external-de-1440.png)

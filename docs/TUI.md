@@ -76,3 +76,10 @@ GUI, terminal and web frontends connected to the same running installation autom
 Unter **Einstellungen / Lizenz → Updates prüfen** lädt die TUI das Paket auf dem verbundenen Backend herunter. Nach vollständigem Download erscheint die Installation mit Bestätigung. Sie verwendet denselben Ablauf wie GUI und Web, auch bei einer entfernten Verbindung. Ohne TUI bleibt `DartsHub --update` verfügbar.
 
 Under **Settings / license → Check updates**, the TUI downloads the package on the connected backend. Once downloaded, installation becomes available with confirmation. This uses the same workflow as GUI and web, including remote connections. Without the TUI, `DartsHub --update` remains available.
+
+
+## Soundpacks herunterladen / Download soundpacks
+
+Unter **Soundpacks → Herunterladen** zeigt das Terminal den aktuellen Schritt, dessen Prozentwert sowie beim Entpacken und Zuordnen die verarbeiteten Dateien. Während des Aufräumens wird weiter gewartet. Die Liste installierter Packs aktualisiert sich automatisch nach der Verarbeitung. **Download abbrechen** beendet Download oder Verarbeitung.
+
+Under **Soundpacks → Download**, the terminal shows the current phase and its percentage, plus processed file counts while extracting and mapping. Cleanup remains a waiting phase. The installed pack list refreshes automatically after processing. **Cancel download** stops downloading or processing.

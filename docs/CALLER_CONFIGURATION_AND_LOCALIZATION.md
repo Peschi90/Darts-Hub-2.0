@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+In der Websteuerung öffnet **Herunterladen** einen Fortschrittsdialog. Er zeigt Downloadmenge und Prozentwert getrennt vom Entpacken des Paketarchivs, dem Entpacken der Audiodateien und der Soundzuordnung mit Dateizähler. 100 % beim Download bedeutet nur, dass die Übertragung fertig ist. Beim abschließenden Aufräumen bleibt eine Warteanzeige sichtbar. Nach erfolgreicher Installation aktualisiert sich die Soundpack-Liste automatisch und der Dialog schließt sich. Fehler und Abbrüche bleiben sichtbar. **Schließen** lässt die Installation weiterlaufen; **Fortschritt anzeigen** öffnet den Dialog erneut. **Abbrechen** stoppt den laufenden Download oder die Verarbeitung vor der fertigen Installation. Ungespeicherte Caller-Einstellungen und die Browser-Audiowiedergabe bleiben beim Aktualisieren der Liste erhalten.
+
 Eigene Soundpacks bauen: [vollständige Key-Referenz mit Auslösern, Ersatzsounds und Beispielen](CALLER_SOUNDPACKS.de.md).
 
 1. Für Live-Ansagen Autodarts verbinden und das gewünschte Board auswählen.
@@ -22,6 +24,8 @@ Eigene Soundpacks bauen: [vollständige Key-Referenz mit Auslösern, Ersatzsound
 - Bei Fehlern die [Runtime-Konsole](RUNTIME_CONSOLE.md) öffnen.
 
 ## English
+
+In web control, **Download** opens a progress dialog. It shows transferred data and percentage separately from package extraction, audio extraction and sound mapping with file counts. A download at 100% only means the transfer has finished. Final cleanup keeps a waiting indicator visible. After successful installation the soundpack list refreshes automatically and the dialog closes. Errors and cancellations remain visible. **Close** lets installation continue; **Show progress** reopens the dialog. **Cancel** stops the download or processing before installation finishes. Unsaved Caller settings and browser audio playback survive the list refresh.
 
 Build custom soundpacks: [complete key reference with triggers, fallbacks and examples](CALLER_SOUNDPACKS.en.md).
 

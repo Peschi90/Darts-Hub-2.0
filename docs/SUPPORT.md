@@ -2,6 +2,10 @@
 
 ## Deutsch
 
+Die Weboberfläche zeigt das Anfrageformular links, Diagnoseoptionen und Datenschutz rechts sowie Fortschritt und Versand darunter. Auf Mobilgeräten stehen die Bereiche untereinander. Nach Änderungen an der Anfrage die Diagnose erneut erstellen.
+
+![Web-Supportseite](images/support/support-web-de.png)
+
 ### Anfrage vorbereiten
 1. **Support** im Seitenmenü der GUI oder in der TUI-Navigation öffnen.
 2. Kontaktdaten, Betreff und Problembeschreibung eintragen; Zeitraum und betroffene Module wählen.
@@ -23,6 +27,10 @@
 - **Sendestatus unbekannt? Nicht blind erneut senden:** Der Server könnte die Anfrage bereits gespeichert haben.
 
 ## English
+
+The web interface places the request on the left, diagnostic and privacy options on the right, and progress and sending below. On mobile, sections stack vertically. Collect diagnostics again after changing the request.
+
+![Web support page](images/support/support-web-en.png)
 
 ### Prepare a request
 1. Open **Support** from the GUI sidebar or TUI navigation.

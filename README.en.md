@@ -13,6 +13,82 @@ Darts-Hub connects your Autodarts board to voice announcements, WLED lighting an
 
 **New here?** Open **Guided introduction** on Dashboard or **?** in the header. The German/English companion explains setup, soundpacks, event rules, HubX and support using examples and safe exercises. Pause and resume whenever needed. [Guide and terminal equivalent](docs/GUIDED_INTRODUCTION.md)
 
+## Documentation guide
+
+New here? Follow the first two sections in order. Then choose the guides for the extensions you use. References and troubleshooting can wait until needed. These links cover user documentation; internal development documents are not listed.
+
+### 1. Start here: install and get familiar
+
+| Document | When is it useful? |
+| --- | --- |
+| [Online installer](docs/ONLINE_INSTALLER.md) | Automatic installation and choosing GUI, terminal or headless mode. |
+| [Install from a package](docs/DISTRIBUTION.md) | Choose the right package, extract it and start the application. |
+| [Quick setup](docs/SETUP.md) | Connect Autodarts and set up your first extensions. |
+| [Guided introduction](docs/GUIDED_INTRODUCTION.md) | Learn the interface through interactive tasks. |
+| [Moving from Darts-Hub V1](docs/LEGACY_IMPORT.md) | Review, correct and import old JSON settings; needed only when migrating. |
+
+### 2. Next: choose how to control Darts-Hub
+
+| Document | When is it useful? |
+| --- | --- |
+| [Web interface and browser caller](docs/WEB_INTERFACE.md) | Control the application in a browser, play caller audio there and install the web app. |
+| [HTTPS and web-app pairing](docs/WEB_HTTPS.md) | Pair the online web app, understand HTTPS and diagnose connection problems. |
+| [Terminal interface (TUI)](docs/TUI.md) | Configure and operate without a graphical desktop. |
+| [Raspberry Pi](docs/RASPBERRY_PI.md) | Installation and operation on a Raspberry Pi. |
+
+### 3. As needed: set up your extensions
+
+| Document | When is it useful? |
+| --- | --- |
+| [Extension overview](docs/erweiterungen/README.md) | Features and settings for each extension, including Autodarts. |
+| [Caller: voice and announcements](docs/CALLER_CONFIGURATION_AND_LOCALIZATION.md) | Choose and download soundpacks and configure announcements. |
+| [Caller: media folder](docs/CALLER_MEDIA_PATH.md) | Store soundpacks and move them when changing the media folder. |
+| [WLED](docs/WLED_CONFIGURATION_AND_AUTODARTS.md) | Set up controllers, effects, presets and game rules. |
+| [Robbel3D](docs/ROBBEL3D.md) | Configure the supported WLED setup using One-Click. |
+| [PixelIt](docs/PIXELIT.md) | Configure displays, templates and multi-step sequences. |
+| [AWTRIX-NG](docs/AWTRIX.md) | Set up clocks, displays and events. |
+| [AWTRIX: icons and GIFs](docs/AWTRIXNG_ICONS.md) | Load and manage controller graphics and preview them on a matrix. |
+| [GIF display](docs/GIF.md) | Display local images and animations for game events. |
+| [Own applications](docs/OWN_APPLICATIONS.md) | Launch and manage additional programs. |
+| [Launch websites](docs/EXTERNAL_WEBSITES.md) | Choose a browser, URL and optional startup arguments. |
+| [User extension](docs/USER_EXTENSION.md) | Authorize and run a custom script using a client ID and secret. |
+
+### 4. Once set up: events and custom content
+
+| Document | When is it useful? |
+| --- | --- |
+| [Event reference](docs/erweiterungen/EREIGNISSE.md) | Look up which events the extensions support. |
+| [Dart conditions (DMU/CMB)](docs/DISPLAY_DART_EFFECTS.md) | Match effects to fields, multipliers and combinations. |
+| [Reorder events](docs/EVENT_RULE_ORDER.md) | Reorder rule cards using drag and drop. |
+| [Discover, share and import with HubX](docs/HUBX.md) | Find and import ready-made content or share your templates. |
+| [Import standalone HubX GIFs](docs/HubX-GIF-Import.md) | Import graphics for supported controllers. |
+| [Create custom soundpacks](docs/CALLER_SOUNDPACKS.en.md) | Prepare your own recordings and soundpack structure. |
+| [Caller sound keys](docs/CALLER_SOUND_KEYS.en.md) | Complete reference of sound-file keys and when they play. |
+
+### 5. Day-to-day operation: updates, startup and backups
+
+| Document | When is it useful? |
+| --- | --- |
+| [Startup arguments and terminal maintenance](docs/START_ARGUMENTS.md) | Startup options, network GUI, --update and --uninstall. |
+| [Autostart](docs/AUTOSTART.md) | Start Darts-Hub automatically at login or in the background. |
+| [Backups](docs/BACKUPS.md) | Back up and restore settings and data. |
+| [System information](docs/SYSTEM.md) | Find version, connection and actual storage paths. |
+| [Linux storage paths](docs/LINUX_PATHS.md) | Understand installation and data folders on Linux. |
+| [Factory reset](docs/FACTORY_RESET.md) | Reset individual modules or the entire application. |
+| [Telemetry and privacy](docs/TELEMETRY.md) | Understand diagnostic data sharing and your choices. |
+
+### 6. When something goes wrong: find help
+
+| Document | When is it useful? |
+| --- | --- |
+| [Known issues and limitations](docs/KNOWN_ISSUES.md) | Start here for common issues and limitations. |
+| [Use the console](docs/RUNTIME_CONSOLE.md) | Filter messages, find relevant entries and locate logs. |
+| [Copy console details](docs/CONSOLE_DETAILS.md) | Copy complete diagnostic information for a bug report. |
+| [GUI memory usage](docs/GUI_MEMORY.md) | Understand what affects memory usage. |
+| [Request support](docs/SUPPORT.md) | Send a useful request with the relevant diagnostic information. |
+
+For shared controls, see [extension basics (German)](docs/erweiterungen/GEMEINSAM.md). The [compact documentation index](docs/README.md) is also available as a quick link list.
+
 ## Browser control
 
 While GUI or headless is running, open `http://HOST-IP:8079` on your local network.  [Web interface guide](docs/WEB_INTERFACE.md#english).

@@ -78,12 +78,12 @@ Siehe README fÃ¼r RÃ¼ckfragen, Ablauf und LÃ¶schumfang / See README for co
 GUI: `DartsHub.exe bip=192.168.1.100` (auch als Argument im Ziel einer Windows-VerknÃ¼pfung).
 TUI: `DartsHub.exe --tui bip=192.168.1.100`.
 Linux/macOS: `./DartsHub bip=192.168.1.100` beziehungsweise `./DartsHub --tui bip=192.168.1.100`.
-IPv6: `bip=2001:db8::1`. Keine Portangabe; verwendet wird HTTP-Port **5069**.
+IPv6: `bip=2001:db8::1`. Keine Portangabe; verwendet wird HTTP-Port **5069**, bei älteren Hosts bei Bedarf **8079**.
 
-Auf dem Host: `DartsHub --headless --urls http://0.0.0.0:5069` und TCP 5069 im lokalen Netzwerk freigeben.
+Auf dem Host Darts-Hub ganz normal als GUI, TUI oder Headless starten. Das Backend ist automatisch auf TCP 5069 im LAN erreichbar; keine zusätzlichen Argumente oder Backend-Einstellungen nötig. Die Firewall muss Verbindungen zulassen. Ältere Hosts werden bei Bedarf automatisch über den vorhandenen Webzugang auf TCP 8079 angesprochen.
 Bei `bip=` ist kein API-Token und keine Bestätigung erforderlich. GUI und TUI verwenden automatisch dieselbe Sitzung wie die lokale Weboberfläche. `bip=` hat Vorrang vor `DARTSHUB_API_URL`. Es startet auch bei einem unerreichbaren Host kein lokales Backend. Ohne Parameter bleibt der bisherige Start erhalten. Einstellungen und Dateipfade gehören zum Backendhost; der Parameter wird nicht als Konfiguration gespeichert.
 
-Start the host with `DartsHub --headless --urls http://0.0.0.0:5069` and allow TCP 5069 on the LAN.
+Start Darts-Hub normally as GUI, TUI or headless on the host. The backend automatically listens on TCP 5069 on the LAN; no host options or settings are needed. The firewall must allow connections. Older hosts are automatically tried through their existing web listener on TCP 8079 when necessary.
 Append `bip=IPADDRESS` to the GUI command or shortcut target; use `--tui bip=IPADDRESS` for the terminal frontend.
 No API token or confirmation is required with `bip=`: both frontends automatically use the existing local web session authentication.
 IPv4 and IPv6 are supported without a port. This selects HTTP port **5069**, overrides `DARTSHUB_API_URL`, and never starts a local backend, even if the host is unreachable. Startup without this parameter keeps its existing behavior. Settings and file paths belong to the backend host; this argument is not persisted.
@@ -100,3 +100,14 @@ The file is stored in the log directory (usually `logs` in the installation dire
 Die GUI zeigt beim Update-Download sofort eine animierte Fortschrittskarte oberhalb der Release Notes. Sobald die Paketgröße bekannt ist, erscheint der echte Prozentfortschritt. Über Einstellungen → Anwendung → Details lässt sich der Dialog wieder öffnen. In der TUI zeigt der Updatebereich den Vorbereitungsstatus bzw. den Prozentfortschritt. `--update` bleibt der direkte Terminalweg.
 
 The GUI immediately shows an animated download card above the release notes. Once the package size is known, it displays actual percentage progress. Reopen it under Settings → Application → Details. The TUI update area reports preparation or percentage progress. Use `--update` for the direct terminal workflow.
+
+
+### TUI-Fehlerprotokoll / TUI failure log
+
+Bei einem TUI-Absturz zeigt das Terminal die vollständige bereinigte Fehlerursache und den Pfad zu `tui-failure.log` im Logverzeichnis an. Diese Datei hilft bei Supportanfragen.
+
+If the TUI crashes, the terminal displays the complete redacted error and the path to `tui-failure.log` in the log directory. Include this file when requesting support.
+
+Die Skriptverwaltung (Zugangsdaten, Import und Skriptkonsole) bleibt direkt am Backend-Rechner verfügbar. Eine Netzwerk-GUI oder Netzwerk-TUI zeigt diesen Hinweis und lädt alle übrigen Bereiche weiter; die verweigerte Skriptverwaltung ist kein Backend-Ausfall. Vorübergehende Anfrage-Zeitüberschreitungen werden erneut versucht.
+
+Script management (credentials, import and script console) remains available directly on the backend computer. A network GUI or TUI shows this restriction and continues loading the other areas; denied script management does not mean the backend is offline. Transient request timeouts are retried.
