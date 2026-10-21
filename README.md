@@ -419,3 +419,7 @@ Standalone HubX WLED presets upload only to the selected controller, with free-I
 Die GUI und die lokale Weboberfläche/Webapp zeigen unter **System** die tatsächlich verwendeten Ordner, Einstellungsdatei, Version, Architektur, Betriebsmodus und HTTP-Adressen des verbundenen Backends. Die Angaben sind kopierbar. Terminal-Entsprechung: in der TUI **Weitere Module / System → System** öffnen. Vor einem Umzug den vollständigen Datenordner einschließlich `settings.json` und `keys` sichern; unter Windows sind geschützte Schlüssel zusätzlich an das Benutzerkonto gebunden.
 
 Open **System** in the GUI or local web interface/webapp, or **Other modules / system → System** in the TUI. All views report the connected backend's actual storage and program paths, settings file, version, architecture, runtime mode and HTTP listener addresses. Back up the complete data directory, including `settings.json` and `keys`, before moving it; protected Windows keys are also bound to the user account.
+
+### Sicherungen / Backups
+
+Einstellungen → Sicherungen & Wiederherstellung: Gesamt-/Teilbackups mit optionalem Passwortschutz für Windows, Linux und macOS, lokal oder privat in HubX (fünf Plätze). TUI und Weboberfläche unterstützen dieselben Abläufe. [Anleitung und Grenzen / Guide and limits](docs/BACKUPS.md).

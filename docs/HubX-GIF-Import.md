@@ -45,3 +45,9 @@ Confirm standalone GIF contributions in the HubX inbox and choose the AWTRIX NG 
 GUI: Dashboard → HubX → Inbox. Terminal: open the HubX inbox, accept, select the target device, optionally allow resizing and resolve filename conflicts. Local web UI, paired webapp and downloaded HubX package files use the same review and validation.
 
 Weitere Beiträge und Einzelressourcen / Other packages and standalone resources: [HubX](HUBX.md).
+
+## Direkt auf WLED / Direct upload to WLED
+
+Im Posteingang **Auf WLED-Matrix hochladen** und das Zielgerät wählen. Darts-Hub prüft die Image-Unterstützung, die GIF-Abmessungen und vorhandene Dateinamen. Bei einem Konflikt vergleichen, umbenennen oder ausdrücklich überschreiben. Die Datei wird auf dem Controller gespeichert; es entsteht keine Ereignisregel. Danach im WLED-Modul eine Regel mit **GIF vom Controller** erstellen. Benötigt werden eine passende Matrix und geeignete ESP32-Firmware ab WLED 16. Maximal 128×128, 4 MiB und 31 Zeichen im Dateinamen; keine automatische Skalierung. Weitere Hinweise: [WLED](erweiterungen/WLED.md#gifs-auf-einer-wled-matrix).
+
+Select **Upload to WLED matrix** and the target controller in the inbox. Darts-Hub checks Image support, dimensions and filename conflicts. Compare, rename or explicitly overwrite collisions. Upload creates no event; select **GIF from controller** in a WLED rule afterwards. Requires a suitable matrix and supported ESP32 firmware from WLED 16; maximum 128×128, 4 MiB and a 31-character filename, without automatic resizing. The same workflow is available through GUI, TUI, local web UI and webapp.

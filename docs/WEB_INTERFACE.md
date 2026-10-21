@@ -92,7 +92,7 @@ For game announcements, enable Caller and connect Autodarts. Local Caller output
 
 ## Webapp installieren / Install the web app
 
-**Deutsch:** Beim Öffnen bietet Darts-Hub die Installation an. In Android-Browsern mit Installationsunterstützung öffnet **Installieren** den Browserdialog. Der Browser entscheidet, wann er diesen freigibt; eine vertrauenswürdige HTTPS-Adresse ist dafür erforderlich. Bei der üblichen lokalen HTTP-Adresse zeigt Darts-Hub stattdessen die Browsermenü-Anleitung. Eine dort angelegte Verknüpfung ist nicht zwingend eine vollständig installierte App.
+**Deutsch:** Beim Öffnen bietet Darts-Hub die Installation an. In Android-Browsern mit Installationsunterstützung öffnet **Installieren** den Browserdialog. Der Browser entscheidet, wann er diesen freigibt; eine vertrauenswürdige HTTPS-Adresse ist dafür erforderlich. Bei lokalen HTTP-Adressen bleiben Installationsschaltfläche und Installationsnachfrage ausgeblendet, auch auf localhost und iOS.
 
 Auf iPhone und iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschirm → Hinzufügen**. Falls vorhanden, **Als Web-App öffnen** eingeschaltet lassen. Die Webseite kann dieses Systemmenü nicht selbst öffnen. Das App-Symbol verwendet das Darts-Hub-Logo.
 
@@ -100,7 +100,7 @@ Auf iPhone und iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschir
 
 **GUI/TUI:** Die bestehende Webadresse in den allgemeinen GUI-Einstellungen beziehungsweise auf der TUI-Seite **Weboberfläche** öffnen; anschließend im Browser installieren. Es gibt keine neue gespeicherte Moduleinstellung oder Änderung am JSON-Import.
 
-**English:** Darts-Hub offers installation when opened. On supported Android browsers, **Install** opens the browser's installation dialog when available. The browser controls availability and requires a trusted HTTPS address. At the usual local HTTP address, Darts-Hub shows browser-menu instructions instead; a shortcut created there may not be a fully installed app.
+**English:** Darts-Hub offers installation when opened. On supported Android browsers, **Install** opens the browser's installation dialog when available. The browser controls availability and requires a trusted HTTPS address. At local HTTP addresses, the installation button and prompt are hidden, including localhost and iOS.
 
 On iPhone and iPad: open in Safari → **Share → Add to Home Screen → Add**. Leave **Open as Web App** enabled if shown. The website cannot open this system menu itself. The app icon uses the Darts-Hub logo.
 

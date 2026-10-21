@@ -95,3 +95,8 @@ Die Fehlerdatei liegt im Logordner (normalerweise `logs` im Installationsordner,
 
 When the GUI shows “Backend offline”, inspect the cause before resetting settings. GUI: **Settings → Application** shows the local backend failure and the path to `backend-failure.log`; the Autodarts area also shows the cause. TUI: `DartsHub --tui` prints the log path on startup failure. Headless: `DartsHub --headless` prints the error in the terminal.
 The file is stored in the log directory (usually `logs` in the installation directory; Windows debug launches use `%USERPROFILE%\DartsHub\logs`). If writing fails, the user directory `%LOCALAPPDATA%\DartsHub\logs` is tried. Credentials are redacted. Set a custom directory with `--DartsHub:LogDirectory PATH`. With `bip=`, backend failures are on the other computer.
+
+
+Die GUI zeigt beim Update-Download sofort eine animierte Fortschrittskarte oberhalb der Release Notes. Sobald die Paketgröße bekannt ist, erscheint der echte Prozentfortschritt. Über Einstellungen → Anwendung → Details lässt sich der Dialog wieder öffnen. In der TUI zeigt der Updatebereich den Vorbereitungsstatus bzw. den Prozentfortschritt. `--update` bleibt der direkte Terminalweg.
+
+The GUI immediately shows an animated download card above the release notes. Once the package size is known, it displays actual percentage progress. Reopen it under Settings → Application → Details. The TUI update area reports preparation or percentage progress. Use `--update` for the direct terminal workflow.

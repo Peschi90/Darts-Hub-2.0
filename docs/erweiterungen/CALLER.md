@@ -87,3 +87,12 @@ Die Weboberfläche bietet oben im Dashboard eine pro Tab aktivierbare Caller-Wie
 ## Cricket-Ansagen und Soundkeys
 
 Cricket, Tactics und Hidden Cricket unterscheiden gewertete Marks, Feldabschlüsse, Punkte und nicht gewertete Treffer. Cut Throat und No Score werden separat berücksichtigt. Neue Cricket-Soundkeys, bestehende Keys, Auswahlprioritäten und Ersatzdateien: [vollständige Caller-Key-Referenz](../CALLER_SOUND_KEYS.de.md).
+
+
+## Checkout-Ansagen schützen / Protect checkout announcements
+
+Unter Caller → Checkout kann **Checkout-Ansagen vollständig abspielen** aktiviert werden. Die vollständige „You require“-Ansage inklusive Name und Restpunktzahl läuft dann zu Ende; andere Spielansagen warten. Standardmäßig ausgeschaltet. Beim Stoppen oder Beenden wird weiterhin abgebrochen. Dieselbe Einstellung ist in der TUI unter Caller → Checkout sowie in der lokalen Weboberfläche verfügbar und wird gespeichert.
+
+Enable **Finish checkout announcements** in Caller → Checkout to finish the complete “You require” phrase, including name and remaining score, before subsequent game announcements play. Off by default. Stopping or shutting down still cancels playback. The same saved option is available in the TUI under Caller → Checkout and in the local web interface.
+
+Legacy-Import: Die zusätzliche Einstellung hat keinen alten Parameter und bleibt ohne expliziten Wert ausgeschaltet; vorhandene Checkout-Parameter behalten ihre Bedeutung. / Legacy imports keep the new setting off unless explicitly supplied; existing checkout parameters retain their meaning.
