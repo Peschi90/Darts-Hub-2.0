@@ -500,3 +500,9 @@ Open **System** in the GUI or local web interface/webapp, or **Other modules / s
 ### Sicherungen / Backups
 
 Einstellungen → Sicherungen & Wiederherstellung: Gesamt-/Teilbackups mit optionalem Passwortschutz für Windows, Linux und macOS, lokal oder privat in HubX (fünf Plätze). TUI und Weboberfläche unterstützen dieselben Abläufe. [Anleitung und Grenzen / Guide and limits](docs/BACKUPS.md).
+
+### Entwickler: v1-Upgrade vorbereiten / Developer: prepare the v1 upgrade
+
+Der einbindbare [Migrationshelfer](scripts/v1-upgrade/README.md) installiert eine migrationsfähige v2-Release-/Betaversion und übernimmt unterstützte Einstellungen, Medien und Lizenz. Er muss zuerst in einer neuen v1-Version eingebunden werden; eine passende v2-Veröffentlichung ist Voraussetzung. Bestehende v1-Versionen erhalten dadurch noch kein automatisches Upgrade.
+
+The [integration helper](scripts/v1-upgrade/README.md) needs a v1 update integration and a migration-capable published v2 build before automatic rollout. Unsupported functional settings stop migration; v1 stays intact.

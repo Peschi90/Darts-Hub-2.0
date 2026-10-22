@@ -75,3 +75,25 @@ Terminal/headless: `DartsHub --headless --import-legacy apps-downloadable.json
 - Old AWTRIX3 firmware needs an update to AwtrixNG; see [AWTRIX](AWTRIX.md) and [GIF](GIF.md).
 
 Review state remains available for 15 minutes on the runtime host. If it expires, the host restarts, file structure changes, overwrite mode changes or stored settings change, a complete review is required. The dialog displays newly checked and reused result counts. No source JSON files are modified.
+
+## Automatischer Versionswechsel / Automatic version upgrade
+
+Ein automatischer Wechsel ist für eine neue v1-Version vorbereitet. Er funktioniert
+nur, wenn diese v1-Version den Migrationshelfer enthält und eine passende v2-Version
+mit Migrationsunterstützung veröffentlicht ist. Bestehende v1-Versionen werden nicht
+allein durch diese Vorbereitung automatisch aktualisiert.
+
+Der lokale Upgradeweg kopiert vorhandene Medien und schützt die Lizenz und eine
+vorhandene kompatible Autodarts-Sitzung. Die Originalinstallation bleibt erhalten.
+Unpassende oder nicht übertragbare funktionale Einstellungen stoppen den Umstieg;
+den Bericht prüfen. Bei abgelaufener Anmeldung ist eine erneute Autodarts-Anmeldung
+nötig. Andere v1-Profile und rein v1-spezifische Ansichten werden gesichert, nicht als
+aktive v2-Funktionen ausgegeben. Der manuelle JSON-Import oben übernimmt weiterhin
+keine Zugangsdaten. Externe Programme bleiben auf manuellem Start.
+
+English: automatic upgrade needs a new v1 release with the integration helper and a
+published migration-capable v2. It preserves v1, copies media and protects the license
+and a compatible existing Autodarts session. Functional conversion failures stop the
+handoff. Expired sessions require sign-in; v1-only profiles/layout remain archived.
+The manual JSON import continues to exclude credentials and keeps external apps on
+manual start.

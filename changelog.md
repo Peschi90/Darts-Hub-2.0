@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.53
+## v0.1.0-beta.54
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -42,11 +42,17 @@
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
+- Online-Kopplung zeigt den QR-Code ohne vorheriges Speichern; optionale lokale HTTPS-Einstellungen sind eingeklappt und die Webapp-Adresse ist fest.
+
+- Hinweise zum gemeinsamen Kopplungs-QR-Code für Android-App und Webapp in allen Oberflächen ergänzt.
+
 - Das Öffnen oder Schließen einer Netzwerk-GUI löst keine Start- oder Stopaktionen auf dem Backend-Rechner mehr aus. Anwendungen und Geräte laufen dort weiter.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Einstellungen und Import / Settings and Import
+
+- Migrationshelfer für den automatischen Wechsel von v1 zu v2 vorbereitet: Einstellungen, Medien und Lizenz werden geschützt übernommen; nicht übertragbare Werte werden gemeldet.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -96,11 +102,17 @@
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
+- Online pairing shows the QR code without a separate save step; optional local HTTPS settings are collapsed and the webapp address is fixed.
+
+- Added shared Android/web pairing QR guidance across frontends.
+
 - Opening or closing a network GUI no longer triggers startup or shutdown actions on the backend computer. Its applications and devices keep running.
 
 <!-- Add brief user-facing changes here. -->
 
 #### Einstellungen und Import / Settings and Import
+
+- Prepared a migration helper for switching from v1 to v2, protecting settings, media and license while reporting values that cannot be converted.
 
 <!-- Add brief user-facing changes here. -->
 

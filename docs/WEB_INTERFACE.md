@@ -156,3 +156,22 @@ Screenshots below are from a local test with sample entries and disabled devices
 ![AWTRIX NG – Weboberfläche](images/web-modules/awtrix-de-1440.png)
 ![GIF – Web interface](images/web-modules/gif-en-1440.png)
 ![Eigene Anwendungen – Weboberfläche](images/web-modules/external-de-1440.png)
+
+## Native Android-App per QR-Code koppeln
+
+Unter Einstellungen → Online-Webapp einen neuen Kopplungscode erzeugen. In der Android-App „QR-Code scannen und verbinden“ wählen. Derselbe QR-Code ist in GUI, lokaler Weboberfläche und TUI verfügbar; die TUI zeigt zusätzlich die URL als Text. Kamera-Berechtigung wird nur zum Scannen angefragt. Einmalig und bis zur angezeigten Ablaufzeit gültig. Beim Scannen mit der Smartphone-Kamera öffnet Android die App nach erfolgreicher Domain-Verifizierung, sonst die Webapp. Dafür muss auf dem Webapp-Server der Play-App-Signaturfingerabdruck hinterlegt sein.
+
+English: Generate a new pairing code in Settings → Online web app. Use “Scan QR code and connect” in Android. GUI, local web UI and TUI share the same code/link. The system camera opens the verified Android app, falling back to the web app otherwise. Domain association requires the Play app-signing fingerprint on the relay server. One-time use and expiry remain unchanged.
+
+## Vereinfachte Online-Kopplung / Direct online pairing
+GUI: Einstellungen → Weboberfläche → Kopplungscode erzeugen übernimmt den angezeigten
+Installationsnamen, aktiviert die Online-Verbindung und zeigt Code und QR-Code.
+Vorheriges Speichern von Verbindung oder HTTPS ist nicht erforderlich. Die Adresse
+webapp.darts-hub.de ist fest. Lokales HTTPS ist optional unter „Erweitert“ eingeklappt.
+TUI: Einstellungen → Kopplungscode erzeugen aktiviert die Online-Verbindung ebenfalls;
+den Namen bei Bedarf vorher unter Online-Webapp ändern. Lokales HTTPS bleibt separat.
+
+English: Generate pairing code saves the current GUI/local-web connection settings,
+enables the online connection and displays code/QR without a separate save step.
+The TUI pairing action enables the connection using its saved installation name.
+The public webapp address is fixed; optional local HTTPS stays under Advanced.
