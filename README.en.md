@@ -35,6 +35,7 @@ New here? Follow the first two sections in order. Then choose the guides for the
 | [HTTPS and web-app pairing](docs/WEB_HTTPS.md) | Pair the online web app, understand HTTPS and diagnose connection problems. |
 | [Terminal interface (TUI)](docs/TUI.md) | Configure and operate without a graphical desktop. |
 | [Raspberry Pi](docs/RASPBERRY_PI.md) | Installation and operation on a Raspberry Pi. |
+| [Native Android app (development)](docs/MOBILE_APP.md) | Scope, connection options and limits of the standalone app; iOS core prepared. |
 
 ### 3. As needed: set up your extensions
 

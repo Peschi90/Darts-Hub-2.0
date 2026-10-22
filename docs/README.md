@@ -8,6 +8,7 @@ Stand: 14. Oktober 2026, aktueller Quellstand. Ein geplantes Release ist nicht a
 | --- | --- |
 | Interaktiv lernen / Interactive introduction | [Geführte Einführung / Guided introduction](GUIDED_INTRODUCTION.md) |
 | Installation und Updates | [Installer](ONLINE_INSTALLER.md), [Pakete](DISTRIBUTION.md), [Startargumente](START_ARGUMENTS.md), [Speicherorte](LINUX_PATHS.md) |
+| Native Android-App (Entwicklung) / Native Android app (development) | [Stand und Grenzen / Scope and limitations](MOBILE_APP.md) |
 | Terminal und Hintergrunddienst | [TUI](TUI.md), [Autostart](AUTOSTART.md) |
 | Browser-Caller und Webapp | [Weboberfläche](WEB_INTERFACE.md), [HTTPS und Kopplung](WEB_HTTPS.md) |
 | Sprachansagen | [Caller](CALLER_CONFIGURATION_AND_LOCALIZATION.md), [Medienpfad](CALLER_MEDIA_PATH.md) |

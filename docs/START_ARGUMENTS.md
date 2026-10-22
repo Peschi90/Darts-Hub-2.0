@@ -111,3 +111,7 @@ If the TUI crashes, the terminal displays the complete redacted error and the pa
 Die Skriptverwaltung (Zugangsdaten, Import und Skriptkonsole) bleibt direkt am Backend-Rechner verfügbar. Eine Netzwerk-GUI oder Netzwerk-TUI zeigt diesen Hinweis und lädt alle übrigen Bereiche weiter; die verweigerte Skriptverwaltung ist kein Backend-Ausfall. Vorübergehende Anfrage-Zeitüberschreitungen werden erneut versucht.
 
 Script management (credentials, import and script console) remains available directly on the backend computer. A network GUI or TUI shows this restriction and continues loading the other areas; denied script management does not mean the backend is offline. Transient request timeouts are retried.
+
+Beim Schließen einer Netzwerk-GUI wird nur der Client getrennt. Das Backend, seine externen Anwendungen und Geräte laufen weiter. Das Verbinden startet keine Host-Anwendungen erneut und führt keine Geräte-Startaktionen aus. Das gilt ebenfalls für die Netzwerk-TUI (`DartsHub --tui bip=IPADRESSE`). Eine lokale GUI behält ihre bisherigen Start- und Schließaktionen.
+
+Closing a network GUI only disconnects that client. The backend, its external applications and devices keep running. Connecting does not restart host applications or execute device startup actions. The network TUI (`DartsHub --tui bip=IPADDRESS`) behaves the same way. Local GUI startup and shutdown actions remain unchanged.

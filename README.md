@@ -32,6 +32,7 @@ Neu dabei? Gehe die ersten beiden Abschnitte der Reihe nach durch. Danach brauch
 | [HTTPS und Webapp-Kopplung](docs/WEB_HTTPS.md) | Online-Webapp verbinden, HTTPS verstehen und Verbindungsprobleme einordnen. |
 | [Terminaloberfläche (TUI)](docs/TUI.md) | Ohne grafische Oberfläche konfigurieren und bedienen. |
 | [Raspberry Pi](docs/RASPBERRY_PI.md) | Hinweise zur Installation und zum Betrieb auf dem Pi. |
+| [Native Android-App (Entwicklung)](docs/MOBILE_APP.md) | Stand, Verbindungswege und Grenzen der eigenständigen App; iOS ist vorbereitet. |
 
 ### 3. Nach Bedarf: deine Erweiterungen einrichten
 
