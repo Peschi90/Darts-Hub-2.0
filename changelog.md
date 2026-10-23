@@ -1,12 +1,14 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.54
+## v0.1.0-beta.55
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
 ### Deutsch
 
 #### Allgemein / General
+
+- Ausgaben eigener Anwendungen verfälschen die Telemetrie-Fehlerstatistik nicht mehr. Webseiten können optional mit Darts-Hub geschlossen werden.
 
 - Änderungen an Schnittstellen werden künftig auch auf Verträglichkeit mit der neuen mobilen App geprüft.
 
@@ -42,17 +44,9 @@
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
-- Online-Kopplung zeigt den QR-Code ohne vorheriges Speichern; optionale lokale HTTPS-Einstellungen sind eingeklappt und die Webapp-Adresse ist fest.
-
-- Hinweise zum gemeinsamen Kopplungs-QR-Code für Android-App und Webapp in allen Oberflächen ergänzt.
-
-- Das Öffnen oder Schließen einer Netzwerk-GUI löst keine Start- oder Stopaktionen auf dem Backend-Rechner mehr aus. Anwendungen und Geräte laufen dort weiter.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Einstellungen und Import / Settings and Import
-
-- Migrationshelfer für den automatischen Wechsel von v1 zu v2 vorbereitet: Einstellungen, Medien und Lizenz werden geschützt übernommen; nicht übertragbare Werte werden gemeldet.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -67,6 +61,8 @@
 ### English
 
 #### Allgemein / General
+
+- External application output no longer distorts telemetry error statistics. Websites can optionally close with Darts-Hub.
 
 - Interface changes now require compatibility review with the new mobile app.
 
@@ -102,17 +98,9 @@
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
-- Online pairing shows the QR code without a separate save step; optional local HTTPS settings are collapsed and the webapp address is fixed.
-
-- Added shared Android/web pairing QR guidance across frontends.
-
-- Opening or closing a network GUI no longer triggers startup or shutdown actions on the backend computer. Its applications and devices keep running.
-
 <!-- Add brief user-facing changes here. -->
 
 #### Einstellungen und Import / Settings and Import
-
-- Prepared a migration helper for switching from v1 to v2, protecting settings, media and license while reporting values that cannot be converted.
 
 <!-- Add brief user-facing changes here. -->
 

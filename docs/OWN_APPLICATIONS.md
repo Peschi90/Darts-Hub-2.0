@@ -39,3 +39,23 @@
 - Headless uses the same saved settings. Only run trusted programs: they use the DartsHub user's permissions.
   Python and PowerShell scripts require their respective interpreter.
 - Captured output: **Console → Process Manager**, log subfolder `ProcessManager`.
+
+## Webseiten automatisch schließen / Close websites automatically
+
+GUI: Eigene Anwendungen → Webseite → „Webseite beim Beenden von Darts-Hub schließen“.
+TUI: Eigene Anwendungen → Eintrag bearbeiten → dieselbe Option aktivieren.
+Weboberfläche/Webapp: Option im Webseiten-Eintrag aktivieren und speichern.
+
+Chrome, Chromium, Edge, Brave, Vivaldi oder Firefox explizit auswählen. Die Seite
+öffnet in einem separaten temporären Profil ohne bisherige Anmeldungen oder
+Erweiterungen. Andere Browserfenster bleiben offen. Eigene Profilparameter sind
+in diesem Modus nicht erlaubt. Standardmäßig bleibt die Option ausgeschaltet.
+
+Select a supported browser and enable **Close website when Darts-Hub exits** in
+GUI, terminal editor or web settings, then save. A separate temporary browser
+profile isolates it from existing sign-ins and windows. Default: disabled.
+Supported on Windows, Linux and macOS; only the owned process tree is stopped.
+
+Fremdprogramme bleiben in lokalen Logs sichtbar, zählen aber nicht als
+Darts-Hub-Telemetriefehler. External output stays in local logs and is excluded
+from Darts-Hub telemetry error/warning statistics.
