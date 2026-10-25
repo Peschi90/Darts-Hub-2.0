@@ -108,3 +108,51 @@ Corrections, undo and busts use the values reported by Autodarts. The TUI provid
 HubX-GIFs bis 32 × 8 Pixel können als animierte PixelIt-Vorlagen importiert werden. Originalgröße, Bilddauer und Farben bleiben erhalten. Wiederholung: 1–100 Durchläufe, bis zum nächsten Effekt oder bis zum nächsten Turn. Im Ereignisschritt kann die Vorlagenvorgabe überschrieben werden. Darts-Hub muss zur Wiedergabe laufen. [Anleitung und Grenzen](HubX-GIF-Import.md).
 
 HubX GIFs up to 32 × 8 pixels can be imported as animated PixelIt templates. Original dimensions, frame timing and colors are preserved. Choose 1–100 plays, until the next effect or until the next turn; each event step can override the template settings. Darts-Hub must remain running. See [workflow and limits](HubX-GIF-Import.md).
+
+## Zufällige Effektvarianten / Random effect variants
+
+In der Ereignisregel „Zufällige Effektvariante“ aktivieren. Jeder Schritt hat eine
+Variantenummer (1–64). Für einzelne Zufallseffekte jedem Schritt eine andere Nummer
+geben. Für eine mehrteilige Variante mehreren Schritten dieselbe Nummer geben:
+Diese Schritte laufen in ihrer Listenreihenfolge nacheinander. Neu hinzugefügte
+Schritte bekommen bei aktivierter Zufallsauswahl automatisch die nächste Nummer.
+Bestehende Schritte bleiben in Variante 1; ihre Zuordnung bewusst ändern.
+
+Pro Auslösung wird genau eine Variante gewählt, gemeinsam für alle Zielgeräte.
+Direkte Wiederholungen sind möglich. Ohne Zufallsauswahl laufen alle Schritte wie
+bisher. Testsequenz und Echtbetrieb verwenden dieselbe Auswahl. Bei Pixelit darf
+eine endlose Animation nur der letzte Schritt ihrer Variante am jeweiligen Gerät
+sein. Speichern und Übernehmen ist wie gewohnt erforderlich.
+
+TUI: Ereignis bearbeiten → „Zufällige Effektvariante“; beim Schritt die
+Variantenummer einstellen. Weboberfläche/Webapp bieten dieselben Regel-/Schrittfelder.
+HubX-Dateiimport, Teilen und Sicherungen behalten Auswahl und Variantenummern.
+HubX zeigt in seiner Vorschau eine vollständige repräsentative Variante.
+
+Enable **Random effect variant** in the event rule. Assign different **Variant
+numbers** to alternatives; steps sharing a number play sequentially in list order.
+New steps automatically receive the next number while random selection is enabled.
+Existing steps remain in group 1. One variant is chosen per trigger for all target
+devices; repeats are possible. Disable random selection to play the original full
+sequence. Configure the same fields in the terminal or web editor, then save.
+Sharing, file imports and backups preserve the settings. HubX previews show one
+complete representative variant. Older Darts-Hub versions may reject these fields;
+update the receiving installation before importing.
+
+
+## GIF-Vorlagen ohne Text / Image-only GIF templates
+
+Die GIF-Vorlage erzeugt ausschließlich Bildinhalt. Ereignistext, Platzhalter,
+Textfragmente und Text-Zeichenbefehle werden für diese Vorlage unterdrückt, auch
+bei bereits vorhandenen Regeln. Das gilt für Geräteausgabe und die gemeinsame
+Vorschau in GUI, TUI und Web. Importierte Pixelit-GIF-Animationen bleiben ebenfalls
+textfrei. HubX-Kopien behalten diese Eigenschaft bei einer Umbenennung; HubX zeigt
+keinen Vorlagennamen oder Score als Ersatztext. Lade-/Dateifehler stehen außerhalb
+der Matrix. Normale Textvorlagen bleiben unverändert. Kein neuer Schalter nötig.
+
+GIF templates generate image content only. Event text, placeholders, fragments and
+text drawing commands are suppressed, including in existing rules. Device output
+and the shared GUI/TUI/web previews agree. Imported Pixelit GIF animations are also
+textless. Renamed HubX copies retain their image-only intent; HubX does not invent
+score/name fallback text. Loading/file diagnostics remain outside the matrix.
+Ordinary text templates are unchanged. No additional setting is needed.

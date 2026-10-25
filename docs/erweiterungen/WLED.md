@@ -12,7 +12,7 @@
 
 ## Ereignisse und Automatik
 
-- [Alle WLED-Regeltypen](EREIGNISSE.md): Aufnahme, Einzel-Dart, Feld/Ring, Multiplikator, Kombination, Gewinne, Spieler- und Boardereignisse.
+- [Alle WLED-Regeltypen](EREIGNISSE.md): Aufnahme, DMU mit Feld/Ring, Multiplikator, Kombination, Gewinne, Spieler- und Boardereignisse.
 - Zielgeräte, Spielername und bei geeigneten Ereignissen Spielerposition eingrenzen; Namen unabhängig von Schreibweise.
 - Namensregel übersteuert allgemeinen gleichen Regeltyp pro Zielgerät.
 - Bei gleichzeitig passenden Ereignissen: High Finish vor Matchgewinn, Spielgewinn, Bust, Cricket/Tactics-Trefferereignissen, Kombination, exaktem Score, Scorebereich, Feld, Multiplikator und übrigen Ereignissen. Danach zählt Regelspezifität; pro Gerät wird ein Effekt gewählt.
@@ -27,7 +27,7 @@ Gebündelten 145-LED-Ring und sechs Presets einrichten: Controller suchen, Adres
 
 ## Grenzen
 
-DartScore, Feld, Multiplikator, Kombination, Schlaf, namensgebundenes Idle und Schlafparameter können die WLED-Lizenz benötigen. Ein gespeicherter gesperrter Wert umgeht sie nicht. Kataloge werden beim Start oder manuell geladen. Ein Vorschautest stellt den vorherigen Controllerzustand nicht automatisch wieder her. WLED-UDP-Synchronisation kann unabhängig angesprochene Controller gegenseitig überschreiben.
+Feld, Multiplikator, Kombination, Schlaf, namensgebundenes Idle und Schlafparameter können die WLED-Lizenz benötigen. Ein gespeicherter gesperrter Wert umgeht sie nicht. Kataloge werden beim Start oder manuell geladen. Ein Vorschautest stellt den vorherigen Controllerzustand nicht automatisch wieder her. WLED-UDP-Synchronisation kann unabhängig angesprochene Controller gegenseitig überschreiben.
 
 Weiterlesen: [Einrichtung](../WLED_CONFIGURATION_AND_AUTODARTS.md), [Robbel3D](../ROBBEL3D.md).
 

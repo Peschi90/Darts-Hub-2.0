@@ -83,3 +83,10 @@ Under **Settings / license → Check updates**, the TUI downloads the package on
 Unter **Soundpacks → Herunterladen** zeigt das Terminal den aktuellen Schritt, dessen Prozentwert sowie beim Entpacken und Zuordnen die verarbeiteten Dateien. Während des Aufräumens wird weiter gewartet. Die Liste installierter Packs aktualisiert sich automatisch nach der Verarbeitung. **Download abbrechen** beendet Download oder Verarbeitung.
 
 Under **Soundpacks → Download**, the terminal shows the current phase and its percentage, plus processed file counts while extracting and mapping. Cleanup remains a waiting phase. The installed pack list refreshes automatically after processing. **Cancel download** stops downloading or processing.
+
+
+## darts-voice / darts-extern
+
+Die Module haben eigene TUI-Menüs und akzeptieren `--voice-PROPERTY` bzw. `--extern-PROPERTY`. Der Legacy-Import übernimmt unterstützte Einstellungen mit deaktiviertem Start und schließt Anmeldedaten aus. Einrichtung, Voraussetzungen und Terminalbeispiele: [Voice / Extern](VOICE_EXTERN.md).
+
+Both modules have dedicated TUI menus and accept `--voice-PROPERTY` / `--extern-PROPERTY`. Legacy import preserves supported settings, excludes credentials and keeps workers disabled. See the linked guide for dependencies and terminal examples.

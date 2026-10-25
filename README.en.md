@@ -432,3 +432,6 @@ Logs are stored under `logs`: `DartsHub_04.log` for all messages and, for exampl
 From the existing installation, use `--update` to update in place or `--update --check-only` to inspect availability. `--yes` confirms without prompting; `--beta`/`--stable` override the saved update channel. Provide existing custom data paths/URLs explicitly. `--uninstall` removes the installation and owned settings/media after confirmation. See [startup arguments](docs/START_ARGUMENTS.md).
 
 The [System page](docs/SYSTEM.md) reports actual backend storage, settings file, program/log/update directories and listeners. [HubX](docs/HUBX.md) supports direct delivery and downloaded package imports, including standalone AWTRIX GIFs, WLED presets and Pixelit templates. Standalone resources do not create event rules. The AWTRIX **gif** template is text-free; disable custom text and use a 32×8 icon for fullscreen output.
+
+
+Offline voice control and external dart platforms: [darts-voice / darts-extern](docs/VOICE_EXTERN.md) (current source for the next beta).

@@ -115,3 +115,10 @@ Script management (credentials, import and script console) remains available dir
 Beim Schließen einer Netzwerk-GUI wird nur der Client getrennt. Das Backend, seine externen Anwendungen und Geräte laufen weiter. Das Verbinden startet keine Host-Anwendungen erneut und führt keine Geräte-Startaktionen aus. Das gilt ebenfalls für die Netzwerk-TUI (`DartsHub --tui bip=IPADRESSE`). Eine lokale GUI behält ihre bisherigen Start- und Schließaktionen.
 
 Closing a network GUI only disconnects that client. The backend, its external applications and devices keep running. Connecting does not restart host applications or execute device startup actions. The network TUI (`DartsHub --tui bip=IPADDRESS`) behaves the same way. Local GUI startup and shutdown actions remain unchanged.
+
+
+## darts-voice / darts-extern
+
+Die Module haben eigene TUI-Menüs und akzeptieren `--voice-PROPERTY` bzw. `--extern-PROPERTY`. Der Legacy-Import übernimmt unterstützte Einstellungen mit deaktiviertem Start und schließt Anmeldedaten aus. Einrichtung, Voraussetzungen und Terminalbeispiele: [Voice / Extern](VOICE_EXTERN.md).
+
+Both modules have dedicated TUI menus and accept `--voice-PROPERTY` / `--extern-PROPERTY`. Legacy import preserves supported settings, excludes credentials and keeps workers disabled. See the linked guide for dependencies and terminal examples.

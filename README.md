@@ -506,3 +506,6 @@ Einstellungen → Sicherungen & Wiederherstellung: Gesamt-/Teilbackups mit optio
 Der einbindbare [Migrationshelfer](scripts/v1-upgrade/README.md) installiert eine migrationsfähige v2-Release-/Betaversion und übernimmt unterstützte Einstellungen, Medien und Lizenz. Er muss zuerst in einer neuen v1-Version eingebunden werden; eine passende v2-Veröffentlichung ist Voraussetzung. Bestehende v1-Versionen erhalten dadurch noch kein automatisches Upgrade.
 
 The [integration helper](scripts/v1-upgrade/README.md) needs a v1 update integration and a migration-capable published v2 build before automatic rollout. Unsupported functional settings stop migration; v1 stays intact.
+
+
+Offline-Sprachsteuerung und externe Dartplattformen: [darts-voice / darts-extern](docs/VOICE_EXTERN.md) (aktueller Quellstand für die nächste Beta).

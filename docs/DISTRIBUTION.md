@@ -37,3 +37,6 @@
 - New Windows installations normally use `%USERPROFILE%\DartsHub`; Linux uses `~/dartshub`. Legacy data folders may remain active. Check [System](SYSTEM.md) for actual paths. App updates or `--update` preserve settings and replace the current installation in place; do not copy an empty data folder over it.
 - macOS may block unsigned downloads. Only open applications from a trusted source.
 - [TUI / Headless](TUI.md) · [Startup arguments](START_ARGUMENTS.md)
+
+
+Voice/Extern workers, keyword defaults, correction coordinates and the OS-aware requirements are embedded in the API assembly for all six release targets. Python/native packages, a Vosk model and a browser remain host prerequisites; Windows ARM64 Voice uses x64 Python, macOS Vosk 0.3.44 Universal2. The macOS bundle declares its microphone purpose. See [Voice / Extern](VOICE_EXTERN.md). Hardware and native macOS/Linux execution must be verified on those hosts.

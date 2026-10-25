@@ -11,7 +11,6 @@ Alle aktuell auswählbaren Regeltypen. Ein Haken bedeutet: Das Modul bietet den 
 | Neues Leg / Set (`LegStarted`) | Neues Leg startet (WLED). | ✓ | — | — | — |
 | Genauer Aufnahmescore (`Score`) | Abgeschlossene Aufnahme mit exakter Punktzahl. | ✓ | ✓ | ✓ | ✓ |
 | Aufnahme im Scorebereich (`ScoreRange`) | Abgeschlossene Aufnahme innerhalb eines Punktebereichs. | ✓ | ✓ | ✓ | ✓ |
-| Einzelwurf im Scorebereich (`DartScore`) | Einzel-Dartscore im eingestellten Bereich. | ✓ | — | — | — |
 | Einzelwurf auf Feld (`DartField`) | Treffer auf gewähltem Feld und optionalem Ring. | ✓ | ✓ | ✓ | ✓ |
 | Single / Double / Triple (`Multiplier`) | Treffer mit dem gewählten Multiplikator unabhängig vom Feld. | ✓ | ✓ | ✓ | ✓ |
 | Drei-Dart-Kombination (`Combo`) | Drei-Dart-Kombination, Reihenfolge unerheblich, kein Bust. | ✓ | ✓ | ✓ | ✓ |
@@ -40,9 +39,16 @@ Alle aktuell auswählbaren Regeltypen. Ein Haken bedeutet: Das Modul bietet den 
 | Spielerwechsel (`PlayerChanged`) | Aktiver Spieler wechselt. | — | ✓ | ✓ | — |
 | Wurf oder Turnwechsel (`ThrowOrTurnChanged`) | Eine Regel reagiert auf neuen Wurf und neue Aufnahme, auch beim selben Spieler. | — | ✓ | ✓ | — |
 
+## Regeln in der Android-App
+
+Jede Regel lässt sich durch Tippen auf ihre Kopfzeile einzeln öffnen und schließen. Name, Auslöser und Aktivstatus bleiben sichtbar; getrennte Karten erleichtern die Übersicht. Neue Regeln öffnen sich direkt. Beim Zuklappen gehen Entwürfe nicht verloren. Zum Sortieren den Griff halten oder die Pfeile verwenden; der offene Zustand bleibt bei der Regel.
+
+GUI: Ereigniskarte öffnen und speichern. TUI: `DartsHub --tui`, Modul auswählen, **Ereignisse**, Regel und Auslöser bearbeiten, dann **Entwurf speichern**. Der exakte Score benötigt eine Punktzahl, der Scorebereich zwei Grenzen.
+
 ## Bedingungen und Zeitpunkt
 
-- Score/Scorebereich betreffen eine Aufnahme; DartScore betrifft einen einzelnen Dart.
+- Score/Scorebereich betreffen eine Aufnahme. Beim exakten Score wird nur die **Punktzahl** eingegeben, beim Bereich Minimum und Maximum. Einzelwurf-Effekte werden über **DMU** mit Feld und Ring oder Multiplikator konfiguriert.
+- Der frühere Einzelwurf-Scorebereich (`DartScore`) steht nicht mehr zur Neuauswahl. Bereits gespeicherte und aus V1 importierte Regeln bleiben mit ihren Werten und Lizenzanforderungen erhalten.
 - Feld/Ring etwa Triple 20; Multiplikator Single/Double/Triple feldunabhängig. Kombinationen z. B. `t20,t20,t20` oder `s20,d20,t20`.
 - Gewinn ist von Match-Verlassen getrennt; Netzwerkunterbrechung allein ist kein Exit.
 - Globale Ereignisse ohne Spieler sollten keinen Spielernamenfilter erhalten. WLED blendet ihn bei globalen Board-/Schlaf-/Exit-Ereignissen aus.
@@ -81,3 +87,35 @@ Die vier Trefferergebnisse Mark, Abschluss, Punkte und nicht gewertet sind pro D
 Neue PixelIt-/Awtrix-Textvariablen: `{cricket-scoring-mode}`, `{cricket-field}`, `{cricket-marks}`, `{cricket-turn-marks}`. Bei einem Cricket/Tactics-Trefferereignis ist `{score}` dessen erspielte Punktzahl, `{dart-score}` sein physischer Wert. `{game-mode-extra}` enthält Cricket, Tactics oder Hidden Cricket.
 
 GUI und TUI: jeweiliges Modul → Regeln → Regel hinzufügen/bearbeiten → Cricket/Tactics-Auslöser wählen → Effekte/Schritte/Medien einstellen → speichern. Es gibt bei diesen Ereignissen keinen zusätzlichen Scorefilter. [Caller-Soundkeys und genaue Auslöser](../CALLER_SOUND_KEYS.de.md).
+
+
+## Gespeicherte Bedingungen / Stored conditions
+
+WLED, Pixelit, AWTRIX NG und GIF speichern nur die zum Auslöser passenden Bedingungen:
+`Score` die Punktzahl (`Minimum`), `ScoreRange` beide Grenzen, `DartField` Feld und Ring,
+`Multiplier` nur den Ring, `Combo` nur die Kombination. Andere Auslöser benötigen
+keine dieser fünf Bedingungen. Leere optionale Spielerfilter werden weggelassen;
+gesetzte wirksame Filter und gültige Nullwerte (z. B. MISS) bleiben erhalten.
+Die bestehende WLED-Altregel `DartScore` behält ihre beiden Grenzen.
+
+Beim ersten Start der aktualisierten Version wird `settings.json` automatisch und
+atomar bereinigt. GUI, TUI, lokale Weboberfläche und Webapp verwenden denselben
+Speicherweg; kein Zurücksetzen und keine Neueinrichtung erforderlich. Alte Backups
+werden beim Wiederherstellen bereinigt; neue Backups und HubX-Ereignispakete sind
+kompakt. Unbekannte Auslöser und unbekannte Felder werden nicht gelöscht.
+Bereits heruntergeladene Dateien und bestehende HubX-Veröffentlichungen bleiben
+unverändert. In der TUI wie gewohnt das Modul bearbeiten und speichern; es gibt
+keinen gesonderten Bereinigungsbefehl. Die internen Bearbeitungsmodelle und API-DTOs
+können weiterhin Startwerte enthalten, damit ein Triggerwechsel konfigurierbar bleibt.
+Diese Startwerte werden nicht als ungenutzte Ereignisbedingungen persistiert.
+
+WLED, Pixelit, AWTRIX NG and GIF persist only the conditions their trigger uses:
+`Score`: minimum/exact score; `ScoreRange`: both bounds; `DartField`: field and multiplier;
+`Multiplier`: multiplier; `Combo`: combo. Other triggers omit all five. Empty optional
+player filters are omitted; active filters and meaningful zero values are retained.
+Legacy WLED `DartScore` keeps both bounds. Existing settings are cleaned atomically
+when the updated host starts. GUI, TUI, local web and webapp share the same storage;
+no reset or separate maintenance command is necessary. Old backups are cleaned on
+restore, and new backups/HubX exports omit unused conditions. Unknown triggers and
+fields are preserved. Existing downloads and published HubX items are not rewritten.
+Typed editor/API models retain their editing defaults; storage removes inactive ones.

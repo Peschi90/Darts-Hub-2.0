@@ -97,3 +97,10 @@ and a compatible existing Autodarts session. Functional conversion failures stop
 handoff. Expired sessions require sign-in; v1-only profiles/layout remain archived.
 The manual JSON import continues to exclude credentials and keeps external apps on
 manual start.
+
+
+## darts-voice / darts-extern
+
+Die Module haben eigene TUI-Menüs und akzeptieren `--voice-PROPERTY` bzw. `--extern-PROPERTY`. Der Legacy-Import übernimmt unterstützte Einstellungen mit deaktiviertem Start und schließt Anmeldedaten aus. Einrichtung, Voraussetzungen und Terminalbeispiele: [Voice / Extern](VOICE_EXTERN.md).
+
+Both modules have dedicated TUI menus and accept `--voice-PROPERTY` / `--extern-PROPERTY`. Legacy import preserves supported settings, excludes credentials and keeps workers disabled. See the linked guide for dependencies and terminal examples.
