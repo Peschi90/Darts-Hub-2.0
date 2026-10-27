@@ -44,6 +44,11 @@ Adresse, GPIO, Board-ID, Medienordner und Sicherung angeben. Der Dialog bietet
 dieselbe Vorschau, Bestätigung, Einrichtung und Sicherung. **Im lokalen Netz
 suchen** zeigt die gefundenen Controller-Adressen.
 
+Bei einem getrennt gestarteten Headless-Dienst verbindet sich die TUI mit
+`DartsHub --tui --api-url http://127.0.0.1:5069`. Vorschau und Fortschritt
+werden auch während des geöffneten Dialogs aktualisiert. Bei einem Prüffehler
+wird die Ursache angezeigt und der Dialog lässt sich wieder schließen.
+
 ## English
 
 Open **WLED → Robbel3D One-Click** in the GUI. The original 145-LED Robbel3D
@@ -71,6 +76,11 @@ its backup remains available. Unverified application settings are not committed.
 For the terminal equivalent, run `DartsHub --tui`, open **WLED → Robbel3D
 One-Click**, enter the same inputs and use the shared preview/confirmation flow.
 **Search local network** lists discovered device addresses.
+
+With a separately started headless service, connect using
+`DartsHub --tui --api-url http://127.0.0.1:5069`. Preview and progress updates
+continue while the dialog is open. Validation errors display their cause and
+allow the dialog to be closed again.
 
 ## Implementation references
 

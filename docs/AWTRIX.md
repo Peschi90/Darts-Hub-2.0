@@ -230,3 +230,11 @@ and the shared GUI/TUI/web previews agree. Imported Pixelit GIF animations are a
 textless. Renamed HubX copies retain their image-only intent; HubX does not invent
 score/name fallback text. Loading/file diagnostics remain outside the matrix.
 Ordinary text templates are unchanged. No additional setting is needed.
+
+## Average / MPR
+
+Deutsch: `{average}` ist der X01-Match-Average des auslösenden Spielers, `{leg-average}` der Leg-Average und `{set-average}` der Set-Average. Für Cricket/Tactics stehen `{mpr}` und `{leg-mpr}` zur Verfügung. Feste Spieler: `{p1-average}` bis `{p32-average}` (entsprechend auch die anderen Statistikvariablen). Die Nummern folgen der stabilen Match-Spielerzuordnung. Werte kommen direkt aus Autodarts, mit zwei Nachkommastellen und Dezimalpunkt. Nicht verfügbare Statistiken bleiben leer; Profil-Averages werden nicht verwendet.
+
+English: `{average}` is the triggering player's X01 match average; `{leg-average}` and `{set-average}` select the leg/set. Cricket/Tactics provide `{mpr}` and `{leg-mpr}`. Fixed players use `{p1-average}` through `{p32-average}` (also for the other statistics). Player numbers follow the stable match assignment. Values come directly from Autodarts, formatted with two decimal places and a decimal point. Unavailable statistics remain empty; profile averages are never substituted.
+
+DE: Anzeigevorlage `average` auswählen, Textüberschreibung deaktivieren. EN: Select display template `average` and disable the text override.

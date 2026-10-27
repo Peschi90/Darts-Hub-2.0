@@ -106,3 +106,9 @@ Echte GUI mit synthetischen 16×16-Beispieldaten. / Actual GUI with synthetic 16
 ![GIF-Verwaltung auf Deutsch](../images/wled/wled-gifs-de.png)
 
 ![GIF manager in English](../images/wled/wled-gifs-en.png)
+
+### Eine GIF-Datei fehlt in der Liste / A GIF is missing from the list
+
+32×32 ist eine unterstützte Größe; `Busted_32x32.gif` ist ein gültiger Dateiname. Darts-Hub liest die aktuelle Dateiliste und verwendet bei einer leeren Antwort oder einem nicht verfügbaren Endpunkt zusätzlich die ältere Abfrage. Bei einer weiterhin leeren Liste unter WLED 16.0.1 die Antwort von `http://<WLED-IP>/edit?list=/` prüfen. Die Anfrage liest nur die Dateiliste. Für die Fehlersuche Firmwareversion, genaue Meldung und diese JSON-Antwort bereitstellen. Die WLED-Konsole protokolliert die Antwort auf das Einlesen der Liste; GIF-Dateiinhalte werden nicht protokolliert. Derselbe Zugriff gilt in GUI, TUI, Weboberfläche und Webapp.
+
+32×32 is supported and `Busted_32x32.gif` is a valid filename. Darts-Hub tries the current file-list request and falls back to the legacy endpoint if the result is empty or the endpoint is unavailable. If the list remains empty on WLED 16.0.1, inspect `http://<WLED-IP>/edit?list=/`. This only reads the file list. Provide firmware version, the exact message and the returned JSON for investigation. WLED console diagnostics include the retrieved file list, not GIF file contents. GUI, TUI, web UI and webapp share this backend access.
