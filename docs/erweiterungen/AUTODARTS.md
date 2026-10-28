@@ -23,3 +23,14 @@
 GUI: **Autodarts**, Board-ID, Anmeldung und speichern. TUI: dieselbe Seite, Board bearbeiten und angebotenen Geräte-Anmeldevorgang nutzen. Legacy-E-Mail/Passwort-Import ersetzt diese Anmeldung nicht.
 
 Weiterlesen: [Benutzeranleitung](../../README.md), [Ereignisse](EREIGNISSE.md), [gemeinsame Funktionen](GEMEINSAM.md).
+
+## Statistikdaten beim Matchstart / Statistics at match start
+
+Bei Matches ohne Sets können die Set-Statistiken leer sein. Darts-Hub lädt den
+Spielstatus trotzdem; fehlende Averages bleiben leer, ein gemeldeter Average von
+0 wird als 0 angezeigt. Das gilt für GUI, TUI und Weboberfläche. Es ist keine
+zusätzliche Einstellung nötig.
+
+Matches without sets may provide no set statistics. Darts-Hub still loads the
+match state; unavailable averages stay empty, while a reported average of 0 stays
+0. This applies to the GUI, TUI and web interface without additional settings.

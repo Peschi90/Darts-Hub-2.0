@@ -18,7 +18,7 @@
 - Mehrere Schritte mit Vorlage, Zielgeräten, Text, Icon, Farbe, Dauer, Helligkeit, Scrollgeschwindigkeit, Textschreibweise und Sound.
 - Ausgabe als Benachrichtigung, App oder automatisch; App-Name und zusätzliche JSON-Eigenschaften festlegen.
 - Automatischer Modus mit Dauer **0** verwendet eine App; Displayrotation kann sie später ausblenden. Schritte mit positiver Dauer laufen zeitlich nacheinander.
-- Dieselben Textvariablen wie PixelIt, einschließlich fester Spielerwerte p1–p32.
+- Dieselben Textvariablen wie PixelIt, einschließlich fester Spielerwerte p1–p6.
 - Entwürfe auf echten Geräten testen; speichern und live anwenden. Idle bei Matchstart und Exit-Effekte beim Verlassen ausführen.
 
 ## Display-Einstellungen

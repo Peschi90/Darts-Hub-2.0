@@ -319,7 +319,7 @@ Auf der zweiten Matrix ersetze `p1` durch `p2`, usw. Die Nummern bleiben gleich,
 | `{darts-thrown}` | Anzahl geworfener Darts im aktuellen Leg |
 | `{turn-score}` | Punkte der aktuellen Aufnahme |
 | `{points-left}` | Restpunkte des ausgewählten/aktiven Spielers |
-| `{p1-points-left}`, `{p1-darts-thrown}` | Feste Werte von Spieler 1; ebenso für p2 bis p32 |
+| `{p1-points-left}`, `{p1-darts-thrown}` | Feste Werte von Spieler 1; ebenso für p2 bis p6 |
 
 Korrekturen, Zurücknehmen und Überwerfen verwenden die von Autodarts gemeldeten Werte. In der TUI stehen dieselben Ereignisse und Textfelder zur Verfügung. Headless-Konfigurationen verwenden die Auslöser `Throw` und `PlayerChanged`.
 

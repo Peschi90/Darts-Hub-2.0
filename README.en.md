@@ -320,7 +320,7 @@ Replace `p1` with `p2` on the second matrix, and so on. Numbers stay the same wh
 | `{darts-thrown}` | Darts thrown in the current leg |
 | `{turn-score}` | Current visit score |
 | `{points-left}` | Remaining score of the selected/active player |
-| `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p32 |
+| `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p6 |
 
 Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. Headless configurations use the trigger IDs `Throw` and `PlayerChanged`.
 

@@ -69,7 +69,7 @@ Auf der zweiten Matrix ersetze `p1` durch `p2`, usw. Die Nummern bleiben gleich,
 | `{darts-thrown}` | Anzahl geworfener Darts im aktuellen Leg |
 | `{turn-score}` | Punkte der aktuellen Aufnahme |
 | `{points-left}` | Restpunkte des ausgewählten/aktiven Spielers |
-| `{p1-points-left}`, `{p1-darts-thrown}` | Feste Werte von Spieler 1; ebenso für p2 bis p32 |
+| `{p1-points-left}`, `{p1-darts-thrown}` | Feste Werte von Spieler 1; ebenso für p2 bis p6 |
 
 Korrekturen, Zurücknehmen und Überwerfen verwenden die von Autodarts gemeldeten Werte. In der TUI stehen dieselben Ereignisse und Textfelder zur Verfügung. Der Auslöser **Wurf oder Turnwechsel** aktualisiert eine Regel bei Würfen und neuen Aufnahmen, auch desselben Spielers. In der TUI unter Ereignisse → Auslöser auswählen; Headless-Konfigurationen verwenden `ThrowOrTurnChanged` (`PlayerChanged` bleibt der separate tatsächliche Spielerwechsel).
 
@@ -99,7 +99,7 @@ Replace `p1` with `p2` on the second matrix, and so on. Numbers stay the same wh
 | `{darts-thrown}` | Darts thrown in the current leg |
 | `{turn-score}` | Current visit score |
 | `{points-left}` | Remaining score of the selected/active player |
-| `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p32 |
+| `{p1-points-left}`, `{p1-darts-thrown}` | Fixed values for player 1; likewise for p2 through p6 |
 
 Corrections, undo and busts use the values reported by Autodarts. The TUI provides the same events and text fields. The **Throw or turn change** trigger updates on throws and new visits, including the same player. In the TUI, select it under Events → Trigger; headless configurations use `ThrowOrTurnChanged` (`PlayerChanged` remains the separate actual player change).
 
@@ -159,8 +159,8 @@ Ordinary text templates are unchanged. No additional setting is needed.
 
 ## Average / MPR
 
-Deutsch: `{average}` ist der X01-Match-Average des auslösenden Spielers, `{leg-average}` der Leg-Average und `{set-average}` der Set-Average. Für Cricket/Tactics stehen `{mpr}` und `{leg-mpr}` zur Verfügung. Feste Spieler: `{p1-average}` bis `{p32-average}` (entsprechend auch die anderen Statistikvariablen). Die Nummern folgen der stabilen Match-Spielerzuordnung. Werte kommen direkt aus Autodarts, mit zwei Nachkommastellen und Dezimalpunkt. Nicht verfügbare Statistiken bleiben leer; Profil-Averages werden nicht verwendet.
+Deutsch: `{average}` ist der X01-Match-Average des auslösenden Spielers, `{leg-average}` der Leg-Average und `{set-average}` der Set-Average. Für Cricket/Tactics stehen `{mpr}` und `{leg-mpr}` zur Verfügung. Feste Spieler: `{p1-average}` bis `{p6-average}` (entsprechend auch die anderen Statistikvariablen). Die Nummern folgen der stabilen Match-Spielerzuordnung. Werte kommen direkt aus Autodarts, mit zwei Nachkommastellen und Dezimalpunkt. Nicht verfügbare Statistiken bleiben leer; Profil-Averages werden nicht verwendet.
 
-English: `{average}` is the triggering player's X01 match average; `{leg-average}` and `{set-average}` select the leg/set. Cricket/Tactics provide `{mpr}` and `{leg-mpr}`. Fixed players use `{p1-average}` through `{p32-average}` (also for the other statistics). Player numbers follow the stable match assignment. Values come directly from Autodarts, formatted with two decimal places and a decimal point. Unavailable statistics remain empty; profile averages are never substituted.
+English: `{average}` is the triggering player's X01 match average; `{leg-average}` and `{set-average}` select the leg/set. Cricket/Tactics provide `{mpr}` and `{leg-mpr}`. Fixed players use `{p1-average}` through `{p6-average}` (also for the other statistics). Player numbers follow the stable match assignment. Values come directly from Autodarts, formatted with two decimal places and a decimal point. Unavailable statistics remain empty; profile averages are never substituted.
 
 DE: Anzeigevorlage `templates/average` auswählen, Textüberschreibung deaktivieren. EN: Select display template `templates/average` and disable the text override.

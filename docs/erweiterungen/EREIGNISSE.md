@@ -48,12 +48,14 @@ GUI: Ereigniskarte öffnen und speichern. TUI: `DartsHub --tui`, Modul auswähle
 ## Bedingungen und Zeitpunkt
 
 - Score/Scorebereich betreffen eine Aufnahme. Beim exakten Score wird nur die **Punktzahl** eingegeben, beim Bereich Minimum und Maximum. Einzelwurf-Effekte werden über **DMU** mit Feld und Ring oder Multiplikator konfiguriert.
-- Der frühere Einzelwurf-Scorebereich (`DartScore`) steht nicht mehr zur Neuauswahl. Bereits gespeicherte und aus V1 importierte Regeln bleiben mit ihren Werten und Lizenzanforderungen erhalten.
+- Einzelwurf-Punkte (`DartScore`) stehen nicht mehr zur Neuauswahl. Auch für animierte Matrix-Scores **DMU** mit Feld/Ring oder Multiplikator verwenden. Bereits gespeicherte und aus V1 importierte Altregeln behalten ihre Werte und Lizenzanforderungen.
 - Feld/Ring etwa Triple 20; Multiplikator Single/Double/Triple feldunabhängig. Kombinationen z. B. `t20,t20,t20` oder `s20,d20,t20`.
 - Gewinn ist von Match-Verlassen getrennt; Netzwerkunterbrechung allein ist kein Exit.
 - Globale Ereignisse ohne Spieler sollten keinen Spielernamenfilter erhalten. WLED blendet ihn bei globalen Board-/Schlaf-/Exit-Ereignissen aus.
 - WLED hat eigene Auswahlprioritäten und Lizenzanforderungen. Ein Haken umgeht keine Lizenz.
 - Namensvorrang und Sortierung: [gemeinsame Funktionen](GEMEINSAM.md). GIF hat keinen zusätzlichen Namensvorrang.
+
+Use **DMU** with a field/ring or multiplier for single-dart effects, including animated matrix scores. `DartScore` is no longer offered for new rules. Saved and v1-imported legacy rules retain their values and license requirements.
 
 ## Textvariablen für PixelIt und AwtrixNG
 
@@ -72,7 +74,7 @@ In Schritttexte einsetzen. Ereignisse ohne Spieler oder Dart können leere Werte
 | `{game-mode}` | Spielmodus |
 | `{game-mode-extra}` | Zusatzangabe zum Modus |
 
-Feste Spielerpositionen **p1 bis p32** unterstützen jeweils `{pN-playername}`, `{pN-points-left}`, `{pN-darts-thrown}`, `{pN-dart-number}`, `{pN-dart-score}` und `{pN-turn-score}`. N durch die Nummer ersetzen, z. B. `{p2-points-left}`.
+Feste Spielerpositionen **p1 bis p6** unterstützen jeweils `{pN-playername}`, `{pN-points-left}`, `{pN-darts-thrown}`, `{pN-dart-number}`, `{pN-dart-score}` und `{pN-turn-score}`. N durch die Nummer ersetzen, z. B. `{p2-points-left}`.
 
 Beispiele: `{playername} {points-left} D{dart-number}` für aktiven Spieler; `{p1-playername} {p1-points-left}` für eine feste Spielermatrix.
 
