@@ -17,6 +17,7 @@ Alle aktuell auswählbaren Regeltypen. Ein Haken bedeutet: Das Modul bietet den 
 | Cricket/Tactics-Mark (`CricketMark`) | Gewertete Marks ohne Abschluss oder Punkte. | ✓ | ✓ | ✓ | ✓ |
 | Cricket/Tactics-Feld abgeschlossen (`CricketClosed`) | Dritte Mark erreicht, ohne Punkte. | ✓ | ✓ | ✓ | ✓ |
 | Cricket/Tactics-Punkte (`CricketScored`) | Punkte erzielt; bei Cut Throat für offene Gegner. | ✓ | ✓ | ✓ | ✓ |
+| Cricket/Tactics: Aufnahme ohne gewertete Treffer (`CricketNoScore`) | Nach dem dritten Dart, wenn die gesamte Aufnahme 0 Marks hat. | ✓ | ✓ | ✓ | ✓ |
 | Cricket/Tactics: nicht gewertet (`CricketNoMark`) | Kein Zielfeld oder bereits für alle geschlossen. | ✓ | ✓ | ✓ | ✓ |
 | Erste Cricket/Tactics-Mark (`CricketOpened`) | Erste Mark auf einem zuvor unberührten Feld. | ✓ | ✓ | ✓ | ✓ |
 | Cricket/Tactics-Feld für alle geschlossen (`CricketClosedAll`) | Letzter Spieler schließt das Feld. | ✓ | ✓ | ✓ | ✓ |
@@ -121,3 +122,13 @@ no reset or separate maintenance command is necessary. Old backups are cleaned o
 restore, and new backups/HubX exports omit unused conditions. Unknown triggers and
 fields are preserved. Existing downloads and published HubX items are not rewritten.
 Typed editor/API models retain their editing defaults; storage removes inactive ones.
+
+## Null-Punkte und No Score / Zero points and No Score
+
+**Deutsch:** In Cricket, Tactics und Hidden Cricket lösen 0 Punkte keine normalen Score-/Scorebereich-Effekte aus (einschließlich des alten WLED-Einzelwurf-Scorebereichs). Bestehende Regeln bleiben gespeichert und gelten in anderen Spielmodi weiterhin, insbesondere X01. Die Caller-Ansagen bleiben unverändert. Der eigene Trigger **Cricket/Tactics: Aufnahme ohne gewertete Treffer** (`CricketNoScore`) reagiert einmal nach dem dritten Dart bei insgesamt **0 Marks**. Gültige Treffer zum Öffnen/Schließen eines Feldes sind kein No Score, auch wenn sie 0 Punkte bringen. `CricketNoMark` bleibt der separate Einzel-Dart-Trigger. Positive Punkte, DMU-/Miss-/Kombinationsregeln und die vorhandenen Cricket-Feldereignisse behalten ihr Verhalten.
+
+GUI/Web/Webapp: In WLED, Pixelit, AWTRIX-NG oder GIF eine Ereignisregel anlegen und den neuen Cricket/Tactics-Trigger wählen. TUI: Modul → Ereignisse → Regel → Trigger `CricketNoScore`; danach Effekt/Anzeige wählen und speichern. Die bestehenden Lizenzregeln gelten auch für diesen Cricket/Tactics-Trigger.
+
+**English:** In Cricket, Tactics and Hidden Cricket, zero points never activate generic score/score-range effects (including the legacy WLED single-dart score range). Existing rules remain stored and continue working in other modes, particularly X01. Caller announcements remain unchanged. **Cricket/Tactics: visit without scoring marks** (`CricketNoScore`) fires once after the third dart when the entire visit has **0 marks**. Valid opening/closing hits do not count as No Score, even when they score zero points. `CricketNoMark` remains the separate per-dart trigger. Positive scores, DMU/miss/combination rules and existing Cricket field events retain their behavior.
+
+GUI/web/webapp: Create a rule in WLED, Pixelit, AWTRIX-NG or GIF and select the new Cricket/Tactics trigger. TUI: module → events → rule → trigger `CricketNoScore`, then choose the effect/display and save. Existing license rules also apply to this Cricket/Tactics trigger.

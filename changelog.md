@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.59
+## v0.1.0-beta.60
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -8,13 +8,13 @@
 
 #### Allgemein / General
 
-- Anzeigevariablen, Vorschauen und Spielerpositionen sind auf die sechs Autodarts-Spieler p1–p6 begrenzt.
+- Cricket/Tactics führen keine normalen 0-Punkte-Score-Effekte mehr aus. WLED, Pixelit, AWTRIX-NG und GIF bieten einen eigenen Trigger für Aufnahmen mit 0 Marks; Caller-Ansagen bleiben erhalten.
+
+- Logs liegen immer neben der Anwendung: Konsolendetails bleiben für heute und gestern, Gesamtlogs für sieben Kalendertage erhalten; Modul-Logs bleiben unverändert.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Autodarts
-
-- Matchstarts ohne Sets werden auch mit leeren Statistikdaten zuverlässig geladen.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -24,15 +24,7 @@
 
 #### WLED
 
-- Neue Einzelwurf-Ereignisse verwenden DMU, auch bei Matrix-Scores. Der alte Einzelwurf-Punktebereich entfällt in der Auswahl; bestehende Altregeln bleiben erhalten.
-
-- Matrizen zeigen Scores, Einzelwürfe und alle Anzeigevariablen mit zwölf wählbaren oder zufälligen Animationen, auch vollflächig, bewegt sowie explodierend/implodierend. Tempo, Hintergrundstärke und Farben sind einstellbar; das Score-Studio zeigt passende Beispiele.
-
-
-- WLED-GIFs werden über aktuelle und ältere Dateilisten-Abfragen eingelesen. Leere Antworten werden nochmals geprüft; die Konsole hilft bei fehlenden Dateien.
-
-
-<!-- Kurze Änderungen für Nutzer hier eintragen. -->
+- Controller-GIFs werden beim Start und danach automatisch aktualisiert – auch nach Änderungen direkt in WLED. Leere Listen und vorübergehende Verbindungsfehler werden sicher behandelt; eingetragene Ereignis-Dateinamen bleiben erhalten.
 
 #### PixelIt
 
@@ -59,8 +51,6 @@
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Updates und Installation / Updates and Installation
-
-- Release-Prüfungen passen zu den aktuellen WLED-Einzelwurf-Ereignissen und warten zuverlässig auf vollständige Skriptkonsolen-Ausgaben. Vorlagenprüfungen unterstützen auch getrennte Build-Ausgaben.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -70,15 +60,15 @@
 
 ### English
 
-#### Allgemein / General
+- Cricket/Tactics no longer run generic zero-point score effects. WLED, Pixelit, AWTRIX-NG and GIF offer a dedicated trigger for zero-mark visits; caller announcements remain unchanged.
 
-- Display variables, previews and player positions are limited to the six Autodarts players p1–p6.
+- Logs always stay beside the application: console details retain today and yesterday, combined logs retain seven calendar days; module logs remain unchanged.
+
+#### Allgemein / General
 
 <!-- Add brief user-facing changes here. -->
 
 #### Autodarts
-
-- Matches without sets load reliably even when statistics are unavailable.
 
 <!-- Add brief user-facing changes here. -->
 
@@ -88,15 +78,7 @@
 
 #### WLED
 
-- New single-dart events use DMU, including matrix scores. The former single-dart score range is removed from selection; existing legacy rules remain intact.
-
-- Matrices display scores, individual darts and all display variables with twelve fixed or random animations, including full-matrix patterns, moving numbers, explosions and implosions. Adjust speed, background strength and colors and try examples in the score studio.
-
-
-- WLED GIFs are read using current and legacy file-list requests. Empty responses are checked again, with console details to investigate missing files.
-
-
-<!-- Add brief user-facing changes here. -->
+- Controller GIFs refresh automatically at startup and after changes made directly in WLED. Empty lists and temporary connection failures are handled safely, while configured event filenames are preserved.
 
 #### PixelIt
 
@@ -123,8 +105,6 @@
 <!-- Add brief user-facing changes here. -->
 
 #### Updates und Installation / Updates and Installation
-
-- Release checks match current WLED single-dart events and reliably wait for complete script-console output. Template checks also support separate build outputs.
 
 <!-- Add brief user-facing changes here. -->
 
