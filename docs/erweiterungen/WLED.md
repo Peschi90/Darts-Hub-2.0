@@ -23,7 +23,7 @@
 
 ## Robbel3D One-Click
 
-Gebündelten 145-LED-Ring und sechs Presets einrichten: Controller suchen, Adresse/GPIO, Board-ID und Medienordner wählen, Änderungen prüfen/bestätigen, Controller sichern, LED-Konfiguration/Presets übertragen, Ergebnis prüfen und Caller/WLED sofort anwenden. Sicherung als ZIP herunterladen. WLAN/Gerätekennung bleiben erhalten; weitere LED-Ausgänge werden deaktiviert und Presets ersetzt. GUI und TUI bieten denselben Ablauf.
+Gebündelten 145-LED-Ring und sechs Presets einrichten: Controller suchen, Adresse/GPIO, Board-ID und Medienordner wählen, Änderungen prüfen/bestätigen, Controller sichern, LED-Konfiguration/Presets übertragen, Ergebnis prüfen und Caller/WLED sofort anwenden. Sicherung als ZIP herunterladen. WLAN/Gerätekennung bleiben erhalten; der gewählte GPIO wird erster Ausgang, weitere Ausgänge bleiben erhalten und Presets werden ersetzt. GUI und TUI bieten denselben Ablauf.
 
 ## Grenzen
 

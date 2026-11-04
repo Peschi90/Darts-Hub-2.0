@@ -65,6 +65,7 @@ Die folgenden vier Effekte gelten bei `CallEveryDart = 3`. Pro Dart wird **nur e
 | `effect_cricket_closed` | Der Dart erreicht mindestens die dritte Mark für den Spieler, erzielt aber keine Punkte. |
 | `effect_cricket_scored` | Tatsächlich Punkte erzielt. Standard: für den Werfer; Cut Throat: für offene Gegner. Nie bei No Score. |
 | `effect_cricket_no_mark` | Keine gewerteten Marks: Nicht-Zielfeld, physischer Fehlwurf oder für alle geschlossenes Feld. |
+| cricket_white_horse | White Horse: drei verschiedene gültige Triple-Felder, vor der Aufnahme vom Spieler unmarkiert. Ersetzt die Marks-Ansage nach Dart 3, wenn die Datei vorhanden ist; sonst normale Marks-Ansage. Score-Ansagen müssen aktiviert sein; Siegeransagen behalten Vorrang. Beispiel: cricket_white_horse.mp3. |
 | `cricket_marks_0` … `cricket_marks_9` | Aufnahme beendet: komplette Phrase „Keine Marks“ oder „Sechs Marks“. Ersatz TTS, danach vorhandene numerische Marks-Zahl ohne Zusatzphrase. Bei Sieg hat die Siegeransage Vorrang. Auch No Score verwendet Marks. |
 | `cricket_points` | Optionaler Zusatz nach Marks-Ansage und Zahl, wenn Standard tatsächlich Punkte bringt: z. B. „Punkte“. Nur das Vorhandensein dieser Datei aktiviert den Zusatz. |
 | `cricket_penalty_points` | Entsprechender optionaler Cut-Throat-Zusatz: „Strafpunkte“. No Score spielt keinen Punkte-Zusatz. |

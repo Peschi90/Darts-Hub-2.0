@@ -104,3 +104,8 @@ manual start.
 Die Module haben eigene TUI-Menüs und akzeptieren `--voice-PROPERTY` bzw. `--extern-PROPERTY`. Der Legacy-Import übernimmt unterstützte Einstellungen mit deaktiviertem Start und schließt Anmeldedaten aus. Einrichtung, Voraussetzungen und Terminalbeispiele: [Voice / Extern](VOICE_EXTERN.md).
 
 Both modules have dedicated TUI menus and accept `--voice-PROPERTY` / `--extern-PROPERTY`. Legacy import preserves supported settings, excludes credentials and keeps workers disabled. See the linked guide for dependencies and terminal examples.
+
+
+Importierte Ereignisse erhalten einen Herkunftszusatz: `xyz v1 imp` bei v1-JSON-Dateien, `xyz R3D 2026` beim 145-LED-Robbel3D-Profil und `xyz R3D 2027` beim 2027-Profil. Das gilt für neue Importe in GUI, TUI und Headless; vorhandene Ereignisse werden nicht nachträglich umbenannt.
+
+Imported events receive an origin suffix: `xyz v1 imp` for v1 JSON files, `xyz R3D 2026` for the 145-LED Robbel3D profile and `xyz R3D 2027` for the 2027 profile. This applies to new imports in GUI, TUI and headless mode; existing events are not renamed retroactively.

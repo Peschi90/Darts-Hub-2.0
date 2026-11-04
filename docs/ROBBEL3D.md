@@ -25,7 +25,7 @@ Sie ist im Programm enthalten; zusätzliche Konfigurationsdateien sind nicht nö
    unter **Config → Security & Updates → Backup & Restore** eingespielt werden.
 
 WLAN, Gerätekennung und übrige Controller-Einstellungen bleiben erhalten.
-Weitere LED-Ausgänge werden deaktiviert und vorhandene Presets ersetzt. Bereits
+Der gewählte GPIO wird zum ersten Ausgang. War er bereits der zweite, rückt der bisherige erste an die zweite Stelle. Weitere Ausgänge behalten ihre Hardwareeinstellungen und erhalten anschließende LED-Adressbereiche. Vorhandene Presets werden ersetzt. Bereits
 belegte GPIOs werden abgelehnt. Die alten Vorlagen enthalten teilweise längere
 Segmentgrenzen; die Einrichtung begrenzt sie auf die 145 LEDs des LED-Rings.
 Die Autodarts-Anmeldung und Lizenzregeln bleiben bestehen. Ein Werksreset vor
@@ -63,7 +63,7 @@ device backup, configuration upload, preset upload, verification and immediate
 application of Caller/WLED settings.
 
 Wi-Fi, device identity, other controller settings, Autodarts login and licensing
-are preserved. Additional LED outputs are disabled and existing presets replaced.
+are preserved. The selected GPIO becomes the first output. If it was second, the previous first output moves to second. Other outputs retain their hardware settings and receive consecutive LED address ranges. Existing presets are replaced.
 Occupied GPIOs are rejected. Legacy segment bounds are limited to the ring's
 145 LEDs. Obsolete Caller server ports and certificate switches are displayed
 as unsupported in the preview. A factory reset is unnecessary.
@@ -142,3 +142,15 @@ Dialogbeispiel / example dialog (Entwurf mit Beispieldaten / draft with sample d
 ![Robbel 2027 Deutsch](images/user-guide/robbel2027-de.png)
 
 ![Robbel 2027 English](images/user-guide/robbel2027-en.png)
+
+
+## Preset-Datei prüfen / Preset file verification
+
+Beide Profile übertragen nach Möglichkeit eine vollständige JSON-Datei. Falls die Firmware nur einzelne Presets annimmt, wird jeder Lösch- und Speichervorgang durch Rücklesen geprüft, bevor der nächste startet. Ungültiges JSON oder fehlende Presets führen zum Abbruch ohne Übernahme der Hub-Einstellungen; eine erstellte Sicherung bleibt verfügbar. Das gilt für GUI und TUI.
+
+Both profiles upload a complete JSON document when supported. When firmware requires individual presets, each deletion and save is verified by reading back before proceeding. Invalid JSON or missing presets abort setup without applying Hub settings; an existing backup remains available. This applies to GUI and TUI.
+
+
+Importierte Ereignisse erhalten einen Herkunftszusatz: `xyz v1 imp` bei v1-JSON-Dateien, `xyz R3D 2026` beim 145-LED-Robbel3D-Profil und `xyz R3D 2027` beim 2027-Profil. Das gilt für neue Importe in GUI, TUI und Headless; vorhandene Ereignisse werden nicht nachträglich umbenannt.
+
+Imported events receive an origin suffix: `xyz v1 imp` for v1 JSON files, `xyz R3D 2026` for the 145-LED Robbel3D profile and `xyz R3D 2027` for the 2027 profile. This applies to new imports in GUI, TUI and headless mode; existing events are not renamed retroactively.

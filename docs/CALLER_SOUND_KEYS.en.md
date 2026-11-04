@@ -65,6 +65,7 @@ With `CallEveryDart = 3`, exactly one of the four hit effects is chosen: scoring
 | `effect_cricket_closed` | This dart reaches the player's third mark or more, without scoring points. |
 | `effect_cricket_scored` | Actual points scored: for the throwing player in Standard, for open opponents in Cut Throat. Never in No Score. |
 | `effect_cricket_no_mark` | Zero counting marks: non-target, physical miss or field already closed by everyone. |
+| cricket_white_horse | White Horse: three different valid triple fields previously unmarked by the player. Replaces the marks announcement after dart 3 when available; otherwise normal marks fallback. Requires score calls; winning calls keep priority. Example: cricket_white_horse.mp3. |
 | `cricket_marks_0` … `cricket_marks_9` | Completed visit: complete phrase such as “No marks” or “Six marks”, with TTS fallback, then an existing numeric marks clip without the suffix phrase. Winning announcements take precedence. Also used in No Score. |
 | `cricket_points` | Optional Standard scoring suffix after marks and the numeric points, e.g. “points”. Presence of the file opts into this additional phrase. |
 | `cricket_penalty_points` | Optional Cut-Throat suffix, e.g. “penalty points”. No Score never announces points. |

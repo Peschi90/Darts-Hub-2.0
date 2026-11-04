@@ -1,16 +1,12 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.60
+## v0.1.0-beta.61
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
 ### Deutsch
 
 #### Allgemein / General
-
-- Cricket/Tactics führen keine normalen 0-Punkte-Score-Effekte mehr aus. WLED, Pixelit, AWTRIX-NG und GIF bieten einen eigenen Trigger für Aufnahmen mit 0 Marks; Caller-Ansagen bleiben erhalten.
-
-- Logs liegen immer neben der Anwendung: Konsolendetails bleiben für heute und gestern, Gesamtlogs für sieben Kalendertage erhalten; Modul-Logs bleiben unverändert.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -20,21 +16,39 @@
 
 #### Caller
 
+- Optionaler Soundfile-Key cricket_white_horse mit Rückfall auf die Marks-Ansage.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### WLED
 
-- Controller-GIFs werden beim Start und danach automatisch aktualisiert – auch nach Änderungen direkt in WLED. Leere Listen und vorübergehende Verbindungsfehler werden sicher behandelt; eingetragene Ereignis-Dateinamen bleiben erhalten.
+- Robbel3D überträgt Presets bevorzugt als vollständige Datei und prüft einzelne Speichervorgänge vor dem Fortfahren. Beschädigte Dateien verhindern eine Erfolgsmeldung.
+
+- Robbel3D: Der gewählte GPIO wird erster Ausgang; vorhandene weitere Ausgänge bleiben bei beiden Profilen erhalten.
+
+- Neuer Cricket/Tactics-Trigger White Horse für drei verschiedene, zuvor unmarkierte Triple-Felder.
+
+- Lizenzgeschützte Ereignisse lassen sich mit gültiger Freischaltung wieder aus HubX und Paketdateien importieren.
+
+<!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### PixelIt
+
+- Neuer Cricket/Tactics-Trigger White Horse für drei verschiedene, zuvor unmarkierte Triple-Felder.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### AwtrixNG
 
+- Neuer Cricket/Tactics-Trigger White Horse für drei verschiedene, zuvor unmarkierte Triple-Felder.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### GIF
+
+- Neuer Cricket/Tactics-Trigger White Horse für drei verschiedene, zuvor unmarkierte Triple-Felder.
+
+- Unterordner des Medienordners lassen sich als Zufallsquelle auswählen. Neue Dateien werden automatisch berücksichtigt; GUI, TUI und Weboberfläche nutzen dieselbe Ordnerauswahl.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -47,6 +61,8 @@
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Einstellungen und Import / Settings and Import
+
+- Importierte Ereignisse zeigen ihre Herkunft im Namen: R3D 2026, R3D 2027 oder v1 imp.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -60,10 +76,6 @@
 
 ### English
 
-- Cricket/Tactics no longer run generic zero-point score effects. WLED, Pixelit, AWTRIX-NG and GIF offer a dedicated trigger for zero-mark visits; caller announcements remain unchanged.
-
-- Logs always stay beside the application: console details retain today and yesterday, combined logs retain seven calendar days; module logs remain unchanged.
-
 #### Allgemein / General
 
 <!-- Add brief user-facing changes here. -->
@@ -74,21 +86,39 @@
 
 #### Caller
 
+- Optional cricket_white_horse soundfile key with normal marks fallback.
+
 <!-- Add brief user-facing changes here. -->
 
 #### WLED
 
-- Controller GIFs refresh automatically at startup and after changes made directly in WLED. Empty lists and temporary connection failures are handled safely, while configured event filenames are preserved.
+- Robbel3D prefers complete preset-file uploads and verifies individual saves before continuing. Corrupt files prevent setup from reporting success.
+
+- Robbel3D: The selected GPIO becomes the first output; both profiles preserve other existing outputs.
+
+- New Cricket/Tactics White Horse trigger for three different, previously unmarked triple fields.
+
+- License-protected events can again be imported from HubX and package files with the required feature enabled.
+
+<!-- Add brief user-facing changes here. -->
 
 #### PixelIt
+
+- New Cricket/Tactics White Horse trigger for three different, previously unmarked triple fields.
 
 <!-- Add brief user-facing changes here. -->
 
 #### AwtrixNG
 
+- New Cricket/Tactics White Horse trigger for three different, previously unmarked triple fields.
+
 <!-- Add brief user-facing changes here. -->
 
 #### GIF
+
+- New Cricket/Tactics White Horse trigger for three different, previously unmarked triple fields.
+
+- Media subfolders can be selected as random image sources. New files are picked up automatically; GUI, TUI and web control share the same host folder catalog.
 
 <!-- Add brief user-facing changes here. -->
 
@@ -101,6 +131,8 @@
 <!-- Add brief user-facing changes here. -->
 
 #### Einstellungen und Import / Settings and Import
+
+- Imported event names identify their origin: R3D 2026, R3D 2027 or v1 imp.
 
 <!-- Add brief user-facing changes here. -->
 
