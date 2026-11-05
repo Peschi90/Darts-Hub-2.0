@@ -144,3 +144,9 @@ GUI/Web/mobile: Ereignisregel → Trigger **Cricket/Tactics: White Horse** → E
 GUI/web/mobile: event rule → **Cricket/Tactics: White Horse** → effect/display → save. TUI: module → events → rule → **CricketWhiteHorse** → effect/display → save. No numeric conditions required. Optional Caller key: **cricket_white_horse**, e.g. **cricket_white_horse.mp3** inside the soundpack. Replaces the marks call when score announcements are enabled; missing files retain normal marks calls. Winning announcements keep priority.
 
 Definition: [NDA Guidebook, White Horse](https://www.arachnid360.com/wp-content/uploads/2010/03/NDA-Guidebook.pdf).
+
+## Schnell navigieren / Quick navigation
+
+**DE:** In GUI und Weboberfläche erscheint nach dem Scrollen unten rechts ein schwebender Pfeil **Nach oben**. Neue Regeln in WLED, Pixelit, AWTRIX-NG und GIF werden direkt geöffnet und ins Bild gescrollt. In der Android-App gibt es ebenfalls den Pfeil und den Sprung zur neuen Regel. TUI: Eine neue Regel öffnet direkt ihren Editor; **Pos1/Home** springt an den Anfang der Liste.
+
+**EN:** GUI and web pages show a floating **Back to top** arrow at the bottom right after scrolling. New WLED, Pixelit, AWTRIX-NG and GIF rules open and scroll into view immediately. Android also provides the arrow and automatic rule focus. TUI opens newly added rules directly; **Home** moves to the beginning of the list.

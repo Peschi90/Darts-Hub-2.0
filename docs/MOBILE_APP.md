@@ -47,3 +47,20 @@ in the native app yet. See its README for builds, coverage and limitations.
 
 Backend interface changes require a mobile compatibility review and tests. The
 backend release check detects changes to the reviewed contracts.
+
+## Host-Updates / Host updates
+
+DE: Im aktuellen App-Quellstand zeigt Einstellungen → Verwaltung → Updates die Release-
+Notizen als formatierten Text. Nach Download auf den Host und bestätigter Installation
+zeigt die App einen animierten Balken und wartet bis zu drei Minuten auf die
+Wiederverbindung. Bei Erfolg wird das Dashboard mit frisch geladenen Hostdaten
+geöffnet; bei Timeout erscheinen Fehlermeldung und Verbindungsauswahl. Gespeicherte
+Kopplungen bleiben erhalten. Dies aktualisiert Darts-Hub auf dem Rechner, nicht die
+Android-App. Terminal-Alternative auf dem Host: `DartsHub --update`.
+
+EN: In current app source, Settings → Management → Updates renders formatted release
+notes. After downloading to the host and confirming installation, an animated bar
+tracks the restart/reconnection for up to three minutes. Success opens the dashboard
+with freshly loaded host data; timeout shows an error and the connection screen.
+Saved pairings remain intact. This updates Darts-Hub on the host, not the Android
+app. Terminal equivalent on the host: `DartsHub --update`.
