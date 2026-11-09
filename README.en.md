@@ -435,3 +435,7 @@ The [System page](docs/SYSTEM.md) reports actual backend storage, settings file,
 
 
 Offline voice control and external dart platforms: [darts-voice / darts-extern](docs/VOICE_EXTERN.md) (current source for the next beta).
+
+Hub75: [Setup, USB flashing, Wi-Fi and panel configuration](docs/HUB75.md).
+
+MatrixMind: BernyBoneBreaker’s MatrixMind 1.3.0 scoreboard for 1–3 panels with design and font previews from WebSocket game data, with demos and device GIF management. [Setup and requirements](docs/MATRIXMIND.md#english).

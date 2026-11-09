@@ -509,3 +509,7 @@ The [integration helper](scripts/v1-upgrade/README.md) needs a v1 update integra
 
 
 Offline-Sprachsteuerung und externe Dartplattformen: [darts-voice / darts-extern](docs/VOICE_EXTERN.md) (aktueller Quellstand für die nächste Beta).
+
+Hub75: [Einrichtung, USB-Flashen, WLAN und Panelkonfiguration](docs/HUB75.md).
+
+MatrixMind: Scoreboard von BernyBoneBreaker auf Basis der Version 1.3.0 für 1–3 Panels, mit Design- und Schriftvorschauen, Websocket-Spieldaten, Demos und Geräte-GIF-Verwaltung. [Einrichtung und Voraussetzungen](docs/MATRIXMIND.md).

@@ -90,3 +90,53 @@ Under **Soundpacks → Download**, the terminal shows the current phase and its 
 Die Module haben eigene TUI-Menüs und akzeptieren `--voice-PROPERTY` bzw. `--extern-PROPERTY`. Der Legacy-Import übernimmt unterstützte Einstellungen mit deaktiviertem Start und schließt Anmeldedaten aus. Einrichtung, Voraussetzungen und Terminalbeispiele: [Voice / Extern](VOICE_EXTERN.md).
 
 Both modules have dedicated TUI menus and accept `--voice-PROPERTY` / `--extern-PROPERTY`. Legacy import preserves supported settings, excludes credentials and keeps workers disabled. See the linked guide for dependencies and terminal examples.
+
+Hub75: `DartsHub --tui` → **Hub75**; [Einrichtung und entsprechende GUI-Aktionen / setup and GUI equivalents](HUB75.md).
+
+**Gerät hinzufügen / Add device** öffnet die Auswahl für geführte oder manuelle
+Einrichtung. Der erste Schritt zeigt die Controller-Anforderung und den
+gekennzeichneten Affiliate-Link. Die Geräteliste zeigt den Anzeigemodus.
+**Gerät · Betriebsoptionen pro Gerät / Device · Runtime options per device**
+überschreibt einzelne Modulstandards. Leere Felder übernehmen die Vorgabe.
+
+**Add device** opens the guided or manual setup choice. The first step shows
+the controller requirement and labelled affiliate link. The device list shows
+the display mode. **Device · Runtime options per device** overrides individual
+module defaults. Leave a field blank to inherit it.
+
+## MatrixMind / Hub75 GIFs
+
+`DartsHub --tui` → Hub75 → device · MatrixMind: typed settings, outgoing-frame preview, X01/Cricket/Ultra demos, stop demo, view/export diagnostics and guide/credits. Save the draft to activate settings. Supports 64/128/192×32 natively without Python. Design & font offers the original choices for 2–3 panels; Preview images shows selectable rendered samples. One panel uses the fixed compact layout. Standby adds the animated logo preview. Device · Manage GIFs: upload, preview, download and delete with confirmation. Details: [Deutsch / English](MATRIXMIND.md).
+
+**Gerät · GIFs verwalten / Device · Manage GIFs** lädt dieselbe Controller-Dateiliste wie die GUI unter **Hub75 → Geräte & Einrichtung / Devices & setup**.
+
+MatrixMind: **Einrichten / Setup** erklärt den Ablauf. **MatrixMind aktivieren &
+speichern / Activate MatrixMind & save** prüft den Controller und aktiviert Modul,
+Gerät und MatrixMind gemeinsam. **Speichern & auf dem Panel testen / Save & test on
+the panel** übernimmt den gesamten Entwurf vor dem Paneltest. **MatrixMind deaktivieren /
+Deactivate MatrixMind** lässt Modul und Gerät eingeschaltet. Bildschirm-Beispielvorschau
+und tatsächliche Ausgabe sind getrennt; RGB-Werte werden nicht künstlich aufgehellt.
+
+The terminal offers the same ordered steps. Activation and panel tests check and
+save the complete Hub75 draft; all three required switches are enabled together.
+Deactivation changes only MatrixMind. Sample frames and current output stay separate.
+Controller live view now requires every controller pixel. Reduced or unverified
+firmware previews show an actionable message in GUI and TUI instead of an incomplete
+image. This applies to GIFs and internal WLED effects too. See the optional
+[DHLive1 firmware build](../scripts/wled-full-preview/README.md); it is not installed automatically.
+
+Hub75-Paneländerungen / panel changes: MatrixMind ausschalten & speichern / deactivate & save → Panelentwurf bearbeiten / edit panels → auf Display übertragen & Neustart bestätigen / apply & confirm restart → Rücklesung abwarten / wait for verification → Konfiguration speichern / save configuration.
+
+
+Hub75-Ereignisse / HUB75 events: **Hub75 → Konfiguration bearbeiten / Edit configuration → Rules**. Nur Panels im Ereignismodus sind Ziele. **Effects → HubX-Layout → Layout** lädt die Layoutdatei oder ändert Textplatzhalter. HubX-Pakete können über den HubX-Posteingang geprüft und übernommen werden. [Ablauf / Workflow](HUB75.md).
+
+
+### Ereignisse nach Gerät / Events by device
+
+WLED, HUB75, Pixelit und AWTRIX bieten **Gerät filtern**. In WLED/HUB75 ist die Auswahl auch im Konfigurationseditor verfügbar. „Alle Geräte“ setzt den Filter zurück. Regeln mit mehreren Schritten erscheinen, sobald mindestens ein Schritt das Gerät anspricht. Der Filter ändert keine Zuordnung und wird nicht im Backup gespeichert. Neu angelegte Regeln werden unabhängig vom bisherigen Filter geöffnet.
+
+WLED, HUB75, Pixelit and AWTRIX offer **Filter by device**, also inside the WLED/HUB75 configuration editor. **All devices** clears the filter. A rule matches when at least one step targets the device, including steps targeting all devices. Filtering does not change assignments or backup data. New rules open independently of the previous filter.
+
+GUI, Web/Webapp und Android zeigen zusätzlich kleine Beispielvorschauen in eingeklappten Regeln, sofern ein lokaler Renderer verfügbar ist. Sie zeigen den ersten Schritt bzw. den ersten darstellbaren Effekt, keine komplette zufällige Sequenz. Die Vorschau pausiert außerhalb des sichtbaren Bereichs; aufgeklappt ersetzt die große Vorschau die Miniatur. Es werden keine Effekte an Geräte gesendet. Die TUI zeigt keine Miniaturen.
+
+GUI, web/webapp and Android additionally show small sample previews in collapsed rules where a local renderer is available. They show the first step or first supported effect, not an entire random sequence. Off-screen previews pause; expanding the rule replaces the miniature with its full preview. No effects are sent to devices. The TUI has no miniatures.

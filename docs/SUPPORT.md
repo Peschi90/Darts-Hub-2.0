@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+Die Sammlung enthält neben dem gefilterten Gesamtlog auch vorhandene Logdateien der ausgewählten Module unter `logs/<Modul>/`. Zeitraum und Schwärzung gelten für beide. Vollständige Autodarts-Spielzustände und WebSocket-Payloads erfordern `autodarts_websocket_payloads`; ohne Freischaltung werden auch entsprechende Details älterer Logs beim Export entfernt. Kurze Ereigniszusammenfassungen bleiben erhalten. Dies gilt ebenso für GUI, TUI, lokale Weboberfläche und verbundene Apps; im Terminal unter Support die Module und den Zeitraum auswählen und die Sammlung erstellen.
+
 Die Weboberfläche zeigt das Anfrageformular links, Diagnoseoptionen und Datenschutz rechts sowie Fortschritt und Versand darunter. Auf Mobilgeräten stehen die Bereiche untereinander. Nach Änderungen an der Anfrage die Diagnose erneut erstellen.
 
 ![Web-Supportseite](images/support/support-web-de.png)
@@ -27,6 +29,8 @@ Die Weboberfläche zeigt das Anfrageformular links, Diagnoseoptionen und Datensc
 - **Sendestatus unbekannt? Nicht blind erneut senden:** Der Server könnte die Anfrage bereits gespeichert haben.
 
 ## English
+
+Collections include the filtered combined log and available selected-module logs under `logs/<module>/`. Time filtering and redaction apply to both. Full Autodarts game states and WebSocket payloads require `autodarts_websocket_payloads`; without that feature, corresponding details in historical logs are also omitted on export. Short event summaries remain available. The same behavior applies to GUI, TUI, local web UI and connected apps; in the terminal, select modules and time range under Support and create the collection.
 
 The web interface places the request on the left, diagnostic and privacy options on the right, and progress and sending below. On mobile, sections stack vertically. Collect diagnostics again after changing the request.
 
