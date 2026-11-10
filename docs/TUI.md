@@ -140,3 +140,19 @@ WLED, HUB75, Pixelit and AWTRIX offer **Filter by device**, also inside the WLED
 GUI, Web/Webapp und Android zeigen zusätzlich kleine Beispielvorschauen in eingeklappten Regeln, sofern ein lokaler Renderer verfügbar ist. Sie zeigen den ersten Schritt bzw. den ersten darstellbaren Effekt, keine komplette zufällige Sequenz. Die Vorschau pausiert außerhalb des sichtbaren Bereichs; aufgeklappt ersetzt die große Vorschau die Miniatur. Es werden keine Effekte an Geräte gesendet. Die TUI zeigt keine Miniaturen.
 
 GUI, web/webapp and Android additionally show small sample previews in collapsed rules where a local renderer is available. They show the first step or first supported effect, not an entire random sequence. Off-screen previews pause; expanding the rule replaces the miniature with its full preview. No effects are sent to devices. The TUI has no miniatures.
+
+## HubX-Vorschauen / HubX previews (nächste Beta / next beta)
+
+Modul → **HubX · Effekte entdecken** → Beitrag → **Animierte Vorschau**.
+Während HubX die Vorschau vorbereitet, bleibt der Dialog offen und fragt nach
+der Server-Wartezeit erneut an. Vorübergehende Renderfehler können bis zu fünf
+Minuten Wartezeit verursachen. **Abbrechen** beendet das Nachladen.
+
+Module → **HubX · Discover effects** → item → **Animated preview**. The dialog
+waits and polls using the server retry delay. Temporary render failures can
+require up to five minutes before retrying. **Cancel** stops polling.
+
+
+Autodarts-Aufnahmesitzungen werden in GUI und TUI nur mit aktivem Lizenzfeature `autodarts_websocket_payloads` angezeigt. In der TUI stehen die Aufnahmeaktionen dann auf der Autodarts-Seite zur Verfügung; ohne Freigabe wird auch kein gesperrter Eintrag angezeigt.
+
+Autodarts session recording is shown in the GUI and TUI only with the active `autodarts_websocket_payloads` license feature. In the TUI, recording actions appear on the Autodarts page; without entitlement, no locked entry is shown.

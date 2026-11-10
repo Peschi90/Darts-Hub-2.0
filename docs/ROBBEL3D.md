@@ -154,3 +154,10 @@ Both profiles upload a complete JSON document when supported. When firmware requ
 Importierte Ereignisse erhalten einen Herkunftszusatz: `xyz v1 imp` bei v1-JSON-Dateien, `xyz R3D 2026` beim 145-LED-Robbel3D-Profil und `xyz R3D 2027` beim 2027-Profil. Das gilt für neue Importe in GUI, TUI und Headless; vorhandene Ereignisse werden nicht nachträglich umbenannt.
 
 Imported events receive an origin suffix: `xyz v1 imp` for v1 JSON files, `xyz R3D 2026` for the 145-LED Robbel3D profile and `xyz R3D 2027` for the 2027 profile. This applies to new imports in GUI, TUI and headless mode; existing events are not renamed retroactively.
+
+
+### Preset-Einschaltzustand / Preset power state
+
+Die R3D-2026-Vorlage setzt alle sechs Presets ausdrücklich auf eingeschaltet. Das gilt für den Datei-Upload und den JSON-API-Ersatzweg, auch wenn der Controller vor der Einrichtung ausgeschaltet war. Die Rückleseprüfung kontrolliert den globalen Ein-/Aus-Zustand und vorgegebene Helligkeiten. Bereits fehlerhaft gespeicherte Presets werden durch erneutes One-Click-Setup mit der korrigierten Version ersetzt; ein App-Update allein schreibt den Controller nicht um. Vorher die angebotene Sicherung nutzen und die Vorschau prüfen: One-Click ersetzt die Moduleinstellungen der Vorlage. In der TUI: `DartsHub --tui` → WLED → Robbel3D One-Click.
+
+The R3D 2026 template explicitly switches on all six presets. This applies to file uploads and the JSON API fallback, even if the controller was off before setup. Readback verification checks global power and specified brightness. Run One-Click again with the corrected version to replace previously affected presets; updating the app alone does not rewrite the controller. Use the offered backup and review the preview first: One-Click replaces module settings included in the template. In the TUI: `DartsHub --tui` → WLED → Robbel3D One-Click.
