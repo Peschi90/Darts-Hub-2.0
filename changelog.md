@@ -1,6 +1,6 @@
 # Changelog – Darts-Hub 2.0
 
-## v0.1.0-beta.66
+## v0.1.0-beta.67
 
 <!-- Geplante nächste Version. Bei Bedarf vor dem Release anpassen. / Planned next version; adjust before release if needed. -->
 
@@ -8,11 +8,12 @@
 
 #### Allgemein / General
 
+- Schnellere Release-Prüfungen mit gezielten Betriebssystemtests; Pakete für alle sechs Plattformen bleiben erhalten.
+- Lokale Builds verwenden zuverlässig das .NET-10-SDK, auch wenn neuere SDKs installiert sind; das behebt den Debug-Buildfehler nach einer Neuinstallation.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Autodarts
-
-- Die Autodarts-Aufnahmesitzung ist in GUI, TUI und Android-App nur mit aktiver Lizenzfreigabe sichtbar.
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
@@ -22,9 +23,12 @@
 
 #### WLED
 
-- Robbel3D One-Click speichert die R3D-2026-Effekte zuverlässig eingeschaltet und prüft den gespeicherten Ein-/Aus-Zustand.
-
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
+
+#### Hub75 / MatrixMind
+
+- MatrixMind 1.6.6 bringt frei wählbare Anzeigefarben, drei Standby-Szenen mit Thunder Run, neue Spiel- und Leg-Effekte sowie weitere Trainingsmodi für alle Panelgrößen; GUI, TUI und Web speichern dieselben Einstellungen.
+- Nach dem dritten Pfeil beginnt die Takeout-Animation frühestens nach 1,5 Sekunden; Spielerwechsel und Korrekturen verwerfen die wartende Anzeige.
 
 #### PixelIt
 
@@ -33,6 +37,8 @@
 #### AwtrixNG
 
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
+
+- Separates Diagnosepaket für Windows und Linux sammelt ohne Python Firmwareangaben und App-Namen vor und nach einem Importfehler; auf Wunsch lässt sich eine vorhandene App zur Fehlerprüfung aktivieren.
 
 #### GIF
 
@@ -44,7 +50,7 @@
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
-- HubX-Vorschauen in GUI, TUI, Web/Webapp und Android laden nach vorübergehenden Fehlern und Zeitüberschreitungen automatisch erneut, mit einer passenden Wartezeit. In der TUI lässt sich das Warten abbrechen.
+<!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Einstellungen und Import / Settings and Import
 
@@ -62,11 +68,12 @@
 
 #### Allgemein / General
 
+- Faster release checks with targeted operating-system tests; packages remain available for all six platforms.
+- Local builds reliably use the .NET 10 SDK even when newer SDKs are installed, fixing the debug build failure after a fresh installation.
+
 <!-- Add brief user-facing changes here. -->
 
 #### Autodarts
-
-- Autodarts session recording is visible in the GUI, TUI and Android app only with an active license entitlement.
 
 <!-- Add brief user-facing changes here. -->
 
@@ -76,9 +83,12 @@
 
 #### WLED
 
-- Robbel3D One-Click reliably saves R3D 2026 effects switched on and verifies their stored power state.
-
 <!-- Add brief user-facing changes here. -->
+
+#### Hub75 / MatrixMind
+
+- MatrixMind 1.6.6 adds custom display colors, three standby scenes including Thunder Run, new game and leg effects and more practice modes for every panel size; GUI, TUI and web share the same saved settings.
+- The takeout animation waits at least 1.5 seconds after the third dart; player changes and corrections discard the pending display.
 
 #### PixelIt
 
@@ -87,6 +97,8 @@
 #### AwtrixNG
 
 <!-- Add brief user-facing changes here. -->
+
+- A separate Windows and Linux diagnostic package collects firmware details and app names around an import error without Python; an optional test activates an existing app to help investigate the failure.
 
 #### GIF
 
@@ -98,7 +110,7 @@
 
 #### GUI, TUI und Weboberfläche / GUI, TUI and Web Interface
 
-- HubX previews in GUI, TUI, web/webapp and Android retry temporary failures and timeouts automatically using an appropriate retry delay. Terminal users can cancel while waiting.
+<!-- Add brief user-facing changes here. -->
 
 #### Einstellungen und Import / Settings and Import
 

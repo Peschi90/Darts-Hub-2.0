@@ -2,10 +2,22 @@
 
 ## Deutsch
 
-MatrixMind übernimmt die Anzeige aus **MatrixMind Scoreboard 1.3.0 von
+MatrixMind übernimmt die Anzeige aus **MatrixMind Scoreboard 1.6.6 von
 BernyBoneBreaker** direkt in Darts-Hub. Der native C#-Renderer erhält Spieldaten
 aus der vorhandenen Autodarts-Websocket-Verbindung. Eine separate EXE, ein
 Browsergrabber oder eine Python-Installation sind für MatrixMind nicht nötig.
+
+### Neu in 1.6.6
+
+Unter **Darstellung** stehen drei **Standby-Szenen** bereit: MatrixMind, die 12-sekündige DartsHub2.0/MatrixMind-Sequenz und **Thunder Run** (25 Sekunden). Die beiden zusätzlichen Szenen starten nach einem Spiel neu; ohne Animationen erscheint ein Standbild. Das 12-Sekunden-Video behält seine 25 Einzelbilder pro Sekunde, die Ausgabe zielt auf 30 FPS.
+
+**Anzeigefarben** bietet 22 optionale RGB-Farben für Spielstand, Darts, Cricket und Ergebnisse. Jede Farbe hat einen Farbwähler und ein exaktes #RRGGBB-Feld. **Eigene Farbe verwenden** ausschalten stellt die Designfarbe wieder her. Die Änderungen bleiben im Entwurf, bis gespeichert wird; die Beispielvorschau verwendet den Entwurf. Im Terminal: **Hub75 → Gerät → MatrixMind → Anzeigefarben**, Bereich wählen, Tastatur-Farbauswahl oder exakter Wert; **Erben** stellt die Designfarbe wieder her. Standby wird unter **Konfigurieren** ausgewählt. Danach Hub75 speichern bzw. **Controller prüfen & speichern** ausführen. Die Weboberfläche verwendet dieselben Einstellungen und Farbwähler.
+
+Bull-off mit Startspieler, GAME ON!, Leg-/Set-Ergebnisse, Darts-entfernen und neue Dartgrafiken folgen dem Spiel und gewählten Design. Neben X01 und Cricket werden die gemeldeten Werte für Count Up, Around The Clock, Random Checkout, Round the World, Segment Training, Bob’s 27, 121, Shanghai, Gotcha, Bermuda und Killer dargestellt. Fehlende Ziele, Leben oder Ergebnisstände werden nicht erfunden. **Finale** (22 Sekunden) und **Game On** (8 Sekunden) sowie die Trainingsdemos ergänzen die Vorschau.
+
+Nach dem dritten Pfeil wartet die Takeout-Animation **1,5 Sekunden**. Währenddessen bleibt die Spiel-/Wurfanzeige sichtbar. Laufende Ergebnis- und Trefferanimationen behalten ihren Vorrang. Ein Spielerwechsel, eine Wurfkorrektur oder das Spielende verwirft die ausstehende Takeout-Anzeige; bei einer neuen vollständigen Aufnahme beginnt die Wartezeit neu. Ohne Animationen erscheint kein Takeout-Effekt.
+
+![Optionale Anzeigefarben mit Beispieldaten](images/user-guide/matrixmind-colors-de.png)
 
 ### Panels und Anzeige wählen
 
@@ -30,7 +42,7 @@ Browsergrabber oder eine Python-Installation sind für MatrixMind nicht nötig.
    zeigt echte Rendererbilder mit Beispieldaten für die gewählte Größe. Designs
    und Schriften sind getrennt aufklappbar; **Auswahl übernehmen** ändert den Entwurf.
 5. **Vorschau mit Beispieldaten starten** spielt X01 oder Cricket (je 18 Sekunden),
-   Ultra/Showtime (54 Sekunden) oder das Wartelogo Standby (20 Sekunden) ab.
+   Ultra/Showtime (54 Sekunden) oder das Wartelogo Standby (25 Sekunden) ab.
    Die Vorschau braucht kein eingeschaltetes Display und sendet keine Paneldaten.
 6. Unter **Ausgabe & Test** übernimmt **Speichern & auf dem Panel testen** den
    gesamten Entwurf nach einer Controllerprüfung und startet die gewählte Demo.
@@ -68,7 +80,7 @@ Helligkeit dennoch unterschiedlich wiedergeben.
 
 Die Geräte-Vorschau zeigt die aktuell berechneten Bilder, auch während einer
 Übertragungspause. Sie ist keine Empfangsbestätigung des Controllers. Die Ausgabe
-zielt wie das Original auf bis zu 40 Bilder pro Sekunde; die Geräte-Vorschau wird
+zielt wie das Original auf bis zu 30 Bilder pro Sekunde; die Geräte-Vorschau wird
 bis zu zehnmal pro Sekunde aktualisiert. Netzwerk und Rechner können das begrenzen.
 **Übertragung pausieren** sendet zunächst Schwarz und stoppt weitere DDP-Pakete.
 Fortsetzen, Speichern oder Neustart setzt die Ausgabe fort. Demos im Abschnitt
@@ -109,7 +121,20 @@ nicht über das Webrelay weitergeleitet.
 
 ## English
 
-MatrixMind integrates **MatrixMind Scoreboard 1.3.0 by BernyBoneBreaker** as a native
+
+### New in 1.6.6
+
+After the third dart, takeout waits **1.5 seconds**, retaining the game/dart display in the meantime. Active result and hit effects retain their priority. Player changes, corrections and game end discard pending takeout; a new complete visit starts a fresh delay. Disabling animations also disables takeout.
+
+![Optional display colors with sample data](images/user-guide/matrixmind-colors-en.png)
+
+**Appearance** offers three **Standby scenes**: MatrixMind, the 12-second DartsHub2.0/MatrixMind clip and **Thunder Run** (25 seconds). Added scenes restart after a game; disabling animations shows a still frame. The 12-second clip retains its original 25 distinct frames per second; output targets 30 FPS.
+
+**Display colors** provides 22 optional RGB overrides for scores, darts, Cricket and results. Use the color picker or exact #RRGGBB value; disabling **Use custom color** restores the design color. Settings remain drafts until saved and sample previews use the draft. Terminal equivalent: **Hub75 → device → MatrixMind → Display colors**, select a role and use the keyboard color selector or exact value; **Inherit** restores the theme. Choose standby under **Configure**, then save Hub75 or use **Check controller & save**. Web forms use the same settings and color pickers.
+
+Bull-off with the confirmed starter, GAME ON!, leg/set results, remove-darts scenes and new dart artwork follow live events and the selected design. X01 and Cricket are joined by reported scores for Count Up, Around The Clock, Random Checkout, Round the World, Segment Training, Bob’s 27, 121, Shanghai, Gotcha, Bermuda and Killer. Missing targets, lives and standings remain unknown. **Finale** (22 seconds), **Game On** (8 seconds) and practice demos are available in previews.
+
+MatrixMind integrates **MatrixMind Scoreboard 1.6.6 by BernyBoneBreaker** as a native
 C# renderer. Game data comes from Darts-Hub’s Autodarts WebSocket connection.
 No separate executable, browser capture or Python installation is needed for
 MatrixMind. Only the optional USB flashing tools in the Hub75 setup guide still
@@ -135,7 +160,7 @@ not automatically reconfigure the controller.
 **Load previews** renders real sample images at the selected size, grouped into
 expandable design/font galleries. Select a card to update the draft. **Start sample
 preview** plays X01/Cricket (18 seconds each), Ultra/Showtime (54 seconds) or the
-Standby logo (20 seconds), without sending data to a controller. Changing settings
+Standby logo (25 seconds), without sending data to a controller. Changing settings
 restarts the sample; navigation/device changes stop it. **Check controller & save**
 checks reachability and actual dimensions before saving. Under **Output & test**,
 **Save & test on the panel** checks and saves the complete draft, activates output
@@ -152,7 +177,7 @@ MatrixMind** saves its disabled switch while leaving Hub75 and the device enable
 The device preview shows rendered frames, not delivery acknowledgement. Screen
 and outgoing images use unmodified RGB values without artificial brightness gain.
 Monitors and LEDs can still reproduce colors and brightness differently.
-Output targets up to 40 fps and device previews refresh up to 10 fps,
+Output targets up to 30 fps and device previews refresh up to 10 fps,
 subject to host/network capacity. Pause first blanks the display, then stops DDP;
 resume, saving or restarting resumes output. Panel demos send to the actual display;
 return to game or new game data ends them. Event rules for enabled MatrixMind devices
@@ -174,12 +199,13 @@ settings when editing other values. Sample streams are not relayed remotely.
 
 ## Verification / Prüfung
 
-The native renderer was compared with **32,251 independently captured original
-1.3.0 frames**, including RGB SHA-256, effects and complete DDP packets, all three
+The native renderer was compared with **40,569 independently captured original
+1.6.6 frames** using the original timing for comparison. The deliberate 1.5-second
+takeout delay is tested separately across all sizes. The comparison includes RGB SHA-256, effects and complete DDP packets, all three
 sizes, all designs/fonts, demo timelines, standby and real snapshot corrections.
 Fixtures run without Python. Cross-built Windows/Linux/macOS x64/ARM64 packages
 are not proof of native execution on every platform or physical panel reception.
-Original license and file hashes: `MatrixMind/Original13/NOTICE.txt` and
+Original license and file hashes: `MatrixMind/Original166/NOTICE.txt` and
 `provenance.json` in the Hub75 module. See `scripts/matrixmind/README.md` for review
 and reproduction instructions.
 

@@ -238,3 +238,28 @@ Deutsch: `{average}` ist der X01-Match-Average des auslösenden Spielers, `{leg-
 English: `{average}` is the triggering player's X01 match average; `{leg-average}` and `{set-average}` select the leg/set. Cricket/Tactics provide `{mpr}` and `{leg-mpr}`. Fixed players use `{p1-average}` through `{p6-average}` (also for the other statistics). Player numbers follow the stable match assignment. Values come directly from Autodarts, formatted with two decimal places and a decimal point. Unavailable statistics remain empty; profile averages are never substituted.
 
 DE: Anzeigevorlage `average` auswählen, Textüberschreibung deaktivieren. EN: Select display template `average` and disable the text override.
+
+## Importfehler untersuchen / Investigating import errors
+
+DE: Das separate [Diagnosepaket](../scripts/awtrix-diagnose/READ-ME.txt) benötigt
+kein Python. Den vollständigen Ordner `scripts/awtrix-diagnose` verwenden:
+unter Windows `START-WINDOWS.cmd` doppelklicken, unter Linux/macOS im Ordner
+`sh START-LINUX.sh` ausführen (curl erforderlich). Die IP der Uhr eingeben und
+den Fehler nach Aufforderung in GUI oder TUI wiederholen. Das Skript erfasst
+Firmwareangaben und App-Namen vor und nach dem Fehler. Optional eine gemeldete
+App per Nummer aktivieren; dies kann die Anzeige ändern und stellt sie nicht
+automatisch zurück. Enter überspringt den PUT-Test. Textbericht vor dem Teilen
+prüfen und die genaue Darts-Hub-Version ergänzen. Es werden keine Apps angelegt
+oder gelöscht. Fehlende Namen beweisen keinen fehlgeschlagenen Upload.
+
+EN: The separate [diagnostic package](../scripts/awtrix-diagnose/READ-ME.txt)
+requires no Python. Use the complete `scripts/awtrix-diagnose` folder:
+double-click `START-WINDOWS.cmd` on Windows, or run `sh START-LINUX.sh` inside
+the folder on Linux/macOS (curl required). Enter the clock address and reproduce
+the error in GUI or TUI when prompted. The script collects firmware details and
+app names before and after the error. Optionally select a reported app by number
+to test activation; the display may change and is not automatically restored.
+Press Enter to skip the PUT test. Review the text report before sharing and add
+the exact Darts-Hub version. No apps are created or deleted. Missing names do not
+prove an upload failed. Windows PowerShell and Git Bash were tested with a local
+HTTP simulator; physical-clock, native Linux/macOS and ARM64 checks remain open.
