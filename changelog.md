@@ -58,6 +58,9 @@
 
 #### Updates und Installation / Updates and Installation
 
+- Ein Windows-Diagnoseskript zeigt den Fortschritt an und bündelt Prüfbericht und passende Logeinträge in einer teilbaren ZIP-Datei.
+- Langsame Updateprüfungen bekommen mehr Zeit. Bei einem Fehler endet die Warteanzeige und die Suche kann erneut gestartet werden.
+
 <!-- Kurze Änderungen für Nutzer hier eintragen. -->
 
 #### Lizenz und Support / Licensing and Support
@@ -117,6 +120,9 @@
 <!-- Add brief user-facing changes here. -->
 
 #### Updates und Installation / Updates and Installation
+
+- A Windows diagnostic script shows progress and bundles update check results and relevant log entries in a shareable ZIP file.
+- Slow update checks get more time. If a check fails, the waiting screen closes and you can try again.
 
 <!-- Add brief user-facing changes here. -->
 
